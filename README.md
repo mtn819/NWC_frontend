@@ -5,6 +5,7 @@ This is the client-side interface for the 1977 NWC project. It is built with Cre
 ### To run:
     git clone https://github.com/DataAnalyticsinStudentHands/NWC_frontend.git
     cd NWC_frontend
+    npm install
     npm start
 
 ### Structure:
