@@ -11,6 +11,7 @@ import Footer from "./Components/Footer/Footer";
 import Navigation from './Components/Navigation/Navigation';
 import Home from './Home/Home';
 import MappingNWC from "./MappingNWC/MappingNWC";
+import DiscoverNWCStories from "./Components/DiscoverNWCStories/DiscoverNWCStories";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       <Switch>
         <Route path = "/MappingNWC">
           <MappingNWC/>
+        </Route>
+        <Route path = "/DiscoverNWCStories">
+          <DiscoverNWCStories/>
         </Route>
         <Route path = "/">
           <Home/>

@@ -1,11 +1,11 @@
 import React from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row, Image } from 'react-bootstrap';
 
 function Splash() {
   return (
     <Row>
       <Col>
-        <img src="https://images.ctfassets.net/hrltx12pl8hq/3MbF54EhWUhsXunc5Keueb/60774fbbff86e6bf6776f1e17a8016b4/04-nature_721703848.jpg?fit=fill&w=480&h=270"/>
+        <Image thumbnail src="https://images.ctfassets.net/hrltx12pl8hq/3MbF54EhWUhsXunc5Keueb/60774fbbff86e6bf6776f1e17a8016b4/04-nature_721703848.jpg?fit=fill&w=480&h=270"/>
       </Col>
       <Col className="mr-2">
         <Card>

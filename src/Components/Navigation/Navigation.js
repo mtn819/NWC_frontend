@@ -11,12 +11,16 @@ import { Link } from 'react-router-dom';
 
 function Navigation() {
   return (
-    <Navbar className="mr-auto" bg="light" expand="xs">
+    <Navbar className="mr-auto mb-4" bg="light" expand="xs">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
       <Link to="/">Home</Link>
       <Link to="/MappingNWC">Mapping the NWC</Link>
-      <Link to="/">About the Project</Link>
+      <Link to="/DiscoverNWCStories">Discover NWC Stories</Link>
+      <Form inline>
+        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+        <Button variant="outline-success">Search</Button>
+      </Form>
       
       
       <Navbar.Collapse id="basic-navbar-nav">
