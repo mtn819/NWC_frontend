@@ -15,6 +15,13 @@ In folder src/, App.js hosts the [react-router routing](https://reactrouter.com/
 
 The src/Components/ folder hosts page-unspecific components that will be reused throughout the site. Custom card components, for instance, would be built and exported here.
 
-All other folders under src/, such as Home/ and MappingNWC/, represent different routes. This helps break down webpages into smaller, page-specific sections. The entry for each of these routes is the respective .js file. For instance, Home/'s entry is Home/Home.js. MappingNWC/'s entry is MappingNWC.js.
+src/config harbors things like the axios configuration for this given project, found in src/config/axios.js. Axios must and should be configured before starting this front end for proper functionality.
+
+src/res harbors local resources, like some .png files, that will be used in the project.
+
+All other folders under src/, such as Home/ and MappingNWC/, represent different routes. This helps break down webpages into smaller, page-specific sections. The entry for each of these routes is the respective .js file. For instance, Home/'s entry is Home/Home.js. MappingNWC/'s entry is MappingNWC.js. These entry points also are the servers of their respective axios data.
 
 Some smaller, html customizations can be handled in public/, though this area of the codebase is rather uneventful; almost entirely defined by the defaults of npx create-react-app.
+
+
+Note: Will likely switch to plain CSS and BEM soon, potentially using JSON-styling for components
