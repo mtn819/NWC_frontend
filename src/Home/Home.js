@@ -6,6 +6,8 @@ import Map from "./Map";
 import Explore from './Explore';
 import Highlights from './Highlights';
 
+import Dog from './Dog';
+
 import axios from '../config/axios';
 
 const getWhere = (data, key, value) => {
@@ -37,12 +39,13 @@ function Home() {
   }, [])
 
   return (
-    <Container className="bg-beige pt-4" style={{borderTop: "8px solid red"}}  fluid>
+    <Container className="bg-beige pt-4"  fluid>
       <Splash/><hr/>
       <About content={aboutContent}/><hr/>
       <Map content={mapContent}/><hr/>
       <Explore/><hr/>
       <Highlights/><hr/>
+      <Dog/>
     </Container>
   )
 }

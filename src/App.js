@@ -6,6 +6,8 @@ import {
   Link
 } from "react-router-dom";
 
+import './Custom.css';
+
 import './Custom.scss';
 import Footer from "./Components/Footer/Footer";
 import Navigation from './Components/Navigation/Navigation';

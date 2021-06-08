@@ -1,0 +1,44 @@
+.navigation {
+  width: 100%;
+  height: 96px;
+  padding: 8px;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--colorNav);
+}
+
+.navigation_top {
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation_hamburger, .navigation_search {
+  width: 26px;
+}
+
+.navigation_bot {
+  width: 75%;
+  margin-left: 12.5%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.navigation_link {
+  color: white;
+  font-family: 'Odibee Sans', cursive;
+  font-size: x-large;
+}
+
+
+
+.navigation_border {
+  width: 100%;
+  height: 1px;
+  background-color: var(--colorNavDeepRed);
+  border-top: 8px solid var(--colorNavDeepRed);
+  border-bottom: 8px solid var(--colorNavDeepOrange);
+}
