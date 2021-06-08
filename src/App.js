@@ -13,7 +13,7 @@ import Footer from "./Components/Footer/Footer";
 import Navigation from './Components/Navigation/Navigation';
 import Home from './Home/Home';
 import MappingNWC from "./MappingNWC/MappingNWC";
-import DiscoverNWCStories from "./Components/DiscoverNWCStories/DiscoverNWCStories";
+import DiscoverNWCStories from "./DiscoverNWCStories/DiscoverNWCStories";
 
 function App() {
   return (
