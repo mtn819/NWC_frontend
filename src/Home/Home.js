@@ -1,12 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
-import Splash from "./Splash";
-import About from "./About";
-import Map from "./Map";
-import Explore from './Explore';
-import Highlights from './Highlights';
+import Home_Splash from './Home_Splash';
+import Home_About from './Home_About';
 
-import Dog from './Dog';
+import './Home.css'
 
 import axios from '../config/axios';
 
@@ -39,14 +35,10 @@ function Home() {
   }, [])
 
   return (
-    <Container className="bg-beige pt-4"  fluid>
-      <Splash/><hr/>
-      <About content={aboutContent}/><hr/>
-      <Map content={mapContent}/><hr/>
-      <Explore/><hr/>
-      <Highlights/><hr/>
-      <Dog/>
-    </Container>
+    <div className="home">
+      <Home_Splash/>
+      <Home_About content={aboutContent}/>
+    </div>
   )
 }
 
