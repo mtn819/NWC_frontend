@@ -26,7 +26,7 @@
 }
 
 .home_splash_card_heading {
-  font-family: 'Suez One', serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 48px;
   color: white;
   padding-left: 10%;
@@ -42,7 +42,7 @@
 }
 
 .home_splash_card_content {
-  font-family: 'Odibee Sans', cursive;
+  font-family: 'babas_neue', normal;
   font-size: 36px;
   color: white;
 }
@@ -74,7 +74,7 @@
 }
 
 .home_about_card_heading {
-  font-family: 'Suez One', serif;
+  font-family: 'babas_neue', 'normal';
   font-size: xx-large;
   margin-top: -40px;
   background-color: var(--colorBeigeBg);
@@ -92,6 +92,267 @@
   background-color: var(--colorNavDeepRed);
 }
 
+.home_about_card_content {
+  font-family: 'Open Sans', sans-serif;
+  text-align: left;
+  padding: 16px;
+}
+
 .home_about_chicks {
+  margin-left: 0%;
+}
+
+.home_about_border1 {
+  height: 16px;
+  width: 100%;
+  background-color: var(--colorNavDeepRed);
+}
+
+.home_about_border2 {
+  height: 16px;
+  width: 100%;
+  background-color: var(--colorNavDeepOrange);
+}
+
+.home_about_border3 {
+  height: 16px;
+  width: 100%;
+  background-color: var(--colorAboutBorderYellow);
+}
+
+.home_map {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.home_map_card {
+  width: 50%;
+  border: 4px solid var(--colorNavDeepRed);
+}
+
+.home_map_card_heading {
+  font-family: 'babas_neue', 'normal';
+  font-size: xx-large;
+  margin-top: -40px;
+  background-color: white;
+  width: max-content;
   margin-left: 40px;
+  margin-bottom: 0;
+  padding: 16px;
+}
+
+.home_map_card_hr {
+  height: 12px;
+  width: 180px;
+  background-color: var(--colorNavDeepRed);
+  margin-left: 56px;
+  margin-top: -20px;
+}
+
+.home_map_card_content {
+  font-family: 'Open Sans', sans-serif;
+  padding: 16px;
+}
+
+.home_interactiveMap {
+  display: flex;
+  justify-content: center;
+}
+
+.home_interactiveMap_card {
+  margin-top: 60px;
+  width: 70%;
+}
+
+.home_interactiveMap_card_tabs {
+  display: flex;
+  width: 100%;
+  justify-content:space-evenly;
+  border-bottom: 3px solid black;
+  padding: 0px;
+}
+
+.home_interactiveMap_card_tab {
+  color: var(--colorBeigeBg);
+  background-color: var(--colorNavDeepOrange);
+  padding: 12px;
+  padding-bottom: 2px;
+  padding-top: 4px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  font-family: 'babas_neue', 'normal';
+  font-size: x-large;
+}
+
+.home_interactiveMap_card_tab--active {
+  color: var(--colorActiveMapTabBlue);
+  background-color: white;
+  border: 2px solid var(--colorActiveMapTabBlue);
+}
+
+.home_interactiveMap_card_map {
+  width: 100%;
+}
+
+.home_explore {
+  background-color: var(--colorBeigeBg);
+  min-height: 400px;
+}
+
+.home_explore_card_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home_explore_card {
+  margin-top: 60px;
+  width: 30%;
+  border: 6px solid var(--colorNavDeepRed);
+}
+
+.home_explore_card_heading {
+  text-align: center;
+  font-family: 'babas_neue', 'normal';
+  font-size: 50px;
+  margin-top: -67px;
+  background-color: var(--colorBeigeBg);
+  width: max-content;
+  margin-bottom: 0;
+  margin-left: 16%;
+  padding: 16px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.home_explore_card_hr1 {
+  height: 5px;
+  width: 280px;
+  margin-top: -22px;
+  margin-left: 16%;
+  background-color: var(--colorNavDeepRed);
+}
+
+.home_explore_card_hr2 {
+  height: 5px;
+  width: 280px;
+  margin-top: 0px;
+  margin-left: 16%;
+  background-color: var(--colorNavDeepOrange);
+}
+
+.home_explore_card_content {
+  padding: 12%;
+  padding-top: 32px;
+  text-align: center;
+  font-size: small;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+
+.home_explore_chicks {
+  width: 100%;
+}
+
+.home_explore_links {
+  background-color: white;
+}
+
+.home_explore_links_row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.home_explorelink {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px;
+  margin-bottom: 20px;
+}
+
+.home_explorelink_img {
+  width: 200px;
+}
+
+.home_explorelink_content {
+  margin-top: 40px;
+  max-width: 150px;
+  font-size: small;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.home_highlights {
+  min-height: 400px;
+  background-image: url("../res/backgroundmap.svg");
+  padding: 100px;
+  padding-left: 400px;
+  padding-right: 400px;
+}
+
+.home_highlights_card {
+  width: 400px;
+  height: 300px;
+  background-color: var(--colorBeigeBg);
+  width: 100%;
+  min-height: 700px;
+}
+
+.home_highlights_card_heading {
+  font-family: 'babas_neue', 'normal';
+  color: var(--colorNavDeepRed);
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+/** NEED TO FIX THISSS!!! DOWN*/
+
+.home_highlights_carousel {
+  display: flex;
+  justify-content: space-around;
+  margin-left: -25%;
+  width: 120%;
+}
+
+.home_highlights_item {
+  display: flex;
+  width: 400px;
+}
+
+.home_highlights_item_img {
+  width: 50%;
+  height: 400px;
+}
+
+.home_highlights_item_caption {
+  background-color: white;
+}
+
+.home_highlights_item--active {
+  width: 400px;
+  border-left: 8px solid var(--colorNavDeepRed);
+}
+
+.home_highlights_item--active .home_highlights_item_playnice {
+  width: 500px;
+}
+
+/** NEED TO FIX THISSS!!! UP*/
+
+.home_highlights_carousel_trackers {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.home_highlights_carousel_tracker {
+  width: 12px;
+  height: 12px;
+  background-color: var(--colorNavDeepRed);
+  margin: 24px;
+  margin-top: 50px;
 }
