@@ -26,7 +26,7 @@
 }
 
 .home_splash_card_heading {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'subway_ds', 'normal';
   font-size: 48px;
   color: white;
   padding-left: 10%;
@@ -93,7 +93,7 @@
 }
 
 .home_about_card_content {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'neobulletin', 'normal';
   text-align: left;
   padding: 16px;
 }
@@ -151,7 +151,7 @@
 }
 
 .home_map_card_content {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'neobulletin', 'normal';
   padding: 16px;
 }
 
@@ -247,7 +247,7 @@
   padding-top: 32px;
   text-align: center;
   font-size: small;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'neobulletin', 'normal';
   
 }
 
@@ -279,7 +279,8 @@
   margin-top: 40px;
   max-width: 150px;
   font-size: small;
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'neobulletin', 'normal';
   text-align: center;
   margin-left: 20px;
 }

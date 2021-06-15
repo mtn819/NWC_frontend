@@ -18,26 +18,38 @@
   font-weight: normal;
   font-size: normal;
 }
+.font-babas_neue {
+  font-family: 'babas_neue', 'normal';
+}
 
 @font-face {
-  font-family: 'Gotham Book';
-  src: url('res/SS_Fonts/Gotham Book/Gotham Book Regular/Gotham Book Regular.otf') format('otf');
+  font-family: 'gotham';
+  src: url('res/SS_Fonts/gotham_book/gotham_book_regular/gotham_book_regular.woff') format('woff');
   font-weight: normal;
   font-size: normal;
+}
+.font-gotham_book {
+  font-family: 'gotham', 'normal';
 }
 
 @font-face {
   font-family: 'neobulletin';
-  src: url('res/SS_Fonts/neobulletin/NeoBulletin Limited Free Version.ttf') format('ttf');
+  src: url('res/SS_Fonts/neobulletin/neobulletin_limited_free_version.woff') format('woff');
   font-weight: normal;
   font-size: normal;
+}
+.font-neobulletin {
+  font-family: 'neobulletin', 'normal';
 }
 
 @font-face {
   font-family: 'subway_ds';
-  src: url('res/SS_Fonts/subway_ds/Subway-Black.ttf') format('ttf');
+  src: url('res/SS_Fonts/subway_ds/subway_black.woff') format('woff');
   font-weight: normal;
   font-size: normal;
+}
+.font-subway_ds {
+  font-family: 'subway_ds', 'normal';
 }
 
 

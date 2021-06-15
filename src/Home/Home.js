@@ -39,6 +39,12 @@ function Home() {
 
   return (
     <div className="home">
+      {/*<div className="fontref">
+        <p className="font-babas_neue">ABCDabcd babas_neue</p>
+        <p className="font-gotham_book">ABCDabcd gotham_book</p>
+        <p className="font-neobulletin">ABCDabcd neobulletin</p>
+        <p className="font-subway_ds">ABCDabcd subway_ds</p>
+      </div>*/}
       <Home_Splash/>
       <Home_About content={aboutContent}/>
       <Home_Map content={mapContent}/>
