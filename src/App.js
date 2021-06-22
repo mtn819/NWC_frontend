@@ -14,6 +14,7 @@ import Navigation from './Components/Navigation/Navigation';
 import Home from './Home/Home';
 import MappingNWC from "./MappingNWC/MappingNWC";
 import DiscoverNWCStories from "./DiscoverNWCStories/DiscoverNWCStories";
+import HowToContribute from "./HowToContribute/HowToContribute";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path = "/DiscoverNWCStories">
           <DiscoverNWCStories/>
+        </Route>
+        <Route path = "/HowToContribute">
+          <HowToContribute/>
         </Route>
         <Route path = "/">
           <Home/>

@@ -1,0 +1,134 @@
+.howtocontribute {
+  width: 100%;
+}
+
+.htc_splash {
+  display: flex;
+  justify-content: space-between;
+  background-image: url("../res/backgroundmap.svg");
+  align-items: center;
+}
+
+.htc_splash_button {
+  width: 400px;
+}
+
+.htc_splash_card {
+  width: 600px;
+  background-color: white;
+  padding: 40px;
+  font-family: 'neobulletin', 'normal'; 
+}
+
+.htc_splash_chick {
+  width: 400px;
+}
+
+.htc_navigation {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--colorBeigeBg);
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.htc_nav_button_img {
+  width: 180px;
+}
+
+.htc_involved_heading {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+}
+
+.htc_involved_heading_txt {
+  margin-left: 10%;
+  font-family: 'babas_neue', 'normal';
+  font-size: 80px;
+  margin-top: 20px;
+}
+
+.htc_involved_heading_img {
+  width: 200px;
+  height: 200px;
+  margin-right: 10%;
+}
+
+.htc_involved_cards {
+  margin: 40px;
+  margin-left: 10%;
+}
+
+.htc_involved_card {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.htc_involved_card_thumbnail {
+  width: 400px;
+  height: 200px;
+  border: 1px solid black;
+  margin-right: 40px;
+}
+
+.htc_involved_card_text {
+  width: 600px;
+}
+
+.htc_involved_card_heading {
+  font-family: 'babas_neue', 'normal';
+  font-size: 48px;
+}
+
+.htc_involved_card_content {
+  font-family: 'neobulletin', 'normal'; 
+}
+
+.htc_submissions {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.htc_submissions_playnice {
+  width: 80%;
+  background-color: var(--colorBeigeBg);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.htc_submissions_heading {
+  font-family: 'babas_neue', 'normal';
+  font-size: 52px;
+
+}
+
+.htc_submissions_content {
+  font-family: 'neobulletin', 'normal';
+  margin: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.htc_submissions_buttonrow {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.htc_submissions_button {
+  background-color: var(--colorNavDeepRed);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 40px;
+  font-family: 'babas_neue', 'normal';
+  color: white;
+  font-size: 24px;
+
+}

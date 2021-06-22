@@ -30,7 +30,7 @@ function Navigation() {
         <Link className="navigation_link" to="/DiscoverNWCStories">DISCOVER NWC STORIES</Link>  
         <Link className="navigation_link" to="/">WHY THE NWC MATTERS</Link>
         <Link className="navigation_link" to="/MappingNWC">MAPPING THE NWC</Link>
-        <Link className="navigation_link" to="/">HOW TO CONTRIBUTE</Link>
+        <Link className="navigation_link" to="/HowToContribute">HOW TO CONTRIBUTE</Link>
 
       </div>
     </div>
