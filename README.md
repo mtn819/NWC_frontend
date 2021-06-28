@@ -1,4 +1,6 @@
-# NWC Frontend
+# NWC Frontend Scaling Branch
+
+This branch is going to redo things because I was not a terribly bright architect when I first embarked on this.
 
 This is the client-side interface for the 1977 NWC project. It is built with Create-React-App, React-Router, React-Bootstrap, and Axios. The backend it interacts could be found here: https://github.com/DataAnalyticsinStudentHands/NWC_backend.
 
