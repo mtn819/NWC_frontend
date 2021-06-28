@@ -25,5 +25,10 @@ All other folders under src/, such as Home/ and MappingNWC/, represent different
 
 Some smaller, html customizations can be handled in public/, though this area of the codebase is rather uneventful; almost entirely defined by the defaults of npx create-react-app.
 
+## DETAILS:
+
+### How the Home Map Works:
+res/Home/Home_InteractiveMap_Map.js accepts a list of points. A point is defined by [name, x, y]. The Y axis is flipped here.
+
 
 Note: Will likely switch to plain CSS and BEM soon, potentially using JSON-styling for components

@@ -1,7 +1,14 @@
 import React from 'react'
 import home_map_downtown from '../res/home_map_downtown.svg';
+import Home_InteractiveMap_Map from './Home_InteractiveMap_Map';
 
 function Home_InteractiveMap() {
+  //name, x, y
+  const pointsOfInterest = [
+    ['CITY HALL', 10, 20],
+    ['CONVENTION HALL', 30, 50],
+  ];
+
   return (
     <div className="home_interactiveMap">
       <div className="home_interactiveMap_card">
@@ -18,7 +25,8 @@ function Home_InteractiveMap() {
         <div className="home_interactiveMap_card_poi">
 
         </div>*/}
-        <img src={home_map_downtown} className="home_interactiveMap_card_map"/>
+        {/*<img src={home_map_downtown} className="home_interactiveMap_card_map"/>*/}
+        <Home_InteractiveMap_Map pointsOfInterest={pointsOfInterest} background={'filler'}/>
       </div>
     </div>
   )
