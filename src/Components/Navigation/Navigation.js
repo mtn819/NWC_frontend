@@ -1,8 +1,9 @@
 import React from 'react'
 
 import './Navigation.css';
-import navigation_hamburger from '../../res/navigation_hamburger.svg';
-import navigation_search from '../../res/navigation_search.svg';
+import icon_search from './res/search.png';
+import icon_hamburger from './res/hamburger.png';
+
 
 import {
   Navbar,
@@ -21,18 +22,14 @@ function Navigation() {
   return (
     <>
     <div className="navigation">
-      <div className="navigation_top">
-        <img className="navigation_hamburger" src={navigation_hamburger}/>
-        <img className="navigation_search" src={navigation_search}/>
-      </div>
-      <div className="navigation_bot">
+        <img className="navigation_hamburger" src={icon_hamburger}/>
         <Link className="navigation_link" to="/">HOME</Link>
+        <Link className="navigation_link" to="/">ABOUT PROJECT</Link>  
         <Link className="navigation_link" to="/DiscoverNWCStories">DISCOVER NWC STORIES</Link>  
         <Link className="navigation_link" to="/">WHY THE NWC MATTERS</Link>
         <Link className="navigation_link" to="/MappingNWC">MAPPING THE NWC</Link>
         <Link className="navigation_link" to="/HowToContribute">HOW TO CONTRIBUTE</Link>
-
-      </div>
+        <img className="navigation_search" src={icon_search}/>
     </div>
     <div className="navigation_border">
 

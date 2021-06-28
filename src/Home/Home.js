@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import Home_Splash from './Home_Splash';
-import Home_About from './Home_About';
 import Home_Map from './Home_Map';
 
 import './Home.css'
@@ -8,6 +6,11 @@ import './Home.css'
 import axios from '../config/axios';
 import Home_Explore from './Home_Explore';
 import Home_Highlights from './Home_Highlights';
+
+
+import Splash from './Splash';
+import About from './About';
+
 
 const getWhere = (data, key, value) => {
   return data.filter(e => e[key] === value)[0];
@@ -45,8 +48,8 @@ function Home() {
         <p className="font-neobulletin">ABCDabcd neobulletin</p>
         <p className="font-subway_ds">ABCDabcd subway_ds</p>
       </div>*/}
-      <Home_Splash/>
-      <Home_About content={aboutContent}/>
+      <Splash/>
+      <About content={aboutContent}/>
       <Home_Map content={mapContent}/>
       <Home_Explore content={"All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. "}/>
       <Home_Highlights/>

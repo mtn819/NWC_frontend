@@ -1,3 +1,11 @@
+/*CEREMONY*/
+
+*, *::before, *::after {
+  box-sizing: border-box
+}
+
+/*THEMING*/
+
 :root{
   --colorNav: #142F45;
   --colorNavDeepRed: #B32525;
@@ -6,11 +14,33 @@
   --colorBeigeBg: #FFF4E8;
   --colorAboutBorderYellow: #ffd048;
   --colorActiveMapTabBlue: #44596b;
+
+  --colorDarkBlue: #142F45; /*Like seen in the background of the Navigation*/
+  --colorLightBlue: #9EC7E1; /*Like seen in the links of Navigation*/
+  --colorDeepRed: #B32525; /*Like seen on the border of Navigation*/
+  --colorDeepOrange: #CB4E28; /*Like seen on the border of Navigation*/
+  --colorBeige: #FFF4E8; /*Like seen on Home's About section*/
 }
 
-*, *::before, *::after {
-  box-sizing: border-box
+/*SCALING FOR DIFFERENT SCREEN SIZES*/
+
+:root {
+  --yUnit: 35px;
+  --xUnit: 100vw; /*...IT'S COMPLICATED*/
 }
+
+@media only screen and (max-device-width: 1700px) {
+  :root {
+    --yUnit: 25px;
+  }
+}
+@media only screen and (max-device-width: 1000px) {
+  :root {
+    --yUnit: 20px;
+  }
+}
+
+/*FONTS*/
 
 @font-face {
   font-family: 'babas_neue';
@@ -50,37 +80,4 @@
 }
 .font-subway_ds {
   font-family: 'subway_ds', 'normal';
-}
-
-
-
-
-
-/*
-placeholder fonts. to be ignored!
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-.font-open-sans {
-  font-family: 'Open Sans', sans-serif;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
-.font-dm-sans {
-  font-family: 'DM Sans', sans-serif;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100&display=swap');
-.font-montserrat-alternatives {
-  font-family: 'Montserrat Alternates', sans-serif;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
-.font-odibee-sans {
-  font-family: 'Odibee Sans', cursive;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
-.font-suez-one {
-  font-family: 'Suez One', serif;
 }
