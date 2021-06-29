@@ -27,18 +27,7 @@
 
 :root {
   --yUnit: 35px;
-  --xUnit: 100vw; /*...IT'S COMPLICATED*/
-}
-
-@media only screen and (max-device-width: 1700px) {
-  :root {
-    --yUnit: 25px;
-  }
-}
-@media only screen and (max-device-width: 1000px) {
-  :root {
-    --yUnit: 20px;
-  }
+  --xUnit: calc(100vw/1919); /*...IT'S COMPLICATED*/
 }
 
 /*FONTS*/
