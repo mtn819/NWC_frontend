@@ -27,6 +27,10 @@ All other folders under src/, such as Home/ and MappingNWC/, represent different
 
 Note: The naming convention used for CSS classes in this project follow the BEM naming conventions, with a very small modification. Format: .page_block_elementOne--modifierTwo.
 
+Something commonly seen in the CSS files is "var(--xUnit)". This is defined in Custom.css, and it is equal to 100vw/1919. This is because the XD mockup is based off of a 1919 width screen. This is used as a unit to keep things perfectly proportional with what is seen in the XD document.
+
+Example: Before: 19px; After: calc(19*var(--xUnit))
+
 Some smaller, html customizations can be handled in public/, though this area of the codebase is rather uneventful; almost entirely defined by the defaults of npx create-react-app.
 
 
