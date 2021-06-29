@@ -10,14 +10,20 @@ function About({content}) {
     </>
 
   return (
+    <>
     <div className="home_about">
       <div className="home_about_card">
         <div className="home_about_cardHeading">ABOUT THE PROJECT</div>
         <div className="home_about_cardHr"></div>
         <div className="home_about_cardContent">{content.length > 0 ? content : fillerString}</div>
       </div>
-      <img className="home_about_img" src={aboutchicks}/>
+      <div className="home_about_img">
+        <img src={aboutchicks}/>
+        <div className="home_about_imgCredit">PHOTO BY JANE DOE</div>
+      </div>
     </div>
+    <div className="home_about_borderBottom"></div>
+    </>
   )
 }
 

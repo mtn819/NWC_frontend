@@ -62,7 +62,8 @@
 .home_about_card {
   border: 10px solid var(--colorDeepRed);
   width: calc(var(--xUnit)*835/1919);
-  height: calc(var(--xUnit)*730/1919);
+  height: fit-content;
+  min-height: calc(var(--xUnit)*730/1919);
   margin-top: calc(var(--yUnit)*118/35);
   margin-left: calc(-2*var(--xUnit)*39.22/1919);
 }
@@ -78,12 +79,23 @@
   font-family: 'babas_neue', 'normal';
 }
 
+.home_about_cardHr {
+  width: calc(var(--xUnit)*190.36/1919);
+  height: 1px;
+  margin-left: calc(var(--xUnit)*143.22/1919 + var(--xUnit)*29/1919);
+  margin-top: calc(-1*var(--yUnit)*24/35);
+  margin-bottom: calc(var(--yUnit)*64.67/35);
+  border-top: 15px solid var(--colorDeepRed);
+  border-bottom: 10px solid var(--colorDeepOrange);
+  background-color: var(--colorDeepOrange);
+}
+
 .home_about_cardContent {
   width: calc(var(--xUnit)*579/1919);
   margin-left: calc(var(--xUnit)*143.22/1919);
   padding-left: calc(var(--xUnit)*29/1919);
-  font-family: 'neobulletin', 'normal';
   font-size: calc(var(--yUnit)*24/35);
+  font-family: 'neobulletin', 'normal';
   font-weight: bold;
 }
 
@@ -92,7 +104,40 @@
   height: calc(var(--xUnit)*1063/1919);
   margin-top: calc(-1*var(--yUnit)*112/35);
   margin-right: calc(-1*var(--xUnit)*250/1919);
+  overflow-y: hidden;
 }
+
+/*FIGURE THIS OUT*/
+.home_about_imgCredit {
+  font-family: 'babas_neue', 'normal';
+  font-size: calc(var(--yUnit)*36/35);
+  margin-top: calc(-1*var(--yUnit)*94/35);
+  height: fit-content;
+  background-color: var(--colorDarkBlue);
+  position: absolute;
+  right: 0;
+  color: white;
+  padding: 20px; 
+}
+
+.home_about_borderBottom {
+  /*HIGH RED*/
+  border-top: calc(var(--yUnit)*25/35) solid var(--colorDeepRed);
+
+  /*MID ORANGE*/
+  height: calc(3*var(--yUnit)*25/35);
+  background-color: var(--colorDeepOrange);
+
+  /*LOW YELLO*/
+  border-bottom: calc(var(--yUnit)*25/35) solid var(--colorDeepYellow);
+
+
+  margin-bottom: 260.5px;
+}
+
+/**
+  NEED TO FIX UP MAP
+*/
 
 .home_map {
   margin-top: 40px;
@@ -256,9 +301,13 @@
   width: 100%;
 }
 
+/* NEED TO FIX ABOVE */
+
 .home_explore {
+  border: 1px solid black;
+  margin-top: calc(var(--yUnit)*299/35);
   background-color: var(--colorBeigeBg);
-  min-height: 400px;
+  padding-top: 80px;
 }
 
 .home_explore_card_container {
