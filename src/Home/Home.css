@@ -309,96 +309,133 @@
 /* NEED TO FIX ABOVE */
 
 .home_explore {
-  border: 1px solid black;
-  margin-top: calc(var(--yUnit)*299/35);
+  margin-top: calc(299*var(--xUnit));
   background-color: var(--colorBeigeBg);
-  padding-top: 80px;
-}
-
-.home_explore_card_container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  padding-top: calc(123.26*var(--xUnit));
 }
 
 .home_explore_card {
-  margin-top: 60px;
-  width: 30%;
-  border: 6px solid var(--colorNavDeepRed);
+  border: calc(10*var(--xUnit)) solid var(--colorDeepRed);
+  width: calc(830.47*var(--xUnit));
+  margin-left: calc(592.99*var(--xUnit));
 }
 
-.home_explore_card_heading {
-  text-align: center;
+.home_explore_cardHeading {
   font-family: 'babas_neue', 'normal';
-  font-size: 50px;
-  margin-top: -67px;
+  font-size: calc(96*var(--xUnit));
+  padding-left: calc(40*var(--xUnit));
+  padding-right: calc(40*var(--xUnit));
   background-color: var(--colorBeigeBg);
-  width: max-content;
-  margin-bottom: 0;
-  margin-left: 16%;
-  padding: 16px;
-  padding-left: 4px;
-  padding-right: 4px;
+  margin-top: calc(-1*72*var(--xUnit));
+  margin-left: calc(92*var(--xUnit));
+  width: fit-content;
 }
 
-.home_explore_card_hr1 {
-  height: 5px;
-  width: 280px;
-  margin-top: -22px;
-  margin-left: 16%;
-  background-color: var(--colorNavDeepRed);
+.home_explore_cardHr {
+  width: calc(520*var(--xUnit));
+  height: 1px;
+  margin-left: calc(132.5*var(--xUnit));
+  margin-top: calc(-1*12*var(--xUnit));
+  margin-bottom: calc(20*var(--xUnit));
+
+  background-color: var(--colorDeepRed);
+  /*top*/
+  border-top: calc(10*var(--xUnit)) solid var(--colorDeepRed);
+  border-bottom: calc(10*var(--xUnit)) solid var(--colorDeepOrange);
 }
 
-.home_explore_card_hr2 {
-  height: 5px;
-  width: 280px;
-  margin-top: 0px;
-  margin-left: 16%;
-  background-color: var(--colorNavDeepOrange);
-}
-
-.home_explore_card_content {
-  padding: 12%;
-  padding-top: 32px;
+.home_explore_cardContent {
+  width: calc(520*var(--xUnit));
+  margin-left: calc(132.5*var(--xUnit));
   text-align: center;
-  font-size: small;
   font-family: 'neobulletin', 'normal';
-  
+  font-weight: bold;
 }
 
 .home_explore_chicks {
-  width: 100%;
+  border-bottom: calc(35*var(--xUnit)) solid var(--colorDeepRed);
+  z-index: 1;
 }
 
-.home_explore_links {
+.home_explore_chicksImg {
+  width: calc(1930*var(--xUnit));
+  margin-top: calc(76.86*var(--xUnit));
+  z-index: 1;
+}
+
+.home_explore_chicksCredit {
+  position: absolute;
+  background-color: var(--colorDarkBlue);
+  color: white;
+  font-family: 'babas_neue', 'normal';
+  font-size: calc(36*var(--xUnit));
+  width: calc(322*var(--xUnit));
+  height: calc(84*var(--xUnit));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(-1*84*var(--xUnit));
+  z-index: 1;
+}
+
+.home_explore_buttons {
   background-color: white;
+  padding-top: calc(157*var(--xUnit));
+  padding-bottom: calc(192*var(--xUnit));
 }
 
-.home_explore_links_row {
+.home_explore_dots {
+  width: calc(466*var(--xUnit));
+  position: absolute;
+  z-index: 0;
+}
+
+.home_explore_dots1 {
+  margin-top: calc(-1*160*var(--xUnit));
+}
+
+.home_explore_dots2 {
+  right: 0;
+  margin-top: calc(-1*160*var(--xUnit));
+}
+
+.home_explore_dots3 {
+  margin-top: calc(650*var(--xUnit));
+}
+
+.home_explore_dots4 {
+  right: 0;
+  margin-top: calc(650*var(--xUnit));
+}
+
+.home_explore_buttonRow {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
-.home_explorelink {
+.home_explore_row2 {
+  margin-top: calc(163*var(--xUnit));
+}
+
+.home_explore_button {
   display: flex;
-  justify-content: space-around;
-  margin: 40px;
-  margin-bottom: 20px;
+  align-items: center;
+  z-index: 1;
 }
 
-.home_explorelink_img {
-  width: 200px;
+.home_explore_buttonImg {
+  width: calc(400*var(--xUnit));
 }
 
-.home_explorelink_content {
-  margin-top: 40px;
-  max-width: 150px;
-  font-size: small;
-  /*font-family: 'Open Sans', sans-serif;*/
+.home_explore_buttonText {
+  width: calc(274*var(--xUnit));
+  background-color: white;
+  padding: calc(8*var(--xUnit));
   font-family: 'neobulletin', 'normal';
-  text-align: center;
-  margin-left: 20px;
 }
+
+/*MAKE THIS ITS OWN SEPARATE CSS*/
+
 
 .home_highlights {
   min-height: 400px;

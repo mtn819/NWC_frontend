@@ -5,7 +5,6 @@ import './Home.css'
 
 import axios from '../config/axios';
 import Home_Highlights from './Home_Highlights';
-import Home_Explore from './Home_Explore';
 
 
 import Splash from './Splash';
@@ -53,7 +52,6 @@ function Home() {
       <About content={aboutContent}/>
       <Home_Map content={mapContent}/>
       <Explore content={""}/>
-      <Home_Explore content={"All work and no play makes Jack a dull boy."}/>
       <Home_Highlights/>
     </div>
   )
