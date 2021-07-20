@@ -39,3 +39,7 @@ res/Home/Home_InteractiveMap_Map.js accepts a list of points. A point is defined
 
 
 Note: Will likely switch to plain CSS and BEM soon, potentially using JSON-styling for components
+
+### How Discover/Info Page Works
+
+DiscoverNWCStories uses React Router, similarly to the entire application's routing. Each story has an id in the url, and that id is to be used to fetch data to fill out the specific story.
