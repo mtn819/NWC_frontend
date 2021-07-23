@@ -209,6 +209,11 @@
   font-size: x-large;
 }
 
+.home_interactiveMap_card_tab:hover {
+  cursor: pointer;
+  transform: scale(1.01, 1.01);
+}
+
 .home_interactiveMap_card_tab--active {
   color: var(--colorActiveMapTabBlue);
   background-color: white;
@@ -284,13 +289,18 @@
 }
 
 .home_interactiveMap_map_points {
-  background-image: url('../res/home_map_downtownTab.png');
   background-size: cover;
   width: 500px;
   height: 400px;
   margin-left: 15%;
   margin-top: 40px;
 }
+
+.dt { background-image: url('res/dt.png'); }
+.tw { background-image: url('res/tw.png'); }
+.museo { background-image: url('res/museo.png'); }
+.mag { background-image: url('res/mag.png'); }
+.astro { background-image: url('res/astro.png'); }
 
 .home_interactive_map_points_poi {
   position: absolute;

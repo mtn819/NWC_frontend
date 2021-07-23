@@ -2,7 +2,7 @@ import React from 'react'
 import home_maptick from '../res/home_maptick.png';
 
 //a point is given a [name, x, y]
-function Home_InteractiveMap_Map({pointsOfInterest, backgroundImage}) {
+function Home_InteractiveMap_Map({pointsOfInterest, background}) {
   return (
     <div className="home_interactiveMap_map">
       <div className="home_interactiveMap_map_scroll">
@@ -16,13 +16,13 @@ function Home_InteractiveMap_Map({pointsOfInterest, backgroundImage}) {
           }
         </div>
       </div>
-      <div className="home_interactiveMap_map_points">
+      <div className={`home_interactiveMap_map_points ${background}`}>
         {
           pointsOfInterest
             .map(p =>
               <img src={home_maptick} className="home_interactive_map_points_poi" style={{
-                marginLeft: `${p[1]}px`,
-                marginTop: `${p[2]}px`,
+                marginLeft: `calc(${p[1]}*var(--xUnit))`,
+                marginTop: `calc(${p[2]}*var(--xUnit))`,
               }}/>  
             )
         }
