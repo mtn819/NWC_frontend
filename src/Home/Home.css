@@ -316,6 +316,76 @@
   width: 100%;
 }
 
+.home_interactiveMap_map_popup {
+  width: calc(500*var(--xUnit));
+  height: calc(645*var(--xUnit));
+  background-color: #615FBF;
+  border-radius: calc(40*var(--xUnit));
+  font-family: 'babas_neue';
+  margin-left: calc(-1*40*var(--xUnit));
+  margin-top: calc(-1*100*var(--xUnit));
+  color: white;
+}
+
+.home_interactiveMap_map_popupTop {
+  padding: calc(53*var(--xUnit));
+  width: 100%;
+  background-color: white;
+  border-radius: calc(40*var(--xUnit));
+  height: calc(400*var(--xUnit));
+  color: #CCC9C9;
+}
+
+.back2map:hover {
+  cursor: pointer;
+  color: red;
+  
+}
+
+.graybox {
+  width: calc(380*var(--xUnit));
+  height: calc(250*var(--xUnit));
+  background-color: #CCC9C9;
+  border-radius: calc(20*var(--xUnit));
+}
+
+.images {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: calc(20*var(--xUnit));
+  margin-left: calc(-1*20*var(--xUnit));
+}
+
+.graybox_small {
+  width: calc(100*var(--xUnit));
+  height: calc(80*var(--xUnit));
+  background-color: #CCC9C9;
+  border-radius: calc(20*var(--xUnit));
+}
+
+.graybox_small {
+  width: 10;
+  height: 10;
+}
+
+.bgGray {
+  background-color: gray;
+}
+
+.title {
+  margin-top: calc(50*var(--xUnit));
+  font-size: calc(25*var(--xUnit));
+}
+
+.content {
+  font-size: calc(16*var(--xUnit));
+  margin-top: calc(10*var(--xUnit));
+}
+
+.title, .location, .content {
+  margin-left: calc(20*var(--xUnit));
+}
+
 /* NEED TO FIX ABOVE */
 
 .home_explore {
