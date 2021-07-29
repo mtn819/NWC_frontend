@@ -323,8 +323,9 @@
   border-radius: calc(40*var(--xUnit));
   font-family: 'babas_neue';
   margin-left: calc(-1*40*var(--xUnit));
-  margin-top: calc(-1*100*var(--xUnit));
+  margin-top: calc(-1*80*var(--xUnit));
   color: white;
+  border-top: 1px solid black;
 }
 
 .home_interactiveMap_map_popupTop {
@@ -339,7 +340,7 @@
 .back2map:hover {
   cursor: pointer;
   color: red;
-  
+
 }
 
 .graybox {

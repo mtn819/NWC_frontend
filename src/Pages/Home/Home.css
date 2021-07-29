@@ -1,0 +1,334 @@
+/*
+SPLASH
+*/
+
+.homeSplash {
+  display: flex;
+  background: url("./res/mapbg.png");
+  padding-left: calc(160*var(--xUnit));
+  padding-top: calc(156.33*var(--xUnit));
+  padding-bottom: calc(106.17*var(--xUnit));
+}
+
+.homeSplash_toForm img {
+  width: calc(799.77*var(--xUnit));
+}
+
+.homeSplash_card {
+  width: calc(696.16*var(--xUnit));
+  height: calc(640.29*var(--xUnit));
+  margin-left: calc(114*var(--xUnit));
+  background-color: var(--colorLightBlue);
+  color: white;
+  text-align: center;
+  padding-top: calc(19.45*var(--xUnit));
+}
+
+.homeSplash_card h3 {
+  font-family: 'subway_ds';
+  font-size: calc(96*var(--xUnit));
+  width: calc(552*var(--xUnit));
+  margin-left: calc(72*var(--xUnit));
+}
+
+.homeSplash_cardHr {
+  width: calc(582.95*var(--xUnit));
+  height: calc(6*var(--xUnit));
+  background-color: #DA4C4C;
+  margin-left: calc(56.82*var(--xUnit));
+  margin-top: calc(22*var(--xUnit));
+}
+
+.homeSplash_card p {
+  font-family: 'babas_neue';
+  font-size: calc(65*var(--xUnit));
+  margin-top: calc(41.47*var(--xUnit));
+}
+
+/*
+ABOUT
+*/
+
+.homeAbout_beigeBackdrop {
+  width: calc(1610*var(--xUnit));
+  height: calc(950*var(--xUnit));
+  background-color: var(--colorBeige);
+  margin-top: calc(112*var(--xUnit));
+  margin-left: calc(122*var(--xUnit));
+}
+
+.homeAbout_content {
+  display: flex;
+  margin-top: calc(-1*1062*var(--xUnit));
+}
+
+.homeAbout_card {
+  width: calc(835*var(--xUnit));
+  min-height: calc(730*var(--xUnit));
+  height: fit-content;
+  border: calc(10*var(--xUnit)) solid var(--colorDeepRed);
+  margin-left: calc(46.78*var(--xUnit));
+  margin-top: calc(230*var(--xUnit));
+  padding-bottom: calc(56*var(--xUnit));
+}
+
+.homeAbout_playnice {
+  width: calc(835*var(--xUnit));
+}
+
+.homeAbout_headerBackdrop {
+  background-color: var(--colorBeige);
+  height: calc(96*var(--xUnit));
+  width: calc(654*var(--xUnit));
+  margin-left: calc(109.22*var(--xUnit));
+  margin-top: calc(-1*62*var(--xUnit));
+  overflow-y: hidden;
+}
+
+.homeAbout_header {
+  font-family: 'babas_neue', 'normal';
+  font-size: calc(96*var(--xUnit));
+  margin-left: calc(138.22*var(--xUnit));
+  margin-top: calc(-1*96*var(--xUnit));
+}
+
+.homeAbout_cardHr {
+  width: calc(198.36*var(--xUnit));
+  background-color: var(--colorDeepRed);
+  border-top: calc(15*var(--xUnit)) solid var(--colorDeepRed);
+  border-bottom: calc(10*var(--xUnit)) solid var(--colorDeepOrange);
+  margin-left: calc(138.22*var(--xUnit));
+  margin-top: calc(-1*4*var(--xUnit));
+}
+
+.homeAbout_p1 {
+  margin-top: calc(76.5*var(--xUnit));
+  padding-right: calc(112.78*var(--xUnit));
+}
+
+.homeAbout_p2 {
+  margin-top: calc(36*var(--xUnit));
+  padding-right: calc(91.78*var(--xUnit));
+}
+
+.homeAbout_p1, .homeAbout_p2 {
+  font-family: 'neobulletin', 'normal';
+  font-weight: bold;
+  font-size: calc(24*var(--xUnit));
+  width: calc(835*var(--xUnit));
+  padding-left: calc(143.22*var(--xUnit));
+}
+
+.homeAbout_chicks {
+  margin-left: calc(38.2*var(--xUnit));
+  margin-bottom: 0;
+}
+
+.homeAbout_chicks img {
+  width: calc(1114*var(--xUnit));
+}
+
+.homeAbout_imgCred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'babas_neue', 'normal';
+  font-size: calc(36*var(--xUnit));
+  width: calc(323*var(--xUnit));
+  height: calc(84*var(--xUnit));
+  background-color: var(--colorDarkBlue);
+  margin-left: calc(676*var(--xUnit));
+  color: var(--colorBeige);
+  margin-top: calc(-1*89*var(--xUnit));
+  position: relative;
+}
+
+.homeAbout_border {
+  width: 100vw;
+  border-top: calc(25*var(--xUnit)) solid var(--colorDeepRed); /*high*/
+  height: calc(75*var(--xUnit)); /*mid*/
+  background-color: var(--colorDeepOrange);
+  border-bottom: calc(25*var(--xUnit)) solid var(--colorDeepYellow);/*low*/
+}
+
+/*
+MAP
+*/
+
+.homeMap_card {
+  width: calc(1271.01*var(--xUnit));
+  height: fit-content;
+  min-height: calc(352.54*var(--xUnit));
+  border: calc(10*var(--xUnit)) solid var(--colorDeepRed);
+  margin-left: calc(324*var(--xUnit));
+  margin-top: calc(260.5*var(--xUnit));
+}
+
+.homeMap_headerBackdrop {
+  width: calc(599*var(--xUnit));
+  height: calc(96*var(--xUnit));
+  background-color: white;
+  margin-left: calc(58.92*var(--xUnit));
+  margin-top: calc(-1*70*var(--xUnit));
+}
+
+.homeMap_header {
+  font-family: 'babas_neue', 'normal';
+  font-size: calc(96*var(--xUnit));
+  margin-top: calc(-1*96*var(--xUnit));
+  margin-left: calc(83.92*var(--xUnit));
+}
+
+.homeMap_cardHr {
+  background-color: var(--colorDeepRed);
+  border-top: calc(15*var(--xUnit)) solid var(--colorDeepRed);
+  border-bottom: calc(10*var(--xUnit)) solid var(--colorDeepOrange);
+  width: calc(563.29*var(--xUnit));
+  margin-left: calc(80.72*var(--xUnit));
+}
+
+.homeMap_text {
+  font-size: calc(24*var(--xUnit));
+  font-family: 'neobulletin', 'normal';
+  font-weight: bold;
+  width: calc(1171.8*var(--xUnit));
+  margin-left: calc(32.01*var(--xUnit));
+  margin-top: calc(54.67*var(--xUnit));
+  text-align: center;
+}
+
+.homeMap_tabs {
+  margin-top: calc(122.46*var(--xUnit));
+  display: flex;
+  margin-left: calc(102.5*var(--xUnit));
+  width: fit-content
+}
+
+.homeMap_tabs div {
+  width: calc(296*var(--xUnit));
+  height: calc(110*var(--xUnit));
+  margin-left: calc(33*var(--xUnit));
+  background-color: var(--colorDeepOrange);
+  border-radius: calc(50*var(--xUnit)) calc(50*var(--xUnit)) 0 0;
+  text-align: center;
+  font-family: 'babas_neue', 'normal';
+  font-size: calc(50*var(--xUnit));
+  color: var(--colorBeige);
+  padding-top: calc(29*var(--xUnit));
+}
+
+.homeMap_tabs div:hover {
+  cursor: pointer;
+  border-top: calc(4*var(--xUnit)) solid #142F45;
+  border-left: calc(4*var(--xUnit)) solid #142F45;
+  border-right: calc(4*var(--xUnit)) solid #142F45;
+  color: #142F45;
+
+}
+
+.homeMap_tabs .homeMap_tab--active {
+  border-top: calc(4*var(--xUnit)) solid #142F45;
+  border-left: calc(4*var(--xUnit)) solid #142F45;
+  border-right: calc(4*var(--xUnit)) solid #142F45;
+  background-color: #ffffff;
+  color: #142F45;
+  pointer-events: none;
+}
+
+.homeMap_tabsHr {
+  width: calc(1611.58*var(--xUnit));
+  height: calc(4*var(--xUnit));
+  background-color: #142F45;
+  margin-left: calc(135.5*var(--xUnit));
+}
+
+/*
+THE CSS FOR HANDLING THE ACTUAL INTERACTIVE MAP CAN BE FOUND IN
+./Map.css
+*/
+
+/*
+EXPLORE
+*/
+
+.homeExplore {
+  background-color: var(--colorBeige);
+  padding-top: calc(162.26*var(--xUnit));
+}
+
+.homeExplore_card {
+  margin-left: calc(592.99*var(--xUnit));
+  width: calc(830.47*var(--xUnit));
+  min-height: calc(329*var(--xUnit));
+  height: fit-content;
+  border: calc(10*var(--xUnit)) solid var(--colorDeepRed);
+  padding-bottom: calc(34*var(--xUnit));
+}
+
+.homeExplore_headerBackdrop {
+  width: calc(610*var(--xUnit));
+  height: calc(96*var(--xUnit));
+  background-color: var(--colorBeige);
+  margin-top: calc(-1*70*var(--xUnit));
+  margin-left: calc(110*var(--xUnit));
+}
+
+.homeExplore_header {
+  font-size: calc(96*var(--xUnit));
+  margin-top: calc(-1*96*var(--xUnit));
+  font-family: 'babas_neue', 'normal';
+  margin-left: calc(150*var(--xUnit));
+}
+
+.homeExplore_hr {
+  width: calc(551.82*var(--xUnit));
+  background-color: var(--colorDeepRed);
+  margin-left: calc(139.01*var(--xUnit));
+  margin-top: calc(15.94*var(--xUnit));   
+  border-top: calc(15*var(--xUnit)) solid var(--colorDeepRed);
+  border-bottom: calc(10*var(--xUnit)) solid var(--colorDeepOrange);
+}
+
+.homeExplore_text {
+  margin-top: calc(29.67*var(--xUnit));
+  font-family: 'neobulletin', 'normal';
+  font-weight: bold;
+  width: calc(559*var(--xUnit));
+  text-align: center;
+  margin-left: calc(142.01*var(--xUnit));
+}
+
+.homeExplore_img {
+  margin-top: calc(44.74*var(--xUnit));
+  margin-left: calc(-1*130*var(--xUnit));
+  height: calc(982*var(--xUnit));
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.homeExplore_img img {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: calc(2155.6*var(--xUnit));
+}
+
+.homeExplore_imgSrc {
+  position: relative;
+  width: calc(332*var(--xUnit));
+  height: calc(84*var(--xUnit));
+  background-color: var(--colorDarkBlue);
+  color: var(--colorBeige);
+  font-size: calc(36*var(--xUnit));
+  font-family: 'babas_neue', 'normal';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(-1*84*var(--xUnit));
+}
+
+.homeExplore_borderBot {
+  height: calc(35*var(--xUnit));
+  width: 100vw;
+  background-color: var(--colorDeepRed);
+}

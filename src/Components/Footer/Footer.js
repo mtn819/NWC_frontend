@@ -1,33 +1,47 @@
 import React from 'react'
 import './Footer.css';
-import footer_icon from '../../res/toformamoreperfectunion.png';
-import footer_socmedic from '../../res/socmedic.png';
-import { Jumbotron } from 'react-bootstrap'
+import icon from './res/icon.png';
+import instagram from "./res/Instagram.png";
+import twitter from "./res/Twitter.png";
+import facebook from "./res/Facebook.png";
 
 function Footer() {
   return (
     <div className="footer">
-      <img src={footer_icon} className="footer_icon"/>
 
-      <div className="footer_home">
-        <h4 className="footer_header">HOME</h4>
-        <a className="footer_item">LINK</a>
+      <div className="footer_top">
+        <div className="footer_icon">
+          <img src={icon}/>
+        </div>
+
+        <div className="footer_home">
+          <p>HOME</p>
+        </div>
+        <div className="footer_bar"></div>
+
+        <div className="footer_about">
+          <p>ABOUT</p>
+        </div>
+        <div className="footer_bar"></div>
+
+        <div className="footer_contact">
+          <p>CONTACT</p>
+        </div>
+        <div className="footer_bar"></div>
+
+        <div className="footer_social">
+          <p>SOCIAL MEDIA</p>
+          <div className="footer_socialIcons">
+            <div className="footer_instagram"><img src={instagram}/></div>
+            <div className="footer_twitter"><img src={twitter}/></div>
+            <div className="footer_facebook"><img src={facebook}/></div>
+          </div>
+        </div>
       </div>
 
-      <div className="footer_about">
-        <h4 className="footer_header">ABOUT</h4>
-        <a className="footer_item">PROJECT CONTRIBUTORS</a>
+      <div className="footer_bot">
+        Sharing Stories from 1977 is a Flagship Project of the Center for Public History, the Digital Research Commons, and the Institute for Research on Women, Gender &amp; Sexuality at the University of Houston.
       </div>
-
-      <div className="footer_contact">
-        <h4 className="footer_header">CONTACT</h4>
-        <a className="footer_item">EMAIL</a>
-      </div>
-
-      <div className="footer_media">
-        <img src={footer_socmedic} className="footer_socmedic"/>
-      </div>
-      
     </div>
   )
 }

@@ -7,11 +7,9 @@ import {
 } from "react-router-dom";
 
 import './Custom.css';
-
-import './Custom.scss';
 import Footer from "./Components/Footer/Footer";
 import Navigation from './Components/Navigation/Navigation';
-import Home from './Home/Home';
+import Home from './Pages/Home/Home';
 import MappingNWC from "./MappingNWC/MappingNWC";
 import DiscoverNWCStories from "./DiscoverNWCStories/DiscoverNWCStories";
 import HowToContribute from "./HowToContribute/HowToContribute";

@@ -35,8 +35,7 @@
 
 .navigation_border {
   width: 100%;
-  height: 1px;
-  background-color: var(--colorNavDeepRed);
+  background-color: var(--colorDeepRed);
   border-top: calc(26.63*var(--xUnit)) solid var(--colorDeepRed);
   border-bottom: calc(26.63*var(--xUnit)) solid var(--colorDeepOrange);
 }

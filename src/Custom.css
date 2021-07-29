@@ -1,7 +1,8 @@
 /*CEREMONY*/
 
 *, *::before, *::after {
-  box-sizing: border-box
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -11,27 +12,19 @@ body {
 /*THEMING*/
 
 :root{
-  --colorNav: #142F45;
-  --colorNavDeepRed: #B32525;
-  --colorNavDeepOrange: #CB4E28;
-  --colorSplashCardBg: rgba(158, 199, 225, .5);
-  --colorBeigeBg: #FFF4E8;
-  --colorAboutBorderYellow: #ffd048;
-  --colorActiveMapTabBlue: #44596b;
-
+  --colorLightGray: #CCC9C9; /*Like seen in the text of homeMap's popup*/
   --colorDarkBlue: #142F45; /*Like seen in the background of the Navigation*/
   --colorLightBlue: #9EC7E1; /*Like seen in the links of Navigation*/
   --colorDeepRed: #B32525; /*Like seen on the border of Navigation*/
   --colorDeepOrange: #CB4E28; /*Like seen on the border of Navigation*/
-  --colorDeepYellow: #FFD048; /*Like seen on the bottom border of Home's About Section*/
-  --colorBeige: #FFF4E8; /*Like seen on Home's About section*/
+  --colorDeepYellow: #FFD048; /*Like seen on the bottom border of the homeAbout Section*/
+  --colorBeige: #FFF4E8; /*Like seen the homeAbout section*/
 }
 
 /*SCALING FOR DIFFERENT SCREEN SIZES*/
 
 :root {
-  --yUnit: 35px;
-  --xUnit: calc(100vw/1919);
+  --xUnit: calc(100vw/1920);
 }
 
 /*FONTS*/
@@ -74,4 +67,9 @@ body {
 }
 .font-subway_ds {
   font-family: 'subway_ds', 'normal';
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
 }
