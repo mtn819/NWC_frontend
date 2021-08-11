@@ -66,11 +66,11 @@ a {
 .discover_card_name {}
 
 .discover_card_role {
-  margin-top: calc(-1*10*var(--xUnit));
+  margin-top: calc(20*var(--xUnit));
 }
 
 .discover_card_state {
-  margin-top: calc(-1*12*var(--xUnit));
+  margin-top: calc(15*var(--xUnit));
 }
 
 .discover_card_bottomText {

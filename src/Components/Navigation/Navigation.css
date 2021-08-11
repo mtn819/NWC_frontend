@@ -7,6 +7,10 @@
   background-color: var(--colorDarkBlue);
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  box-shadow: 0 calc(3*var(--xUnit)) calc(6*var(--xUnit)) #00000029;
 }
 
 .navigation_hamburger {
@@ -38,4 +42,5 @@
   background-color: var(--colorDeepRed);
   border-top: calc(26.63*var(--xUnit)) solid var(--colorDeepRed);
   border-bottom: calc(26.63*var(--xUnit)) solid var(--colorDeepOrange);
+  margin-top: calc(121.37*var(--xUnit));
 }

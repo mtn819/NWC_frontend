@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Home.css';
 import Map from './Map';
+import HighlightsCarousel from './HighlightsCarousel';
 
 import dt from './res/dt.png';
 import tw from './res/tw.png';
@@ -15,55 +16,153 @@ import button1 from './res/button1.png';
 import button2 from './res/button2.png';
 import button3 from './res/button3.png';
 import button4 from './res/button4.png';
+import dots1 from './res/dots1.png';
+import dots2 from './res/dots2.png';
+import dots3 from './res/dots3.png';
+import dots4 from './res/dots4.png';
+
+import axios from '../../config/axios';
+
+const getWhere = (data, key, value) => {
+  return data.filter(e => e[key] === value);
+}
 
 function Home() {
+  const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
+  const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
+  const [homeAbout_p2, setHomeAbout_p2] = useState(jack);
+  const [homeMap_text, setHomeMap_text] = useState(jack+jack+jack);
+  const [homeExplore_text, setHomeExplore_text] = useState(jack+jack);
+  const [homeButton1_text, setHomeButton1_text] = useState(jack);
+  const [homeButton1_link, setHomeButton1_link] = useState('/');
+  const [homeButton2_text, setHomeButton2_text] = useState(jack);
+  const [homeButton2_link, setHomeButton2_link] = useState('/');
+  const [homeButton3_text, setHomeButton3_text] = useState(jack);
+  const [homeButton3_link, setHomeButton3_link] = useState('/');
+  const [homeButton4_text, setHomeButton4_text] = useState(jack);
+  const [homeButton4_link, setHomeButton4_link] = useState('/');
+  const [homeDowntown, setHomeDowntown] = useState([]);
+  const [homeThirdward_uh, setHomeThirdward_uh] = useState([]);
+  const [homeMuseum_district, setHomeMuseum_district] = useState([]);
+  const [homeMagnolia_park, setHomeMagnolia_park] = useState([]);
+  const [homeAstrodome, setHomeAtrodome] = useState([]);
+
+  useEffect(() => {
+    async function fetchData(){
+      const req = await axios.get('/content-homes');
+
+      const get = (section) => {
+        return getWhere(req.data, 'Section', section)[0]['Content'];
+      };
+
+      setHomeAbout_p1(
+        get("homeAbout_p1")
+      );
+
+      setHomeAbout_p2(
+        get("homeAbout_p2")
+      );
+
+      setHomeMap_text(
+        get("homeMap_text")
+      );
+
+      setHomeExplore_text(
+        get("homeExplore_text")
+      );
+
+      setHomeButton1_text(
+        get("homeButton1_text")
+      );
+
+      setHomeButton1_link(
+        get("homeButton1_link")
+      );
+
+      setHomeButton2_text(
+        get("homeButton2_text")
+      );
+
+      setHomeButton2_link(
+        get("homeButton2_link")
+      );
+
+      setHomeButton3_text(
+        get("homeButton3_text")
+      );
+
+      setHomeButton3_link(
+        get("homeButton3_link")
+      );
+
+      setHomeButton4_text(
+        get("homeButton4_text")
+      );
+
+      setHomeButton4_link(
+        get("homeButton4_link")
+      );
+    }
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    async function fetchData(){
+      const req = await axios.get('/content-home-maps');
+
+      const get = map => {
+        return (
+          getWhere(req.data, 'Map', map)
+          .map(p => {
+            const p2 = [];
+            p2[0] = p['Name'];
+            p2[1] = p['x'];
+            p2[2] = p['y'];
+            p2[3] = p['Description'];
+
+            return p2;
+          })  
+        );
+      }
+
+      setHomeDowntown(get("downtown"));
+      setHomeThirdward_uh(get("thirdward_uh"));
+      setHomeMuseum_district(get("museum_district"));
+      setHomeMagnolia_park(get("magnolia_park"));
+      setHomeAtrodome(get("astrodome"));
+    }
+
+    fetchData();
+  }, [])
+
   const [currMap, setCurrMap] = useState("dt");
 
-  const homeAbout_p1 = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
-  const homeAbout_p2 = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
-  const homeMap_text = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. "
-  const homeExplore_text = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
   const maps = {
     dt: {
       name: 'DOWNTOWN',
       mapImg: dt,
-      points: [
-        ["CITY HALL", 83.02, 69.72],
-        ["CONVENTION HALL", 644.02, 28.66],
-        ["HYATT HOTEL", 378.02, 128.12],
-        ["RAMADA INN", 294.02, 179.69],
-        ["SENECA FALLS SOUTH", 344.02, 210.48],
-        ["TORCH RELAY", 436.02, 214.08],
-        ["UNION STATION", 901.02, 403.85],
-      ]
+      points: homeDowntown,
     },
     tw: {
       name: 'THIRD WARD/UH',
       mapImg: tw,
-      points: [
-        ["SOME POINT 1", 69, 420]
-      ]
+      points: homeThirdward_uh,
     },
     museo: {
       name: 'MUSEUM DISTRICT',
       mapImg: museo,
-      points: [
-        ["SOME POINT 2", 420, 69]
-      ]
+      points: homeMuseum_district,
     },
     mag: {
       name: 'MAGNOLIA PARK',
       mapImg: mag,
-      points: [
-        ["SOME POINT 3", 500, 500]
-      ]
+      points: homeMagnolia_park,
     },
     astro: {
       name: 'ASTRODOME',
       mapImg: astro,
-      points: [
-        ["SOME POINT 4", 200, 200]
-      ]
+      points: homeAstrodome,
     },
   }
 
@@ -158,14 +257,44 @@ function Home() {
       </div>
 
       {/**BUTTONS */}
-      {/*<div className="homeButtons">
-        <div className="homeButtons_button">
-          <div className="homeButtons_buttonImg homeButtons_button1">
-
+      <div className="homeButtons">
+        <a href={homeButton1_link}>
+          <div className="homeButtons_button homeButtons_button1">
+              <img src={button1}/>
+              <p>{homeButton1_text}</p>
           </div>
-        </div>
-      </div>*/}
+        </a>
+        <a href={homeButton2_link}>
+          <div className="homeButtons_button homeButtons_button2">
+              <img src={button2}/>
+              <p>{homeButton2_text}</p>
+          </div>
+        </a>
+        <a href={homeButton3_link}>
+          <div className="homeButtons_button homeButtons_button3">
+              <img src={button3}/>
+              <p>{homeButton3_text}</p>
+          </div>
+        </a>
+        <a href={homeButton4_link}>
+          <div className="homeButtons_button homeButtons_button4">
+              <img src={button4}/>
+              <p>{homeButton4_text}</p>
+          </div>
+        </a>
 
+        <img className="homeButtons_dots homeButtons_dots1" src={dots1}/>
+        <img className="homeButtons_dots homeButtons_dots2" src={dots2}/>
+        <img className="homeButtons_dots homeButtons_dots3" src={dots3}/>
+        <img className="homeButtons_dots homeButtons_dots4" src={dots4}/>
+      </div>
+
+      {/**HIGHLIGHTS */}
+      <div className="homeHighlights">
+        <div className="homeHighlights_frontDrop"></div>
+        <p className="homeHighlights_header">SITE HIGHLIGHTS</p>
+        <HighlightsCarousel/>
+      </div>
     </div>
   )
 }

@@ -9,6 +9,7 @@ import viewmaps from './res/viewmaps.png';
 import addstory from './res/addstory.png';
 
 function Stories({path}) {
+
   const ids=[5]
 
   return (

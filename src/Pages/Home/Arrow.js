@@ -1,5 +1,4 @@
 import React from 'react'
-import { Calculator } from 'react-bootstrap-icons'
 
 function Arrow({direction, color}) {
   return (

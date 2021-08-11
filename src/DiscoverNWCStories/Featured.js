@@ -3,6 +3,8 @@ import Card from './Card';
 import socmed from './res/socmedic.png';
 import filler from './res/fillerimg.png';
 
+
+
 function Featured({path}) {
   const ids = [2, 4, 6];
 

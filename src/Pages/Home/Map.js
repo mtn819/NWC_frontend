@@ -4,7 +4,7 @@ import maptick from './res/maptick.png';
 
 import Arrow from './Arrow';
 
-// point format: [name, x, y]
+// point format: [Name, x, y, Description]
 function Map({mapImg, points}) {
   const popupImg = "https://www.htmlcsscolor.com/preview/gallery/CCC9C9.png";
   const popupFeed = [popupImg, popupImg, popupImg]
@@ -12,6 +12,7 @@ function Map({mapImg, points}) {
 
   const [hovering, setHovering] = useState(false);
   const [popup, setPopup] = useState(false);
+  const [desc, setDesc] = useState(description);
 
   return (
     <>
@@ -27,7 +28,10 @@ function Map({mapImg, points}) {
           className={"homeMap_poiText" + " " + (hovering === p[0] ? "homeMap_poiText--hovering" : "")}
           onMouseEnter={() => setHovering(p[0])}
           onMouseLeave={() => setHovering(false)}
-          onClick={() => setPopup(p[0])}
+          onClick={() => {
+            setPopup(p[0]);
+            setDesc(p[3]);
+          }}
         >
           {p[0]}
         </p>)}
@@ -43,13 +47,14 @@ function Map({mapImg, points}) {
             (hovering === p[0] ? "homeMap_dot--hovering" : "")}
           onMouseEnter={() => setHovering(p[0])}
           onMouseLeave={() => setHovering(false)}
-          onClick={() => setPopup(p[0])}
           style={{
             marginLeft: `calc(${p[1]}*var(--xUnit))`,
             marginTop: `calc(${p[2]}*var(--xUnit))`
           }}
         >
-          <img src={maptick}/>
+          <img onClick={() => {
+            setPopup(p[0]);
+            setDesc(p[3]); }} src={maptick}/>
           <div className="homeMap_dotLabel">{p[0]}</div>
         </div>)}
         
@@ -85,7 +90,7 @@ function Map({mapImg, points}) {
             <div className="homeMap_popupLocation">{popup}</div>
             <div className="homeMap_popupDescription">
               <h4>DESCRIPTION</h4>
-              <p>{description}</p>
+              <p>{desc}</p>
             </div>
           </div>
         :""}

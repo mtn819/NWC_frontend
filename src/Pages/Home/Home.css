@@ -223,7 +223,6 @@ MAP
   border-left: calc(4*var(--xUnit)) solid #142F45;
   border-right: calc(4*var(--xUnit)) solid #142F45;
   color: #142F45;
-
 }
 
 .homeMap_tabs .homeMap_tab--active {
@@ -290,6 +289,7 @@ EXPLORE
 }
 
 .homeExplore_text {
+  font-size: calc(24*var(--xUnit));
   margin-top: calc(29.67*var(--xUnit));
   font-family: 'neobulletin', 'normal';
   font-weight: bold;
@@ -332,3 +332,116 @@ EXPLORE
   width: 100vw;
   background-color: var(--colorDeepRed);
 }
+
+/*
+BUTTONS
+*/
+
+.homeButtons {
+  z-index: -1;
+  height: calc(1312.72*var(--xUnit));
+}
+
+.homeButtons_button {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+}
+
+.homeButtons_button:hover {
+  transform: scale(1.01);
+}
+
+.homeButtons_button img {
+  width: calc(400*var(--xUnit));
+  height: calc(400*var(--xUnit));
+}
+
+.homeButtons_button p {
+  width: calc(274*var(--xUnit));
+  font-family: 'neobulletin', 'normal';
+  font-size: calc(24*var(--xUnit));
+  font-weight: bold;
+}
+
+.homeButtons_button1 {
+  margin-top: calc(157*var(--xUnit));
+  margin-left: calc(183*var(--xUnit));
+}
+
+.homeButtons_button2 {
+  margin-top: calc(157*var(--xUnit));
+  margin-left: calc(963.33*var(--xUnit));
+}
+
+.homeButtons_button3 {
+  margin-top: calc(720*var(--xUnit));
+  margin-left: calc(183*var(--xUnit));
+}
+
+.homeButtons_button4 {
+  margin-top: calc(720*var(--xUnit));
+  margin-left: calc(963.33*var(--xUnit));
+}
+
+.homeButtons_dots {
+  position: absolute;
+  width: calc(420*var(--xUnit));
+  height: calc(420*var(--xUnit));
+}
+
+.homeButtons_dots1 {
+  margin-top: calc(10*var(--xUnit));
+  margin-left: calc(10*var(--xUnit));
+}
+
+.homeButtons_dots2 {
+  right: 0;
+  margin-top: calc(10*var(--xUnit));
+  margin-right: calc(10*var(--xUnit));
+}
+
+.homeButtons_dots3 {
+  margin-top: calc(880*var(--xUnit));
+  margin-left: calc(10*var(--xUnit));
+}
+
+.homeButtons_dots4 {
+  margin-top: calc(880*var(--xUnit));
+  margin-right: calc(10*var(--xUnit));
+  right: 0;
+}
+
+/*
+HIGHLIGHTS
+*/
+
+.homeHighlights {
+  background: url("./res/mapbg.png");
+  height: calc(1453.28*var(--xUnit));
+  padding-top: calc(212*var(--xUnit));
+}
+
+.homeHighlights_frontDrop {
+  background-color: var(--colorBeige);
+  width: calc(1427*var(--xUnit));
+  height: calc(970*var(--xUnit));
+  position: absolute;
+  margin-left: calc(256*var(--xUnit));
+}
+
+.homeHighlights_header {
+  font-family: 'babas_neue', 'normal';
+  font-size: calc(80*var(--xUnit));
+  color: var(--colorDeepRed);
+  position: absolute;
+  margin-top: calc(60*var(--xUnit));
+  margin-left: calc(764*var(--xUnit));
+}
+
+/*
+THE CSS FOR HANDLING THE ACTUAL INTERACTIVE MAP CAN BE FOUND IN
+./HighlightsCarousel.css
+*/
