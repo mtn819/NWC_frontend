@@ -51,6 +51,12 @@
   margin-left: calc(80.9*var(--xUnit));
 }
 
+.footer_socialIcons a:hover img {
+  transform: scale(1.04);
+  border-bottom: calc(4*var(--xUnit)) solid var(--colorLightBlue);
+  padding-bottom: calc(12*var(--xUnit));
+}
+
 .footer_bot {
   width: calc(1140*var(--xUnit));
   font-size: calc(30*var(--xUnit));

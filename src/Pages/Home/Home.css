@@ -101,6 +101,10 @@ ABOUT
   margin-top: calc(-1*4*var(--xUnit));
 }
 
+.homeAbout_p1 p {
+  margin-bottom: calc(36*var(--xUnit));
+}
+
 .homeAbout_p1 {
   margin-top: calc(76.5*var(--xUnit));
   padding-right: calc(112.78*var(--xUnit));

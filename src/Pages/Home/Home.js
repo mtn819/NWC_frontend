@@ -22,6 +22,7 @@ import dots3 from './res/dots3.png';
 import dots4 from './res/dots4.png';
 
 import axios from '../../config/axios';
+import ReactMarkdown from 'react-markdown';
 
 const getWhere = (data, key, value) => {
   return data.filter(e => e[key] === value);
@@ -31,6 +32,7 @@ function Home() {
   const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
   const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
   const [homeAbout_p2, setHomeAbout_p2] = useState(jack);
+  const [homeAbout_p, setHomeAbout_p] = useState(jack+jack);
   const [homeMap_text, setHomeMap_text] = useState(jack+jack+jack);
   const [homeExplore_text, setHomeExplore_text] = useState(jack+jack);
   const [homeButton1_text, setHomeButton1_text] = useState(jack);
@@ -62,6 +64,10 @@ function Home() {
       setHomeAbout_p2(
         get("homeAbout_p2")
       );
+
+      setHomeAbout_p(
+        get("homeAbout_p")
+      )
 
       setHomeMap_text(
         get("homeMap_text")
@@ -196,8 +202,10 @@ function Home() {
             <div className="homeAbout_headerBackdrop"></div>
             <p className="homeAbout_header">ABOUT THE PROJECT</p>
             <div className="homeAbout_cardHr"></div>
-            <p className="homeAbout_p1">{homeAbout_p1}</p>
-            <p className="homeAbout_p2">{homeAbout_p2}</p>
+
+            <p className="homeAbout_p1"><ReactMarkdown>{homeAbout_p}</ReactMarkdown></p>
+            {/**<p className="homeAbout_p1">{homeAbout_p1}</p>
+            <p className="homeAbout_p2">{homeAbout_p2}</p>*/}
           </div>
 
           <div className="homeAbout_chicks">
