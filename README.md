@@ -1,14 +1,13 @@
-# NWC Frontend Scaling Branch
-
-This branch is going to redo things because I was not a terribly bright architect when I first embarked on this.
+# NWC Frontend 
 
 This is the client-side interface for the 1977 NWC project. It is built with Create-React-App, React-Router, React-Bootstrap, and Axios. The backend it interacts could be found here: https://github.com/DataAnalyticsinStudentHands/NWC_backend.
 
+## For Developers
 ### To run:
-    git clone https://github.com/DataAnalyticsinStudentHands/NWC_frontend.git
-    cd NWC_frontend
-    npm install
-    npm start
+    `git clone https://github.com/DataAnalyticsinStudentHands/NWC_frontend.git`
+    `cd NWC_frontend`
+    `npm install`
+    `npm start`
 
 ### Structure:
 The meat of the code can be found in src/. This codebase is the product of [npx create-react-app](https://github.com/facebook/create-react-app)
@@ -43,3 +42,12 @@ Note: Will likely switch to plain CSS and BEM soon, potentially using JSON-styli
 ### How Discover/Info Page Works
 
 DiscoverNWCStories uses React Router, similarly to the entire application's routing. Each story has an id in the url, and that id is to be used to fetch data to fill out the specific story.
+
+## Deployment
+
+We are following standard procedures for a Create-React-App [deployment](https://create-react-app.dev/docs/deployment/) following a [build](https://create-react-app.dev/docs/production-build/). We are using [PM2](https://pm2.keymetrics.io/) to manage our Node processes.
+
+In a nutshell run:
+    
+    `npm run build`
+    `pm2 serve build 3000 -spa`
