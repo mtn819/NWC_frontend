@@ -51,3 +51,9 @@ In a nutshell run:
     
     `npm run build`
     `pm2 serve build 3000 -spa`
+
+## Configuring axios in deployment:
+
+Change the variable found in config/.env.js like so:
+
+    `axiosBaseURL: "dash.cs.uh.edu/nwc_api?"`
