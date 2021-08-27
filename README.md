@@ -54,6 +54,6 @@ In a nutshell run:
 
 ## Configuring axios in deployment:
 
-Change the variable found in config/.env.js like so:
+Change the variable found in config/.env.js e.g.:
 
-    `axiosBaseURL: "dash.cs.uh.edu/nwc_api?"`
+    `axiosBaseURL: "http://localhost:1337/"`
