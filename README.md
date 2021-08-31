@@ -50,7 +50,7 @@ We are following standard procedures for a Create-React-App [deployment](https:/
 In a nutshell run:
     
     `npm run build`
-    `pm2 serve build 3000 -spa`
+    `pm2 serve build 3000 --name "NWC Frontend" --spa`
 
 ## Configuring axios in deployment:
 
