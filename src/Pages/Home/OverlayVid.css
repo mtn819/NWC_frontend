@@ -6,14 +6,14 @@
   z-index: 0
 }
 
-.overlay_vid video:hover {
-  cursor: pointer;
-}
-
 .overlay_vid video {
   width: 100vw;
   height: 100vh;
   z-index: 0;
+}
+
+.overlay_vid video:hover {
+  cursor: pointer;
 }
 
 .overlay_vid--off {

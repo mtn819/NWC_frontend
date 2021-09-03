@@ -1,6 +1,6 @@
 .navigation {
   width: 100vw;
-  height: calc(121.37*var(--xUnit));
+  height: 121.37rem;
   padding: 8px;
   padding-top: 16px;
   display: flex;
@@ -10,27 +10,27 @@
   position: fixed;
   z-index: 999;
   top: 0;
-  box-shadow: 0 calc(3*var(--xUnit)) calc(6*var(--xUnit)) #00000029;
+  box-shadow: 0 3rem 6rem #00000029;
 }
 
 .navigation_hamburger {
-  width: calc(31.6*var(--xUnit));
-  margin-left: calc(35*var(--xUnit));
+  width: 31.6rem;
+  margin-left: 35rem;
 }
 
 .navigation_search {
-  width: calc(52*var(--xUnit));
-  margin-right: calc(44.29*var(--xUnit));
+  width: 52rem;
+  margin-right: 44.29rem;
 }
 
 .navigation_hamburger, .navigation_search {
-  margin-bottom: calc(8*var(--xUnit));
+  margin-bottom: 8rem;
 }
 
 .navigation_link {
   color: var(--colorLightBlue);
   font-family: 'babas_neue', normal;
-  font-size: calc(35*var(--xUnit));
+  font-size: 35rem;
 }
 
 .navigation_link:hover {
@@ -40,7 +40,7 @@
 .navigation_border {
   width: 100%;
   background-color: var(--colorDeepRed);
-  border-top: calc(26.63*var(--xUnit)) solid var(--colorDeepRed);
-  border-bottom: calc(26.63*var(--xUnit)) solid var(--colorDeepOrange);
-  margin-top: calc(121.37*var(--xUnit));
+  border-top: 26.63rem solid var(--colorDeepRed);
+  border-bottom: 26.63rem solid var(--colorDeepOrange);
+  margin-top: 121.37rem;
 }

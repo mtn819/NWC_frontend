@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Home.css';
 import Map from './Map';
 import HighlightsCarousel from './HighlightsCarousel';
+import './OverlayVid.css';
 
 import dt from './res/dt.png';
 import tw from './res/tw.png';
@@ -20,6 +21,7 @@ import dots1 from './res/dots1.png';
 import dots2 from './res/dots2.png';
 import dots3 from './res/dots3.png';
 import dots4 from './res/dots4.png';
+import overlaymp4 from './res/overlayvid.mp4';
 
 import axios from '../../config/axios';
 import ReactMarkdown from 'react-markdown';
@@ -172,10 +174,32 @@ function Home() {
     },
   }
 
+  const [videoOn, setVideoOn] = useState(true)
   
 
-
   return (
+    <>
+    <div className={"overlay_vid" + " " + (videoOn ? "": "overlay_vid--off")}>
+      <video autoPlay muted>
+        <source src={overlaymp4} type="video/mp4"></source>
+      </video>
+      <a href='#'>
+        <div className="overlay_vid_continue" onClick={e => setVideoOn(!videoOn)}>
+          Continue To Site -&gt;
+        </div>
+      </a>
+
+      {/**<div className="overlay_vid_card">
+        <h3>Sharing Stories from</h3>
+        <div className="overlay_vid_cardhr"></div>
+        <p>PUTTING THE NATIONAL WOMEN'S CONFERENCE ON THE MAP</p>
+        <a href='#'>
+          <div className="overlay_vid_cardbut" onClick={e => setVideoOn(!videoOn)}>Enter Site</div>
+        </a>
+      </div>*/}
+    </div>
+
+    {!videoOn ? 
     <div className="home">
 
       {/**SPLASH */}
@@ -304,6 +328,8 @@ function Home() {
         <HighlightsCarousel/>
       </div>
     </div>
+    : ""}
+    </>
   )
 }
 

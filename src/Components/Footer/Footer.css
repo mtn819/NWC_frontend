@@ -1,68 +1,68 @@
 .footer {
   width: 100vw;
-  height: calc(600*var(--xUnit));
+  height: 600rem;
   background-color: var(--colorDarkBlue);
   font-family: 'babas_neue';
-  padding-top: calc(146*var(--xUnit));
-  padding-left: calc(108*var(--xUnit));
+  padding-top: 146rem;
+  padding-left: 108rem;
 }
 
 .footer_top {
-  font-size: calc(40*var(--xUnit));
+  font-size: 40rem;
   color: var(--colorLightBlue);
   display: flex;
 }
 
 .footer_icon img {
-  width: calc(216*var(--xUnit));
+  width: 216rem;
 }
 
 .footer_bar {
-  width: calc(2*var(--xUnit));
-  height: calc(200*var(--xUnit));
+  width: 2rem;
+  height: 200rem;
   background-color: white;
-  margin-left: calc(155*var(--xUnit));
+  margin-left: 155rem;
 }
 
 .footer_home {
-  margin-left: calc(155*var(--xUnit));
+  margin-left: 155rem;
 }
 
 .footer_about, .footer_contact, .footer_social {
-  margin-left: calc(37.5*var(--xUnit));
+  margin-left: 37.5rem;
 }
 
 .footer_socialIcons {
   display: flex;
-  margin-top: calc(35.31*var(--xUnit));
+  margin-top: 35.31rem;
 }
 
 .footer_instagram img {
-  width: calc(42.58*var(--xUnit));
+  width: 42.58rem;
 }
 
 .footer_twitter img {
-  width: calc(42.58*var(--xUnit));
-  margin-left: calc(80.9*var(--xUnit));
+  width: 42.58rem;
+  margin-left: 80.9rem;
 }
 
 .footer_facebook img {
-  width: calc(20.58*var(--xUnit));
-  margin-left: calc(80.9*var(--xUnit));
+  width: 20.58rem;
+  margin-left: 80.9rem;
 }
 
 .footer_socialIcons a:hover img {
   transform: scale(1.04);
-  border-bottom: calc(4*var(--xUnit)) solid var(--colorLightBlue);
-  padding-bottom: calc(12*var(--xUnit));
+  border-bottom: 4rem solid var(--colorLightBlue);
+  padding-bottom: 12rem;
 }
 
 .footer_bot {
-  width: calc(1140*var(--xUnit));
-  font-size: calc(30*var(--xUnit));
+  width: 1140rem;
+  font-size: 30rem;
   color: #3874A5;
   text-align: center;
 
-  margin-top: calc(90.9*var(--xUnit));
-  margin-left: calc(328*var(--xUnit));
+  margin-top: 90.9rem;
+  margin-left: 328rem;
 }

@@ -25,6 +25,7 @@ body {
 
 :root {
   --xUnit: calc(100vw/1920);
+  font-size: calc(100vw/1920);
 }
 
 /*FONTS*/
