@@ -22,13 +22,13 @@
 
 .overlay_vid_continue {
   position: absolute;
-  width: calc(400*var(--xUnit));
-  height: calc(70*var(--xUnit));
+  width: 400rem;
+  height: 70rem;
   text-align: center;
   background-color: var(--colorLightBlue);
   font-family: 'babas_neue';
-  font-size: calc(40*var(--xUnit));
-  border: calc(6*var(--xUnit)) double black;
+  font-size: 40rem;
+  border: 6rem double black;
 
   margin-top: calc(-1*300*var(--xUnit));
   margin-left: calc(1200*var(--xUnit));

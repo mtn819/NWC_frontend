@@ -160,32 +160,32 @@ MAP
 */
 
 .homeMap_card {
-  width: calc(1271.01*var(--xUnit));
+  width: 1271.01rem;
   height: fit-content;
-  min-height: calc(352.54*var(--xUnit));
-  border: calc(10*var(--xUnit)) solid var(--colorDeepRed);
-  margin-left: calc(324*var(--xUnit));
-  margin-top: calc(260.5*var(--xUnit));
+  min-height: 352.54rem;
+  border: 10rem solid var(--colorDeepRed);
+  margin-left: 324rem;
+  margin-top: 260.5rem;
 }
 
 .homeMap_headerBackdrop {
-  width: calc(599*var(--xUnit));
-  height: calc(96*var(--xUnit));
+  width: 599rem;
+  height: 96rem;
   background-color: white;
-  margin-left: calc(58.92*var(--xUnit));
-  margin-top: calc(-1*70*var(--xUnit));
+  margin-left: 58.92rem;
+  margin-top: -70rem;
 }
 
 .homeMap_header {
   font-family: 'babas_neue', 'normal';
-  font-size: calc(96*var(--xUnit));
-  margin-top: calc(-1*96*var(--xUnit));
-  margin-left: calc(83.92*var(--xUnit));
+  font-size: 96rem;
+  margin-top: -96rem;
+  margin-left: 83.92rem;
 }
 
 .homeMap_cardHr {
   background-color: var(--colorDeepRed);
-  border-top: calc(15*var(--xUnit)) solid var(--colorDeepRed);
+  border-top: 15rem solid var(--colorDeepRed);
   border-bottom: calc(10*var(--xUnit)) solid var(--colorDeepOrange);
   width: calc(563.29*var(--xUnit));
   margin-left: calc(80.72*var(--xUnit));

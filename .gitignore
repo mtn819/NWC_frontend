@@ -1,5 +1,6 @@
 # CUSTOM
 .env.js
+*.mp4
 
 # Logs
 logs
