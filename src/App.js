@@ -10,6 +10,7 @@ import './Custom.css';
 import Footer from "./Components/Footer/Footer";
 import Navigation from './Components/Navigation/Navigation';
 import Home from './Pages/Home/Home';
+import WhyTheNWCMatters from "./Pages/WhyTheNWCMatters/WhyTheNWCMatters";
 import MappingNWC from "./MappingNWC/MappingNWC";
 import DiscoverNWCStories from "./DiscoverNWCStories/DiscoverNWCStories";
 import HowToContribute from "./HowToContribute/HowToContribute";
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path = "/HowToContribute">
           <HowToContribute/>
+        </Route>
+        <Route path = "/WhyTheNWCMatters">
+          <WhyTheNWCMatters/>
         </Route>
         <Route path = "/">
           <Home/>

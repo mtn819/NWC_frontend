@@ -324,6 +324,10 @@ function Home() {
       {/**HIGHLIGHTS */}
       <div className="homeHighlights">
         <div className="homeHighlights_frontDrop"></div>
+        <div className="homeHighlights_frontDrop2">
+          <h2>COMING SOON</h2>
+          <p>Public Launch: 11/21</p>
+        </div>
         <p className="homeHighlights_header">SITE HIGHLIGHTS</p>
         <HighlightsCarousel/>
       </div>

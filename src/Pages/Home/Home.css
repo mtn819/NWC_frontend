@@ -436,6 +436,27 @@ HIGHLIGHTS
   margin-left: calc(256*var(--xUnit));
 }
 
+.homeHighlights_frontDrop2 {
+  width: calc(1427*var(--xUnit));
+  height: calc(970*var(--xUnit));
+  position: absolute;
+  margin-left: calc(256*var(--xUnit));
+  font-size: 60rem;
+  font-family: 'subway_ds';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .69);
+  color: white;
+  z-index: 5;
+  flex-direction: column;
+}
+
+.homeHighlights_frontDrop2 p {
+  font-size: 34.5rem;
+  font-family: 'babas_neue', 'normal';
+}
+
 .homeHighlights_header {
   font-family: 'babas_neue', 'normal';
   font-size: calc(80*var(--xUnit));

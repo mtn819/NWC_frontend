@@ -1,8 +1,23 @@
+/*Little optional thing for scaling navbar on hover*/
+/*
+.navigation_total:hover .navigation {
+  height: 100rem;
+}
+
+.navigation_total:hover .navigation_border {
+  border-top: 20rem solid var(--colorDeepRed);
+  border-bottom: 20rem solid var(--colorDeepOrange);
+  margin-top: 100rem;
+}
+
+.navigation_total:hover .navigation .navigation_link {
+  font-size: 40rem;
+}
+*/
+
 .navigation {
   width: 100vw;
-  height: 121.37rem;
-  padding: 8px;
-  padding-top: 16px;
+  height: 80rem;
   display: flex;
   background-color: var(--colorDarkBlue);
   align-items: center;
@@ -40,7 +55,7 @@
 .navigation_border {
   width: 100%;
   background-color: var(--colorDeepRed);
-  border-top: 26.63rem solid var(--colorDeepRed);
-  border-bottom: 26.63rem solid var(--colorDeepOrange);
-  margin-top: 121.37rem;
+  border-top: 14rem solid var(--colorDeepRed);
+  border-bottom: 14rem solid var(--colorDeepOrange);
+  margin-top: 80rem;
 }
