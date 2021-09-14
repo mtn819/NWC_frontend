@@ -1,5 +1,4 @@
-.about {
-}
+
 
 /*
 BANNER
@@ -8,39 +7,36 @@ BANNER
 .aboutBanner {
   width: 100vw;
   background: url("./res/mapbg.png");
-  min-height: 793rem;
   padding-top: 151rem;
+  display: flex;
 }
 
 .aboutBanner_button {
   width: 500rem;
   height: 500rem;
-  position: absolute;
 }
 
 .aboutBanner_card {
   width: 834rem;
   height: 358rem;
-  margin-left: 479rem;
   min-height: 358rem;
   background-color: white;
   border-left: 12rem solid var(--colorDeepRed);
   padding: 61rem;
   padding-top: 58rem;
   margin-top: 52rem;
-  position: absolute;
 }
 
 .aboutBanner_card p {
   font-family: var(--fontNeoBulletin);
   font-size: 30rem;
   font-weight: bold;
+  width: 760rem;
 }
 
 .aboutBanner_credit {
   width: 323rem;
   height: 84rem;
-  position: absolute;
   background-color: var(--colorDarkBlue);
   color: var(--colorBeige);
   font-size: 36rem;
@@ -48,19 +44,23 @@ BANNER
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 46rem;
   right: 0;
-  margin-right: 496rem;
-  margin-top: 560rem;
+  margin-left: -200rem;;
+  margin-top: 577rem;
+  margin-right: 400rem;
+}
+
+.aboutBanner_credit p {
+  width: 323rem;
+  text-align: center;
 }
 
 .aboutBanner_chick {
   width: 537rem;
   height: 764rem;
-  position: absolute;
-  right: 0;
-  margin-bottom: 44rem;
-  margin-right: -40rem;
+  margin-left: -400rem;
+  margin-bottom: -151rem;
+  margin-top: -100rem;
 }
 
 /*

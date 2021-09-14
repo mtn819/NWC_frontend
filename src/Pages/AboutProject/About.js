@@ -7,6 +7,7 @@ import tl from './res/tl.png';
 import meet from './res/meatteem.png';
 
 import axios from '../../config/axios';
+import VARIABLES from "../../config/.env.js";
 
 const getWhere = (data, key, value) => {
   return data.filter(e => e[key] === value);
@@ -59,6 +60,18 @@ function About() {
       setAboutTimeline_5(
         get("aboutTimeline_5")
       );
+    }
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    async function fetchData(){
+      const req = await axios.get('/content-about-pdfs');
+
+      const get = (section) => {
+        return VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + getWhere(req.data, 'Section', section)[0]["pdf"][0]["url"];
+      };
 
       setAboutDocuments_ddlink(
         get("aboutDocuments_ddlink")
@@ -68,13 +81,14 @@ function About() {
         get("aboutDocuments_cblink")
       );
 
+      setAboutDocuments_frlink(
+        get("aboutDocuments_frlink")
+      );
+
       setAboutDocuments_aplink(
         get("aboutDocuments_aplink")
       );
 
-      setAboutDocuments_frlink(
-        get("aboutDocuments_frlink")
-      );
     }
 
     fetchData();
@@ -91,7 +105,7 @@ function About() {
             {aboutBanner_card}
           </p>
         </div>
-        <div className="aboutBanner_credit">PHOTO BY JANE DOE</div>
+        <div className="aboutBanner_credit"><p>PHOTO BY JANE DOE</p></div>
         <img src={chick} className="aboutBanner_chick"/>
       </div>
     

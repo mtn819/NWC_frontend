@@ -12,10 +12,13 @@ const getWhere = (data, key, value) => {
 }
 
 function Footer() {
+  const neh_seal = "https://www.neh.gov/sites/default/files/styles/medium/public/2019-08/NEH%20Preferred%20SealBlk820.jpg?itok=gHkChZsx";
 
   const [instagramLink, setInstagramLink] = useState("/");
   const [twitterLink, setTwitterLink] = useState("/");
   const [facebookLink, setFacebookLink] = useState("/");
+  const [contactEmail, setContactEmail] = useState("abc@defg.com");
+  const [paragraph, setParagraph] = useState("all work and no play makes jack a dull boy.")
 
   useEffect(() => {
     async function fetchData(){
@@ -28,6 +31,8 @@ function Footer() {
       setInstagramLink(get("InstagramLink"));
       setTwitterLink(get("TwitterLink"));
       setFacebookLink(get("FacebookLink"));
+      setContactEmail(get("contactEmail"));
+      setParagraph(get("paragraph"));
     }
 
     fetchData();
@@ -38,21 +43,24 @@ function Footer() {
 
       <div className="footer_top">
         <div className="footer_icon">
+          <img src={neh_seal}/> 
           <img src={icon}/>
+        </div>
+        <div className="footer_seal">
         </div>
 
         <div className="footer_home">
-          <p>HOME</p>
+          <a href="/"><p>HOME</p></a>
         </div>
         <div className="footer_bar"></div>
 
         <div className="footer_about">
-          <p>ABOUT</p>
+          <a href="/about"><p>ABOUT</p></a>
         </div>
         <div className="footer_bar"></div>
 
         <div className="footer_contact">
-          <p>CONTACT</p>
+          <a href={`mailto:${contactEmail}`}><p>CONTACT</p></a>
         </div>
         <div className="footer_bar"></div>
 
@@ -67,7 +75,7 @@ function Footer() {
       </div>
 
       <div className="footer_bot">
-        Sharing Stories from 1977 is a Flagship Project of the Center for Public History, the Digital Research Commons, and the Institute for Research on Women, Gender &amp; Sexuality at the University of Houston.
+        {paragraph}
       </div>
     </div>
   )

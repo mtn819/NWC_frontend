@@ -21,7 +21,6 @@
   display: flex;
   background-color: var(--colorDarkBlue);
   align-items: center;
-  justify-content: space-between;
   position: fixed;
   z-index: 999;
   top: 0;
@@ -46,6 +45,7 @@
   color: var(--colorLightBlue);
   font-family: 'babas_neue', normal;
   font-size: 35rem;
+  margin-left: 150rem;
 }
 
 .navigation_link:hover {

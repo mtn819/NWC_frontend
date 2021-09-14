@@ -13,8 +13,14 @@
   display: flex;
 }
 
+.footer_icon {
+  display: flex;
+  align-items: center;
+}
+
 .footer_icon img {
   width: 216rem;
+  margin-right: 20rem;
 }
 
 .footer_bar {
@@ -25,11 +31,18 @@
 }
 
 .footer_home {
-  margin-left: 155rem;
+  margin-left: 100rem;
 }
 
 .footer_about, .footer_contact, .footer_social {
   margin-left: 37.5rem;
+}
+
+.footer_home:hover,
+.footer_about:hover,
+.footer_contact:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 .footer_socialIcons {
