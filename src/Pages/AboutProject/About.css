@@ -48,10 +48,10 @@ BANNER
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 0;
   margin-bottom: 46rem;
   right: 0;
   margin-right: 496rem;
+  margin-top: 560rem;
 }
 
 .aboutBanner_chick {
@@ -59,7 +59,6 @@ BANNER
   height: 764rem;
   position: absolute;
   right: 0;
-  bottom: 0;
   margin-bottom: 44rem;
   margin-right: -40rem;
 }
