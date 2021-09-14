@@ -1,0 +1,172 @@
+.about {
+}
+
+/*
+BANNER
+*/
+
+.aboutBanner {
+  width: 100vw;
+  background: url("./res/mapbg.png");
+  min-height: 793rem;
+  padding-top: 151rem;
+}
+
+.aboutBanner_button {
+  width: 500rem;
+  height: 500rem;
+  position: absolute;
+}
+
+.aboutBanner_card {
+  width: 834rem;
+  height: 358rem;
+  margin-left: 479rem;
+  min-height: 358rem;
+  background-color: white;
+  border-left: 12rem solid var(--colorDeepRed);
+  padding: 61rem;
+  padding-top: 58rem;
+  margin-top: 52rem;
+  position: absolute;
+}
+
+.aboutBanner_card p {
+  font-family: var(--fontNeoBulletin);
+  font-size: 30rem;
+  font-weight: bold;
+}
+
+.aboutBanner_credit {
+  width: 323rem;
+  height: 84rem;
+  position: absolute;
+  background-color: var(--colorDarkBlue);
+  color: var(--colorBeige);
+  font-size: 36rem;
+  font-family: var(--fontBabasNeue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  margin-bottom: 46rem;
+  right: 0;
+  margin-right: 496rem;
+}
+
+.aboutBanner_chick {
+  width: 537rem;
+  height: 764rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 44rem;
+  margin-right: -40rem;
+}
+
+/*
+TIMELINE
+*/
+
+.aboutTimeline {
+  min-height: 1538rem;
+}
+
+.aboutTimeline_header {
+  font-size: 80rem;
+  font-family: var(--fontBabasNeue);
+  text-align: center;
+  margin-top: 106rem;
+}
+
+.aboutTimeline_annot {
+  position: absolute;
+}
+
+.aboutTimeline_annot1 {
+  margin-top: 1050rem;
+  margin-left: 180rem;
+}
+
+.aboutTimeline_annot2 {
+  margin-left: 535rem;
+  margin-top: 20rem;
+}
+
+.aboutTimeline_annot3 {
+  margin-top: 1050rem;
+  margin-left: 810rem;
+}
+
+.aboutTimeline_annot4 {
+  margin-left: 1150rem;
+  margin-top: 20rem;
+}
+
+.aboutTimeline_annot5 {
+  margin-top: 1050rem;
+  margin-left: 1450rem;
+}
+
+.aboutTimeline_annotNo {
+  font-size: 200rem;
+  font-family: var(--fontBabasNeue);
+  color: #75B2E0;
+  opacity: 34.5%;
+  position: absolute;
+}
+
+.aboutTimeline_annotText {
+  font-size: 16rem;
+  font-family: var(--fontMontserrat);
+  margin-top: 110rem;
+  margin-left: 38rem;
+  width: 234rem;
+}
+
+.aboutTimeline_tl {
+  width: 1877rem;
+  margin-left: 43rem;
+  margin-top: 289rem;
+}
+
+/*
+DOCUMENTS
+*/
+
+.aboutDocuments {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rem;
+}
+
+.aboutDocuments a {
+  font-size: 80rem;
+  font-family: var(--fontBabasNeue);
+  margin-bottom: 141rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 400rem;
+  margin-left: 807rem;
+  color: var(--colorDarkBlue);
+}
+
+.aboutDocuments a:hover {
+  color: #FFD048;
+  text-decoration: underline;
+  text-decoration-color: var(--colorDarkBlue);
+}
+
+/*
+MEET
+*/
+
+.aboutMeet {
+  margin-bottom: 261.5rem;
+  margin-left: 40rem;
+}
+
+.aboutMeet img {
+  width: 1750rem;
+}
