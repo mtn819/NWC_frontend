@@ -48,6 +48,10 @@
   margin-left: 150rem;
 }
 
+.navigation_link--selected {
+  color: white;
+}
+
 .navigation_link:hover {
   color: white
 }

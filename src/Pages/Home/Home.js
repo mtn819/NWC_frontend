@@ -24,21 +24,27 @@ import dots4 from './res/dots4.png';
 import overlaymp4 from './res/overlayvid.mp4';
 
 import axios from '../../config/axios';
+import VARIABLES from '../../config/.env';
 import ReactMarkdown from 'react-markdown';
 
 const getWhere = (data, key, value) => {
   return data.filter(e => e[key] === value);
 }
 
+const urlify = (str) => {
+  return VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + "" + str;
+}
+
 function Home() {
   //temp
-  //const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
+  // const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
 
   const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
   const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
   const [homeAbout_p2, setHomeAbout_p2] = useState(jack);
   const [homeAbout_p, setHomeAbout_p] = useState(jack+jack);
   const [homeMap_text, setHomeMap_text] = useState(jack+jack+jack);
+  const [homeAboutReadmore, setHomeAboutReadmore] = useState(false);
   const [homeExplore_text, setHomeExplore_text] = useState(jack+jack);
   const [homeButton1_text, setHomeButton1_text] = useState(jack);
   const [homeButton1_link, setHomeButton1_link] = useState('/');
@@ -131,6 +137,10 @@ function Home() {
             p2[1] = p['x'];
             p2[2] = p['y'];
             p2[3] = p['Description'];
+            p2[4] = p.mainImage[0] ? urlify(p.mainImage[0].url) : undefined;
+            p2[5] = p.pdf1[0] ? urlify(p.pdf1[0].url) : undefined;
+            p2[6] = p.pdf2[0] ? urlify(p.pdf2[0].url) : undefined;
+            p2[7] = p.pdf3[0] ? urlify(p.pdf3[0].url) : undefined;
 
             return p2;
           })  
@@ -230,9 +240,10 @@ function Home() {
             <p className="homeAbout_header">ABOUT THE PROJECT</p>
             <div className="homeAbout_cardHr"></div>
 
-            <p className="homeAbout_p1"><ReactMarkdown>{homeAbout_p}</ReactMarkdown></p>
-            {/**<p className="homeAbout_p1">{homeAbout_p1}</p>
-            <p className="homeAbout_p2">{homeAbout_p2}</p>*/}
+            {/*<p className="homeAbout_p1"><ReactMarkdown>{homeAbout_p}</ReactMarkdown></p>*/}
+            <p className="homeAbout_p1">{homeAbout_p1}</p>
+            {homeAboutReadmore ? <p className="homeAbout_p2">{homeAbout_p2}</p> : ""}
+            <p className="homeAbout_readmore" onClick={e=>setHomeAboutReadmore(!homeAboutReadmore)}>READ {homeAboutReadmore ? "LESS" : "MORE"}</p>
           </div>
 
           <div className="homeAbout_chicks">

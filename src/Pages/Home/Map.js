@@ -13,6 +13,10 @@ function Map({mapImg, points}) {
   const [hovering, setHovering] = useState(false);
   const [popup, setPopup] = useState(false);
   const [desc, setDesc] = useState(description);
+  const [mainImage, setMainImage] = useState("");
+  const [pdf1, setPdf1] = useState("");
+  const [pdf2, setPdf2] = useState("");
+  const [pdf3, setPdf3] = useState("");
 
   return (
     <>
@@ -31,6 +35,10 @@ function Map({mapImg, points}) {
           onClick={() => {
             setPopup(p[0]);
             setDesc(p[3]);
+            setMainImage(p[4]);
+            setPdf1(p[5]);
+            setPdf2(p[6]);
+            setPdf3(p[7]);
           }}
         >
           {p[0]}
@@ -54,7 +62,11 @@ function Map({mapImg, points}) {
         >
           <img onClick={() => {
             setPopup(p[0]);
-            setDesc(p[3]); }} src={maptick}/>
+            setDesc(p[3]);
+            setMainImage(p[4]);
+            setPdf1(p[5]);
+            setPdf2(p[6]);
+            setPdf3(p[7]); }} src={maptick}/>
           <div className="homeMap_dotLabel">{p[0]}</div>
         </div>)}
         
@@ -71,15 +83,27 @@ function Map({mapImg, points}) {
                 </div>
                 <p>BACK TO MAP</p>
               </div>
-              <div className="homeMap_popupImg"><img src={popupImg}/></div>
+              <div className="homeMap_popupImg"><img src={mainImage}/></div>
               <div className="homeMap_popupSrc"><h3>SOURCE:</h3> <p>JACK</p></div>
               <div className="homeMap_popupFeed">
                 <div className="homeMap_popupFeedLeft">
                   <Arrow direction="left" color="#2699FB"/>
                 </div>
-                {popupFeed.map(i => <div className="homeMap_popupFeedImg">
-                  <img src={i}/>
-                </div>)}
+                <a href={pdf1}>
+                <div className="homeMap_popupFeedImg">
+                  <img src={mainImage}/>
+                </div>
+                </a>
+                <a href={pdf2}>
+                <div className="homeMap_popupFeedImg">
+                  <img src={mainImage}/>
+                </div>
+                </a>
+                <a href={pdf3}>
+                <div className="homeMap_popupFeedImg">
+                  <img src={mainImage}/>
+                </div>
+                </a>
                 <div className="homeMap_popupFeedRight">
                   <Arrow direction="right" color="#2699FB"/>
                 </div>

@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './Navigation.css';
 import icon_search from './res/search.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 
 function Navigation() {
+  const [selected, setSelected] = useState("");
+  const location = useLocation();
+  console.log(location);
+
   return (
     <div className="navigation_total">
     <div className="navigation">
         <div></div>
-        <Link className="navigation_link" to="/">HOME</Link>
-        <Link className="navigation_link" to="/About">ABOUT PROJECT</Link> 
+        <Link className={"navigation_link" + " " + (location.pathname === "/" ? "navigation_link--selected" : "")} to="/">HOME</Link>
+        <Link className={"navigation_link" + " " + (location.pathname === "/About" ? "navigation_link--selected" : "")} to="/About">ABOUT PROJECT</Link> 
         <div></div> 
         {/*<Link className="navigation_link" to="/DiscoverNWCStories">DISCOVER NWC STORIES</Link>  
         <Link className="navigation_link" to="/WhyTheNWCMatters">WHY THE NWC MATTERS</Link>

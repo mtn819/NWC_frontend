@@ -123,6 +123,18 @@ ABOUT
   padding-left: 143.22rem;
 }
 
+.homeAbout_readmore {
+  font-size: 45rem;
+  font-family: var(--fontBabasNeue);
+  margin-left: 600rem;
+  margin-top: 50rem;
+}
+
+.homeAbout_readmore:hover {
+  color: var(--colorDeepRed);
+  cursor: pointer;
+}
+
 .homeAbout_chicks {
   margin-left: 38.2rem;
   margin-bottom: 0;
@@ -364,7 +376,7 @@ BUTTONS
 }
 
 .homeButtons_button p {
-  width: calc(274*var(--xUnit));
+  width: calc(420*var(--xUnit));
   font-family: 'neobulletin', 'normal';
   font-size: calc(24*var(--xUnit));
   font-weight: bold;
@@ -372,22 +384,22 @@ BUTTONS
 
 .homeButtons_button1 {
   margin-top: calc(157*var(--xUnit));
-  margin-left: calc(183*var(--xUnit));
+  margin-left: calc(150*var(--xUnit));
 }
 
 .homeButtons_button2 {
   margin-top: calc(157*var(--xUnit));
-  margin-left: calc(963.33*var(--xUnit));
+  margin-left: calc(996.33*var(--xUnit));
 }
 
 .homeButtons_button3 {
   margin-top: calc(720*var(--xUnit));
-  margin-left: calc(183*var(--xUnit));
+  margin-left: calc(150*var(--xUnit));
 }
 
 .homeButtons_button4 {
   margin-top: calc(720*var(--xUnit));
-  margin-left: calc(963.33*var(--xUnit));
+  margin-left: calc(996.33*var(--xUnit));
 }
 
 .homeButtons_dots {
