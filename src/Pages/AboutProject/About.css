@@ -110,8 +110,7 @@ TIMELINE
 .aboutTimeline_annotNo {
   font-size: 200rem;
   font-family: var(--fontBabasNeue);
-  color: #75B2E0;
-  opacity: 34.5%;
+  color: rgba(117, 178, 224, .5);
   
   position: absolute;
 }
