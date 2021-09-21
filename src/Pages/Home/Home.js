@@ -11,7 +11,7 @@ import mag from './res/mag.png';
 import astro from './res/astro.png';
 
 import toform from './res/toform.png';
-import aboutchicks from './res/aboutchicks.png';
+import aboutpeople from './res/aboutpeople.png';
 import explorechicks from './res/explorechicks.png';
 import button1 from './res/button1.png';
 import button2 from './res/button2.png';
@@ -21,7 +21,7 @@ import dots1 from './res/dots1.png';
 import dots2 from './res/dots2.png';
 import dots3 from './res/dots3.png';
 import dots4 from './res/dots4.png';
-import overlaymp4 from './res/overlayvid.mp4';
+//import overlaymp4 from './res/overlayvid.mp4';
 
 import axios from '../../config/axios';
 import VARIABLES from '../../config/.env';
@@ -37,7 +37,7 @@ const urlify = (str) => {
 
 function Home() {
   //temp
-  // const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
+  const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
 
   const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
   const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
@@ -247,7 +247,7 @@ function Home() {
           </div>
 
           <div className="homeAbout_chicks">
-            <img src={aboutchicks}/>
+            <img src={aboutpeople}/>
             <div className="homeAbout_imgCred">
               <p>PHOTO BY JANE DOE</p>
             </div>

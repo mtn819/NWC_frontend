@@ -8,6 +8,7 @@ import meet from './res/meatteem.png';
 
 import axios from '../../config/axios';
 import VARIABLES from "../../config/.env.js";
+import { ArrowCounterclockwise } from 'react-bootstrap-icons';
 
 const getWhere = (data, key, value) => {
   return data.filter(e => e[key] === value);
@@ -69,7 +70,13 @@ function About() {
     async function fetchData(){
       const req = await axios.get('/content-about-pdfs');
 
+      console.log("Pizza!");
+      console.log(VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1));
+
       const get = (section) => {
+        const url = 
+        console.log("Hi");
+        console.log(VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + getWhere(req.data, 'Section', section)[0]["pdf"][0]["url"]);
         return VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + getWhere(req.data, 'Section', section)[0]["pdf"][0]["url"];
       };
 
