@@ -35,7 +35,7 @@ BANNER
 }
 
 .aboutBanner_credit {
-  width: 323rem;
+  min-width: 323rem;
   height: 84rem;
   background-color: var(--colorDarkBlue);
   color: var(--colorBeige);
@@ -48,6 +48,9 @@ BANNER
   margin-left: -200rem;;
   margin-top: 577rem;
   margin-right: 400rem;
+  width: fit-content;
+  text-align: right;
+  padding: 12rem;
 }
 
 .aboutBanner_credit p {
@@ -162,10 +165,21 @@ MEET
 */
 
 .aboutMeet {
-  margin-bottom: 261.5rem;
+  margin-bottom: 0;
   margin-left: 40rem;
 }
 
 .aboutMeet img {
   width: 1750rem;
+}
+
+.aboutChart {
+  margin-top: 64rem;
+  margin-bottom: 64rem;
+  margin-left: 170rem;
+}
+
+.aboutChart img{
+  width: 1604rem;
+  height: 980rem;
 }

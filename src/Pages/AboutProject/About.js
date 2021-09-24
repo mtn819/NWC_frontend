@@ -5,6 +5,7 @@ import button from "./res/button.png";
 import chick from './res/chick.png';
 import tl from './res/tl.png';
 import meet from './res/meatteem.png';
+import bottomchart from './res/bottomchart.png';
 
 import axios from '../../config/axios';
 import VARIABLES from "../../config/.env.js";
@@ -19,6 +20,7 @@ function About() {
   const yt = "https://www.youtube.com";
 
   const [aboutBanner_card, setAboutBanner_card] = useState(jack);
+  const [aboutImgCredit, setAboutImgCredit] = useState("JANE DOE");
   const [aboutTimeline_1, setAboutTimeline_1] = useState(jack);
   const [aboutTimeline_2, setAboutTimeline_2] = useState(jack);
   const [aboutTimeline_3, setAboutTimeline_3] = useState(jack);
@@ -40,6 +42,10 @@ function About() {
 
       setAboutBanner_card (
         get("aboutBanner_card")
+      );
+
+      setAboutImgCredit(
+        get("aboutImgCredit")
       );
 
       setAboutTimeline_1 (
@@ -74,9 +80,6 @@ function About() {
       console.log(VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1));
 
       const get = (section) => {
-        const url = 
-        console.log("Hi");
-        console.log(VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + getWhere(req.data, 'Section', section)[0]["pdf"][0]["url"]);
         return VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + getWhere(req.data, 'Section', section)[0]["pdf"][0]["url"];
       };
 
@@ -112,7 +115,7 @@ function About() {
             {aboutBanner_card}
           </p>
         </div>
-        <div className="aboutBanner_credit"><p>PHOTO BY JANE DOE</p></div>
+        <div className="aboutBanner_credit"><p>PHOTO BY {aboutImgCredit}</p></div>
         <img src={chick} className="aboutBanner_chick"/>
       </div>
     
@@ -144,22 +147,22 @@ function About() {
 
       {/**DOCUMENTS */}
       <div className="aboutDocuments">
-        <a href={aboutDocuments_ddlink}>
+        <a href={aboutDocuments_ddlink} target="_blank">
         <div className="aboutDocuments_item aboutDocuments_design">
           DESIGN DOCUMENTS
         </div>
         </a>
-        <a href={aboutDocuments_cblink}>
+        <a href={aboutDocuments_cblink} target="_blank">
         <div className="aboutDocuments_item aboutDocuments_code">
           CODEBOOK
         </div>
         </a>
-        <a href={aboutDocuments_aplink}>
+        <a href={aboutDocuments_aplink} target="_blank">
         <div className="aboutDocuments_item aboutDocuments_approach">
           APPROACH TO DIGITAL HUMANITIES
         </div>
         </a>
-        <a href={aboutDocuments_frlink}>
+        <a href={aboutDocuments_frlink} target="_blank">
         <div className="aboutDocuments_item aboutDocuments_further">
           FURTHER READING
         </div>
@@ -170,6 +173,11 @@ function About() {
       {/**MEET */}
       <div className="aboutMeet">
         <img src={meet}/>
+      </div>
+
+      {/**BOTTOMCHART */}
+      <div className="aboutChart">
+        <img src={bottomchart}/>
       </div>
     
     </div>

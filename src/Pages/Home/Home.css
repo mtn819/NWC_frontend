@@ -151,13 +151,16 @@ ABOUT
   align-items: center;
   font-family: 'babas_neue', 'normal';
   font-size: 36rem;
-  width: 323rem;
+  width: fit-content;
+  min-width: 323rem;
   height: 84rem;
   background-color: var(--colorDarkBlue);
-  margin-left: 676rem;
+  margin-left: 500rem;
   color: var(--colorBeige);
   margin-top: -89rem;
   position: relative;
+  text-align: right;
+  padding: 12rem;
 }
 
 .homeAbout_border {
@@ -385,7 +388,7 @@ BUTTONS
 
 .homeButtons_button1 {
   margin-top: calc(157*var(--xUnit));
-  margin-left: calc(150*var(--xUnit));
+  margin-left: calc(100*var(--xUnit));
 }
 
 .homeButtons_button2 {
@@ -395,7 +398,7 @@ BUTTONS
 
 .homeButtons_button3 {
   margin-top: calc(720*var(--xUnit));
-  margin-left: calc(150*var(--xUnit));
+  margin-left: calc(100*var(--xUnit));
 }
 
 .homeButtons_button4 {

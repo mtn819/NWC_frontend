@@ -89,17 +89,17 @@ function Map({mapImg, points}) {
                 <div className="homeMap_popupFeedLeft">
                   <Arrow direction="left" color="#2699FB"/>
                 </div>
-                <a href={pdf1}>
+                <a href={pdf1} target="_blank">
                 <div className="homeMap_popupFeedImg">
                   <img src={mainImage}/>
                 </div>
                 </a>
-                <a href={pdf2}>
+                <a href={pdf2} target="_blank">
                 <div className="homeMap_popupFeedImg">
                   <img src={mainImage}/>
                 </div>
                 </a>
-                <a href={pdf3}>
+                <a href={pdf3} target="_blank">
                 <div className="homeMap_popupFeedImg">
                   <img src={mainImage}/>
                 </div>

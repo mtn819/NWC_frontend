@@ -43,10 +43,7 @@ function Footer() {
 
       <div className="footer_top">
         <div className="footer_icon">
-          <img src={neh_seal}/> 
           <img src={icon}/>
-        </div>
-        <div className="footer_seal">
         </div>
 
         <div className="footer_home">
@@ -75,6 +72,9 @@ function Footer() {
       </div>
 
       <div className="footer_bot">
+        <div className="footer_seal">
+          <img src={neh_seal}/> 
+        </div>
         {paragraph}
       </div>
     </div>

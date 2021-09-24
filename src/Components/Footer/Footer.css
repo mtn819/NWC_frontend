@@ -1,10 +1,11 @@
 .footer {
   width: 100vw;
-  height: 600rem;
+  height: fit-content;
   background-color: var(--colorDarkBlue);
   font-family: 'babas_neue';
   padding-top: 146rem;
   padding-left: 108rem;
+  padding-bottom: 60rem;
 }
 
 .footer_top {
@@ -78,4 +79,9 @@
 
   margin-top: 90.9rem;
   margin-left: 328rem;
+}
+
+.footer_seal img {
+  width: 400rem;
+  margin-bottom: 40rem;
 }
