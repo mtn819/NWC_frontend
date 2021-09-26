@@ -17,7 +17,7 @@ function Navigation() {
   }
   
   const getCondition = pathname => {
-    return () => location.pathname == pathname;
+    return () => location.pathname === pathname;
   }
 
   const rcCurried = pathname => {
