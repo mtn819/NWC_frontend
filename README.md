@@ -36,6 +36,9 @@ Holds the actual pages. src/pages/{page_name}/{page_name}.js is the primary file
 ### [src/components/](src/components/)
 Where reusable snippets live. Things like navbars, style textboxes, and all that good stuff.
 
+### [src/components/utilityFunctions](src/components/utilityFunctions)
+Stores some useful functions that are reused throughout the site.
+
 ### [src/res/](src/res/)
 Holds (preferably) light resources, like images and fonts.
 

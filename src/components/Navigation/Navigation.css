@@ -5,13 +5,14 @@
 
 .NavigationTop {
   background-color: var(--themeColorDeepBlue);
-  padding: 2.5rem;
-  padding-left: 8rem;
+  padding: 20rem;
+  padding-left: 112rem;
+  display: flex;
 }
 
 .NavigationTop_link {
-  font-size: 4.5rem;
-  margin-right: 5rem;
+  font-size: 50rem;
+  margin-right: 58rem;
   text-decoration: none;
   color: var(--themeColorLightBlue);
   font-family: var(--themeFontBabas);
@@ -28,6 +29,6 @@
 
 .NavigationBorder {
   background-color: var(--themeColorRed);
-  border-top: 1.5rem solid var(--themeColorRed);
-  border-bottom: 1.5rem solid var(--themeColorOrange);
+  border-top: 14rem solid var(--themeColorRed);
+  border-bottom: 14rem solid var(--themeColorOrange);
 }

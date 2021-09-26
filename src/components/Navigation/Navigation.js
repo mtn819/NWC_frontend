@@ -1,20 +1,10 @@
 import React from 'react'
 import "./Navigation.css";
 import { Link, useLocation } from "react-router-dom";
+import { renderClass } from '../utilityFunctions/utilityFunctions';
 
 function Navigation() {
   const location = useLocation()
-
-  const renderClass = (element, modifier, condition) => {
-    /**
-     * Passed "block", "on", v => v > 5,
-     * will return "block--on" if v > 5.
-     */
-    if(condition()){
-      return `${element} ${element}--${modifier}`
-    }
-    return element;
-  }
   
   const getCondition = pathname => {
     return () => location.pathname === pathname;
@@ -29,13 +19,13 @@ function Navigation() {
   }
 
   return (
-    <div className="Navigation">
+    <nav className="Navigation">
       <div className="NavigationTop">
         <Link to='/' className={rcCurried('/')}>Home</Link>
         <Link to='/about' className={rcCurried('/about')}>About</Link>
       </div>
       <div className="NavigationBorder"></div>
-    </div>
+    </nav>
   )
 }
 

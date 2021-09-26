@@ -4,7 +4,7 @@
 }
 
 :root {
-  font-size: 8px;
+  font-size: calc(100vw/1920);
 
   --themeFontBabas: 'babas_neue', 'normal';
   --themeFontGotham: 'gotham', 'normal';
@@ -16,6 +16,8 @@
   --themeColorLightBlue: #9EC7E1;
   --themeColorRed: #B32525;
   --themeColorOrange: #CB4E28;
+  --themeColorBeige: #FFF4E8;
+  --themeColorYellow: #FFD048;
 }
 
 /* FONTS */

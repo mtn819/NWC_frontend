@@ -1,0 +1,92 @@
+.Home {
+  width: 100%
+}
+
+/*
+SPLASH
+*/
+
+.HomeSplash {
+  background-image: url("../../res/mapbg.png");
+  padding: 100rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 16rem solid var(--themeColorRed);
+  margin-bottom: 16rem;
+}
+
+.HomeSplash_logo img {
+  width: 800rem;
+}
+
+.HomeSplash_card {
+  color: white;
+  width: 696rem;
+  background-color: var(--themeColorLightBlue);
+  padding: 26rem;
+  text-align: center;
+}
+
+.HomeSplash_card h1 {
+  font-family: var(--themeFontSubway);
+  font-size: 96rem;
+}
+
+.HomeSplash_cardHr {
+  width: 100%;
+  height: 6rem;
+  background-color: var(--themeColorRed);
+  margin-top: 26rem;
+  margin-bottom: 26rem;
+}
+
+.HomeSplash_card p {
+  font-family: var(--themeFontBabas);
+  font-size: 65rem;
+}
+
+/*
+ABOUT
+*/
+
+.HomeAbout {
+  width:100%;
+  font-size: 80rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 46rem;
+  background-color: var(--themeColorBeige);
+  border-top: 16rem solid var(--themeColorRed);
+}
+
+.HomeAbout .OutlineCard {
+  width: 835rem;
+}
+
+.HomeAbout .CaptionedImg{
+  width: 1000rem;
+}
+
+.HomeAbout_border {
+  height: 45rem;
+  border-top: 15rem solid var(--themeColorRed);
+  background-color: var(--themeColorOrange);
+  border-bottom: 15rem solid var(--themeColorYellow);
+  position: relative;
+}
+
+/*
+MAP
+*/
+
+.HomeMap {
+  padding-top: 197.5rem;
+}
+
+.HomeMap .OutlineCard {
+  width: 1271rem;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,23 @@
+.OutlineCard {
+  border: 10rem solid var(--themeColorRed);
+  height: fit-content;
+  padding-left: 100rem;
+  padding-right: 100rem;
+  padding-bottom: 50rem;
+}
+
+.OutlineCard h1 {
+  font-family: var(--themeFontBabas);
+  font-size: 96rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  /*background-color is handled in the JS*/
+  transform: translateY(-50%);
+  border-bottom: 16rem solid var(--themeColorRed);
+}
+
+.OutlineCard_children {
+  font-size: 24rem;
+  font-family: var(--themeFontGotham);
+}

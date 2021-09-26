@@ -1,0 +1,18 @@
+.CaptionedImg img {
+  width: 100%;
+}
+
+.CaptionedImg p {
+  position: relative;
+  background-color: var(--themeColorDeepBlue);
+  width: fit-content;
+  padding: 20rem;
+  padding-left: 40rem;
+  padding-right: 40rem;
+  text-align: center;
+  margin-top: -110rem;
+  margin-left: auto;
+  font-size: 36rem;
+  font-family: var(--themeFontBabas);
+  color: white;
+}
