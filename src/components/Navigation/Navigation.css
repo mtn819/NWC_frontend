@@ -1,0 +1,33 @@
+.Navigation {
+  min-width: 100%;
+  width: fit-content;
+}
+
+.NavigationTop {
+  background-color: var(--themeColorDeepBlue);
+  padding: 2.5rem;
+  padding-left: 8rem;
+}
+
+.NavigationTop_link {
+  font-size: 4.5rem;
+  margin-right: 5rem;
+  text-decoration: none;
+  color: var(--themeColorLightBlue);
+  font-family: var(--themeFontBabas);
+}
+
+.NavigationTop_link:hover {
+  transform: scale(1.01);
+  text-decoration: underline;
+}
+
+.NavigationTop_link--active {
+  color: white;
+}
+
+.NavigationBorder {
+  background-color: var(--themeColorRed);
+  border-top: 1.5rem solid var(--themeColorRed);
+  border-bottom: 1.5rem solid var(--themeColorOrange);
+}
