@@ -5,15 +5,20 @@ import { fetchBaseUrl } from '../../config/.env';
 import ReactMarkdown from "react-markdown";
 
 // Components
-import { getText } from '../../components/utilityFunctions/utilityFunctions';
+import { getText, getLink } from '../../components/utilityFunctions/utilityFunctions';
 import OutlineCard from '../../components/OutlineCard/OutlineCard';
 import CaptionedImg from '../../components/CaptionedImg/CaptionedImg';
+import CaptionedButton from '../../components/CaptionedButton/CaptionedButton';
 import Map from './Map';
 
 // Res
 import splashLogo from "../../res/splashLogo.png";
 import holdingFlag from "../../res/holdingFlag.png";
 import podiumGroup from "../../res/podiumGroup.png";
+import buttonWhy from "../../res/buttonWhy.png";
+import buttonDiscover from "../../res/buttonDiscover.png";
+import buttonMapping from "../../res/buttonMapping.png";
+import buttonHow from "../../res/buttonHow.png";
 
 function Home() {
   const [data, setData] = useState({});
@@ -25,7 +30,6 @@ function Home() {
     .then(response => response.json())
     .then(data => setData(data));
   }, []);
-
 
   return (
     <main className="Home">
@@ -86,6 +90,36 @@ function Home() {
         />
       </div>
       <div className="HomeExplore_border"></div>
+
+      {/**
+       * BUTTONS
+       */}
+      <div className="HomeButtons">
+        <CaptionedButton
+          img={buttonWhy}
+          href={getLink(data, "BUTTONS_WHY")}
+        >
+          {getText(data, "BUTTONS_WHY")}
+        </CaptionedButton>
+        <CaptionedButton
+          img={buttonDiscover}
+          href={getLink(data, "BUTTONS_DISCOVER")}
+        >
+          {getText(data, "BUTTONS_DISCOVER")}
+        </CaptionedButton>
+        <CaptionedButton
+          img={buttonMapping}
+          href={getLink(data, "BUTTONS_MAPPING")}
+        >
+          {getText(data, "BUTTONS_MAPPING")}
+        </CaptionedButton>
+        <CaptionedButton
+          img={buttonHow}
+          href={getLink(data, "BUTTONS_HOW")}
+        >
+          {getText(data, "BUTTONS_HOW")}
+        </CaptionedButton>
+      </div>
 
     </main>
 

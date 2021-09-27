@@ -1,0 +1,26 @@
+.CaptionedButton_linkWrapper {
+  text-decoration: none;
+}
+
+.CaptionedButton {
+  display: flex;
+  background-color: white;
+  align-items: center;
+}
+
+.CaptionedButton:hover {
+  transform: scale(1.01);
+  opacity: .69;
+}
+
+.CaptionedButton img {
+  width: 400rem;
+}
+
+.CaptionedButton_children {
+  width: 350rem;
+  text-align: center;
+  font-size: 24rem;
+  font-family: var(--themeFontNeo);
+  color: black;
+}

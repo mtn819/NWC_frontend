@@ -121,7 +121,29 @@ EXPLORE
 }
 
 .HomeExplore_border {
-  height: 36rem;
+  height: 42.0rem;
   background-color: var(--themeColorRed);
   position: relative;
+  margin-top: -5rem;
+}
+
+/*
+BUTTONS
+*/
+
+.HomeButtons {
+  background-image: url("../../res/backgroundDots.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-top: 150rem;
+  padding-bottom: 150rem;
+  padding-left: 150rem;
+  padding-right: 150rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.HomeButtons .CaptionedButton {
+  margin-bottom: 110rem;
 }

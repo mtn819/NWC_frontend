@@ -60,6 +60,18 @@ export const getText = (data, element) => {
   )
 }
 
+export const getLink = (data, element) => {
+  // IS HARDCODED FOR THE CMS. Used to quickgrab a piece of text from the page.
+  return getSafe(
+    getWhere(
+      getSafe(data, 0, "LINK"),
+      "ELEMENT",  
+      element,
+    ),
+    "HREF",
+  )
+}
+
 export const media2url = med => {
   // translates ugly json to strapi to just the image's url
   return [
