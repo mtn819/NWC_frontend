@@ -15,8 +15,7 @@ To install, run the following:
 
 Then, substantiate src/config/.env.js:
 
-    // This determines the base url from which data will be fetched.
-    export const fetchBaseUrl = "http://localhost:1337";
+    export const fetchBaseUrl = "http://localhost:1337"; // base url from which data will be fetched.
     
 
 ## Running <a id="running"></a>
