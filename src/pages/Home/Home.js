@@ -10,6 +10,7 @@ import OutlineCard from '../../components/OutlineCard/OutlineCard';
 import CaptionedImg from '../../components/CaptionedImg/CaptionedImg';
 import CaptionedButton from '../../components/CaptionedButton/CaptionedButton';
 import Map from './Map';
+import Carousel from '../../components/Carousel/Carousel';
 
 // Res
 import splashLogo from "../../res/splashLogo.png";
@@ -119,6 +120,13 @@ function Home() {
         >
           {getText(data, "BUTTONS_HOW")}
         </CaptionedButton>
+      </div>
+
+      {/**
+       * HIGHLIGHTS
+       */}
+      <div className="HomeHighlights">
+        <Carousel page="HOME"/>
       </div>
 
     </main>
