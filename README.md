@@ -13,6 +13,12 @@ To install, run the following:
     cd nwc_front
     npm install
 
+Then, substantiate src/config/.env.js:
+
+    // This determines the base url from which data will be fetched.
+    export const fetchBaseUrl = "http://localhost:1337";
+    
+
 ## Running <a id="running"></a>
     npm start
 
