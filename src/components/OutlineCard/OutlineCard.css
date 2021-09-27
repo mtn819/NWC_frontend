@@ -6,7 +6,7 @@
   padding-bottom: 50rem;
 }
 
-.OutlineCard h1 {
+.OutlineCard > h2 {
   font-family: var(--themeFontBabas);
   font-size: 96rem;
   width: fit-content;

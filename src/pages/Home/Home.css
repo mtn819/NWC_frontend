@@ -7,7 +7,9 @@ SPLASH
 */
 
 .HomeSplash {
-  background-image: url("../../res/mapbg.png");
+  background-image: url("../../res/backgroundMap.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 100rem;
   display: flex;
   align-items: center;
@@ -57,12 +59,17 @@ ABOUT
   justify-content: space-between;
   align-items: center;
   padding-left: 46rem;
-  background-color: var(--themeColorBeige);
+  /*background-color: var(--themeColorBeige);*/
+  background-image: url("../../res/beigewhitebg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   border-top: 16rem solid var(--themeColorRed);
 }
 
 .HomeAbout .OutlineCard {
   width: 835rem;
+  margin-top: 100rem;
+  margin-bottom: 100rem;
 }
 
 .HomeAbout .CaptionedImg{
@@ -82,11 +89,15 @@ MAP
 */
 
 .HomeMap {
-  padding-top: 197.5rem;
+  padding: 140rem;
+  padding-top: 195rem;
 }
 
 .HomeMap .OutlineCard {
   width: 1271rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 123rem;
 }
+
+/* THE REST OF THE MAP CODE IS HANDLED IN ./Map.css */

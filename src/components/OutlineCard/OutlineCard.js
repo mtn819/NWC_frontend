@@ -8,7 +8,7 @@ function OutlineCard({heading, children, headingbg}) {
 
   return (
     <div className="OutlineCard">
-      <h1 style={{backgroundColor: headingbg}}>&nbsp;{heading}&nbsp;</h1>
+      <h2 style={{backgroundColor: headingbg}}>&nbsp;{heading}&nbsp;</h2>
       <div className="OutlineCard_children">{children}</div>
     </div>
   )

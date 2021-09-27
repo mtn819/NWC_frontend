@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react'
 import "./Home.css";
 import { fetchBaseUrl } from '../../config/.env';
+import ReactMarkdown from "react-markdown";
 
 // Components
-import { getSafe } from '../../components/utilityFunctions/utilityFunctions';
+import {getText} from '../../components/utilityFunctions/utilityFunctions';
 import OutlineCard from '../../components/OutlineCard/OutlineCard';
+import Map from './Map';
 
 // Res
 import splashLogo from "../../res/splashLogo.png";
@@ -15,25 +17,23 @@ import CaptionedImg from '../../components/CaptionedImg/CaptionedImg';
 function Home() {
   const [data, setData] = useState({});
 
-  useEffect(async () => {
+  useEffect(() => {
     fetch(
-      [fetchBaseUrl, "pages?Name=Home"].join('/')
+      [fetchBaseUrl, "pages?NAME=HOME"].join('/')
     )
     .then(response => response.json())
-    .then(data => setData(data))
-    .then(() => console.log(data));
+    .then(data => setData(data));
   }, []);
 
 
   return (
-    <div className="Home">
-
+    <main className="Home">
       {/**
        * SPLASH
        */}
       <div className="HomeSplash">
         <div className="HomeSplash_logo">
-          <img src={splashLogo}/>
+          <img src={splashLogo} alt="People holding a flag."/>
         </div>
         <div className="HomeSplash_card">
           <h1>Sharing Stories from 1977</h1>
@@ -50,9 +50,9 @@ function Home() {
           heading="ABOUT THE PROJECT"
           headingbg="var(--themeColorBeige)"
         >
-          <p>ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. </p>
+          <ReactMarkdown>{getText(data, "ABOUT_CARD")}</ReactMarkdown>
         </OutlineCard>
-        <CaptionedImg img={holdingFlag} caption={`PHOTO BY ${"JANE DOE"}`} />
+        <CaptionedImg img={holdingFlag} caption={`PHOTO BY ${getText(data, "ABOUT_PHOTOBY")}`} />
       </div>
       <div className="HomeAbout_border"></div>
 
@@ -63,11 +63,13 @@ function Home() {
         <OutlineCard
           heading="INTERACTIVE MAP"
         >
-          <p>ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. </p>
+          <ReactMarkdown>{getText(data, "MAP_CARD")}</ReactMarkdown>
         </OutlineCard>
+
+        <Map/>
       </div>
 
-    </div>
+    </main>
 
   )
 }
