@@ -157,11 +157,11 @@ function About() {
           CODEBOOK
         </div>
         </a>
-        <a href={aboutDocuments_aplink} target="_blank">
+        {/*<a href={aboutDocuments_aplink} target="_blank">
         <div className="aboutDocuments_item aboutDocuments_approach">
           APPROACH TO DIGITAL HUMANITIES
         </div>
-        </a>
+        </a>*/}
         <a href={aboutDocuments_frlink} target="_blank">
         <div className="aboutDocuments_item aboutDocuments_further">
           FURTHER READING
