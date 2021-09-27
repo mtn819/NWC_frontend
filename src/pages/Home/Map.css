@@ -1,4 +1,123 @@
 /*
+POPUP
+*/
+
+
+.MapPopup {
+  width: 100%;
+  font-size: 30rem;
+  position: absolute;
+  left: 0;
+  margin-top: -100rem;
+  z-index: 1;
+}
+
+.MapPopup_main {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: var(--themeColorPurpleBlue);
+  width: 700rem;
+  border-radius: 75rem;
+}
+
+.MapPopup_exit {
+  height: 1500rem;
+  background-color: rgba(0, 0, 0, .69);
+}
+
+.MapPopup_exit:hover {
+  cursor: pointer;
+}
+
+.MapPopup_top {
+  width: 100%;
+  background-color: white;
+  border-radius: inherit;
+  padding-top: 57rem;
+  padding-bottom: 80rem;
+  padding-left: 80rem;
+  padding-right: 80rem;
+}
+
+.MapPopup_back {
+  font-family: var(--themeFontBabas);
+  font-size: 30rem;
+  color: var(--themeColorGray);
+  margin-bottom: 18rem;
+  user-select: none;
+}
+
+.MapPopup_back:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--themeColorDeepBlue);
+  transform: scale(1.01);
+}
+
+.MapPopup_img {
+  width: 100%;
+}
+
+.MapPopup_source {
+  color: var(--themeColorGray);
+  font-size: 12rem;
+  font-family: var(--themeFontMonserrat);
+  margin-top: 9rem;
+}
+
+/* BOTTOM 1/2 OF POPUP */
+
+.MapPopup_pdfs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top: -50rem;
+  margin-bottom: 20rem;
+  flex-wrap: wrap;
+}
+
+.MapPopup_pdfThumbnail {
+  width: 90%;
+  max-height: 100rem;
+  border-radius: 14rem;
+}
+
+.MapPopup_pdfThumbnail:hover {
+  transform: scale(1.01);
+  opacity: .69;
+}
+
+.MapPopup_text{
+  padding-left: 60rem;
+  padding-right: 40rem;
+  padding-bottom: 40rem;
+}
+
+.MapPopup_text h2 {
+  color: white;
+  font-size: 40rem;
+  margin-bottom: 20rem;
+  font-family: var(--themeFontBabas);
+}
+
+.MapPopup_text div {
+  color: white;
+  font-size: 20rem;
+  font-family: var(--themeFontMonserrat);
+  font-weight: bold;
+}
+
+
+/*
 TABS
 */
 
@@ -53,6 +172,7 @@ BODY
   margin-right: auto;
   background-color: var(--themeColorDeepBeige);
   display: flex;
+  box-shadow: var(--themeBoxShadow);
 }
 
 /*

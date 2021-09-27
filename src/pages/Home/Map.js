@@ -1,6 +1,7 @@
 // CORE IMPORTS
 import React, { useState, useEffect } from 'react'
 import "./Map.css";
+import ReactMarkdown from 'react-markdown';
 
 // different map images
 import astro from "../../res/mapAstro.png";
@@ -46,6 +47,9 @@ function Map() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
+  // CLASS RENDERERS
+
   const rcTab = map => {
     // curried version of renderClass, for tabs
     return renderClass(
@@ -73,6 +77,9 @@ function Map() {
     )
   }
 
+
+  // SETTERS
+
   const setCurrMap_inplace = map => {
     setState(insert(state, "currMap", map));
   }
@@ -84,6 +91,13 @@ function Map() {
   const setCurrPoint_inplace = title => {
     setState(insert(state, "currPoint", title));
   }
+
+  const closePopup_inplace = () => {
+    setCurrPoint_inplace(undefined);
+  }
+
+
+  // GETTERS (FOR CONVENIENCE)
 
   const getCurrMapImg = () => {
     const currMap = getSafe(state, "currMap");
@@ -102,8 +116,65 @@ function Map() {
   // "Get Title" of passed point.
   const gt = p => getSafe(p, "TITLE");
 
+  // "Current Point"
+  const cp = () => getSafe(state, "currPoint");
+
   return (
     <div className="Map">
+      {/**
+       * POPUP
+       */}
+      
+      {
+        gt(cp()) === undefined ?
+        "" :
+        <div className="MapPopup">
+          <div className="MapPopup_main">
+            <div className="MapPopup_top">
+              <p className="MapPopup_back" onClick={closePopup_inplace}>
+                &larr; BACK TO MAP
+              </p>
+              <img
+                src={getSafe(cp(), "MAIN_IMG")}
+                className="MapPopup_img"
+                alt="Main Popup"
+              />
+              <p className="MapPopup_source">
+                <b>SOURCE:</b> {getSafe(cp(), "SOURCE")}
+              </p>
+            </div>
+            {/**BOTTOM */}
+            <div className="MapPopup_pdfs">
+              {
+                getSafe(cp(), "PDFS")
+                .map(pdf =>
+                  <a
+                    href={getSafe(pdf, "PDF")}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={Math.random()*Math.random()}
+                  >
+                    <img
+                      className="MapPopup_pdfThumbnail"
+                      src={getSafe(pdf, "THUMBNAIL")}
+                      alt="PDF Thumbnail"
+                    />
+                  </a>
+                )
+              }
+            </div>
+            <div className="MapPopup_text">
+              <h2 className="MapPopup_title">{gt(cp())}</h2>
+              <div>
+                <ReactMarkdown>
+                  {getSafe(cp(), "CONTENT")}
+                </ReactMarkdown>
+              </div>
+            </div>
+          </div>
+          <div className="MapPopup_exit" onClick={closePopup_inplace}></div>
+        </div>
+      }
 
       {/**
        * TABS
@@ -141,7 +212,7 @@ function Map() {
                 className={rcTitle(gt(p))}
                 onMouseEnter={()=>setCurrHover_inplace(gt(p))}
                 onMouseLeave={()=>setCurrHover_inplace(undefined)}
-                onClick={()=>setCurrPoint_inplace(gt(p))}
+                onClick={()=>setCurrPoint_inplace(p)}
                 key={gt(p)}
               >
                 {gt(p)}
@@ -165,7 +236,7 @@ function Map() {
                 }}
                 onMouseEnter={()=>setCurrHover_inplace(gt(p))}
                 onMouseLeave={()=>setCurrHover_inplace(undefined)}
-                onClick={()=>setCurrPoint_inplace(gt(p))}
+                onClick={()=>setCurrPoint_inplace(p)}
                 key={gt(p)}
               >
                 <img

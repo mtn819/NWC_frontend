@@ -14,11 +14,15 @@
 
   --themeColorDeepBlue: #142F45;
   --themeColorLightBlue: #9EC7E1;
+  --themeColorPurpleBlue: #615FBF;
   --themeColorRed: #B32525;
   --themeColorOrange: #CB4E28;
   --themeColorBeige: #FFF4E8;
   --themeColorYellow: #FFD048;
   --themeColorDeepBeige: #F5E7D9;
+  --themeColorGray: #CCC9C9;
+
+  --themeBoxShadow: 0 3rem 10rem rgb(0 0 0 / 0.2);
 }
 
 /* FONTS */

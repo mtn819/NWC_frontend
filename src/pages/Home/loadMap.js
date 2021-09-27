@@ -16,11 +16,12 @@ const mapDp2obj = dp => {
   // translates ugly json from strapi to pretty points
   return {
     "TITLE": getSafe(dp, "TITLE"),
-    "CONTENT": getSafe(dp, "CONTENT"),
     "X": getSafe(dp, "POSITION", "X"),
     "Y": getSafe(dp, "POSITION", "Y"),
     "MAIN_IMG": media2url(getSafe(dp, "MAIN_IMAGE")),
+    "SOURCE": getSafe(dp, "SOURCE"),
     "PDFS": getSafe(dp, "PDF").map(pdf => pdf2url(pdf)),
+    "CONTENT": getSafe(dp, "CONTENT"),
   }
 }
 

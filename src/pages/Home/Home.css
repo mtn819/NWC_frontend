@@ -60,7 +60,7 @@ ABOUT
   align-items: center;
   padding-left: 46rem;
   /*background-color: var(--themeColorBeige);*/
-  background-image: url("../../res/beigewhitebg.png");
+  background-image: url("../../res/beigeWhiteBg.png");
   background-size: cover;
   background-repeat: no-repeat;
   border-top: 16rem solid var(--themeColorRed);
@@ -89,8 +89,10 @@ MAP
 */
 
 .HomeMap {
-  padding: 140rem;
+  padding-left: 140rem;
+  padding-right: 140rem;
   padding-top: 195rem;
+  padding-bottom: 300rem;
 }
 
 .HomeMap .OutlineCard {
@@ -101,3 +103,25 @@ MAP
 }
 
 /* THE REST OF THE MAP CODE IS HANDLED IN ./Map.css */
+
+/*
+EXPLORE
+*/
+
+.HomeExplore {
+  background-color: var(--themeColorBeige);
+  padding-top: 123rem;
+}
+
+.HomeExplore .OutlineCard {
+  width: 830rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 44rem;
+}
+
+.HomeExplore_border {
+  height: 36rem;
+  background-color: var(--themeColorRed);
+  position: relative;
+}

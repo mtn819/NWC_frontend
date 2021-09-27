@@ -5,14 +5,15 @@ import { fetchBaseUrl } from '../../config/.env';
 import ReactMarkdown from "react-markdown";
 
 // Components
-import {getText} from '../../components/utilityFunctions/utilityFunctions';
+import { getText } from '../../components/utilityFunctions/utilityFunctions';
 import OutlineCard from '../../components/OutlineCard/OutlineCard';
+import CaptionedImg from '../../components/CaptionedImg/CaptionedImg';
 import Map from './Map';
 
 // Res
 import splashLogo from "../../res/splashLogo.png";
 import holdingFlag from "../../res/holdingFlag.png";
-import CaptionedImg from '../../components/CaptionedImg/CaptionedImg';
+import podiumGroup from "../../res/podiumGroup.png";
 
 function Home() {
   const [data, setData] = useState({});
@@ -68,6 +69,23 @@ function Home() {
 
         <Map/>
       </div>
+
+      {/**
+       * EXPLORE
+       */}
+      <div className="HomeExplore">
+        <OutlineCard
+          heading="EXPLORE THE SITE"
+          headingbg="var(--themeColorBeige)"
+        >
+          <ReactMarkdown>{getText(data, "EXPLORE_CARD")}</ReactMarkdown>
+        </OutlineCard>
+        <CaptionedImg
+          img={podiumGroup}
+          caption={`PHOTO BY ${getText(data, "EXPLORE_PHOTOBY")}`}
+        />
+      </div>
+      <div className="HomeExplore_border"></div>
 
     </main>
 
