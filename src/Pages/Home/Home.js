@@ -35,9 +35,15 @@ const urlify = (str) => {
   return VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + "" + str;
 }
 
+export const superSorter = (list) => {
+  const cpy = [...list];
+  cpy.sort((a, b) => a[0] - b[0]);
+  return cpy;
+}
+
 function Home() {
   //temp
-  //const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
+  // const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
 
   const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
   const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
@@ -60,6 +66,12 @@ function Home() {
   const [homeMuseum_district, setHomeMuseum_district] = useState([]);
   const [homeMagnolia_park, setHomeMagnolia_park] = useState([]);
   const [homeAstrodome, setHomeAtrodome] = useState([]);
+  const [photoByExplore, setPhotoByExplore] = useState([]);
+
+  const scroll = () => {
+    window.scrollTo(0, 0);
+    return <></>
+  }
 
   useEffect(() => {
     async function fetchData(){
@@ -124,6 +136,10 @@ function Home() {
       setHomeButton4_link(
         get("homeButton4_link")
       );
+
+      setPhotoByExplore(
+        get("PhotoByExplore")
+      );
     }
 
     fetchData();
@@ -135,6 +151,7 @@ function Home() {
 
       const get = map => {
         return (
+          superSorter(
           getWhere(req.data, 'Map', map)
           .map(p => {
             const p2 = [];
@@ -146,9 +163,26 @@ function Home() {
             p2[5] = p.pdf1[0] ? urlify(p.pdf1[0].url) : undefined;
             p2[6] = p.pdf2[0] ? urlify(p.pdf2[0].url) : undefined;
             p2[7] = p.pdf3[0] ? urlify(p.pdf3[0].url) : undefined;
+            p2[8] = p.pdf4[0] ? urlify(p.pdf4[0].url) : undefined;
+            p2[9] = p.img1[0] ? urlify(p.img1[0].url) : undefined;
+            p2[10] = p.img2[0] ? urlify(p.img2[0].url) : undefined;
+            p2[11] = p.img3[0] ? urlify(p.img3[0].url) : undefined;
+            p2[12] = p.img4[0] ? urlify(p.img4[0].url) : undefined;
+            p2[4] = [
+              p2[9], p2[10], p2[11], p2[12]
+            ]
+            p2[4] = p2[4][Math.floor(Math.random()*p2[4].length)];
+            //console.log(p);
+            p2[13] = p["citation1"] ? p["citation1"] : "";
+            //console.log(p);
+            p2[14] = p.citation2 !== undefined ? p.citation2 : "";
+            p2[15] = p.citation3 !== undefined ? p.citation3 : "";
+            p2[16] = p.citation4 !== undefined ? p.citation4 : "";
+            //console.log(p);
+            console.log(p2);
 
             return p2;
-          })  
+          }))
         );
       }
 
@@ -198,28 +232,33 @@ function Home() {
   return (
     <>
     <div className={"overlay_vid" + " " + (videoOn ? "": "overlay_vid--off")}>
+      <p 
+        className="overlay_vid_skip"
+        onClick={e => {setVideoOn(!videoOn); scroll()}}
+      >
+        Skip Video
+      </p>
       <video autoPlay muted>
         <source src={overlaymp4} type="video/mp4"></source>
       </video>
-      <a href='#'>
+      {/*<a href='#'>
         <div className="overlay_vid_continue" onClick={e => setVideoOn(!videoOn)}>
           Continue To Site -&gt;
         </div>
-      </a>
+  </a>*/}
 
-      {/**<div className="overlay_vid_card">
+      <div className="overlay_vid_card">
         <h3>Sharing Stories from</h3>
         <div className="overlay_vid_cardhr"></div>
         <p>PUTTING THE NATIONAL WOMEN'S CONFERENCE ON THE MAP</p>
         <a href='#'>
-          <div className="overlay_vid_cardbut" onClick={e => setVideoOn(!videoOn)}>Enter Site</div>
+          <div className="overlay_vid_cardbut" onClick={e => {setVideoOn(!videoOn); scroll()}}>Enter Site</div>
         </a>
-      </div>*/}
+      </div>
     </div>
 
     {!videoOn ? 
     <div className="home">
-
       {/**SPLASH */}
       <div className="homeSplash">
 
@@ -246,8 +285,10 @@ function Home() {
             <div className="homeAbout_cardHr"></div>
 
             {/*<p className="homeAbout_p1"><ReactMarkdown>{homeAbout_p}</ReactMarkdown></p>*/}
+            <div className="homeAbout_peas">
             <p className="homeAbout_p1">{homeAbout_p1}</p>
             {homeAboutReadmore ? <p className="homeAbout_p2">{homeAbout_p2}</p> : ""}
+            </div>
             <p className="homeAbout_readmore" onClick={e=>setHomeAboutReadmore(!homeAboutReadmore)}>READ {homeAboutReadmore ? "LESS" : "MORE"}</p>
           </div>
 
@@ -301,7 +342,7 @@ function Home() {
         <div className="homeExplore_img">
           <img src={explorechicks}/>
         </div>
-        <div className="homeExplore_imgSrc"><p>PHOTO BY JANE DOE</p></div>
+        <div className="homeExplore_imgSrc"><p>PHOTO BY {photoByExplore}</p></div>
 
         <div className="homeExplore_borderBot"></div>
 

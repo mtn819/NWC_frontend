@@ -106,6 +106,12 @@ ABOUT
   margin-bottom: 36rem;
 }
 
+.homeAbout_peas {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 500rem;
+}
+
 .homeAbout_p1 {
   margin-top: 76.5rem;
   padding-right: 112.78rem;
@@ -214,7 +220,7 @@ MAP
   width: calc(1171.8*var(--xUnit));
   margin-left: calc(32.01*var(--xUnit));
   margin-top: calc(54.67*var(--xUnit));
-  text-align: center;
+  text-align: left;
 }
 
 .homeMap_tabs {
@@ -276,7 +282,8 @@ EXPLORE
 }
 
 .homeExplore_card {
-  margin-left: calc(592.99*var(--xUnit));
+  margin-left: auto;
+  margin-right: auto;
   width: calc(830.47*var(--xUnit));
   min-height: calc(329*var(--xUnit));
   height: fit-content;
@@ -314,7 +321,7 @@ EXPLORE
   font-family: 'neobulletin', 'normal';
   font-weight: bold;
   width: calc(559*var(--xUnit));
-  text-align: center;
+  text-align: left;
   margin-left: calc(142.01*var(--xUnit));
 }
 

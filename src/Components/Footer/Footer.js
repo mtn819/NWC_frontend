@@ -4,6 +4,7 @@ import icon from './res/icon.png';
 import instagram from "./res/Instagram.png";
 import twitter from "./res/Twitter.png";
 import facebook from "./res/Facebook.png";
+import neh_seal from "./res/neh.jpg";
 
 import axios from '../../config/axios';
 
@@ -12,7 +13,7 @@ const getWhere = (data, key, value) => {
 }
 
 function Footer() {
-  const neh_seal = "https://www.neh.gov/sites/default/files/styles/medium/public/2019-08/NEH%20Preferred%20SealBlk820.jpg?itok=gHkChZsx";
+  //const neh_seal = "https://www.neh.gov/sites/default/files/styles/medium/public/2019-08/NEH%20Preferred%20SealBlk820.jpg?itok=gHkChZsx";
 
   const [instagramLink, setInstagramLink] = useState("/");
   const [twitterLink, setTwitterLink] = useState("/");

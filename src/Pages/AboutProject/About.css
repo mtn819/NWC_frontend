@@ -137,9 +137,13 @@ DOCUMENTS
 */
 
 .aboutDocuments {
+  width: fit-content;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-bottom: 30rem;
+  align-items: top;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .aboutDocuments a {
@@ -150,7 +154,6 @@ DOCUMENTS
   align-items: center;
   text-align: center;
   width: 400rem;
-  margin-left: 807rem;
   color: var(--colorDarkBlue);
 }
 

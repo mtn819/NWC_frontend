@@ -85,12 +85,17 @@
   color: black;
   padding-right: calc(20*var(--xUnit));
   padding-left: calc(20*var(--xUnit));
-  width: fit-content;
-  margin-left: calc(300*var(--xUnit));
+  width: 335rem;
+  margin-left: 210rem;
   border-radius: calc(40*var(--xUnit));
+  border-bottom-left-radius: 0;
   margin-top: calc(40*var(--xUnit));
-  font-size: calc(20*var(--xUnit));
-  font-family: 'subway_ds';
+  font-size: calc(40*var(--xUnit));
+  font-family: var(--fontMontserrat);
+  height: 71rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay_vid_cardbut:hover {
@@ -99,4 +104,16 @@
   opacity: 100%;
   color: white;
   background-color: var(--colorDarkBlue);
+}
+
+.overlay_vid_skip {
+  position: absolute;
+  font-size: 40rem;
+  font-family: var(--fontSubwayDs);
+  margin-left: 1500rem;
+  margin-top: 860rem;
+  color: white;
+  width: fit-content;
+  z-index: 999;
+  cursor: pointer;
 }
