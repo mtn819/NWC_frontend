@@ -1,0 +1,27 @@
+.CarouselFrame{
+  width: 925rem;
+  height: 535rem;
+  display: flex;
+  box-shadow: var(--themeBoxShadow);
+}
+
+.CarouselFrame img {
+  width: 50%;
+  height: 100%;
+}
+
+.CarouselFrame_text {
+  width: 50%;
+  padding: 32rem;
+}
+
+.CarouselFrame_text h2 {
+  font-size: 60rem;
+  font-family: var(--themeFontBabas);
+  margin-bottom: 40rem;
+}
+
+.CarouselFrame_children {
+  font-size: 24rem;
+  font-family: var(--themeFontNeo);
+}

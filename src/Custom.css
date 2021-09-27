@@ -5,6 +5,7 @@
 
 :root {
   font-size: calc(100vw/1920);
+  overflow-x: hidden;
 
   --themeFontBabas: 'babas_neue', 'normal';
   --themeFontGotham: 'gotham', 'normal';

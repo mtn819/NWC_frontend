@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactMarkdown from 'react-markdown';
 import "./OutlineCard.css";
 
 function OutlineCard({heading, children, headingbg}) {
@@ -9,7 +10,11 @@ function OutlineCard({heading, children, headingbg}) {
   return (
     <div className="OutlineCard">
       <h2 style={{backgroundColor: headingbg}}>&nbsp;{heading}&nbsp;</h2>
-      <div className="OutlineCard_children">{children}</div>
+      <div className="OutlineCard_children">
+        <ReactMarkdown>
+          {children}
+        </ReactMarkdown>
+      </div>
     </div>
   )
 }

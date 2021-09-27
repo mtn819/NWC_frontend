@@ -1,0 +1,57 @@
+.Carousel_visible {
+  position: absolute;
+  display: flex;
+  width: 3000rem;
+  margin-left: -600rem;
+  justify-content: center;
+}
+
+@keyframes Transition {
+  from { opacity: 0; }
+  to { opacity: 100; }
+}
+
+.Carousel_visible--1,
+.Carousel_visible--2 {
+  animation-name: Transition;
+  animation-duration: 1s;
+}
+
+.Carousel_link {
+  text-decoration: none;
+  color: black;
+}
+
+.Carousel_link:hover {
+  cursor: pointer;
+}
+
+.Carousel_curr {
+  animation-name: Transition;
+  animation-duration: 1s;
+  border-left: 20rem solid var(--themeColorRed);
+}
+
+.Carousel_curr:hover {
+  transform: scale(1.01) translateY(-20rem);
+  opacity: .69;
+}
+
+.Carousel_prev,
+.Carousel_next {
+  opacity: .69;
+  transform: scale(.69);
+}
+
+.Carousel_prev:hover,
+.Carousel_next:hover {
+  transform: scale(.69) translateY(-20rem);
+}
+
+.Carousel_prev {
+  margin-right: -100rem;
+}
+
+.Carousel_next {
+  margin-left: -100rem;
+}

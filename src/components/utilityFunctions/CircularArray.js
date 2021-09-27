@@ -1,6 +1,6 @@
 export class CircularArray {
-  constructor(items) {
-    this.curr = 0;
+  constructor(items, curr=0) {
+    this.curr = curr;
     this.items = items;
   }
   get(i=this.curr) {
@@ -17,6 +17,9 @@ export class CircularArray {
     ]
   }
   next() {
-    this.curr += 1;
+    return new CircularArray(this.items, this.curr+1);
+  }
+  prev() {
+    return new CircularArray(this.items, this.curr-1);
   }
 }

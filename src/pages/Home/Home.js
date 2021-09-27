@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import "./Home.css";
 import { fetchBaseUrl } from '../../config/.env';
-import ReactMarkdown from "react-markdown";
-
 // Components
 import { getText, getLink } from '../../components/utilityFunctions/utilityFunctions';
 import OutlineCard from '../../components/OutlineCard/OutlineCard';
@@ -56,7 +54,7 @@ function Home() {
           heading="ABOUT THE PROJECT"
           headingbg="var(--themeColorBeige)"
         >
-          <ReactMarkdown>{getText(data, "ABOUT_CARD")}</ReactMarkdown>
+          {getText(data, "ABOUT_CARD")}
         </OutlineCard>
         <CaptionedImg img={holdingFlag} caption={`PHOTO BY ${getText(data, "ABOUT_PHOTOBY")}`} />
       </div>
@@ -69,7 +67,7 @@ function Home() {
         <OutlineCard
           heading="INTERACTIVE MAP"
         >
-          <ReactMarkdown>{getText(data, "MAP_CARD")}</ReactMarkdown>
+          {getText(data, "MAP_CARD")}
         </OutlineCard>
 
         <Map/>
@@ -83,7 +81,7 @@ function Home() {
           heading="EXPLORE THE SITE"
           headingbg="var(--themeColorBeige)"
         >
-          <ReactMarkdown>{getText(data, "EXPLORE_CARD")}</ReactMarkdown>
+          {getText(data, "EXPLORE_CARD")}
         </OutlineCard>
         <CaptionedImg
           img={podiumGroup}
