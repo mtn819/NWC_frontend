@@ -21,7 +21,7 @@ import dots1 from './res/dots1.png';
 import dots2 from './res/dots2.png';
 import dots3 from './res/dots3.png';
 import dots4 from './res/dots4.png';
-//import overlaymp4 from './res/overlayvid.mp4';
+import overlaymp4 from './res/overlayvid.mp4';
 
 import axios from '../../config/axios';
 import VARIABLES from '../../config/.env';
@@ -43,7 +43,7 @@ export const superSorter = (list) => {
 
 function Home() {
   //temp
-  const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
+  //const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
 
   const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
   const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
