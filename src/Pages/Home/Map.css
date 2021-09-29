@@ -51,15 +51,16 @@
 }
 
 .homeMap_interactive {
-  margin-left: calc(555.14*var(--xUnit)); /*WAS 575.14*/
+  margin-left: calc(498.14*var(--xUnit)); /*WAS 575.14*/
   height: fit-content;
-  padding-top: calc(94.04*var(--xUnit));
+  padding-top: calc(0.04*var(--xUnit));
 }
 
 .homeMap_img {
   position: absolute;
-  width: calc(1044.94*var(--xUnit));
-  height: calc(861.99*var(--xUnit));
+  width: calc(1113.94*var(--xUnit));
+  height: calc(1067*var(--xUnit));
+  border: 1px solid black;
 }
 
 .homeMap_dot {

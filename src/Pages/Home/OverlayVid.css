@@ -3,7 +3,7 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  z-index: 0
+  z-index: 0;
 }
 
 .overlay_vid video {
@@ -111,9 +111,14 @@
   font-size: 40rem;
   font-family: var(--fontSubwayDs);
   margin-left: 1500rem;
-  margin-top: 860rem;
+  margin-top: 800rem;
   color: white;
   width: fit-content;
   z-index: 999;
   cursor: pointer;
+}
+
+.overlay_vid_skip:hover {
+  text-decoration: underline;
+  transform: scale(1.01);
 }

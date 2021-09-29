@@ -21,7 +21,7 @@ import dots1 from './res/dots1.png';
 import dots2 from './res/dots2.png';
 import dots3 from './res/dots3.png';
 import dots4 from './res/dots4.png';
-import overlaymp4 from './res/overlayvid.mp4';
+//import overlaymp4 from './res/overlayvid.mp4';
 
 import axios from '../../config/axios';
 import VARIABLES from '../../config/.env';
@@ -43,7 +43,7 @@ export const superSorter = (list) => {
 
 function Home() {
   //temp
-  // const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
+  const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
 
   const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
   const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
@@ -232,13 +232,14 @@ function Home() {
   return (
     <>
     <div className={"overlay_vid" + " " + (videoOn ? "": "overlay_vid--off")}>
+      {(() => {window.scrollTo(0, document.body.scrollHeight); return "";})()}
       <p 
         className="overlay_vid_skip"
         onClick={e => {setVideoOn(!videoOn); scroll()}}
       >
         Skip Video
       </p>
-      <video autoPlay muted>
+      <video autoPlay controls muted onEnded={e => {setVideoOn(!videoOn); scroll()}}>
         <source src={overlaymp4} type="video/mp4"></source>
       </video>
       {/*<a href='#'>
@@ -247,18 +248,19 @@ function Home() {
         </div>
   </a>*/}
 
-      <div className="overlay_vid_card">
+      {/*<div className="overlay_vid_card">
         <h3>Sharing Stories from</h3>
         <div className="overlay_vid_cardhr"></div>
         <p>PUTTING THE NATIONAL WOMEN'S CONFERENCE ON THE MAP</p>
         <a href='#'>
           <div className="overlay_vid_cardbut" onClick={e => {setVideoOn(!videoOn); scroll()}}>Enter Site</div>
         </a>
-      </div>
+      </div>*/}
     </div>
 
     {!videoOn ? 
     <div className="home">
+      {(() => {scroll(); return "";})()}
       {/**SPLASH */}
       <div className="homeSplash">
 
