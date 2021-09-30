@@ -238,7 +238,7 @@ function Home() {
       >
         Skip Video
       </p>
-      <video autoPlay controls onEnded={e => {setVideoOn(!videoOn); scroll()}}>
+      <video autoPlay controls>
         <source src={overlaymp4} type="video/mp4"></source>
       </video>
       {/*<a href='#'>
