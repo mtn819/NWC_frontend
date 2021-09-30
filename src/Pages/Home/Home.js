@@ -239,7 +239,7 @@ function Home() {
         Skip Video
       </p>
       <video autoPlay controls>
-        <source src={overlaymp4} type="video/mp4"></source>
+        <source src={overlaymp4} type="video/mp4;codecs=avc1.42E01E, mp4a.40.2"></source>
       </video>
       {/*<a href='#'>
         <div className="overlay_vid_continue" onClick={e => setVideoOn(!videoOn)}>
