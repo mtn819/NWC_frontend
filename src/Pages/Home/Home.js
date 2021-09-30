@@ -231,15 +231,14 @@ function Home() {
 
   return (
     <>
-    <div className={"overlay_vid" + " " + (videoOn ? "": "overlay_vid--off")}>
-      {(() => {window.scrollTo(0, document.body.scrollHeight); return "";})()}
+    <div className={"overlay_vid" + " " + (videoOn ? "": "overlay_vid--off")}>  
       <p 
         className="overlay_vid_skip"
         onClick={e => {setVideoOn(!videoOn); scroll()}}
       >
         Skip Video
       </p>
-      <video autoPlay controls muted onEnded={e => {setVideoOn(!videoOn); scroll()}}>
+      <video autoPlay controls onEnded={e => {setVideoOn(!videoOn); scroll()}}>
         <source src={overlaymp4} type="video/mp4"></source>
       </video>
       {/*<a href='#'>
@@ -260,7 +259,6 @@ function Home() {
 
     {!videoOn ? 
     <div className="home">
-      {(() => {scroll(); return "";})()}
       {/**SPLASH */}
       <div className="homeSplash">
 

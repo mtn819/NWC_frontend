@@ -15,7 +15,8 @@
 
 .homeHighlights_carouselCard img {
   height: 100%;
-  max-width: 500rem;
+  width: 100%;
+  margin-left: auto;
 }
 
 

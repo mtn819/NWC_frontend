@@ -73,6 +73,9 @@ function Footer() {
       </div>
 
       <div className="footer_bot">
+        <div className="footer_support">
+        The Sharing Stories from 1977 project appreciates the support of the following:
+        </div>
         <div className="footer_seal">
           <img src={neh_seal}/> 
         </div>

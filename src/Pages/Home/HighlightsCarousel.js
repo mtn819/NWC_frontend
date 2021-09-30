@@ -76,24 +76,30 @@ function HighlightsCarousel() {
       <Carousel autoPlay>
         <div className="homeHighlights_carouselCard">
           <img className="homeHighlights_img1" src={img1}/>
+          {/**
           <div>
             <p className="homeHighlights_cardHeader">{header1}</p>
             <p className="homeHighlights_cardText">{content1}</p>
           </div>
+           */}
         </div>
         <div className="homeHighlights_carouselCard" className="homeHighlights_carouselCard">
           <img className="homeHighlights_img2" src={img2}/>
+          {/**
           <div>
             <p className="homeHighlights_cardHeader">{header2}</p>
             <p className="homeHighlights_cardText">{content2}</p>
           </div>
+           */}
         </div>
         <div className="homeHighlights_carouselCard">
           <img className="homeHighlights_img3" src={img3}/>
+          {/**
           <div>
             <p className="homeHighlights_cardHeader">{header3}</p>
             <p className="homeHighlights_cardText">{content3}</p>
           </div>
+           */}
         </div>
       </Carousel>
     </div>
