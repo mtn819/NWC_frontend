@@ -43,7 +43,7 @@ export const superSorter = (list) => {
 
 function Home() {
   //temp
-  //const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
+  // const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
 
   const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
   const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
