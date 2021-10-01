@@ -163,9 +163,11 @@ function Home() {
 
       const get = map => {
         return (
+
           superSorter(
           getWhere(req.data, 'Map', map)
           .map(p => {
+            console.log(p);
             const p2 = [];
             p2[0] = p['Name'];
             p2[1] = p['x'];
