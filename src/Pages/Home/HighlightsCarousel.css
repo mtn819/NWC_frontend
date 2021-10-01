@@ -13,11 +13,11 @@
   padding-right: calc(12*var(--xUnit));
 }
 
-homeHighlights_img1,
-homeHighlights_img2,
-homeHighlights_img3 {
-    width: auto !important;
-    height: 100% !important;
+.homeHighlights_img1,
+.homeHighlights_img2,
+.homeHighlights_img3 {
+    width: 300rem !important;
+    height: 500rem !important;
     margin: auto;
 }
 
