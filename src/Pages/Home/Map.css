@@ -192,6 +192,7 @@ POPUP
   border-radius: calc(15*var(--xUnit));
   width: calc(150*var(--xUnit));
   height: calc(107*var(--xUnit));
+  margin: 25rem;
 }
 
 .homeMap_popupTitle {
