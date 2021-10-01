@@ -166,12 +166,12 @@ POPUP
   font-size: 20rem;
   text-align: left;
   width: 100%;
-  
+
 }
 
 .homeMap_popupSrc p {
-  margin-left: calc(11*var(--xUnit));
-  width: 100%;
+  margin-left: calc(40*var(--xUnit));
+  width: 800rem;
 }
 
 .homeMap_popupFeed {
