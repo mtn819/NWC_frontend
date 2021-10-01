@@ -240,7 +240,7 @@ function Home() {
     },
   }
 
-  const [videoOn, setVideoOn] = useState(true)
+  const [videoOn, setVideoOn] = useState(true);
   
 
   return (
@@ -252,7 +252,7 @@ function Home() {
       >
         Skip Video
       </p>
-      <video autoPlay controls muted>
+      <video autoPlay controls muted playsInline>
         <source src={overlaymp4} type="video/mp4;codecs=avc1.42E01E, mp4a.40.2"></source>
       </video>
       {/*<a href='#'>
