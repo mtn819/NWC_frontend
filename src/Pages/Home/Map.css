@@ -174,7 +174,7 @@ POPUP
   margin-right: auto;
   width: 400rem;
   font-size: 20rem;
-
+  overflow-wrap: anywhere;
 }
 
 .homeMap_popupFeed {
