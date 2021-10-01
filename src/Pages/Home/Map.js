@@ -116,7 +116,7 @@ function Map({mapImg, points}) {
                 <p>{caption1}</p>
                 <p>{caption2}</p>
                 <p>{caption3}</p>
-                <p>{caption4}</p>
+                {/*<p>{caption4}</p>*/}
               </div>
               <div className="homeMap_popupFeed">
                 <a href={pdf1} target="_blank">
