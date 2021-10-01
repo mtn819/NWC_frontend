@@ -115,7 +115,8 @@ POPUP
 }
 
 .homeMap_popupTop {
-  height: calc(565*var(--xUnit));
+  min-height: calc(565*var(--xUnit));
+  height: fit-content;
   border-radius: calc(75*var(--xUnit)) calc(75*var(--xUnit)) calc(36*var(--xUnit)) 0;
   background-color: white;
   padding-top: calc(64*var(--xUnit));
