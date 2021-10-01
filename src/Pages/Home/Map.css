@@ -164,7 +164,9 @@ POPUP
   margin-right: auto;
   margin-top: calc(20*var(--xUnit));
   font-size: 20rem;
-  text-align: center;
+  text-align: left;
+  width: 100%;
+  
 }
 
 .homeMap_popupSrc p {
