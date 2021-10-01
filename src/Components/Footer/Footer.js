@@ -67,6 +67,7 @@ function Footer() {
         <div className="footer_donate">
             <a href={donateLink}>DONATE</a>
         </div>
+        <div className="footer_bar"></div>
 
         <div className="footer_social">
           <p>SOCIAL MEDIA</p>

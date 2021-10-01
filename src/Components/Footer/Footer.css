@@ -35,13 +35,14 @@
   margin-left: 100rem;
 }
 
-.footer_about, .footer_contact, .footer_social {
+.footer_about, .footer_contact, .footer_social, .footer_donate {
   margin-left: 37.5rem;
 }
 
 .footer_home:hover,
 .footer_about:hover,
-.footer_contact:hover {
+.footer_contact:hover,
+.footer_donate:hover{
   color: white;
   text-decoration: underline;
 }
