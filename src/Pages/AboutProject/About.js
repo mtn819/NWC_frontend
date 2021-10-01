@@ -16,11 +16,13 @@ const getWhere = (data, key, value) => {
 }
 
 function About() {
-  const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY.";
+  const jack = "_";//"ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY.";
   const yt = "https://www.youtube.com";
 
   const [aboutBanner_card, setAboutBanner_card] = useState(jack);
   const [aboutImgCredit, setAboutImgCredit] = useState("JANE DOE");
+  const [aboutImgCredit_more, setAboutImgCredit_more] = useState("")
+
   const [aboutTimeline_1, setAboutTimeline_1] = useState(jack);
   const [aboutTimeline_2, setAboutTimeline_2] = useState(jack);
   const [aboutTimeline_3, setAboutTimeline_3] = useState(jack);
@@ -47,6 +49,10 @@ function About() {
       setAboutImgCredit(
         get("aboutImgCredit")
       );
+
+      setAboutImgCredit_more(
+          get("aboutImgCredit_more")
+      )
 
       setAboutTimeline_1 (
         get("aboutTimeline_1")
@@ -115,7 +121,7 @@ function About() {
             {aboutBanner_card}
           </p>
         </div>
-        <div className="aboutBanner_credit"><p>PHOTO BY {aboutImgCredit}</p></div>
+        <div className="aboutBanner_credit" title={aboutImgCredit_more}><p>PHOTO BY {aboutImgCredit}</p></div>
         <img src={chick} className="aboutBanner_chick"/>
       </div>
     
