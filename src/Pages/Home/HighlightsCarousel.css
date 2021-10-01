@@ -16,8 +16,8 @@
 .homeHighlights_img1,
 .homeHighlights_img2,
 .homeHighlights_img3 {
-    width: auto !important;
-    height: 100% !important;
+    width: auto;
+    height: 100%;
     margin: auto;
 }
 
