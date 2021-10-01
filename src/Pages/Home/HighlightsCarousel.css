@@ -1,6 +1,5 @@
 .homeHighlights_carousel {
-  width: 500rem;
-  height: auto;
+  width: 926rem;
   margin-left: calc(517*var(--xUnit));
   margin-top: calc(216.5*var(--xUnit));
 }
@@ -16,7 +15,7 @@
 
 .homeHighlights_carouselCard img {
     height: 537rem;
-    width: auto;
+    width: 300;
   margin: auto;
 }
 
