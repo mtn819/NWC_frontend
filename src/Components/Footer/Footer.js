@@ -20,6 +20,7 @@ function Footer() {
   const [facebookLink, setFacebookLink] = useState("/");
   const [contactEmail, setContactEmail] = useState("abc@defg.com");
   const [paragraph, setParagraph] = useState("all work and no play makes jack a dull boy.")
+  const [donateLink, setDonateLink] = useState("/");
 
   useEffect(() => {
     async function fetchData(){
@@ -34,6 +35,7 @@ function Footer() {
       setFacebookLink(get("FacebookLink"));
       setContactEmail(get("contactEmail"));
       setParagraph(get("paragraph"));
+      setDonateLink(get("DonateLink"));
     }
 
     fetchData();
@@ -61,6 +63,10 @@ function Footer() {
           <a href={`mailto:${contactEmail}`}><p>CONTACT</p></a>
         </div>
         <div className="footer_bar"></div>
+
+        <div className="footer_donate">
+            <a href={donateLink}>DONATE</a>
+        </div>
 
         <div className="footer_social">
           <p>SOCIAL MEDIA</p>
