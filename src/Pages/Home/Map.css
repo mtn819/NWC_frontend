@@ -170,10 +170,11 @@ POPUP
 }
 
 .homeMap_popupSrc p {
-  margin-left: calc(40*var(--xUnit));
-  width: 800rem;
-  border: 1px solid black;
-  
+  margin-left: auto;
+  margin-right: auto;
+  width: 600rem;
+  font-size: 20rem;
+
 }
 
 .homeMap_popupFeed {
