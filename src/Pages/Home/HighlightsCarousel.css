@@ -1,5 +1,6 @@
 .homeHighlights_carousel {
-  width: 926rem;
+  width: 500rem;
+  height: auto;
   margin-left: calc(517*var(--xUnit));
   margin-top: calc(216.5*var(--xUnit));
 }
