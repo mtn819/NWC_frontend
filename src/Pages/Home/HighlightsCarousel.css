@@ -21,6 +21,14 @@
     margin: auto;
 }
 
+.slide.selected .homeHighlights_img1,
+.slide.selected .homeHighlights_img2,
+.slide.selected .homeHighlights_img3 {
+    width: auto;
+    height: 100%;
+    margin: auto;
+}
+
 
 .homeHighlights_cardHeader {
   font-family: 'babas_neue', 'normal';
