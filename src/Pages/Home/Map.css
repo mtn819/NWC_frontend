@@ -172,6 +172,8 @@ POPUP
 .homeMap_popupSrc p {
   margin-left: calc(40*var(--xUnit));
   width: 800rem;
+  border: 1px solid black;
+  
 }
 
 .homeMap_popupFeed {
