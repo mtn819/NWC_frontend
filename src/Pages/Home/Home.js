@@ -182,9 +182,9 @@ function Home() {
             p2[10] = p.img2[0] ? urlify(p.img2[0].url) : undefined;
             p2[11] = p.img3[0] ? urlify(p.img3[0].url) : undefined;
             //p2[12] = p.img4[0] ? urlify(p.img4[0].url) : undefined;
-            p2[4] = [
+            /*p2[4] = [
               p2[9], p2[10], p2[11], p2[12]
-            ]
+            ]*/
             //p2[4] = p2[4][Math.floor(Math.random()*p2[4].length)];
             //console.log(p);
             p2[13] = p["citation1"] ? p["citation1"] : "";
