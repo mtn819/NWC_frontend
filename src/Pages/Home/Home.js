@@ -175,11 +175,11 @@ function Home() {
             p2[5] = p.pdf1[0] ? urlify(p.pdf1[0].url) : undefined;
             p2[6] = p.pdf2[0] ? urlify(p.pdf2[0].url) : undefined;
             p2[7] = p.pdf3[0] ? urlify(p.pdf3[0].url) : undefined;
-            p2[8] = p.pdf4[0] ? urlify(p.pdf4[0].url) : undefined;
+            //p2[8] = p.pdf4[0] ? urlify(p.pdf4[0].url) : undefined;
             p2[9] = p.img1[0] ? urlify(p.img1[0].url) : undefined;
             p2[10] = p.img2[0] ? urlify(p.img2[0].url) : undefined;
             p2[11] = p.img3[0] ? urlify(p.img3[0].url) : undefined;
-            p2[12] = p.img4[0] ? urlify(p.img4[0].url) : undefined;
+            //p2[12] = p.img4[0] ? urlify(p.img4[0].url) : undefined;
             p2[4] = [
               p2[9], p2[10], p2[11], p2[12]
             ]
@@ -189,7 +189,7 @@ function Home() {
             //console.log(p);
             p2[14] = p.citation2 !== undefined ? p.citation2 : "";
             p2[15] = p.citation3 !== undefined ? p.citation3 : "";
-            p2[16] = p.citation4 !== undefined ? p.citation4 : "";
+            //p2[16] = p.citation4 !== undefined ? p.citation4 : "";
             //console.log(p);
             console.log(p2);
 
