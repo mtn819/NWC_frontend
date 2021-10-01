@@ -174,7 +174,7 @@ POPUP
 .homeMap_popupFeed {
   margin-top: calc(10*var(--xUnit));
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding-left: calc(20*var(--xUnit));
   padding-right: calc(20*var(--xUnit));
