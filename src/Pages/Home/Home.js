@@ -21,7 +21,7 @@ import dots1 from './res/dots1.png';
 import dots2 from './res/dots2.png';
 import dots3 from './res/dots3.png';
 import dots4 from './res/dots4.png';
-import overlaymp4 from './res/overlayvid.mp4';
+//import overlaymp4 from './res/overlayvid.mp4';
 
 import axios from '../../config/axios';
 import VARIABLES from '../../config/.env';
@@ -43,9 +43,9 @@ export const superSorter = (list) => {
 
 function Home() {
   //temp
-  // const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
+  const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
 
-  const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
+  const jack = "_";
   const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
   const [homeAbout_p2, setHomeAbout_p2] = useState(jack);
   const [homeAbout_p, setHomeAbout_p] = useState(jack+jack);
@@ -67,6 +67,10 @@ function Home() {
   const [homeMagnolia_park, setHomeMagnolia_park] = useState([]);
   const [homeAstrodome, setHomeAtrodome] = useState([]);
   const [photoByExplore, setPhotoByExplore] = useState([]);
+  const [aboutImgCredit_more, setAboutImgCredit_more] = useState([]);
+  const [photoByExplore_more, setPhotoByExplore_more] = useState([]);
+
+  const [mute, setMute] = useState(false)
 
   const scroll = () => {
     window.scrollTo(0, 0);
@@ -140,6 +144,14 @@ function Home() {
       setPhotoByExplore(
         get("PhotoByExplore")
       );
+
+      setPhotoByExplore_more(
+        get("PhotoByExplore_more")
+      )
+
+      setAboutImgCredit_more(
+          get("aboutImgCredit_more")
+      )
     }
 
     fetchData();
@@ -238,7 +250,7 @@ function Home() {
       >
         Skip Video
       </p>
-      <video autoPlay controls>
+      <video autoPlay controls muted>
         <source src={overlaymp4} type="video/mp4;codecs=avc1.42E01E, mp4a.40.2"></source>
       </video>
       {/*<a href='#'>
@@ -295,7 +307,7 @@ function Home() {
           <div className="homeAbout_chicks">
             <img src={aboutpeople}/>
             <div className="homeAbout_imgCred">
-              <p>PHOTO BY {homeAboutImgCredit}</p>
+              <p title={aboutImgCredit_more}>PHOTO BY {homeAboutImgCredit}</p>
             </div>
           </div>
           
@@ -342,7 +354,7 @@ function Home() {
         <div className="homeExplore_img">
           <img src={explorechicks}/>
         </div>
-        <div className="homeExplore_imgSrc"><p>PHOTO BY {photoByExplore}</p></div>
+        <div className="homeExplore_imgSrc" title={photoByExplore_more}><p>PHOTO BY {photoByExplore}</p></div>
 
         <div className="homeExplore_borderBot"></div>
 
