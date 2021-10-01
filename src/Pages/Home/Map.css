@@ -157,10 +157,9 @@ POPUP
 
 .homeMap_popupSrc {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   color: var(--colorLightGray);
-  margin-left: auto;
   margin-right: auto;
   margin-top: calc(20*var(--xUnit));
   font-size: 20rem;
@@ -169,6 +168,7 @@ POPUP
 
 .homeMap_popupSrc p {
   margin-left: calc(11*var(--xUnit));
+  width: 100%;
 }
 
 .homeMap_popupFeed {
