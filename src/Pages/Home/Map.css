@@ -225,9 +225,6 @@ POPUP
   margin-left: calc(97*var(--xUnit));
 }
 
-.homeMap_popupDescription h4 {
-  width: calc(513*var(--xUnit));
-}
 
 .homeMap_popupDescription {
   margin-top: calc(3*var(--xUnit));
