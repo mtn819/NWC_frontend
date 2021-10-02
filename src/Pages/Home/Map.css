@@ -229,7 +229,7 @@ POPUP
   width: calc(513*var(--xUnit));
 }
 
-.homeMap_popupDescription p {
+.homeMap_popupDescription {
   margin-top: calc(3*var(--xUnit));
   width: calc(560*var(--xUnit));
 }
