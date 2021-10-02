@@ -3,7 +3,7 @@ import './Map.css';
 import maptick from './res/maptick.png';
 
 import Arrow from './Arrow';
-import { Markdown } from 'react-bootstrap-icons';
+import ReactMarkdown from 'react-markdown';
 
 // point format: [Name, x, y, Description]
 function Map({mapImg, points}) {
@@ -145,7 +145,7 @@ function Map({mapImg, points}) {
 
             <div className="homeMap_popupLocation">{popup}</div>
             <div className="homeMap_popupDescription">
-              <Markdown>{desc}</Markdown>
+              <ReactMarkdown>{desc}</ReactMarkdown>
             </div>
           </div>
         :""}
