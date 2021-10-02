@@ -308,7 +308,7 @@ function Home() {
 
           <div className="homeAbout_chicks">
             <img src={aboutpeople}/>
-            <div className="homeAbout_imgCred">
+            <div title={aboutImgCredit_more} className="homeAbout_imgCred">
               <p title={aboutImgCredit_more}>PHOTO BY {homeAboutImgCredit}</p>
             </div>
           </div>
