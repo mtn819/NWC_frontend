@@ -1,0 +1,58 @@
+/*
+SPLASH
+*/
+
+.homeSplash {
+    display: flex;
+    background-image: url("../../res/imgs/mapbg.png");
+    padding: 1rem;
+}
+
+.homeSplash > * {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeSplash_toform {
+    width: 90%;
+}
+
+.homeSplash_card {
+    background-color: var(--colorLightBlue);
+    width: fit-content;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: white;
+}
+
+.homeSplash_card > h2 {
+    max-width: 9ch;
+    font-family: var(--fontSubwayDs);
+    font-size: 2rem;
+    margin: auto;
+    text-align: center;
+    padding-bottom: .5rem;
+    border-bottom: .2rem solid var(--colorDeepRed);
+    margin-bottom: .5rem;
+}
+
+.homeSplash_card > p {
+    font-size: 1.5rem;
+    max-width: 30ch;
+    text-align: center;
+}
+
+/*
+ABOUT
+*/
+
+.homeAbout {
+    display: flex;
+    background-color: var(--colorBeige);
+}
+
+.homeAbout > * {
+    width: 100%;
+}

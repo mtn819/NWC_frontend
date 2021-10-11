@@ -1,0 +1,73 @@
+/*
+CEREMONY
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*
+FONT IMPORTS
+*/
+
+
+@font-face {
+  font-family: 'babas_neue';
+  src: url('res/SS_Fonts/bebas_neue/BebasNeue-Regular.woff') format('woff');
+  font-weight: normal;
+  font-size: normal;
+}
+
+@font-face {
+  font-family: 'gotham';
+  src: url('res/SS_Fonts/gotham_book/gotham_book_regular/gotham_book_regular.woff') format('woff');
+  font-weight: normal;
+  font-size: normal;
+}
+
+@font-face {
+  font-family: 'neobulletin';
+  src: url('res/SS_Fonts/neobulletin/neobulletin_limited_free_version.woff') format('woff');
+  font-weight: normal;
+  font-size: normal;
+}
+
+@font-face {
+  font-family: 'subway_ds';
+  src: url('res/SS_Fonts/subway_ds/subway_black.woff') format('woff');
+  font-weight: normal;
+  font-size: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*
+THEMING
+*/
+
+:root{
+  --colorLightGray: #CCC9C9; /*Like seen in the text of homeMap's popup*/
+  --colorDarkBlue: #142F45; /*Like seen in the background of the Navigation*/
+  --colorLightBlue: #9EC7E1; /*Like seen in the links of Navigation*/
+  --colorDeepRed: #B32525; /*Like seen on the border of Navigation*/
+  --colorDeepOrange: #CB4E28; /*Like seen on the border of Navigation*/
+  --colorDeepYellow: #FFD048; /*Like seen on the bottom border of the homeAbout Section*/
+  --colorBeige: #FFF4E8; /*Like seen the homeAbout section*/
+
+  --fontBabasNeue: 'babas_neue';
+  --fontGotham: 'gotham';
+  --fontNeoBulletin: 'neobulletin';
+  --fontSubwayDs: 'subway_ds', 'normal';
+  --fontMontserrat: 'Montserrat', sans-serif;
+
+  font-size: calc(16px + 1vw);
+  font-family: var(--fontBabasNeue);
+}
