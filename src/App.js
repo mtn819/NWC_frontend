@@ -1,49 +1,24 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
-import './Custom.css';
-import Footer from "./Components/Footer/Footer";
-import Navigation from './Components/Navigation/Navigation';
-import Home from './Pages/Home/Home';
-import WhyTheNWCMatters from "./Pages/WhyTheNWCMatters/WhyTheNWCMatters";
-import MappingNWC from "./MappingNWC/MappingNWC";
-import DiscoverNWCStories from "./DiscoverNWCStories/DiscoverNWCStories";
-import HowToContribute from "./HowToContribute/HowToContribute";
-import About from "./Pages/AboutProject/About";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <Router className="App">
-      <Navigation/>
-
-      <Switch>
-        <Route path = "/MappingNWC">
-          <MappingNWC/>
-        </Route>
-        <Route path = "/DiscoverNWCStories">
-          <DiscoverNWCStories/>
-        </Route>
-        <Route path = "/HowToContribute">
-          <HowToContribute/>
-        </Route>
-        <Route path = "/WhyTheNWCMatters">
-          <WhyTheNWCMatters/>
-        </Route>
-        <Route path = "/About">
-          <About></About>
-        </Route>
-        <Route path = "/">
-          <Home/>
-        </Route>
-      </Switch>
-
-      <Footer/>
-    </Router> 
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
