@@ -1,21 +1,51 @@
+// CORE
 import React, { useState, useEffect } from 'react'
 import "./Home.css";
+import { fetchBaseUrl } from '../../config/.env';
+
+// RES
 import toform from "../../res/imgs/toform.png";
 import aboutpeople from "../../res/imgs/aboutpeople.png";
+import explorepeople from "../../res/imgs/explorepeople.png";
+import buttonwhy from "../../res/imgs/buttonwhy.png";
+import buttondiscover from "../../res/imgs/buttondiscover.png";
+import buttonmapping from "../../res/imgs/buttonmapping.png";
+import buttonhow from "../../res/imgs/buttonhow.png";
+
+// COMPONENTS
 import Card from '../../components/Card/Card';
 import CaptionedImg from "../../components/CaptionedImg/CaptionedImg";
 import Map from './Map';
-import { fetchBaseUrl } from '../../config/.env';
 import { getSafe, processPage } from '../../components/util/util';
+import ReactMarkdown from 'react-markdown';
+import MyCarousel from '../../components/MyCarousel/MyCarousel';
+import { loadCarousel } from '../../components/MyCarousel/carouselLoader';
 
 function Home() {
-    const [state, setState] = useState({});
+    const [state, setState] = useState([]);
 
     useEffect(() => {
-        fetch([fetchBaseUrl, "PAGES?PAGE=HOME"].join('/'))
-        .then(req => req.json())
-        .then(data => processPage(data, state, setState))
-    }, []);
+        try {
+            fetch([fetchBaseUrl, "PAGES?PAGE=HOME"].join('/'))
+            .then(req => req.json())
+            .then(data => processPage(data, setState))
+        } catch(e) {
+            console.log(e);
+        }
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+
+    const [carousel, setCarousel] = useState([]);
+
+    useEffect(() => {
+        try{
+            fetch([fetchBaseUrl, "CAROUSELS?PAGE=HOME"].join('/'))
+            .then(req => req.json())
+            .then(data => loadCarousel(data, carousel, setCarousel));
+        } catch(e) {
+            console.log(e);
+        }
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className="home">
@@ -63,6 +93,73 @@ function Home() {
                 <Map/>
             </div>
 
+            {/**EXPLORE */}
+            <div className="homeExplore">
+                <Card
+                    header="EXPLORE THE SITE"
+                    headerBackdrop="var(--colorBeige)"
+                    content={getSafe(state, "EXPLORE_TEXT")}
+                />
+                <CaptionedImg
+                    src={explorepeople}
+                    caption={getSafe(state, "EXPLORE_CAPTION")}
+                    caption_more={getSafe(state, "EXPLORE_CAPTION_MORE")}
+                />
+            </div>
+            <div className="homeExplore_hr"></div>
+
+            {/**BUTTONS */}
+            {/**WHY DISCOVER MAP HOW */}
+            <div className="homeButtons">
+                <a href={getSafe(state, "BUTTONS_LINK_WHY")}>
+                    <div className="homeButtons_item">
+                        <img src={buttonwhy} alt="Why the NWC Matters"/>
+                        <div className="homeButtons_text">
+                            <ReactMarkdown>
+                                {getSafe(state, "BUTTONS_TEXT_WHY")}
+                            </ReactMarkdown>
+                        </div>
+                    </div>
+                </a>
+                <a href={getSafe(state, "BUTTONS_LINK_DISCOVER")}>
+                    <div className="homeButtons_item">
+                        <img src={buttondiscover} alt="Discover NWC Stories"/>
+                        <div className="homeButtons_text">
+                            <ReactMarkdown>
+                                {getSafe(state, "BUTTONS_TEXT_DISCOVER")}
+                            </ReactMarkdown>
+                        </div>
+                    </div>
+                </a>
+                <a href={getSafe(state, "BUTTONS_LINK_MAPPING")}>
+                    <div className="homeButtons_item">
+                        <img src={buttonmapping} alt="Mapping the NWC"/>
+                        <div className="homeButtons_text">
+                            <ReactMarkdown>
+                                {getSafe(state, "BUTTONS_TEXT_MAPPING")}
+                            </ReactMarkdown>
+                        </div>
+                    </div>
+                </a>
+                <a href={getSafe(state, "BUTTONS_LINK_HOW")}>
+                    <div className="homeButtons_item">
+                        <img src={buttonhow} alt="How to contribute"/>
+                        <div className="homeButtons_text">
+                            <ReactMarkdown>
+                                {getSafe(state, "BUTTONS_TEXT_HOW")}
+                            </ReactMarkdown>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            {/**HIGHLIGHTS */}
+            <div className="homeHighlights">
+                <div className="homeHighlights_card">
+                    <h2>SITE HIGHLIGHTS</h2>
+                    <MyCarousel carouselData={carousel}/>
+                </div>
+            </div>
         </div>
     )
 }

@@ -61,14 +61,15 @@ ABOUT
 .homeAbout .card {
     width: 80%;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     margin-bottom: 1rem;
 }
 
 .homeAbout_hr {
-    border-top: .5rem solid var(--colorDeepRed);
-    border-bottom: .5rem solid var(--colorDeepOrange);
-    background-color: var(--colorDeepRed);
+    border-top: .4rem solid var(--colorDeepRed);
+    background-color: var(--colorDeepOrange);
+    border-bottom: .4rem solid var(--colorDeepYellow);
+    height: 1.2rem;
     position: relative;
 }
 
@@ -76,9 +77,97 @@ ABOUT
 MAP
 */
 
+.homeMap {
+    margin-bottom: 4rem;
+}
+
 .homeMap .card {
     width: 70%;
     margin: auto;
     margin-top: 4rem;
     margin-bottom: 2rem;
+}
+
+/*
+EXPLORE
+*/
+.homeExplore {
+    background-color: var(--colorBeige);
+    padding-top: 4rem;
+    border-bottom: 1rem solid var(--colorDeepRed);
+}
+
+.homeExplore .card {
+    width: 60%;
+    margin: auto;
+}
+
+/*
+BUTTONS
+*/
+
+.homeButtons {
+    background-image: url("../../res/imgs/backgrounddots.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+}
+
+.homeButtons a {
+    text-decoration: none;
+    color: black;
+}
+
+.homeButtons_item {
+    width: 40vw;
+    display: flex;
+    font-size: .8rem;
+    align-items: center;
+    margin-left: -1rem;
+}
+
+.homeButtons_item:hover {
+    transform: scale(1.01);
+    opacity: .69;
+}
+
+.homeButtons_item > img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.homeButtons_text {
+    font-family: var(--fontNeoBulletin);
+    font-size: .6rem;
+    margin-top: 1rem;
+}
+
+/*
+HIGHLIGHTS
+*/
+
+.homeHighlights {
+    background-image: url("../../res/imgs/mapbg.png");
+    padding: 2rem;
+}
+
+.homeHighlights_card {
+    width: 60%;
+    background-color: var(--colorBeige);
+    padding: 1rem;
+    margin: auto;
+}
+
+.homeHighlights_card > h2 {
+    width: fit-content;
+    margin: auto;
+    color: var(--colorDeepRed);
+}
+
+.homeHighlights .myCarousel {
+    padding: 1rem;
 }

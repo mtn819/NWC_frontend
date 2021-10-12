@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './custom.css';
 import Router from './Router';
 import reportWebVitals from './reportWebVitals';
+import Footer from './components/Footer/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router />
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

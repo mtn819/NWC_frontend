@@ -14,6 +14,11 @@
     margin-left: 2rem;
 }
 
+.navbar a.navbar_a--active {
+    pointer-events: none;
+}
+
+.navbar a.navbar_a--active,
 .navbar a:hover {
     text-decoration: underline;
     color: white;

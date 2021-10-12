@@ -1,3 +1,5 @@
+import { fetchBaseUrl } from "../../config/.env";
+
 export function getSafe(data, ...keys) {
     let curr = data;
     keys.forEach(k => {
@@ -10,7 +12,7 @@ export function getSafe(data, ...keys) {
     return curr;
 }
 
-export function processPage(data, state, setState) {
+export function processPage(data, setState) {
     const stateTextfields = {};
     const textfields = getSafe(data, 0, "TEXTFIELD");
     if(textfields !== undefined) {
@@ -18,9 +20,11 @@ export function processPage(data, state, setState) {
             stateTextfields[getSafe(tf, "SECTION")] =
                 getSafe(tf, "CONTENT");
         })
-        setState({
-            ...state,
-            ...stateTextfields,
-        })
+        setState(stateTextfields)
     }
+}
+
+export function media2url(media) {
+    const mediaUrl = getSafe(media, "url");
+    return [fetchBaseUrl, mediaUrl].join(''); // mediaUrl already comes with the /
 }
