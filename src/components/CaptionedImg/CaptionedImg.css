@@ -1,0 +1,18 @@
+.captionedImg > img {
+    width: 100%;
+}
+
+.captionedImg_caption {
+    height: 2rem;
+    color: var(--colorBeige);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorDarkBlue);
+    border: 1px solid black;
+    width: fit-content;
+    margin-top: -2.5rem;
+    position: relative;
+}

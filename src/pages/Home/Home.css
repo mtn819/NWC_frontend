@@ -36,6 +36,7 @@ SPLASH
     padding-bottom: .5rem;
     border-bottom: .2rem solid var(--colorDeepRed);
     margin-bottom: .5rem;
+    text-align: center;
 }
 
 .homeSplash_card > p {
@@ -55,4 +56,29 @@ ABOUT
 
 .homeAbout > * {
     width: 100%;
+}
+
+.homeAbout .card {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.homeAbout_hr {
+    border-top: .5rem solid var(--colorDeepRed);
+    border-bottom: .5rem solid var(--colorDeepOrange);
+    background-color: var(--colorDeepRed);
+    position: relative;
+}
+
+/*
+MAP
+*/
+
+.homeMap .card {
+    width: 70%;
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
 }
