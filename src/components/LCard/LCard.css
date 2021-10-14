@@ -1,0 +1,33 @@
+.lcard {
+    width: fit-content;
+    min-width: 10rem;
+    min-height: 4rem;
+    height: fit-content;
+    background-color: white;
+    padding: 1rem;
+}
+
+.lcard_topright {
+    border-top: .2rem solid var(--colorDeepRed);
+    border-right: .2rem solid var(--colorDeepRed);
+    position: relative;
+    float: right;
+    width: 2rem;
+    height: 2rem;
+    margin-right: -2rem;
+}
+
+.lcard_text {
+    margin-top: .4rem;
+}
+
+.lcard_bottomleft {
+    position: absolute;
+    display: flex;
+    border-bottom: .2rem solid var(--colorDeepRed);
+    border-left: .2rem solid var(--colorDeepRed);
+    width: 2rem;
+    height: 2rem;
+    align-items: flex-end;
+    margin-left: -2rem;
+}

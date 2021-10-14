@@ -25,26 +25,20 @@ function Home() {
     const [state, setState] = useState([]);
 
     useEffect(() => {
-        try {
-            fetch([fetchBaseUrl, "PAGES?PAGE=HOME"].join('/'))
-            .then(req => req.json())
-            .then(data => processPage(data, setState))
-        } catch(e) {
-            console.log(e);
-        }
+        fetch([fetchBaseUrl, "PAGES?PAGE=HOME"].join('/'))
+        .then(req => req.json())
+        .then(data => processPage(data, setState))
+        .catch(err => console.log(err));
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 
     const [carousel, setCarousel] = useState([]);
 
     useEffect(() => {
-        try{
-            fetch([fetchBaseUrl, "CAROUSELS?PAGE=HOME"].join('/'))
-            .then(req => req.json())
-            .then(data => loadCarousel(data, carousel, setCarousel));
-        } catch(e) {
-            console.log(e);
-        }
+        fetch([fetchBaseUrl, "CAROUSELS?PAGE=HOME"].join('/'))
+        .then(req => req.json())
+        .then(data => loadCarousel(data, carousel, setCarousel))
+        .catch(err => console.log(err));
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
@@ -73,7 +67,7 @@ function Home() {
                         maxLength={200}
                     />
                 </div>
-                <div className="homeAbout_col">
+                <div className="homeAbout_col homeAbout_imgCol">
                     <CaptionedImg
                         src={aboutpeople}
                         caption={getSafe(state, "ABOUT_CAPTION")}

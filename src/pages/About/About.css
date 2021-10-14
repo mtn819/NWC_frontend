@@ -1,0 +1,157 @@
+/*
+SPLASH
+*/
+
+.aboutSplash {
+    display: flex;
+    background-image: url("../../res/imgs/mapbg.png");
+    padding-top: .5rem;
+    align-items: center;
+}
+
+.aboutSplash_button {
+    width: 80%;
+}
+
+.aboutSplash_button > img {
+    width: 100%;
+}
+
+.aboutSplash_card {
+    width: 140%;
+}
+
+.aboutSplash_card .lcard {
+    width: 85%;
+    margin: auto;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--fontNeoBulletin);
+    font-size: .55rem;
+    font-weight: bold;
+}
+
+.aboutSplash_img {
+    width: 80%;
+    align-self: flex-end;
+}
+
+/*
+TIMELINE
+*/
+
+/*NOTE: THE SPACING BETWEEN TIMELINE AND PDFS IS A BIT TRICKY.*/
+
+.aboutTimeline > h2 {
+    margin: 1rem auto;
+    width: fit-content;
+    font-size: 2rem;
+}
+
+.aboutTimeline_body {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+
+.aboutTimeline_num {
+    position: absolute;
+}
+
+.aboutTimeline_num > h2 {
+    position: absolute;
+    color: rgba(117,178,224,.5);
+    font-size: 4rem;
+}
+
+.aboutTimeline_num > p {
+    font-family: var(--fontMontserrat);
+    font-size: .45rem;
+    width: 25ch;
+    margin-top: 2rem;
+    margin-left: .5rem;
+    background-color: white;
+}
+
+.aboutTimeline_1 {
+    margin-top: 32vw;
+    margin-left: 6%;
+}
+
+.aboutTimeline_2 {
+    margin-top: -19vw;
+    margin-left: 23%;
+}
+
+.aboutTimeline_3 {
+    margin-top: 32vw;
+    margin-left: 41%;
+}
+
+.aboutTimeline_4 {
+    margin-top: -19vw;
+    margin-left: 58%;
+}
+
+.aboutTimeline_5 {
+    margin-top: 32vw;
+    margin-left: 76%;
+}
+
+.aboutTimeline_mainImg {
+    width: 100%;
+}
+
+/*
+PDFS
+*/
+
+.aboutPdfs {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
+    margin-bottom: 4rem;
+}
+
+.aboutPdfs > a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--colorDarkBlue);
+    width: 10ch;
+    text-align: center;
+}
+
+.aboutPdfs > a:hover {
+    text-decoration: underline;
+    color: var(--colorDeepYellow);
+    text-decoration-color: var(--colorDarkBlue);
+}
+
+/*BOTTOM*/
+.aboutBottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutBottom > * {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.aboutBottom img {
+    margin-bottom: 4rem;
+}
+
+.aboutBottom_meet {
+    width: 90%;
+}
+
+.aboutBottom_chart {
+    width: 80%;
+}

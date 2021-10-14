@@ -1,0 +1,24 @@
+.welcome {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.welcome_skip {
+    position: absolute;
+    top: 85%;
+    color: white;
+    text-decoration: none;
+    z-index: 1;
+    font-family: var(--fontSubwayDs);
+}
+
+.welcome_skip:hover {
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+.welcome_video {
+    height: calc(95vh - 3rem);
+    margin: auto;
+}

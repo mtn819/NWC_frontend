@@ -14,13 +14,10 @@ function Footer() {
     const [state, setState] = useState([]);
 
     useEffect(() => {
-        try {
-            fetch([fetchBaseUrl, "PAGES?PAGE=FOOTER"].join('/'))
-            .then(response => response.json())
-            .then(data => processPage(data, setState))
-        } catch(e) {
-
-        }
+        fetch([fetchBaseUrl, "PAGES?PAGE=FOOTER"].join('/'))
+        .then(response => response.json())
+        .then(data => processPage(data, setState))
+        .catch(err => console.log(err));
     }, [])
 
     return (
@@ -51,7 +48,7 @@ function Footer() {
             <div className="footer_bottom">
                 <p>THE SHARING STORIES FROM 1977 PROJECT APPRECIATES THE SUPPORT OF THE FOLLOWING:</p>
                 <img src={natendow} alt="NATIONAL ENDOWMENT FOR THE HUMANITIES"/>
-                <p>{getSafe(state, "BOTTOM_TEXT")}</p>
+                <p className="footer_bottomText">{getSafe(state, "BOTTOM_TEXT")}</p>
             </div>
         </div>
     )

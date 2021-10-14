@@ -7,7 +7,7 @@ POPUP
     z-index: 5;
     background-color: rgba(0, 0, 0, .69);
     height: 40rem;
-    margin-top: -1rem;
+    margin-top: -4rem;
 }
 
 .mapPopup_exit:hover {

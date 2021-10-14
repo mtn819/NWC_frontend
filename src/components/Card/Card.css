@@ -1,6 +1,6 @@
 .card {
     border: .3rem solid var(--colorDeepRed);
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 .card h2 {
@@ -17,8 +17,9 @@
 .card_content {
     font-family: var(--fontNeoBulletin);
     margin-bottom: 1rem;
-    font-size: .8rem;
+    font-size: .6rem;
     margin-top: -1rem;
+    font-weight: bold;
 }
 
 .card_readmore:hover {

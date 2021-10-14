@@ -14,13 +14,10 @@ import ReactMarkdown from 'react-markdown';
 function Map() {
 
     useEffect(() => {
-        try{
-            fetch([fetchBaseUrl, "map-points"].join('/'))
-            .then(res => res.json())
-            .then(data => loadMap(data, setMapData));
-        } catch(e) {
-            console.log(e);
-        }
+        fetch([fetchBaseUrl, "map-points"].join('/'))
+        .then(res => res.json())
+        .then(data => loadMap(data, setMapData))
+        .catch(err => console.log(err));
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
     
     const [mapData, setMapData] = useState();

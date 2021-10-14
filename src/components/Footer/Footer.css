@@ -56,3 +56,7 @@
 .footer_bottom > img {
     width: 10rem;
 }
+
+.footer_bottomText {
+    max-width: 90ch;
+}
