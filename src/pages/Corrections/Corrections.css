@@ -1,0 +1,61 @@
+.correctionsBlue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(158, 199, 225, .4);
+}
+
+.correctionsBlue > h1 {
+    margin-bottom: 1rem;
+}
+
+.correctionsBlue > p {
+    max-width: 60ch;
+    font-size: .9rem;
+    margin-bottom: 2rem;
+}
+
+.correctionsBlue > input,
+.correctionsBlue > textarea {
+    width: 80%;
+    margin-bottom: .8rem;
+    border-radius: 4px;
+    padding-left: 4ch;
+}
+
+.correctionsBlue > input:focus,
+.correctionsBlue > textarea:focus {
+    outline: none;
+    border: 1px solid blue;
+}
+
+.correctionsBlue > input {
+    min-height: 1rem;
+}
+
+.correctionsBlue > textarea {
+    min-height: 8rem;
+}
+
+.corrections_button {
+    border: none;
+    background-color: var(--colorDeepRed);
+    width: 5rem;
+    font-family: var(--fontBabasNeue);
+    color: white;
+    padding: .2rem;
+    font-size: .8rem;
+    border-radius: 50px;
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+.corrections_button:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}

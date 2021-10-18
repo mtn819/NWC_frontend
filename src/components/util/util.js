@@ -44,3 +44,9 @@ export function processPage(data, setState) {
         ...stateMedia,
     })
 }
+
+export function processPageOld(data, setState) {
+    const newState = {};
+    data.forEach(datum => newState[getSafe(datum, "Section")] = getSafe(datum, "Content"));
+    setState(newState);
+}

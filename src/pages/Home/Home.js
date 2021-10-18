@@ -16,13 +16,14 @@ import buttonhow from "../../res/imgs/buttonhow.png";
 import Card from '../../components/Card/Card';
 import CaptionedImg from "../../components/CaptionedImg/CaptionedImg";
 import Map from './Map';
-import { getSafe, processPage } from '../../components/util/util';
+import { getSafe, processPage, processPageOld } from '../../components/util/util';
 import ReactMarkdown from 'react-markdown';
 import MyCarousel from '../../components/MyCarousel/MyCarousel';
 import { loadCarousel } from '../../components/MyCarousel/carouselLoader';
 
 function Home() {
     const [state, setState] = useState([]);
+    const [stateOld, setStateOld] = useState([]);
 
     useEffect(() => {
         fetch([fetchBaseUrl, "PAGES?PAGE=HOME"].join('/'))
@@ -38,6 +39,14 @@ function Home() {
         fetch([fetchBaseUrl, "CAROUSELS?PAGE=HOME"].join('/'))
         .then(req => req.json())
         .then(data => loadCarousel(data, carousel, setCarousel))
+        .catch(err => console.log(err));
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    // OLD API; DATA GETS LOADED INTO stateOld
+    useEffect(() => {
+        fetch([fetchBaseUrl, "content-homes"].join('/'))
+        .then(req => req.json())
+        .then(data => processPageOld(data, setStateOld))
         .catch(err => console.log(err));
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 

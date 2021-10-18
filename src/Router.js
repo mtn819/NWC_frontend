@@ -9,12 +9,20 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Welcome from "./pages/Welcome/Welcome";
+import Corrections from "./pages/Corrections/Corrections";
+import ToolkitsEducators from "./pages/Toolkits/ToolkitsEducators";
 
 function Router() {
   return (
     <BrowserRouter>
       <Navbar></Navbar>
       <Switch>
+        <Route path="/toolkits/educators">
+          <ToolkitsEducators/>
+        </Route>
+        <Route path="/corrections">
+          <Corrections/>
+        </Route>
         <Route path="/about">
           <About/>
         </Route>
