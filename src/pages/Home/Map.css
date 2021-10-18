@@ -98,6 +98,7 @@ TABS
     margin: auto;
     width: fit-content;
     border-bottom: .1rem solid var(--colorDarkBlue);
+    margin-bottom: 2rem;
 }
 
 .mapTabs_tab {
