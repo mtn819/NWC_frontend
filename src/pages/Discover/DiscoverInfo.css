@@ -1,0 +1,77 @@
+/*
+BANNER
+*/
+
+.discoverInfoBanner {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+}
+
+.discoverInfoBanner a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.discoverInfoBanner a:hover {
+    text-decoration: underline;
+}
+
+.discoverInfoBanner h1 {
+    font-weight: normal;
+}
+
+.discoverInfoBanner_right {
+    text-align: right;
+}
+
+/*
+BODY
+*/
+
+.discoverInfoBody {
+    display: flex;
+    padding: 1rem;
+}
+
+/*
+BODY_LEFT
+*/
+
+.discoverInfoBody_profile {
+    background-color: rgba(245, 245, 245, 1);
+    width: 10rem;
+    padding-bottom: 1rem;
+}
+
+.discoverInfoBody_profile > h3,
+.discoverInfoBody_profile > p {
+    padding: 0 .6rem;
+}
+
+.discoverInfoBody_profile > h3 {
+    font-size: .8rem;
+    font-weight: normal;
+    margin-top: .5rem;
+}
+
+.discoverInfoBody_profile > p {
+    font-size: .5rem;
+    font-family: var(--fontMontserrat);
+    font-weight: bold;
+}
+
+.discoverInfoBody_pfp {
+    width: 100%;
+}
+
+.discoverInfoBody_caption {
+    font-size: .5rem;
+    margin-bottom: 1rem;
+}
+
+.discoverInfoBody_role {
+    margin-bottom: .4rem;
+}
+

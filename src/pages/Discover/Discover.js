@@ -6,6 +6,7 @@ import LCard from '../../components/LCard/LCard';
 import CaptionedImg from '../../components/CaptionedImg/CaptionedImg';
 import FeaturedCard from './FeaturedCard';
 import searchPlaceholder from "../../res/imgs/searchplaceholder.png";
+import discoverbannerperson from "../../res/imgs/discoverbannerperson.png";
 
 function Discover() {
     return (
@@ -16,7 +17,7 @@ function Discover() {
                 <img src={discoverButton} alt="Discover NWC Stories"/>
                 <LCard text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."/>
                 <CaptionedImg
-                    src={podiumperson}
+                    src={discoverbannerperson}
                     caption="PHOTO BY JANE DOE"
                     caption_more="Here are some more details" />
             </div>

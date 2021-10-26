@@ -12,6 +12,7 @@ import Welcome from "./pages/Welcome/Welcome";
 import Corrections from "./pages/Corrections/Corrections";
 import ToolkitsEducators from "./pages/Toolkits/ToolkitsEducators";
 import Discover from "./pages/Discover/Discover";
+import DiscoverInfo from "./pages/Discover/DiscoverInfo";
 
 function Router() {
   return (
@@ -23,6 +24,9 @@ function Router() {
         </Route>
         <Route path="/corrections">
           <Corrections/>
+        </Route>
+        <Route path="/discover/:storyId">
+          <DiscoverInfo/>
         </Route>
         <Route path="/discover">
           <Discover/>

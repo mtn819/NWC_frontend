@@ -9,14 +9,18 @@ BANNER
     background-color: var(--colorBeige);
 }
 
-.discoverBanner > img,
-.discoverBanner > .captionedImg {
+.discoverBanner > img {
     width: 25%;
 }
 
 .discoverBanner > .lcard {
     width: 35%;
     margin: 2rem 0;
+}
+
+.discoverBanner > .captionedImg {
+    width: 30%;
+    align-self: flex-end;
 }
 
 /*
