@@ -13,6 +13,7 @@ function Navbar() {
         <nav className="navbar">
             <Link to="/" className={location.pathname === "/" ? "navbar_a--active" : ""}>HOME</Link>
             <Link to="/about" className={location.pathname === "/about" ? "navbar_a--active" : ""}>ABOUT</Link>
+            <Link to="/discover" className={location.pathname === "/discover" ? "navbar_a--active" : ""}>DISCOVER</Link>
         </nav>
     )
 }
