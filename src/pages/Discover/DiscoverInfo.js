@@ -5,6 +5,9 @@ import {
 } from "react-router-dom";
 import "./DiscoverInfo.css";
 import mayaangelou from "../../res/imgs/mayaangelou.png";
+import videofiller from "../../res/imgs/videofiller.png";
+import ReactMarkdown from 'react-markdown';
+import docfiller from "../../res/imgs/docfiller1.png";
 
 function DiscoverInfo({}) {
     const { storyId } = useParams(); // WILL BE USED TO GRAB STRAPI DATA
@@ -21,6 +24,29 @@ function DiscoverInfo({}) {
             "NATIONAL COMMISSIONER",
             `WROTE POEM "TO FORM A MORE PERFECT UNION"`,
             "WROTE THE NEW DECLARATION OF SENTIMENTS",
+        ],
+        videofiller: videofiller,
+        tags: ["ACTIVISM", "AFRICAN-AMERICAN", "AUTHOR", "CIVIL RIGHTS", "POETRY", "WRITER"],
+        bigquote1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        text: `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        `,
+        archive: [
+            // [thumbnail, link]
+            [docfiller, "https://www.youtube.com/watch?v=LXkF0gAqkdw", "tituloN"],
+            [docfiller, "https://www.youtube.com/watch?v=LXkF0gAqkdw", "tituloN"],
+            [docfiller, "https://www.youtube.com/watch?v=LXkF0gAqkdw", "tituloN"],
+            [docfiller, "https://www.youtube.com/watch?v=LXkF0gAqkdw", "tituloN"],
         ]
     });
 
@@ -69,12 +95,55 @@ function DiscoverInfo({}) {
                 </div>
 
                 {/**BODY_RIGHT */}
-                <div clasName="dicoverInfoBody_right">
-                    ABCDEFG
-                </div>
+                <div className="discoverInfoBody_right">
+                    
+                    <img className="discoverInfoBody_video" src={pageState.videofiller} alt="video"/>
 
+                    <div className="discoverInfoBody_tagh">
+                        <h3>USER TAGS</h3>
+                    </div>
+                    <div className="discoverInfoBody_tags">{
+                        pageState.tags.map(t => <p className="discoverInfoBody_tag">
+                            {t}
+                        </p>)
+                    }</div>
+
+                    <h2 className="discoverInfoBody_bioh">
+                        BIOGRAPHY
+                    </h2>
+
+                    <div className="discoverInfoBody_bigquote discoverInfoBody_bigquote1">
+                        <p>{pageState.bigquote1}</p>
+                    </div>
+
+                    <div className="discoverInfoBody_text">
+                        <ReactMarkdown>
+                            {pageState.text}
+                        </ReactMarkdown>
+                    </div>
+
+                    <div className="discoverInfoBody_bigquote discoverInfoBody_bigquote1">
+                        <p>{pageState.bigquote1}</p>
+                    </div>
+                </div>
             </div>
 
+            {/**ARCHIVE */}
+            <div className="discoverInfoArchive">
+                <h2>EXPLORE MORE FROM THE ARCHIVE</h2>
+                <div className="discoverInfoArchive_items">
+                    {pageState.archive.map(item => <a className="discoverInfoArchive_item" href={item[1]}>
+                        <img className="discoverInfoArchive_thumb" src={item[0]} alt="Archive Paper" key={Math.random()*Math.random()}/>
+                        <p className="discoverInfoArchive_title">{item[2]}</p>
+                    </a>)}
+                </div>
+            </div>
+
+            {/**STORIES */}
+            <div className="discoverInfoStories">
+                <h2>EXPLORE MORE STORIES</h2>
+                <p>Have to turn other cards into solid components</p>
+            </div>
         </div>
     )
 }
