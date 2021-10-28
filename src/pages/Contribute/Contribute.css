@@ -1,0 +1,133 @@
+/*
+BANNER
+*/
+
+.contributeBanner {
+    background-image: url("../../res/imgs/mapbg.png");
+    display: flex;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.contributeBanner img {
+    width: 100%;
+}
+
+.contributeBanner_button {
+    width: 25%;
+    align-self: center;
+}
+
+.contributeBanner_card {
+    width: 50%;
+    align-self: center;
+    border-left: .8rem solid var(--colorDeepRed);
+    background-color: white;
+    padding: 1rem 2rem;
+}
+
+.contributeBanner .captionedImg {
+    width: 25%;
+}
+
+/*
+BUTTONS
+*/
+
+.contributeButtons {
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+
+.contributeButtons img {
+    width: 100%;
+}
+
+/*
+INVOLVE
+*/
+
+.contributeInvolve {
+    padding: 2rem;
+}
+
+.contributeInvolve > h2 {
+    margin-bottom: 2rem;
+}
+
+.contributeInvolve_panel {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.contributeInvolve_thumbnail img {
+    width: 100%;
+}
+
+.contributeInvolve_thumbnail {
+    width: 40%;
+}
+
+.contributeInvolve_text {
+    width: 60%;
+    margin: .5rem 1rem;
+}
+
+.contributeInvolve_text > h3 {
+    margin-bottom: 1rem;
+}
+
+.contributeInvolve_text > p {
+    font-size: .65rem;
+    max-width: 70ch;
+    font-family: var(--fontNeoBulletin);
+}
+
+/*
+SUBMISSIONS
+*/
+
+.contributeSubmissions {
+    background-color: var(--colorBeige);
+    padding: 2rem 1rem;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 2.5rem;
+}
+
+.contributeSubmissions > h2 {
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.contributeSubmissions > p {
+    max-width: 70ch;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 2.5rem;
+    font-size: .7rem;
+}
+
+.contributeSubmissions_buttonRow {
+    display: flex;
+    justify-content: center;
+}
+
+.contributeSubmissions_buttonRow > button {
+    border: none;
+    background-color: var(--colorDeepRed);
+    color: white;
+    font-family: var(--fontBabasNeue);
+    font-size: .75rem;
+    margin: 0 1rem;
+    padding: .5rem 1rem;
+    border-radius: 999px;
+}
+
+.contributeSubmissions_buttonRow > button:hover {
+    transform: scale(1.01);
+    opacity: .9;
+    cursor: pointer;
+}

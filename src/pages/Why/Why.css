@@ -1,0 +1,109 @@
+/*
+BANNER
+*/
+
+.whyBanner {
+    display: flex;
+    background-image: url("../../res/imgs/mapbg.png");
+}
+.whyBanner_button > img {
+    width: 100%;
+}
+
+.whyBanner_button {
+    width: 25%;
+}
+
+.whyBanner_card {
+    width: 50%;
+    border-left: .8rem solid var(--colorDeepRed);
+    height: fit-content;
+    align-self: center;
+    padding: .5rem 1rem;
+    background-color: white;
+}
+
+.whyBanner_card > h2 {
+    text-align: center;
+}
+
+.whyBanner .captionedImg {
+    width: 25%;
+}
+
+.whyBanner_coverup {
+    height: 1rem;
+    background-color: white;
+    margin-top: -0.2px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/*
+DOCUMENTS
+*/
+
+.whyDocuments {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 4rem;
+}
+
+.whyDocuments > h2 {
+    margin-bottom: 1rem;
+    color: var(--colorDarkBlue);
+    font-weight: normal;
+}
+
+.whyDocuments_docs {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.whyDocuments_docs img {
+    width: 80%;
+}
+
+.whyDocuments_docs img:hover {
+    transform: scale(1.01);
+    opacity: .95;
+}
+
+/*
+TIMELINE
+*/
+
+.whyTimeline {
+    margin-bottom: 2rem;
+}
+
+/*
+ESSAYS
+*/
+
+.whyEssays {
+    padding: 1rem 2rem;
+    width: 90%;
+    margin: 4rem auto;
+    background-color: var(--colorBeige);
+}
+
+.whyEssays > h2 {
+    font-weight: normal;
+    color: var(--colorDeepRed);
+    margin-bottom: 1rem;
+}
+
+.whyEssays_essays { 
+    display: flex;
+}
+
+.whyEssays_essays img {
+    width: calc(100% - 1rem);
+}
+
+.whyEssays_essays img:hover {
+    transform: scale(1.01);
+    opacity: .95;
+}

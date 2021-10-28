@@ -13,6 +13,8 @@ import Corrections from "./pages/Corrections/Corrections";
 import ToolkitsEducators from "./pages/Toolkits/ToolkitsEducators";
 import Discover from "./pages/Discover/Discover";
 import DiscoverInfo from "./pages/Discover/DiscoverInfo";
+import Why from "./pages/Why/Why";
+import Contribute from "./pages/Contribute/Contribute";
 
 function Router() {
   return (
@@ -21,6 +23,12 @@ function Router() {
       <Switch>
         <Route path="/toolkits/educators">
           <ToolkitsEducators/>
+        </Route>
+        <Route path="/contribute">
+          <Contribute/>
+        </Route>
+        <Route path="/why">
+          <Why/>
         </Route>
         <Route path="/corrections">
           <Corrections/>
