@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     useParams,
     Link,
@@ -8,6 +8,7 @@ import mayaangelou from "../../res/imgs/mayaangelou.png";
 import videofiller from "../../res/imgs/videofiller.png";
 import ReactMarkdown from 'react-markdown';
 import docfiller from "../../res/imgs/docfiller1.png";
+import {processPageOld} from "../../components/util/util";
 
 function DiscoverInfo({}) {
     const { storyId } = useParams(); // WILL BE USED TO GRAB STRAPI DATA

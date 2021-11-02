@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Discover.css";
 import discoverButton from "../../res/imgs/buttondiscover.png";
 import podiumperson from "../../res/imgs/podiumperson.png";
@@ -7,8 +7,24 @@ import CaptionedImg from '../../components/CaptionedImg/CaptionedImg';
 import FeaturedCard from './FeaturedCard';
 import searchPlaceholder from "../../res/imgs/searchplaceholder.png";
 import discoverbannerperson from "../../res/imgs/discoverbannerperson.png";
+import {fetchBaseUrl} from "../../config/.env.js";
+import { loadcards } from './cardloader';
 
 function Discover() {
+    const [cards, setCards] = useState([]);
+
+    const [page, setPage] = useState(0);
+
+    useEffect(() => {
+        fetch([fetchBaseUrl, `content-discover-stories?_start=${page}&_limit=2`].join('/'))
+        .then(response => response.json())
+        .then(data => loadcards(data, setCards))
+        .then(() => console.log(cards))
+        .catch(console.log);
+
+        console.log(`Page: ${page}.`);
+    }, [page]);
+
     return (
         <div className="discover">
             
@@ -49,8 +65,18 @@ function Discover() {
 
             {/**CARDS */}
             <div className="discoverCards_border"></div>
+            <button type="button" onClick={() => page == 2 ? setPage(0) : setPage(2)}>
+                Change the Page
+            </button>
+
             <div className="discoverCards">
-                <FeaturedCard
+                {cards.map(c => <FeaturedCard
+                    imgSrc={podiumperson}
+                    location={c.state}
+                    href={`/discover/${c.id}`}
+                />)}
+
+                {/*<FeaturedCard
                     imgSrc={podiumperson}
                     location="Shanghai, CH"
                     href="https://www.youtube.com"
@@ -94,7 +120,7 @@ function Discover() {
                     imgSrc={podiumperson}
                     location="Shanghai, CH"
                     href="https://www.youtube.com"
-                />
+                />*/}
             </div>
 
         </div>
