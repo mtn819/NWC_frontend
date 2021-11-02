@@ -71,7 +71,9 @@ function Home() {
                 <div className="homeAbout_col">
                     <Card
                         header="ABOUT THE PROJECT"
-                        content={getSafe(state, "ABOUT_TEXT")}
+                        content={
+                            `${getSafe(stateOld, "homeAbout_p1")} ${getSafe(stateOld, "homeAbout_p2")}`
+                        }
                         headerBackdrop="var(--colorBeige)"
                         maxLength={200}
                     />
@@ -79,8 +81,8 @@ function Home() {
                 <div className="homeAbout_col homeAbout_imgCol">
                     <CaptionedImg
                         src={aboutpeople}
-                        caption={getSafe(state, "ABOUT_CAPTION")}
-                        caption_more={getSafe(state, "ABOUT_CAPTION_MORE")}
+                        caption={getSafe(stateOld, "aboutImgCredit")}
+                        caption_more={getSafe(stateOld, "aboutImgCredit_more")}
                     />
                 </div>
             </div>
@@ -90,7 +92,7 @@ function Home() {
             <div className="homeMap">
                 <Card
                     header="Interactive Map"
-                    content={getSafe(state, "MAP_TEXT")}
+                    content={getSafe(stateOld, "homeMap_text")}
                     headerBackdrop="white"
                 />
                 <Map/>
@@ -101,12 +103,12 @@ function Home() {
                 <Card
                     header="EXPLORE THE SITE"
                     headerBackdrop="var(--colorBeige)"
-                    content={getSafe(state, "EXPLORE_TEXT")}
+                    content={getSafe(stateOld, "homeExplore_text")}
                 />
                 <CaptionedImg
                     src={explorepeople}
-                    caption={getSafe(state, "EXPLORE_CAPTION")}
-                    caption_more={getSafe(state, "EXPLORE_CAPTION_MORE")}
+                    caption={getSafe(stateOld, "PhotoByExplore")}
+                    caption_more={getSafe(stateOld, "PhotoByExplore_more")}
                 />
             </div>
             <div className="homeExplore_hr"></div>
