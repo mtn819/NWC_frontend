@@ -116,42 +116,42 @@ function Home() {
             {/**BUTTONS */}
             {/**WHY DISCOVER MAP HOW */}
             <div className="homeButtons">
-                <a href={getSafe(state, "BUTTONS_LINK_WHY")}>
+                <a href={getSafe(stateOld, "homeButton1_link")}>
                     <div className="homeButtons_item">
                         <img src={buttonwhy} alt="Why the NWC Matters"/>
                         <div className="homeButtons_text">
                             <ReactMarkdown>
-                                {getSafe(state, "BUTTONS_TEXT_WHY")}
+                                {getSafe(stateOld, "homeButton1_text")}
                             </ReactMarkdown>
                         </div>
                     </div>
                 </a>
-                <a href={getSafe(state, "BUTTONS_LINK_DISCOVER")}>
+                <a href={getSafe(stateOld, "homeButton2_link")}>
                     <div className="homeButtons_item">
                         <img src={buttondiscover} alt="Discover NWC Stories"/>
                         <div className="homeButtons_text">
                             <ReactMarkdown>
-                                {getSafe(state, "BUTTONS_TEXT_DISCOVER")}
+                                {getSafe(stateOld, "homeButton2_text")}
                             </ReactMarkdown>
                         </div>
                     </div>
                 </a>
-                <a href={getSafe(state, "BUTTONS_LINK_MAPPING")}>
+                <a href={getSafe(stateOld, "homeButton3_link")}>
                     <div className="homeButtons_item">
                         <img src={buttonmapping} alt="Mapping the NWC"/>
                         <div className="homeButtons_text">
                             <ReactMarkdown>
-                                {getSafe(state, "BUTTONS_TEXT_MAPPING")}
+                                {getSafe(stateOld, "homeButton3_text")}
                             </ReactMarkdown>
                         </div>
                     </div>
                 </a>
-                <a href={getSafe(state, "BUTTONS_LINK_HOW")}>
+                <a href={getSafe(stateOld, "homeButton4_link")}>
                     <div className="homeButtons_item">
                         <img src={buttonhow} alt="How to contribute"/>
                         <div className="homeButtons_text">
                             <ReactMarkdown>
-                                {getSafe(state, "BUTTONS_TEXT_HOW")}
+                                {getSafe(stateOld, "homeButton4_text")}
                             </ReactMarkdown>
                         </div>
                     </div>

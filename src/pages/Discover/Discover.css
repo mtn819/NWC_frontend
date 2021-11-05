@@ -43,6 +43,7 @@ FEATURED
 
 .discoverFeatured_cards > * {
     margin: 1rem 0;
+    width: 30%;
 }
 
 /*
@@ -74,4 +75,5 @@ CARDS
 
 .discoverCards > * {
     margin: 1rem 0;
+    width: 30%;
 }

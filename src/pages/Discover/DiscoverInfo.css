@@ -181,6 +181,17 @@ BODY_RIGHT
     font-family: var(--fontMontserrat);
 }
 
+.discoverInfoBody_sources h3 {
+    font-weight: normal;
+    margin-bottom: .6rem;
+}
+
+.discoverInfoBody_sources p {
+    font-size: .6rem;
+    font-family: var(--fontMontserrat);
+    margin-bottom: .4rem;
+}
+
 /*
 ARCHIVE
 */
@@ -222,4 +233,31 @@ ARCHIVE
 
 .discoverInfoArchive_thumb {
     width: 100%;
+}
+
+/*
+STORIES
+*/
+
+.discoverInfoStories {
+    padding: 1rem;
+    background-color: var(--colorBeige);
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+
+.discoverInfoStories > h2 {
+    text-align: center;
+    color: var(--colorDeepRed);
+    padding-bottom: 2rem;
+}
+
+.discoverInfoStories_stories {
+    display: flex;
+}
+
+.discoverInfoStories_stories > * {
+    background-color: white;
+    width: 100%;
+    margin: 0 .2rem;
 }

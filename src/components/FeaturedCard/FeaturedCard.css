@@ -1,8 +1,7 @@
 .featuredCard {
     position: relative;
-    box-shadow: 0 0 .5rem 0 rgba(0, 0, 0);
+    box-shadow: 0 0 .2rem 0 rgba(0, 0, 0);
     border-radius: 8px;
-    width: 13rem;
     padding-bottom: 1.4rem;
     color: black;
 }

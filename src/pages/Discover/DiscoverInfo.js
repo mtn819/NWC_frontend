@@ -9,6 +9,10 @@ import videofiller from "../../res/imgs/videofiller.png";
 import ReactMarkdown from 'react-markdown';
 import docfiller from "../../res/imgs/docfiller1.png";
 import {processPageOld} from "../../components/util/util";
+import { fetchBaseUrl } from '../../config/.env';
+import { loaddiscover } from "./discoverInfoLoader";
+import { loadcards } from "./cardloader";
+import FeaturedCard from '../../components/FeaturedCard/FeaturedCard';
 
 function DiscoverInfo({}) {
     const { storyId } = useParams(); // WILL BE USED TO GRAB STRAPI DATA
@@ -29,6 +33,7 @@ function DiscoverInfo({}) {
         videofiller: videofiller,
         tags: ["ACTIVISM", "AFRICAN-AMERICAN", "AUTHOR", "CIVIL RIGHTS", "POETRY", "WRITER"],
         bigquote1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        bigquote2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
         text: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -42,6 +47,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         `,
+        sources: [],
         archive: [
             // [thumbnail, link]
             [docfiller, "https://www.youtube.com/watch?v=LXkF0gAqkdw", "tituloN"],
@@ -50,6 +56,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             [docfiller, "https://www.youtube.com/watch?v=LXkF0gAqkdw", "tituloN"],
         ]
     });
+
+    // grab page data
+    useEffect(() => {
+        fetch([fetchBaseUrl, `content-discover-stories?_id=${storyId}`].join('/'))
+        .then(res => res.json())
+        .then(data => loaddiscover(data, setPageState, pageState))
+        .then(data => console.log(pageState))
+        .catch(err => console.log(err));
+    }, []);
+
+    const [cards, setCards] = useState([]);
+
+    // grab featureds
+    useEffect(() => {
+        fetch([fetchBaseUrl, `content-discover-stories?featured=true`].join('/'))
+        .then(res => res.json())
+        .then(data => loadcards(data, setCards))
+        .then(data => console.log(cards))
+        .catch(err => console.log(err));
+    }, []);
 
     return (
         <div className="discoverInfo">
@@ -124,7 +150,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     </div>
 
                     <div className="discoverInfoBody_bigquote discoverInfoBody_bigquote1">
-                        <p>{pageState.bigquote1}</p>
+                        <p>{pageState.bigquote2}</p>
+                    </div>
+
+                    <div className="discoverInfoBody_sources">
+                        <h3>Sources</h3>
+                        {pageState.sources.map(s => <p>
+                            {s}
+                        </p>)}
                     </div>
                 </div>
             </div>
@@ -143,7 +176,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             {/**STORIES */}
             <div className="discoverInfoStories">
                 <h2>EXPLORE MORE STORIES</h2>
-                <p>Have to turn other cards into solid components</p>
+                <div className="discoverInfoStories_stories">
+                    { cards.map(c => <a href={`/discover/${c.id}`}><FeaturedCard
+                        id={c.id}
+                        name={c.name}
+                        imgSrc={c.img}
+                        location={c.state}
+                        role={c.role}
+                    /></a>) }
+                </div>
             </div>
         </div>
     )
