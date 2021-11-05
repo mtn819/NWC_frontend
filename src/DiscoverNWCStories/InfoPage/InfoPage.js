@@ -1,6 +1,7 @@
 import React from 'react'
 
-import './InfoPage.css'
+import './InfoPage.css';
+import InfoVideo from './InfoVideo.js';
 import filler from '../res/fillerimg.png';
 import { useParams } from 'react-router-dom';
 
@@ -19,7 +20,9 @@ function InfoPage({
   const quoteTop = "\"All work and no play makes Jack a dull boy.\" ";
   const bioText = "All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. ";
   const quoteBot = "\"All work and no play makes Jack a dull boy.\" ";
-  const video = "https://cdn.vox-cdn.com/thumbor/RWw0ruSCoa1PrEtjEfjXyQofY8M=/0x0:2040x1360/1200x800/filters:focal(857x517:1183x843)/cdn.vox-cdn.com/uploads/chorus_image/image/69176604/acastro_180403_1777_youtube_0001.0.jpg";
+  //const video = "https://cdn.vox-cdn.com/thumbor/RWw0ruSCoa1PrEtjEfjXyQofY8M=/0x0:2040x1360/1200x800/filters:focal(857x517:1183x843)/cdn.vox-cdn.com/uploads/chorus_image/image/69176604/acastro_180403_1777_youtube_0001.0.jpg";
+  const videoSRC = "https://av.lib.uh.edu:443/master_files/wh246s17n/embed";
+  const videoTitle = "Barbara Trincilla interview";
 
   return (
     <div>
@@ -64,7 +67,7 @@ function InfoPage({
 
         <div className="info_rightsplit">
           <div className="info_video">
-            <img src={video}/>
+            <InfoVideo src={videoSRC} title={videoTitle} />
           </div>
 
           <div className="info_tags">
