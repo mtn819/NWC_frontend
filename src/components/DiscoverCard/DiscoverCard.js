@@ -6,13 +6,13 @@ import redlogo from "./redlogo.png";
 import teallogo from "./teallogo.png";
 
 function DiscoverCard({
-    //color, // yellow, blue, red, teal
+    color, // yellow, blue, red, teal
     href,
     name,
     role,
     state,
 }) {
-    const color = ["yellow", "blue", "red", "teal"][parseInt(Math.random() * 4)];
+    // const color = ["yellow", "blue", "red", "teal"][parseInt(Math.random() * 4)];
     let logo;
     let border;
     const getborder = color => `4px solid ${color}`;

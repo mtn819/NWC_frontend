@@ -10,11 +10,20 @@ import discoverbannerperson from "../../res/imgs/discoverbannerperson.png";
 import {fetchBaseUrl} from "../../config/.env.js";
 import { loadcards } from './cardloader';
 import DiscoverCard from '../../components/DiscoverCard/DiscoverCard';
+import { getSafe, processPageOld } from "../../components/util/util";
 
 function Discover() {
     const [cards, setCards] = useState([]);
 
     const [page, setPage] = useState(0);
+
+    const [input, setInput] = useState("");
+
+    const [filter, setFilter] = useState("");
+
+    const [stateOld, setStateOld] = useState({
+        bannerText: "abcdefg",
+    }); // Handles the text throughout page.
 
     useEffect(() => {
         fetch([fetchBaseUrl, `content-discover-stories`/* + `?_start=${page}&_limit=2`*/].join('/'))
@@ -24,7 +33,24 @@ function Discover() {
         .catch(console.log);
 
         console.log(`Page: ${page}.`);
-    }, [page]);
+    }, []);
+
+    useEffect(() => {
+        fetch([fetchBaseUrl, "content-discovers"].join('/'))
+        .then(req => req.json())
+        .then(data => processPageOld(data, setStateOld))
+        .catch(err => console.log(err));
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    function filterCards(){
+        const urlFilter = `${filter}=${input}`;
+        fetch([fetchBaseUrl, `content-discover-stories?${urlFilter}`/* + `?_start=${page}&_limit=2`*/].join('/'))
+        .then(response => response.json())
+        .then(data => loadcards(data, setCards))
+        .then(() => console.log(cards))
+        .catch(console.log);
+    }
+
 
     return (
         <div className="discover">
@@ -32,7 +58,7 @@ function Discover() {
             {/**BANNER */}
             <div className="discoverBanner">
                 <img src={discoverButton} alt="Discover NWC Stories"/>
-                <LCard text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."/>
+                <LCard text={getSafe(stateOld, "BannerText")}/>
                 <CaptionedImg
                     src={discoverbannerperson}
                     caption="PHOTO BY JANE DOE"
@@ -51,27 +77,20 @@ function Discover() {
                         imgSrc={c.img}
                         location={c.state}
                         role={c.role}
-                    /></a>) }
-                    {/*<FeaturedCard
-                        imgSrc={podiumperson}
-                        location="Shanghai, CH"
-                        href="https://www.youtube.com"
-                    />
-                    <FeaturedCard
-                        imgSrc={podiumperson}
-                        location="Shanghai, CH"
-                        href="https://www.youtube.com"
-                    />
-                    <FeaturedCard
-                        imgSrc={podiumperson}
-                        location="Shanghai, CH"
-                        href="https://www.youtube.com"
-                    />*/}
+                    /></a>)
+                    }
                 </div>
             </div>
 
             {/**SEARCH */}
-            <img className="discoverSearch" src={searchPlaceholder} alt="abcdefg"/>
+            <div className="discoverSearch">
+                <input value={input} onChange={e=>setInput(e.target.value)}/>
+                <div className="discoverSearch_sortBy">
+                    <p>SORT BY:</p>
+                    <p onClick={filterCards}>Go!</p>
+                    <p onClick={() => setFilter("Name")}>NAME</p>
+                </div>
+            </div>
 
             {/**CARDS */}
             <div className="discoverCards_border"></div>
@@ -80,60 +99,15 @@ function Discover() {
             </button>*/}
 
             <div className="discoverCards">
-                {cards.map(c => <DiscoverCard
+                {cards.map((value, index) => <DiscoverCard
                     key={Math.random()}
-                    color={["yellow", "blue", "red", "teal"][parseInt(Math.random() * 4)]}
-                    href={`/discover/${c.id}`}
-                    name={c.name}
-                    role={c.role}
-                    state={c.state}
-                />)}
-
-                {/*<FeaturedCard
-                    imgSrc={podiumperson}
-                    location="Shanghai, CH"
-                    href="https://www.youtube.com"
-                />
-                <FeaturedCard
-                    imgSrc={podiumperson}
-                    location="Shanghai, CH"
-                    href="https://www.youtube.com"
-                />
-                <FeaturedCard
-                    imgSrc={podiumperson}
-                    location="Shanghai, CH"
-                    href="https://www.youtube.com"
-                />
-                <FeaturedCard
-                    imgSrc={podiumperson}
-                    location="Shanghai, CH"
-                    href="https://www.youtube.com"
-                />
-                <FeaturedCard
-                    imgSrc={podiumperson}
-                    location="Shanghai, CH"
-                    href="https://www.youtube.com"
-                />
-                <FeaturedCard
-                    imgSrc={podiumperson}
-                    location="Shanghai, CH"
-                    href="https://www.youtube.com"
-                />
-                <FeaturedCard
-                    imgSrc={podiumperson}
-                    location="Shanghai, CH"
-                    href="https://www.youtube.com"
-                />
-                <FeaturedCard
-                    imgSrc={podiumperson}
-                    location="Shanghai, CH"
-                    href="https://www.youtube.com"
-                />
-                <FeaturedCard
-                    imgSrc={podiumperson}
-                    location="Shanghai, CH"
-                    href="https://www.youtube.com"
-                />*/}
+                    color={["yellow", "blue", "red", "teal"][index % 4]}
+                    href={`/discover/${value.id}`}
+                    name={value.name}
+                    role={value.role}
+                    state={value.state}
+                />)
+                }
             </div>
 
         </div>

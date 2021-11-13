@@ -14,5 +14,9 @@ function d2card(datum) {
 };
 
 export function loadcards(data, setState) {
-    setState(data.map(d2card));
+    try{
+        setState(data.map(d2card));
+    } catch(e) {
+        console.log(e);
+    }
 }

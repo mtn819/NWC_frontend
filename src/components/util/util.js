@@ -45,9 +45,12 @@ export function processPage(data, setState) {
     })
 }
 
-export function processPageOld(data, setState) {
+export function processPageOld(data, setState, state={}) {
     const newState = {};
     data.forEach(datum => newState[getSafe(datum, "Section")] = getSafe(datum, "Content"));
-    setState(newState);
+    setState({
+        ...state,
+        ...newState,
+    });
     console.log(newState)
 }

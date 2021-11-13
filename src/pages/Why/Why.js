@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Why.css";
 import button from "../../res/imgs/buttonwhy.png";
 import bannerhuman from "../../res/imgs/whybannerhuman.png";
 import "./Why.css";
 import CaptionedImg from "../../components/CaptionedImg/CaptionedImg";
+import { processPageOld } from "../../components/util/util";
+import { fetchBaseUrl } from "../../config/.env.js";
+import { loadThumbnail } from "./thumbnailLoder";
+
 
 function Why() {
     const [page, setPage] = useState({
@@ -21,8 +25,29 @@ function Why() {
             ["https://static01.nyt.com/images/2015/06/21/arts/21SIMONE/21SIMONE-superJumbo.jpg", "https://www.youtube.com/watch?v=VRU2qs82DAg"],
             ["https://static01.nyt.com/images/2015/06/21/arts/21SIMONE/21SIMONE-superJumbo.jpg", "https://www.youtube.com/watch?v=VRU2qs82DAg"],
             ["https://static01.nyt.com/images/2015/06/21/arts/21SIMONE/21SIMONE-superJumbo.jpg", "https://www.youtube.com/watch?v=VRU2qs82DAg"],
-        ]
+        ],
     });
+
+    useEffect(() => {   
+        fetch([fetchBaseUrl, "content-whys"].join('/'))
+        .then(req => req.json())
+        .then(data => processPageOld(data, setPage, page))
+        .catch(err => console.log(err));                                                                
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(() => {
+        fetch([fetchBaseUrl, "content-why-documents"])
+        .then(req => req.json())
+        .then(data => processPageOld(data, setPage, page))
+        .catch(err => console.log(err));
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(() => {                   
+        fetch([fetchBaseUrl, "content-why-essays"])
+        .then(req => req.json())
+        .then(data => processPageOld(data, setPage, page))
+        .catch(err => console.log(err));
+    }, []);
 
     return (
         <div className="why">
