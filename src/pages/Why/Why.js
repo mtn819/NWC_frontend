@@ -42,12 +42,12 @@ function Why() {
         .catch(err => console.log(err));
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    useEffect(() => {                   
+    useEffect(() => {
         fetch([fetchBaseUrl, "content-why-essays"])
         .then(req => req.json())
         .then(data => processPageOld(data, setPage, page))
         .catch(err => console.log(err));
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className="why">

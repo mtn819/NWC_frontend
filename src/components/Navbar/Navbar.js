@@ -6,14 +6,20 @@ import {
 
 import "./Navbar.css";
 
-function Navbar() {
+function NavbarLink({text, url}){
     const location = useLocation("/");
+    return <Link to={url} className={location.pathname === url ? "navbar_a--active" : ""}>{text}</Link>
+}
+
+function Navbar() {
 
     return (
         <nav className="navbar">
-            <Link to="/" className={location.pathname === "/" ? "navbar_a--active" : ""}>HOME</Link>
-            <Link to="/about" className={location.pathname === "/about" ? "navbar_a--active" : ""}>ABOUT</Link>
-            <Link to="/discover" className={location.pathname === "/discover" ? "navbar_a--active" : ""}>DISCOVER</Link>
+            <NavbarLink text="HOME" url="/"/>
+            <NavbarLink text="ABOUT" url="/about"/>
+            <NavbarLink text="DISCOVER" url="/discover"/>
+            <NavbarLink text="WHY THE NWC MATTERS" url="/why"/>
+            <NavbarLink text="HOW TO CONTRIBUTE" url="/contribute"/>
         </nav>
     )
 }
