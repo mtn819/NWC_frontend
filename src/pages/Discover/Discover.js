@@ -19,8 +19,6 @@ function Discover() {
 
     const [input, setInput] = useState("");
 
-    const [filter, setFilter] = useState("");
-
     const [stateOld, setStateOld] = useState({
         bannerText: "abcdefg",
     }); // Handles the text throughout page.
@@ -42,6 +40,7 @@ function Discover() {
         .catch(err => console.log(err));
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+    const [filter, setFilter] = useState("");
     function filterCards(){
         const urlFilter = `${filter}=${input}`;
         fetch([fetchBaseUrl, `content-discover-stories?${urlFilter}`/* + `?_start=${page}&_limit=2`*/].join('/'))

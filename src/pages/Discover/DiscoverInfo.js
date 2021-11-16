@@ -13,6 +13,7 @@ import { fetchBaseUrl } from '../../config/.env';
 import { loaddiscover } from "./discoverInfoLoader";
 import { loadcards } from "./cardloader";
 import FeaturedCard from '../../components/FeaturedCard/FeaturedCard';
+import InfoVideo from '../../components/InfoVideo/InfoVideo';
 
 function DiscoverInfo({}) {
     const { storyId } = useParams(); // WILL BE USED TO GRAB STRAPI DATA
@@ -30,7 +31,8 @@ function DiscoverInfo({}) {
             `WROTE POEM "TO FORM A MORE PERFECT UNION"`,
             "WROTE THE NEW DECLARATION OF SENTIMENTS",
         ],
-        videofiller: videofiller,
+        AvalonUrl: "abcdefg",
+        AvalonTitle: "querty",
         tags: ["ACTIVISM", "AFRICAN-AMERICAN", "AUTHOR", "CIVIL RIGHTS", "POETRY", "WRITER"],
         bigquote1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
         bigquote2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
@@ -124,7 +126,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 {/**BODY_RIGHT */}
                 <div className="discoverInfoBody_right">
                     
-                    <img className="discoverInfoBody_video" src={pageState.videofiller} alt="video"/>
+                    <InfoVideo src={pageState.AvalonUrl} title={pageState.AvalonTitle} />
 
                     <div className="discoverInfoBody_tagh">
                         <h3>USER TAGS</h3>
