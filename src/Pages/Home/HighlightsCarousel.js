@@ -16,7 +16,7 @@ const getWhere = (data, key, value) => {
 }
 
 const urlify = (str) => {
-  return VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + "" + str;
+  return [VARIABLES.fetchBaseUrl, str].join('/');//VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + "" + str;
 }
 
 function HighlightsCarousel() {
@@ -34,41 +34,38 @@ function HighlightsCarousel() {
   
 
   useEffect(() => {
-    async function fetchData(){
-      const req = await axios.get('/content-homes');
-
-      const get = (section) => {
-        return getWhere(req.data, 'Section', section)['Content'];
-      };
-
-      setHeader1(get("homeHighlights_header1"));
-      setContent1(get("homeHighlights_content1"));
-      setHeader2(get("homeHighlights_header2"));
-      setContent2(get("homeHighlights_content2"));
-      setHeader3(get("homeHighlights_header3"));
-      setContent3(get("homeHighlights_content3"));
-    }
-
-
-    fetchData();
+      fetch([VARIABLES.fetchBaseUrl, "content-homes"].join('/'))
+      .then(res => res.json())
+      .then(data => {
+        const get = (section) => {
+          return getWhere(data, 'Section', section)['Content'];
+        };
+  
+        setHeader1(get("homeHighlights_header1"));
+        setContent1(get("homeHighlights_content1"));
+        setHeader2(get("homeHighlights_header2"));
+        setContent2(get("homeHighlights_content2"));
+        setHeader3(get("homeHighlights_header3"));
+        setContent3(get("homeHighlights_content3"));
+      })
+      .catch(err => console.log(err));
   }, []);
 
   useEffect(() => {
-    async function fetchData(){
-      const req = await axios.get('/content-home-carousels');
+    fetch([VARIABLES.fetchBaseUrl, "content-home-carousels"].join('/'))
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
 
       const get = (section) => {
-        console.log(urlify(getWhere(req.data, 'Section', section)["Image"][0]["url"]))
-        return urlify(getWhere(req.data, 'Section', section)["Image"][0]["url"]);
+        return urlify(getWhere(data, 'Section', section)["Image"][0]["url"]);
       };
 
       setImg1(get("highlightsimg1"));
       setImg2(get("highlightsimg2"));
       setImg3(get("highlightsimg3"));
-    }
-
-
-    fetchData();
+    })
+    .catch(err => console.log(err));
   }, []);
 
   return (

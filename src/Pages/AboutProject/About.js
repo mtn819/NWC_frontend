@@ -15,6 +15,10 @@ const getWhere = (data, key, value) => {
   return data.filter(e => e[key] === value);
 }
 
+const urlify = (str) => {
+  return [VARIABLES.fetchBaseUrl, str].join('/');//VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + "" + str;
+}
+
 function About() {
   const jack = "_";//"ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY.";
   const yt = "https://www.youtube.com";
@@ -35,11 +39,11 @@ function About() {
   const [aboutDocuments_frlink, setAboutDocuments_frlink] = useState(jack);
 
   useEffect(() => {
-    async function fetchData(){
-      const req = await axios.get('/content-abouts');
-
+    fetch([VARIABLES.fetchBaseUrl, "content-abouts"].join('/'))
+    .then(res => res.json())
+    .then(data => {
       const get = (section) => {
-        return getWhere(req.data, 'Section', section)[0]['Content'];
+        return getWhere(data, 'Section', section)[0]['Content'];
       };
 
       setAboutBanner_card (
@@ -73,20 +77,15 @@ function About() {
       setAboutTimeline_5(
         get("aboutTimeline_5")
       );
-    }
-
-    fetchData();
+    })
   }, []);
 
   useEffect(() => {
-    async function fetchData(){
-      const req = await axios.get('/content-about-pdfs');
-
-      console.log("Pizza!");
-      console.log(VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1));
-
+    fetch([VARIABLES.fetchBaseUrl, "content-about-pdfs"].join('/'))
+    .then(res => res.json())
+    .then(data => {
       const get = (section) => {
-        return VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + getWhere(req.data, 'Section', section)[0]["pdf"][0]["url"];
+        return urlify(getWhere(data, 'Section', section)[0]["pdf"][0]["url"]);
       };
 
       setAboutDocuments_ddlink(
@@ -104,10 +103,8 @@ function About() {
       setAboutDocuments_aplink(
         get("aboutDocuments_aplink")
       );
-
-    }
-
-    fetchData();
+    })
+    .catch(err => console.log(err));
   }, []);
 
   return (

@@ -15,6 +15,7 @@ import MappingNWC from "./MappingNWC/MappingNWC";
 import DiscoverNWCStories from "./DiscoverNWCStories/DiscoverNWCStories";
 import HowToContribute from "./HowToContribute/HowToContribute";
 import About from "./Pages/AboutProject/About";
+import Why from "./Pages/Why/Why";
 
 function App() {
   return (
@@ -31,8 +32,8 @@ function App() {
         <Route path = "/HowToContribute">
           <HowToContribute/>
         </Route>
-        <Route path = "/WhyTheNWCMatters">
-          <WhyTheNWCMatters/>
+        <Route path = "/Why">
+          <Why/>
         </Route>
         <Route path = "/About">
           <About></About>

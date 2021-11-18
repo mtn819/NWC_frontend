@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import "./WhyTheNWCMatters.css";
 import Arrow from './Arrow';
 
 import button from './res/button.png';

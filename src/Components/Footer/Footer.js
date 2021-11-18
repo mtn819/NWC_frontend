@@ -7,6 +7,7 @@ import facebook from "./res/Facebook.png";
 import neh_seal from "./res/neh.png";
 
 import axios from '../../config/axios';
+import VARIABLES from '../../config/.env';
 
 const getWhere = (data, key, value) => {
   return data.filter(e => e[key] === value);
@@ -22,11 +23,11 @@ function Footer() {
   const [donateLink, setDonateLink] = useState("/");
 
   useEffect(() => {
-    async function fetchData(){
-      const req = await axios.get('/content-footers');
-
+    fetch([VARIABLES.fetchBaseUrl, "content-footers"].join('/'))
+    .then(res => res.json())
+    .then(data => {
       const get = (section) => {
-        return getWhere(req.data, 'Section', section)[0]['Content'];
+        return getWhere(data, 'Section', section)[0]['Content'];
       };
 
       setInstagramLink(get("InstagramLink"));
@@ -35,9 +36,8 @@ function Footer() {
       setContactEmail(get("contactEmail"));
       setParagraph(get("paragraph"));
       setDonateLink(get("DonateLink"));
-    }
-
-    fetchData();
+    })
+    .catch(err => console.log(err));
   }, []);
 
   return (
@@ -50,11 +50,6 @@ function Footer() {
 
         <div className="footer_home">
           <a href="/"><p>HOME</p></a>
-        </div>
-        <div className="footer_bar"></div>
-
-        <div className="footer_about">
-          <a href="/about"><p>ABOUT</p></a>
         </div>
         <div className="footer_bar"></div>
 

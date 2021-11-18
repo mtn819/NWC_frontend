@@ -1,0 +1,54 @@
+.whyBanner {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    background: url("./res/mapbg.png");
+}
+
+.whyBanner_button {
+    width: 25%;
+}
+
+.whyBanner_card {
+    width: 45%;
+    border-left: 12rem solid var(--colorDeepRed);
+    padding: 30rem;
+    background-color: white;
+}
+
+.whyBanner_card h2 {
+    font-family: var(--fontBabasNeue);
+    font-size: 50rem;
+    font-weight: normal;
+    color: var(--colorDarkBlue);
+    text-align: center;
+}
+
+.whyBanner_card p {
+    font-size: 24rem;
+    font-family: var(--fontNeoBulletin);
+}
+
+.whyBanner figure {
+    position: relative;
+    display: block;
+    width: 30%;
+    align-self: flex-end;
+}
+
+.whyBanner figure img {
+    width: 100%;
+}
+
+.whyBanner figcaption {
+    font-family: var(--fontBabasNeue);
+    font-size: 32rem;
+    color: var(--colorBeige);
+    background-color: var(--colorDarkBlue);
+    width: fit-content;
+    padding: 8rem;
+    margin-top: -56rem;
+    position: relative;
+}

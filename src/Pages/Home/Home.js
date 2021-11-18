@@ -21,7 +21,6 @@ import dots1 from './res/dots1.png';
 import dots2 from './res/dots2.png';
 import dots3 from './res/dots3.png';
 import dots4 from './res/dots4.png';
-import overlaymp4 from './res/overlayvid.mp4';
 
 import axios from '../../config/axios';
 import VARIABLES from '../../config/.env';
@@ -32,7 +31,7 @@ const getWhere = (data, key, value) => {
 }
 
 const urlify = (str) => {
-  return VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + "" + str;
+  return [VARIABLES.fetchBaseUrl, str].join('/');//VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + "" + str;
 }
 
 export const superSorter = (list) => {
@@ -43,7 +42,7 @@ export const superSorter = (list) => {
 
 function Home() {
   //temp
-  //const overlaymp4 = "https://www.w3schools.com/html/mov_bbb.mp4";
+  const overlaymp4 = VARIABLES.overlaymp4;//"https://www.w3schools.com/html/mov_bbb.mp4";
 
   const jack = "_";
   const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
@@ -78,11 +77,13 @@ function Home() {
   }
 
   useEffect(() => {
-    async function fetchData(){
-      const req = await axios.get('/content-homes');
+
+    fetch([VARIABLES.fetchBaseUrl, "content-homes"].join('/'))
+    .then(res => res.json())
+    .then(data => {
 
       const get = (section) => {
-        return getWhere(req.data, 'Section', section)[0]['Content'];
+        return getWhere(data, 'Section', section)[0]['Content'];
       };
 
       setHomeAbout_p1(
@@ -152,22 +153,20 @@ function Home() {
       setAboutImgCredit_more(
           get("aboutImgCredit_more")
       )
-    }
-
-    fetchData();
+    })
+    .catch(err => console.log(err));
   }, []);
 
   useEffect(() => {
-    async function fetchData(){
-      const req = await axios.get('/content-home-maps');
-
+    fetch([VARIABLES.fetchBaseUrl, "content-home-maps"].join('/'))
+    .then(res => res.json())
+    .then(data => {
       const get = map => {
         return (
 
           superSorter(
-          getWhere(req.data, 'Map', map)
+          getWhere(data, 'Map', map)
           .map(p => {
-            console.log(p);
             const p2 = [];
             p2[0] = p['Name'];
             p2[1] = p['x'];
@@ -205,9 +204,7 @@ function Home() {
       setHomeMuseum_district(get("museum_district"));
       setHomeMagnolia_park(get("magnolia_park"));
       setHomeAtrodome(get("astrodome"));
-    }
-
-    fetchData();
+    });
   }, [])
 
   const [currMap, setCurrMap] = useState("dt");
@@ -398,10 +395,10 @@ function Home() {
       {/**HIGHLIGHTS */}
       <div className="homeHighlights">
         <div className="homeHighlights_frontDrop"></div>
-        <div className="homeHighlights_frontDrop2">
+        {/*<div className="homeHighlights_frontDrop2">
           <h2>COMING SOON</h2>
           <p>Public Launch: 11/21</p>
-        </div>
+          </div>*/}
         <p className="homeHighlights_header">SITE HIGHLIGHTS</p>
         <HighlightsCarousel/>
       </div>
