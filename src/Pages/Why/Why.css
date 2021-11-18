@@ -1,3 +1,7 @@
+/*
+BANNER
+*/
+
 .whyBanner {
     display: flex;
     width: 100%;
@@ -51,4 +55,92 @@
     padding: 8rem;
     margin-top: -56rem;
     position: relative;
+}
+
+/*
+VIDEO
+*/
+.whyVideo > * {
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin: 60rem auto;
+}
+
+/*
+ESSAYS
+*/
+
+.whyEssays {
+    background-color: var(--colorBeige);
+    padding: 40rem 120rem;
+    width: 80%;
+    margin: 60rem auto;
+}
+
+.whyEssays h2 {
+    font-family: var(--fontBabasNeue);
+    font-size: 80rem;
+    margin-bottom: 40rem;
+    color: var(--colorDeepRed);
+    font-weight: normal;
+}
+
+.whyEssays_list {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: left;
+}
+
+.whyEssays_list img {
+    width: 340px;
+    aspect-ratio: 8/11;
+    margin-right: 10rem;
+}
+
+.whyEssays_list img:hover {
+    opacity: .8;
+}
+
+.whyEssays_list::-webkit-scrollbar {
+    width: 10px;
+}
+
+/*
+PUBLICATIONS
+*/
+
+.whyPublications {
+    width: 50%;
+    margin: auto;
+}
+
+.whyPublications h2 {
+    font-family: var(--fontBabasNeue);
+    font-size: 80rem;
+    margin-bottom: 40rem;
+    color: var(--colorDarkBlue);
+    font-weight: normal;
+}
+
+.whyPublications_list {
+    display: flex;
+    width: 100%;
+    margin-bottom: 80rem;
+}
+
+.whyPublications_list > * {
+    width: 90%;
+}
+
+.whyPublications_list img {
+    width: 90%;
+    aspect-ratio: 8/11;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.whyPublications_list img:hover {
+    opacity: .8;
+    transform: scale(1.01);
 }

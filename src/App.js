@@ -16,6 +16,7 @@ import DiscoverNWCStories from "./DiscoverNWCStories/DiscoverNWCStories";
 import HowToContribute from "./HowToContribute/HowToContribute";
 import About from "./Pages/AboutProject/About";
 import Why from "./Pages/Why/Why";
+import Essay from "./Pages/Essay/Essay";
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
         </Route>
         <Route path = "/Why">
           <Why/>
+        </Route>
+        <Route path = "/Essay">
+          <Essay/>
         </Route>
         <Route path = "/About">
           <About></About>
