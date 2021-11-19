@@ -12,7 +12,7 @@ import astro from './res/astro.png';
 
 import toform from './res/toform.png';
 import aboutpeople from './res/aboutpeople.png';
-import explorechicks from './res/explorechicks.png';
+import minorityrightsplank from './res/minority_rights_plank.png';
 import button1 from './res/button1.png';
 import button2 from './res/button2.png';
 import button3 from './res/button3.png';
@@ -46,7 +46,6 @@ function Home() {
   const jack = "_";
   const [homeAbout_p1, setHomeAbout_p1] = useState(jack+jack);
   const [homeAbout_p2, setHomeAbout_p2] = useState(jack);
-  const [homeAbout_p, setHomeAbout_p] = useState(jack+jack);
   const [homeMap_text, setHomeMap_text] = useState(jack+jack+jack);
   const [homeAboutReadmore, setHomeAboutReadmore] = useState(false);
   const [homeAboutImgCredit, setHomeAboutImgCredit] = useState("Jane Doe");
@@ -67,8 +66,6 @@ function Home() {
   const [photoByExplore, setPhotoByExplore] = useState([]);
   const [aboutImgCredit_more, setAboutImgCredit_more] = useState([]);
   const [photoByExplore_more, setPhotoByExplore_more] = useState([]);
-
-  const [mute, setMute] = useState(false)
 
   const scroll = () => {
     window.scrollTo(0, 0);
@@ -92,10 +89,6 @@ function Home() {
       setHomeAbout_p2(
         get("homeAbout_p2")
       );
-
-      setHomeAbout_p(
-        get("homeAbout_p")
-      )
 
       setHomeAboutImgCredit(
         get("aboutImgCredit")
@@ -271,7 +264,7 @@ function Home() {
       <div className="homeSplash">
 
         <div className="homeSplash_toForm">
-          <img src={toform}/>
+          <img src={toform} alt="conference_logo"/>
         </div>
 
         <div className="homeSplash_card">
@@ -301,7 +294,7 @@ function Home() {
           </div>
 
           <div className="homeAbout_chicks">
-            <img src={aboutpeople}/>
+            <img src={aboutpeople} alt="female_athletes"/>
             <div title={aboutImgCredit_more} className="homeAbout_imgCred">
               <p title={aboutImgCredit_more}>PHOTO BY {homeAboutImgCredit}</p>
             </div>
@@ -348,7 +341,7 @@ function Home() {
         </div>
         
         <div className="homeExplore_img">
-          <img src={explorechicks}/>
+          <img src={minorityrightsplank} alt="minority_rights_plank"/>
         </div>
         <div className="homeExplore_imgSrc" title={photoByExplore_more}><p>PHOTO BY {photoByExplore}</p></div>
 
@@ -360,42 +353,41 @@ function Home() {
       <div className="homeButtons">
         <a href={homeButton1_link}>
           <div className="homeButtons_button homeButtons_button1">
-              <img src={button1}/>
+              <img src={button1} alt="button_2"/>
               <p>{homeButton1_text}</p>
           </div>
         </a>
-        <a href={homeButton2_link}>
+        {/*<a href={homeButton2_link}>*/}
           <div className="homeButtons_button homeButtons_button2">
-              <img src={button2}/>
+              <img src={button2} alt="button_2"/>
               <p>{homeButton2_text}</p>
           </div>
-        </a>
-        <a href={homeButton3_link}>
+        {/*</a>*/}
+        {/*<a href={homeButton3_link}>*/}
           <div className="homeButtons_button homeButtons_button3">
-              <img src={button3}/>
+              <img src={button3} alt="button_3"/>
               <p>{homeButton3_text}</p>
           </div>
-        </a>
-        <a href={homeButton4_link}>
+        {/*</a>*/}
+       {/* <a href={homeButton4_link}>*/}
           <div className="homeButtons_button homeButtons_button4">
-              <img src={button4}/>
+              <img src={button4} alt="button_4"/>
               <p>{homeButton4_text}</p>
           </div>
-        </a>
+        {/*</a>*/}
 
-        <img className="homeButtons_dots homeButtons_dots1" src={dots1}/>
-        <img className="homeButtons_dots homeButtons_dots2" src={dots2}/>
-        <img className="homeButtons_dots homeButtons_dots3" src={dots3}/>
-        <img className="homeButtons_dots homeButtons_dots4" src={dots4}/>
+        <img className="homeButtons_dots homeButtons_dots1" src={dots1} alt=""/>
+        <img className="homeButtons_dots homeButtons_dots2" src={dots2} alt=""/>
+        <img className="homeButtons_dots homeButtons_dots3" src={dots3} alt=""/>
+        <img className="homeButtons_dots homeButtons_dots4" src={dots4} alt=""/>
       </div>
 
       {/**HIGHLIGHTS */}
       <div className="homeHighlights">
         <div className="homeHighlights_frontDrop"></div>
-        {/*<div className="homeHighlights_frontDrop2">
+        <div className="homeHighlights_frontDrop2">
           <h2>COMING SOON</h2>
-          <p>Public Launch: 11/21</p>
-          </div>*/}
+          </div>
         <p className="homeHighlights_header">SITE HIGHLIGHTS</p>
         <HighlightsCarousel/>
       </div>
