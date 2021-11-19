@@ -2,15 +2,13 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import './Custom.css';
 import Footer from "./Components/Footer/Footer";
 import Navigation from './Components/Navigation/Navigation';
 import Home from './Pages/Home/Home';
-import WhyTheNWCMatters from "./Pages/WhyTheNWCMatters/WhyTheNWCMatters";
 import MappingNWC from "./MappingNWC/MappingNWC";
 import DiscoverNWCStories from "./DiscoverNWCStories/DiscoverNWCStories";
 import HowToContribute from "./HowToContribute/HowToContribute";

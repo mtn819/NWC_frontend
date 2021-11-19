@@ -9,7 +9,6 @@ import { Link, useLocation } from 'react-router-dom';
 function Navigation() {
   const [selected, setSelected] = useState("");
   const location = useLocation();
-  console.log(location);
 
   return (
     <div className="navigation_total">

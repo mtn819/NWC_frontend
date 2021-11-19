@@ -22,9 +22,8 @@ import dots2 from './res/dots2.png';
 import dots3 from './res/dots3.png';
 import dots4 from './res/dots4.png';
 
-import axios from '../../config/axios';
 import VARIABLES from '../../config/.env';
-import ReactMarkdown from 'react-markdown';
+
 
 const getWhere = (data, key, value) => {
   return data.filter(e => e[key] === value);
@@ -191,8 +190,6 @@ function Home() {
             p2[14] = p.citation2 !== undefined ? p.citation2 : "";
             p2[15] = p.citation3 !== undefined ? p.citation3 : "";
             //p2[16] = p.citation4 !== undefined ? p.citation4 : "";
-            //console.log(p);
-            console.log(p2);
 
             return p2;
           }))

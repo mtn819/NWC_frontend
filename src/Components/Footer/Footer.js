@@ -6,7 +6,6 @@ import twitter from "./res/Twitter.png";
 import facebook from "./res/Facebook.png";
 import neh_seal from "./res/neh.png";
 
-import axios from '../../config/axios';
 import VARIABLES from '../../config/.env';
 
 const getWhere = (data, key, value) => {
@@ -45,7 +44,7 @@ function Footer() {
 
       <div className="footer_top">
         <div className="footer_icon">
-          <img src={icon}/>
+          <img src={icon} alt="project_icon"/>
         </div>
 
         <div className="footer_home">
@@ -66,9 +65,9 @@ function Footer() {
         <div className="footer_social">
           <p>SOCIAL MEDIA</p>
           <div className="footer_socialIcons">
-            <a href={instagramLink}><div className="footer_instagram"><img src={instagram}/></div></a>
-            <a href={twitterLink}><div className="footer_twitter"><img src={twitter}/></div></a>
-            <a href={facebookLink}><div className="footer_facebook"><img src={facebook}/></div></a>
+            <a href={instagramLink}><div className="footer_instagram"><img src={instagram} alt="instagram_logo"/></div></a>
+            <a href={twitterLink}><div className="footer_twitter"><img src={twitter} alt="twitter_logo"/></div></a>
+            <a href={facebookLink}><div className="footer_facebook"><img src={facebook} alt="facebook_logo"/></div></a>
           </div>
         </div>
       </div>
@@ -78,7 +77,7 @@ function Footer() {
         The Sharing Stories from 1977 project appreciates the support of the following:
         </div>
         <div className="footer_seal">
-          <img src={neh_seal}/> 
+          <img src={neh_seal} alt="NEH_seal"/> 
         </div>
         {paragraph}
       </div>
