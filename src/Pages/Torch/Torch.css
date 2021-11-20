@@ -1,0 +1,244 @@
+/*
+BANNER
+*/
+
+.torchBanner {
+    width: 100%;
+    position: relative;
+    padding: 40rem 120rem;
+}
+
+.torchBanner_right {
+    font-size: 50rem;
+    width: 60%;
+    margin-left: auto;
+}
+
+.torchBanner_right h1 {
+    font-size: 100rem;
+    font-family: var(--fontBabasNeue);
+    color: var(--colorDarkBlue);
+    font-weight: normal;
+}
+
+.torchBanner_right h2 {
+    font-size: 110rem;
+    font-family: var(--fontBabasNeue);
+    font-weight: normal;
+    max-width: 24ch;
+}
+
+.torchBanner_right p {
+    font-size: 36rem;
+    max-width: 70ch;
+}
+
+/*
+SECTION 1
+*/
+
+.torchSection1_title h2 {
+    font-size: 80rem;
+    font-family: var(--fontBabasNeue);
+    font-weight: normal;
+    text-align: center;
+    max-width: 40ch;
+    margin: auto;
+}
+
+.torchSection1 {
+    display: flex;
+    padding: 40rem 80rem;
+    align-items: center;
+}
+
+.torchSection1 > * {
+    width: 50%;
+    margin: 30rem;
+}
+
+.torchSection1 img {
+    width: 100%;
+}
+
+.torchSection1_text p {
+    font-size: 30rem;
+}
+
+/*
+MIDPHOTO
+*/
+.torchMidphoto {
+    width: 100%;
+    position: relative;
+}
+
+.torchMidphoto img {
+    width: 100%;
+}
+
+.torchMidphoto figcaption {
+    font-size: 60rem;
+    font-family: var(--fontBabasNeue);
+    color: var(--colorBeige);
+    background-color: var(--colorDarkBlue);
+    width: fit-content;
+    padding: 20rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/*
+SECTION 2
+*/
+
+.torchSection2 {
+    display: flex;
+}
+
+.torchSection2 > * {
+    width: 50%;
+}
+
+.torchSection2 img {
+    width: 100%;
+}
+
+.torchSection2_left {
+    padding: 60rem;
+}
+
+.torchSection2_title {
+    font-size: 80rem;
+    font-family: var(--fontMontserrat);
+    font-weight: normal;
+    margin-bottom: 40rem;
+}
+
+.torchSection2_quote {
+    font-size: 50rem;
+    max-width: 40ch;
+    font-weight: bold;
+    font-family: var(--fontMontserrat);
+    border-left: 12rem solid var(--colorDeepRed);
+    padding: 20rem 60rem;
+    margin-bottom: 40rem;
+}
+
+.torchSection2_text {
+    font-size: 30rem;
+    max-width: 70ch;
+}
+
+.torchSection2_right {
+    margin: 20rem;
+}
+
+.torchSection2_right figcaption {
+    font-size: 30rem;
+    font-family: var(--fontMontserrat);
+    text-align: right;
+    padding: 20rem;
+}
+
+/*
+MAP
+*/
+
+.torchMap {
+    background-color: var(--colorDeepRed);
+    font-family: var(--fontMontserrat);
+    font-size: 40rem;
+    margin-bottom: 40rem;
+    padding: 40rem;
+}
+
+.torchMap h2 {
+    text-align: center;
+    color: white;
+    padding: 40rem;
+}
+
+.torchMap figure {
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.torchMap img {
+    width: 100%;
+    margin: auto;
+}
+
+.torchMap figcaption {
+    width: 100%;
+    font-family: var(--fontMontserrat);
+    color: white;
+    text-align: right;
+}
+
+/*
+SECTION 3
+*/
+
+.torchSection3 {
+    font-size: 40rem;
+    display: flex;
+    align-items: center;
+}
+
+.torchSection3 > * {
+    width: 50%;
+    margin: 20rem;
+    padding: 20rem;
+    align-items: center;
+}
+
+.torchSection3_left h2 {
+    font-family: var(--fontMontserrat);
+}
+
+.torchSection3_left p {
+    font-family: var(--fontMontserrat);
+    font-size: 36rem;
+}
+
+.torchSection3 img {
+    width: 100%;
+}
+
+/*
+CONCLUSION
+*/
+
+.torchConclusion {
+    font-size: 40rem;
+    font-family: var(--fontMontserrat);
+    padding: 60rem;
+}
+
+.torchConclusion h2 {
+    margin-bottom: 40rem;
+}
+
+/*
+SOURCES
+*/
+
+.torchSources {
+    font-size: 36rem;
+    padding: 60rem;
+}
+
+.torchSources h2 {
+    margin-bottom: 60rem;
+    font-family: var(--fontBabasNeue);
+    font-size: 80rem;
+    font-weight: normal;
+    color: var(--colorDarkBlue);
+}
+
+.torchSources p {
+    margin-bottom: 40rem;
+}

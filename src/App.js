@@ -15,6 +15,7 @@ import Home from './Pages/Home/Home';
 import About from "./Pages/AboutProject/About";
 import Why from "./Pages/Why/Why";
 import Essay from "./Pages/Essay/Essay";
+import Torch from "./Pages/Torch/Torch";
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path = "/Essay">
           <Essay/>
+        </Route>
+        <Route path = "/Torch">
+         <Torch/>
         </Route>
         <Route path = "/About">
           <About></About>
