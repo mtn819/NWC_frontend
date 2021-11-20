@@ -1,6 +1,10 @@
 /*
 BANNER
 */
+a {
+    text-decoration: none; /* no underline */
+}
+
 
 .whyBanner {
     display: flex;
@@ -20,6 +24,7 @@ BANNER
     border-left: 12rem solid var(--colorDeepRed);
     padding: 30rem;
     background-color: white;
+    
 }
 
 .whyBanner_card h2 {
@@ -33,6 +38,17 @@ BANNER
 .whyBanner_card p {
     font-size: 24rem;
     font-family: var(--fontNeoBulletin);
+}
+
+.why_readmore{
+    color: black;
+    margin-left: 600rem;
+    margin-top: 50rem;
+}
+  
+.why_readmore:hover {
+    color: var(--colorDeepRed);
+    cursor: pointer;
 }
 
 .whyBanner figure {
