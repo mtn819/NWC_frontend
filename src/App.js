@@ -16,6 +16,7 @@ import About from "./Pages/AboutProject/About";
 import Why from "./Pages/Why/Why";
 import Essay from "./Pages/Essay/Essay";
 import Torch from "./Pages/Torch/Torch";
+import Layout3 from "./Pages/Essay/Layout3";
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route path = "/Torch">
          <Torch/>
+        </Route>
+        <Route path ="/Layout3">
+          <Layout3/>
         </Route>
         <Route path = "/About">
           <About></About>

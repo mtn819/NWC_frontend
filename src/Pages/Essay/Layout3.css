@@ -1,0 +1,95 @@
+.layout3 {
+    font-size: 20rem;
+    padding-top: 120rem;
+}
+
+.layout3 h1 {
+    font-size: 80rem;
+    font-family: var(--fontBabasNeue);
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 120rem;
+}
+
+.layout3 img {
+    display: block;
+    margin: auto;
+    width: 50%;
+    margin-bottom: 60rem;
+}
+
+.layout3_quote {
+    width: 70%;
+    border-left: 8rem solid var(--colorDeepRed);
+    max-width: 70ch;
+    font-size: 25rem;
+    padding: 20rem;
+    font-family: var(--fontMontserrat);
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 120rem;  
+}
+
+.layout3_section1 {
+    display: flex;
+    font-size: 22rem;
+    font-family: var(--fontMontserrat);
+    padding: 20rem;
+    margin: 30rem;
+}
+
+.layout3_section2 {
+    font-size: 22rem;
+    font-family: var(--fontMontserrat);
+    padding: 20rem;
+    margin: 30rem;
+}
+
+.layout3_section3 {
+    display: flex;
+    padding: 40rem;
+}
+
+.layout3_section3Text {
+    font-size: 22rem;
+    font-family: var(--fontMontserrat);
+    padding: 20rem;
+    margin: 30rem;
+    width: 60%;
+}
+
+.layout3_section3Quote {
+    width: 40%;
+    border-left: 8rem solid var(--colorDeepRed);
+    max-width: 70ch;
+    font-size: 25rem;
+    padding: 20rem;
+    font-family: var(--fontMontserrat);
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 120rem;  
+}
+
+.layout3_author {
+    font-size: 30rem;
+    margin: 120rem;
+    font-family: var(--fontMontserrat);
+    font-weight: bold;
+}
+
+.layout3_sources {
+    margin  : 120rem;
+}
+
+.layout3_sources h2 {
+    font-size: 60rem;
+    font-family: var(--fontBabasNeue);
+    font-weight: normal;
+    margin-bottom: 40rem;
+}
+
+.layout3_sources p {
+    font-size: 24rem;
+    font-family: var(--fontMontserrat);
+    margin-bottom: 20rem;
+}
