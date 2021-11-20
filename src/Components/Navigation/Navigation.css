@@ -46,10 +46,12 @@
   font-family: 'babas_neue', normal;
   font-size: 35rem;
   margin-left: 150rem;
+  text-decoration: none;
 }
 
 .navigation_link--selected {
   color: white;
+  text-decoration: underline;
 }
 
 .navigation_link:hover {

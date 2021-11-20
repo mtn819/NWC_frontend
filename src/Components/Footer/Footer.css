@@ -39,12 +39,21 @@
   margin-left: 37.5rem;
 }
 
-.footer_home:hover,
-.footer_about:hover,
-.footer_contact:hover,
-.footer_donate:hover{
+.footer_home a,
+.footer_about a,
+.footer_contact a,
+.footer_social p,
+.footer_donate a {
+  color: var(--colorLightBlue);
+  text-decoration: none;
+}
+
+.footer_home a:hover,
+.footer_about a:hover,
+.footer_contact a:hover,
+.footer_donate a:hover{
   color: white;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 
 .footer_socialIcons {
