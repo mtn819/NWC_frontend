@@ -66,7 +66,7 @@ function Why() {
                 <div className="whyBanner_card">
                     <h2>HISTORICAL OVERVIEW</h2>
                     <p>{pageState.HistoricalOverview}</p>
-                    <a href="/essay?id=6195463454e8a217c0d07075"><p className="homeAbout_readmore" >READ MORE</p></a>
+                    <a href="/essay?id=6195463454e8a217c0d07075"><p className="why_readmore" >READ MORE</p></a>
                 </div>
                 <figure>
                     <img src={whybannerhuman} alt=""/>
