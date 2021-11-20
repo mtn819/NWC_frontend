@@ -60,16 +60,28 @@ BANNER
 /*
 VIDEO
 */
-.whyVideo > * {
+.whyoutsideVideo {
+    background-image: url("res/videobg.png");
+    background-size: 100% 100%;
+}
+
+.whyVideo * {
     position: relative;
     display: block;
     width: fit-content;
-    margin: 60rem auto;
+    margin: auto;
+    padding: 60rem;
 }
 
 /*
 ESSAYS
 */
+
+.whylowerSection {
+    background-image: url("res/carouselbg.png");
+    background-size: 100% 100%;
+    padding-top: 150rem;
+}
 
 .whyEssays {
     background-color: var(--colorBeige);
@@ -127,7 +139,7 @@ PUBLICATIONS
 .whyPublications_list {
     display: flex;
     width: 100%;
-    margin-bottom: 80rem;
+    padding-bottom: 80rem;
 }
 
 .whyPublications_list > * {

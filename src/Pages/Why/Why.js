@@ -75,30 +75,35 @@ function Why() {
             </div>
 
             {/**VIDEO */}
-            <div className="whyVideo">
-                <InfoVideo src={pageState.videoSRC} title={pageState.videoTitle} />
+            <div className="whyoutsideVideo">
+                <div className="whyVideo">
+                    <InfoVideo src={pageState.videoSRC} title={pageState.videoTitle} />
+                </div>
             </div>
 
             {/**TIMELINE */}
             <iframe src={pageState.TimelineIframeSrc} width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe> 
 
-            {/**ESSAYS */}
-            <div className="whyEssays">
-                <h2>FEATURED ESSAYS</h2>
-                <div className="whyEssays_list">
-                    {essays.map(e => <Link to={`essay?id=${e[0]}`}>
-                        <img src={e[1]} alt="" key={e[0]}/>
-                    </Link>)}
-                </div>
-            </div>
 
-            {/**PUBLICATIONS */}
-            <div className="whyPublications">
-                <h2>CONFERENCE PUBLICATIONS</h2>
-                <div className="whyPublications_list">
-                    {pageState.documents.map(d => <a href={d[1]}>
-                        <img src={d[0]} alt=""/>
-                    </a>)}
+            <div className="whylowerSection">
+                {/**ESSAYS */}
+                <div className="whyEssays">
+                    <h2>FEATURED ESSAYS</h2>
+                    <div className="whyEssays_list">
+                        {essays.map(e => <Link to={`essay?id=${e[0]}`}>
+                            <img src={e[1]} alt="" key={e[0]} />
+                        </Link>)}
+                    </div>
+                </div>
+
+                {/**PUBLICATIONS */}
+                <div className="whyPublications">
+                    <h2>CONFERENCE PUBLICATIONS</h2>
+                    <div className="whyPublications_list">
+                        {pageState.documents.map(d => <a href={d[1]}>
+                            <img src={d[0]} alt="" />
+                        </a>)}
+                    </div>
                 </div>
             </div>
         </div>
