@@ -18,7 +18,7 @@ import Essay from "./Pages/Essay/Essay";
 
 function App() {
   return (
-    <Router className="App">
+    <Router basename={'/dev'} className="App">
       <Navigation/>
 
       <Switch>
