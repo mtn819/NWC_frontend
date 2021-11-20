@@ -81,6 +81,8 @@ ESSAYS
     background-image: url("res/carouselbg.png");
     background-size: 100% 100%;
     padding-top: 150rem;
+    padding-left: 60rem;
+    padding-right: 60rem;
 }
 
 .whyEssays {
