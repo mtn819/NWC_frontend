@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Why.css";
 import buttonwhy from "./res/buttonwhy.png";
 import whybannerhuman from "./res/whybannerhuman.png";
+import comingsoon from "./res/comingsoon_thumb.png";
 import VARIABLES from '../../config/.env';
 import { Link } from 'react-router-dom';
 import InfoVideo from "../../Components/Avalon/InfoVideo";
@@ -97,6 +98,7 @@ function Why() {
                         {essays.map(e => <Link to={`essay?id=${e[0]}`}>
                             <img src={e[1]} alt="" key={e[0]} />
                         </Link>)}
+                        <img src={comingsoon} alt=""/>
                     </div>
                 </div>
 
