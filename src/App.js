@@ -9,12 +9,14 @@ import './Custom.css';
 import Footer from "./Components/Footer/Footer";
 import Navigation from './Components/Navigation/Navigation';
 import Home from './Pages/Home/Home';
-import MappingNWC from "./MappingNWC/MappingNWC";
-import DiscoverNWCStories from "./DiscoverNWCStories/DiscoverNWCStories";
-import HowToContribute from "./HowToContribute/HowToContribute";
+// import MappingNWC from "./MappingNWC/MappingNWC";
+// import DiscoverNWCStories from "./DiscoverNWCStories/DiscoverNWCStories";
+// import HowToContribute from "./HowToContribute/HowToContribute";
 import About from "./Pages/AboutProject/About";
 import Why from "./Pages/Why/Why";
 import Essay from "./Pages/Essay/Essay";
+import Torch from "./Pages/Torch/Torch";
+import Layout3 from "./Pages/Essay/Layout3";
 
 function App() {
   return (
@@ -22,7 +24,7 @@ function App() {
       <Navigation/>
 
       <Switch>
-        <Route path = "/MappingNWC">
+        {/* <Route path = "/MappingNWC">
           <MappingNWC/>
         </Route>
         <Route path = "/DiscoverNWCStories">
@@ -30,12 +32,18 @@ function App() {
         </Route>
         <Route path = "/HowToContribute">
           <HowToContribute/>
-        </Route>
+        </Route> */}
         <Route path = "/Why">
           <Why/>
         </Route>
         <Route path = "/Essay">
           <Essay/>
+        </Route>
+        <Route path = "/Torch">
+         <Torch/>
+        </Route>
+        <Route path ="/Layout3">
+          <Layout3/>
         </Route>
         <Route path = "/About">
           <About></About>

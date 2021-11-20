@@ -91,6 +91,9 @@ function Why() {
                 <div className="whyEssays">
                     <h2>FEATURED ESSAYS</h2>
                     <div className="whyEssays_list">
+                        <Link to="/Torch">
+                            <img src={`${VARIABLES.fetchBaseUrl}/uploads/Virgnia_Currey_Torch_Relay_Participant_Letter_0ffa5ada40.jpg`} alt=""/>
+                        </Link>
                         {essays.map(e => <Link to={`essay?id=${e[0]}`}>
                             <img src={e[1]} alt="" key={e[0]} />
                         </Link>)}
