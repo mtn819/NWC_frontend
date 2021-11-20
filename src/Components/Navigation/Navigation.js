@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 import './Navigation.css';
-import icon_search from './res/search.png';
 import { Link, useLocation } from 'react-router-dom';
 
 
