@@ -1,6 +1,10 @@
+
+
 /*
 BANNER
 */
+
+/*
 
 .torchBanner {
     width: 100%;
@@ -31,6 +35,12 @@ BANNER
 .torchBanner_right p {
     font-size: 36rem;
     max-width: 70ch;
+}
+
+*/
+
+.torchSection1 {
+    font-family: var(--fontMontserrat);
 }
 
 /*
@@ -78,7 +88,7 @@ MIDPHOTO
 }
 
 .torchMidphoto figcaption {
-    font-size: 60rem;
+    font-size: 45rem;
     font-family: var(--fontBabasNeue);
     color: var(--colorBeige);
     background-color: var(--colorDarkBlue);

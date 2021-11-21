@@ -11,6 +11,10 @@
     margin-bottom: 120rem;
 }
 
+.layout3 h2 {
+    margin-top: 20rem;
+}
+
 .layout3 img {
     display: block;
     margin: auto;
@@ -36,6 +40,10 @@
     font-family: var(--fontMontserrat);
     padding: 20rem;
     margin: 30rem;
+}
+
+.layout3_section1 > * {
+    margin: 20rem;
 }
 
 .layout3_section2 {
