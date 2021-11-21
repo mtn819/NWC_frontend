@@ -49,7 +49,7 @@ function Why() {
             setEssays(
                 data.map(d => {
                     const thumbnail = [VARIABLES.fetchBaseUrl, d.TallImage.Image[0].url].join('')
-                    const id = d.id;
+                    const id = d._id;
 
                     return [id, thumbnail];
                 })

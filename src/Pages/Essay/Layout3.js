@@ -20,15 +20,14 @@ function Layout3() {
         section3Quote: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
         section4: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
         authorCred: "Written by Jane Doe",
-        sources: ["Source A", "Source B",]
+        sources: ["Source A", "Source B",],
+        PreferredCitation: ""
     });
 
     useEffect(() => {
         fetch([VARIABLES.fetchBaseUrl, `content-essays/${id}`].join('/'))
         .then(res => res.json())
         .then(data => {
-            console.log("HERE", data);
-
             setPageState({
                 ...pageState,
                 header: data.Title,
@@ -41,6 +40,7 @@ function Layout3() {
                 section4: data.Paragraph4,
                 authorCred: data.AuthorCredit,
                 sources: data.Sources.map(src => src.text),
+                PreferredCitation: data.PreferredCitation
             })
         });
     }, []);
@@ -70,6 +70,12 @@ function Layout3() {
             <div className="layout3_sources">
                 <h2>SOURCES</h2>
                 {pageState.sources.map(src => <p>{src}</p>)}
+            </div>
+
+            {/**PREF CIT */}
+            <div className="layout3_prefCit">
+                <h2>PREFERRED CITATION</h2>
+                {pageState.PreferredCitation}
             </div>
 
         </div>

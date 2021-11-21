@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import "./Torch.css";
 import VARIABLES from '../../config/.env';
+import ReactMarkdown from 'react-markdown';
+import torchRelayEssayImage from "./res/Torch_Relay_Essay_Image.png";
 
 function Torch() {
     const [pageState, setPageState] = useState({
         Title: "title",
         section1_image: "",
         section1_text: "",
-        midphoto: "https://images.wallpaperscraft.com/image/single/gray_light_background_dots_perforation_72423_300x168.jpg",
         MidpagePhotoCredit: "",
         section2_title: "",
         Section2_Quote: "",
@@ -20,20 +21,21 @@ function Torch() {
         LargeImageMap_Citation: "",
         Section3_title: "",
         Section3_image: "",
+        Section3_ImgCitation: "",
         Section3_text: "",
         Sources: [],
         TimelineIframeSrc: "",
+        authorCred: "Written by Jane Doe",
     });
 
     useEffect(() => {
         fetch([VARIABLES.fetchBaseUrl, "featured-essay"].join('/'))
         .then(res => res.json())
         .then(data => {
-            console.log(data);
-            console.log("Abc");
             setPageState({
                 ...pageState,
                 ...data,
+                TimelineIframeSource: data.TimelineIframeSource,
                 section1_image: [VARIABLES.fetchBaseUrl, data.Section1.Image.url].join(''),
                 section1_text: data.Section1.SectionText,
                 section2_title: data.Section2.SectionTitle,
@@ -45,6 +47,7 @@ function Torch() {
                 Section3_title: data.Section3.SectionTitle,
                 Section3_image: [VARIABLES.fetchBaseUrl, data.Section3.Image.url].join(''),
                 Section3_text: data.Section3.SectionText,
+                authorCred: data.Author,
             });
         })
         .catch(err => console.log(err));
@@ -54,26 +57,21 @@ function Torch() {
         <div className="torch">
             {/**BANNER */}
             <div className="torchBanner">
-                <iframe src={pageState.TimelineIframeSrc} width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
-                {/*<div className="torchBanner_right">
-                    <h1>THE TORCH RELAY</h1>
-                    <h2>HOUSTON NATIONAL WOMEN'S CONFERENCE, 1977</h2>
-                    <p>
-                        In 1977, more than 20,000 attendees gathered at the National Women's Conference in Houston. The goal was to formulate a Plan of Action that would improve the lives of American women. A symbol of this conference is the "Torch of Freedom," that hundreds of relay runners carried from the sight of the first women's conference in the U.S. The relay run began in Seneca Falls, New York and was routed through the states to Houston, Texas. The map shows the stops as planned in the tentative NWC torch relay route. This digital and interactive map will take you through the route followed by Relay for ERA runners.
-                    </p>
-                    <p>
-                        Information about the date, number of days, miles and destination can be found underneath each cities clide. Sourced from the UNiversity of Houston's Special Collections department; NVH Box .7 - Folder 12. The archives used for this map include: Tentative Route IWY Torch Relay, Torch Relay Fact Sheet, IWY Torch Relay Day Schedule.
-                    </p>
-                </div>*/}
+            <iframe title="TorchRelay" src="https://uploads.knightlab.com/storymapjs/877694e00dbf671073fb8b137cf5698e
+/wgss-4350
+/index.html" frameBorder="0" width="100%" height="800"></iframe>
             </div>
 
             {/**SECTION 1 */}
             <div className="torchSection1_title">
-                <h2>{pageState.Title}</h2>
+                <h1>{pageState.Title}</h1>
             </div>
             <div className="torchSection1">
                 <div className="torchSection1_img">
                     <img src={pageState.section1_image} alt=""/>
+                    <figcaption>
+                        {pageState.Section1_ImgCitation}
+                    </figcaption>
                 </div>
                 <div className="torchSection1_text">
                     <p>{pageState.section1_text}</p>
@@ -82,22 +80,26 @@ function Torch() {
 
             {/**MIDPHOTO */}
             <figure className="torchMidphoto">
-                <img src={pageState.midphoto} alt=""/>
+                <img src={torchRelayEssayImage} alt=""/>
                 <figcaption>
                     {pageState.MidpagePhotoCredit}
                 </figcaption>
             </figure>
+            <div className="homeAbout_border"></div>
 
             {/**SECTION 2 */}
             <div className="torchSection2">
                 <div className="torchSection2_left">
                     <h2 className="torchSection2_title">{pageState.section2_title}</h2>
                     <div className="torchSection2_quote">
-                        {pageState.Section2_Quote}
+                        <div >
+                            {pageState.Section2_Quote}
+                        </div>
                     </div>
-                    <div className="torchSection2_text">
+                    <ReactMarkdown className="torchSection2_text">
                         {pageState.Section2_text}
-                    </div>
+                    </ReactMarkdown>
+
                 </div>
                 <div className="torchSection2_right">
                     <figure>
@@ -119,7 +121,7 @@ function Torch() {
             <div className="torchMap">
                 <h2>HOUSTON MAP OF TORCH RELAY</h2>
                 <figure>
-                    <img src={pageState.LargeImageMap}/>
+                    <img src={pageState.LargeImageMap} alt="torch_map"/>
                     <figcaption>
                         {pageState.LargeImageMap_Citation}
                     </figcaption>
@@ -134,6 +136,9 @@ function Torch() {
                 </div>
                 <div className="torchSection3_right">
                     <img src={pageState.Section3_image} alt=""/>
+                    <figcaption>
+                        {pageState.Section3_ImgCitation}
+                    </figcaption>
                 </div>
             </div>
 
@@ -143,10 +148,20 @@ function Torch() {
                 <p>{pageState.Conclusion}</p>
             </div>
 
+            <ReactMarkdown className="torch_author">
+                {pageState.authorCred}
+            </ReactMarkdown>
+
             {/**SOURCES */}
             <div className="torchSources">
                 <h2>SOURCES</h2>
                 {pageState.Sources.map(src => <p>{src.text}</p>)}
+            </div>
+
+            {/**PREF CIT */}
+            <div className="torch_prefCit">
+                <h2>PREFERRED CITATION</h2>
+                {pageState.PreferredCitation}
             </div>
 
         </div>
