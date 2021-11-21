@@ -1,25 +1,35 @@
 .layout3 {
     font-size: 20rem;
     padding-top: 120rem;
+    padding-left: 200rem;
+    padding-right: 200rem;
 }
 
 .layout3 h1 {
     font-size: 80rem;
     font-family: var(--fontBabasNeue);
+    color: var(--colorDarkBlu);
     font-weight: normal;
     text-align: center;
     margin-bottom: 120rem;
 }
 
 .layout3 h2 {
+    color: var(--colorDarkBlue);
+    font-size: 40rem;
+    font-family: var(--fontBabasNeue);
+    font-weight: normal;
+    margin-bottom: 20rem;
     margin-top: 20rem;
 }
 
 .layout3 img {
     display: block;
     margin: auto;
-    width: 50%;
     margin-bottom: 60rem;
+    max-width: 100%;
+    height: auto;
+    width: 40%;
 }
 
 .layout3_quote {
@@ -29,75 +39,63 @@
     font-size: 25rem;
     padding: 20rem;
     font-family: var(--fontMontserrat);
+    color: var(--colorDarkBlue);
     font-weight: bold;
+    font-style: italic;
     margin: auto;
     margin-bottom: 120rem;  
 }
 
 .layout3_section1 {
-    display: flex;
-    font-size: 22rem;
+    columns: 2;
+    column-gap: 8%;
     font-family: var(--fontMontserrat);
-    padding: 20rem;
-    margin: 30rem;
-}
-
-.layout3_section1 > * {
-    margin: 20rem;
+    color: var(--colorLightGrayFont);
+    padding-bottom: 40rem;
 }
 
 .layout3_section2 {
-    font-size: 22rem;
+    font-size: 20rem;
     font-family: var(--fontMontserrat);
-    padding: 20rem;
-    margin: 30rem;
+    color: var(--colorLightGrayFont);
+    padding-bottom: 40rem;
 }
 
 .layout3_section3 {
     display: flex;
-    padding: 40rem;
+    padding-bottom: 40rem;
 }
 
 .layout3_section3Text {
-    font-size: 22rem;
+    font-size: 20rem;
     font-family: var(--fontMontserrat);
-    padding: 20rem;
-    margin: 30rem;
-    width: 60%;
+    color: var(--colorLightGrayFont);
+    width: 50%;
 }
 
 .layout3_section3Quote {
     width: 40%;
-    border-left: 8rem solid var(--colorDeepRed);
+    color: var(--colorDarkBlue);
+    border-right: 8rem solid var(--colorDeepRed);
     max-width: 70ch;
     font-size: 25rem;
     padding: 20rem;
     font-family: var(--fontMontserrat);
+    font-style: italic;
     font-weight: bold;
     margin: auto;
     margin-bottom: 120rem;  
 }
 
 .layout3_author {
-    font-size: 30rem;
-    margin: 120rem;
+    font-size: 25rem;
+    margin-bottom: 120rem;
     font-family: var(--fontMontserrat);
-    font-weight: bold;
-}
-
-.layout3_sources {
-    margin  : 120rem;
-}
-
-.layout3_sources h2 {
-    font-size: 60rem;
-    font-family: var(--fontBabasNeue);
-    font-weight: normal;
-    margin-bottom: 40rem;
 }
 
 .layout3_sources p {
-    font-size: 24rem;
+    font-size: 15rem;
     font-family: var(--fontMontserrat);
     margin-bottom: 20rem;
 }
+
