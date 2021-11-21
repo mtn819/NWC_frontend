@@ -37,7 +37,8 @@ function App() {
           <Why/>
         </Route>
         <Route path = "/Essay">
-          <Essay/>
+          {/*<Essay/>*/}
+          <Layout3/>
         </Route>
         <Route path = "/Torch">
          <Torch/>
@@ -52,7 +53,6 @@ function App() {
           <Home/>
         </Route>
       </Switch>
-
       <Footer/>
     </Router> 
   );

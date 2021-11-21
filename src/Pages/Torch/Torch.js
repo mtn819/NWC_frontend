@@ -22,6 +22,7 @@ function Torch() {
         Section3_image: "",
         Section3_text: "",
         Sources: [],
+        TimelineIframeSrc: "",
     });
 
     useEffect(() => {
@@ -44,7 +45,7 @@ function Torch() {
                 Section3_title: data.Section3.SectionTitle,
                 Section3_image: [VARIABLES.fetchBaseUrl, data.Section3.Image.url].join(''),
                 Section3_text: data.Section3.SectionText,
-
+                TimelineIframeSrc: "",
             });
         })
         .catch(err => console.log(err));
@@ -54,7 +55,8 @@ function Torch() {
         <div className="torch">
             {/**BANNER */}
             <div className="torchBanner">
-                <div className="torchBanner_right">
+                <iframe src={pageState.TimelineIframeSrc} width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+                {/*<div className="torchBanner_right">
                     <h1>THE TORCH RELAY</h1>
                     <h2>HOUSTON NATIONAL WOMEN'S CONFERENCE, 1977</h2>
                     <p>
@@ -63,7 +65,7 @@ function Torch() {
                     <p>
                         Information about the date, number of days, miles and destination can be found underneath each cities clide. Sourced from the UNiversity of Houston's Special Collections department; NVH Box .7 - Folder 12. The archives used for this map include: Tentative Route IWY Torch Relay, Torch Relay Fact Sheet, IWY Torch Relay Day Schedule.
                     </p>
-                </div>
+                </div>*/}
             </div>
 
             {/**SECTION 1 */}
