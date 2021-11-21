@@ -45,7 +45,6 @@ function Torch() {
                 Section3_title: data.Section3.SectionTitle,
                 Section3_image: [VARIABLES.fetchBaseUrl, data.Section3.Image.url].join(''),
                 Section3_text: data.Section3.SectionText,
-                TimelineIframeSrc: "",
             });
         })
         .catch(err => console.log(err));
