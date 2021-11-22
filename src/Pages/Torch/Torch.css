@@ -191,7 +191,6 @@ SECTION 3
 .torchSection3 {
     display: flex;
     font-family: var(--fontMontserrat);
-    padding-bottom: 120rem;
     padding-left: 200rem;
     padding-right: 200rem;
 }
