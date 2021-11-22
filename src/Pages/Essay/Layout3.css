@@ -1,8 +1,15 @@
 .layout3 {
-    font-size: 20rem;
     padding-top: 120rem;
     padding-left: 200rem;
     padding-right: 200rem;
+}
+
+.layout3 p {
+    margin-block-start: 20rem;
+    margin-block-end: 20rem;
+    font-size: 25rem;
+    color: var(--colorLightGrayFont);
+    font-family: var(--fontMontserrat);
 }
 
 .layout3 h1 {
@@ -33,75 +40,58 @@
 }
 
 .layout3_quote {
+    color: var(--colorDarkBlue) !important;
     width: 70%;
     border-left: 8rem solid var(--colorDeepRed);
     max-width: 70ch;
-    font-size: 25rem;
     padding: 20rem;
-    font-family: var(--fontMontserrat);
-    color: var(--colorDarkBlue);
     font-weight: bold;
     font-style: italic;
     margin: auto;
-    margin-bottom: 120rem;  
 }
 
 .layout3_section1 {
     columns: 2;
     column-gap: 8%;
-    font-family: var(--fontMontserrat);
-    color: var(--colorLightGrayFont);
-    padding-bottom: 40rem;
+    break-inside: auto;
+    padding-bottom: 80rem;
 }
 
 .layout3_section2 {
-    font-size: 20rem;
-    font-family: var(--fontMontserrat);
-    color: var(--colorLightGrayFont);
-    padding-bottom: 40rem;
+    padding-bottom: 80rem;
 }
 
 .layout3_section3 {
     display: flex;
-    padding-bottom: 40rem;
+    padding-bottom: 80rem;
 }
 
 .layout3_section3Text {
-    font-size: 20rem;
-    font-family: var(--fontMontserrat);
-    color: var(--colorLightGrayFont);
     width: 50%;
 }
 
 .layout3_section3Quote {
     width: 40%;
-    color: var(--colorDarkBlue);
+    height: 10%;
+    color: var(--colorDarkBlue) !important;
     border-right: 8rem solid var(--colorDeepRed);
-    max-width: 70ch;
-    font-size: 25rem;
     padding: 20rem;
-    font-family: var(--fontMontserrat);
     font-style: italic;
     font-weight: bold;
     margin: auto;
-    margin-bottom: 120rem;  
+    margin-bottom: 120rem; 
 }
 
-.layout3_author {
-    font-size: 25rem;
-    margin-bottom: 120rem;
-    font-family: var(--fontMontserrat);
-}
-
-.layout3_sources {
-    font-family: var(--fontMontserrat);
-    font-size: 36rem;
+.layout3_author p {
+    color: var(--colorDarkBlue);
+    font-size: 30rem;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
 }
 
 .layout3_sources h2 {
     font-size: 40rem;
     font-family: var(--fontBabasNeue);
-    color: var(--colorDarkBlue);
     font-weight: normal;
     margin-top: 120rem;
     margin-bottom: 40rem;
@@ -109,15 +99,15 @@
 
 .layout3_sources p {
     font-size: 15rem;
-    font-family: var(--fontMontserrat);
     margin-bottom: 20rem;
+    color: var(--colorDarkBlue);
 }
 
 .layout3_prefCit {
+    color: var(--colorDarkBlue);
     font-family: var(--fontMontserrat);
     padding-bottom: 120rem;
     font-size: 20rem;
-    padding-bottom: 120rem;
 }
 
 .layout3_prefCit h2 {
@@ -128,4 +118,5 @@
     margin-top: 120rem;
     margin-bottom: 40rem;
 }
+
 

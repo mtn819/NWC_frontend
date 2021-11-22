@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import "./Torch.css";
 import VARIABLES from '../../config/.env';
 import ReactMarkdown from 'react-markdown';
@@ -50,7 +50,9 @@ function Torch() {
                 authorCred: data.Author,
             });
         })
+        
         .catch(err => console.log(err));
+        window.scrollTo(0, 0);
     }, [])
 
     return (
@@ -73,15 +75,15 @@ function Torch() {
                         {pageState.Section1_ImgCitation}
                     </figcaption>
                 </div>
-                <div className="torchSection1_text">
-                    <p>{pageState.section1_text}</p>
-                </div>
+                <ReactMarkdown className="torchSection1_text">
+                    {pageState.section1_text}
+                </ReactMarkdown>
             </div>
 
             {/**MIDPHOTO */}
             <figure className="torchMidphoto">
                 <img src={torchRelayEssayImage} alt=""/>
-                <figcaption>
+                <figcaption title={pageState.MidpagePhotoCredit_more}>
                     {pageState.MidpagePhotoCredit}
                 </figcaption>
             </figure>
@@ -132,7 +134,9 @@ function Torch() {
             <div className="torchSection3">
                 <div className="torchSection3_left">
                     <h2>{pageState.Section3_title}</h2>
-                    <p>{pageState.Section3_text}</p>
+                    <ReactMarkdown>
+                        {pageState.Section3_text}
+                    </ReactMarkdown>
                 </div>
                 <div className="torchSection3_right">
                     <img src={pageState.Section3_image} alt=""/>
@@ -145,7 +149,9 @@ function Torch() {
             {/**CONCLUSION */}
             <div className="torchConclusion">
                 <h2>CONCLUSION</h2>
-                <p>{pageState.Conclusion}</p>
+                <ReactMarkdown>
+                    {pageState.Conclusion}
+                </ReactMarkdown>
             </div>
 
             <ReactMarkdown className="torch_author">

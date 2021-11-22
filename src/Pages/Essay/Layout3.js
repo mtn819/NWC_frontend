@@ -43,6 +43,7 @@ function Layout3() {
                 PreferredCitation: data.PreferredCitation
             })
         });
+        window.scrollTo(0, 0);
     }, []);
 
     return (
@@ -50,15 +51,21 @@ function Layout3() {
             <h1>{pageState.header}</h1>
             <img src={toform} alt=""/>
             <p className="layout3_quote">{pageState.quote}</p>
-            <div className="layout3_section1">
-                <p>{pageState.section1_p1}
-                {pageState.section1_p2}</p>
-            </div>
+            <p className="layout3_section1">
+                <ReactMarkdown>
+                {pageState.section1_p1}
+                </ReactMarkdown>
+                <ReactMarkdown>
+                {pageState.section1_p2}
+                </ReactMarkdown>
+            </p>
             <ReactMarkdown className="layout3_section2">
                 {pageState.section2}
             </ReactMarkdown>
             <p className="layout3_section3">
-                <ReactMarkdown className="layout3_section3Text">{pageState.section3Text}</ReactMarkdown>
+                <ReactMarkdown className="layout3_section3Text">
+                    {pageState.section3Text}
+                </ReactMarkdown>
                 <p className="layout3_section3Quote">{pageState.section3Quote}</p>
             </p>
             <ReactMarkdown className="layout3_section2">
