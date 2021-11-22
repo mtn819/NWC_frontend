@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import './Home.css';
 import Map from './Map';
 import HighlightsCarousel from './HighlightsCarousel';
@@ -351,12 +352,13 @@ function Home() {
 
       {/**BUTTONS */}
       <div className="homeButtons">
-        <a href={homeButton1_link}>
+        <Link to={homeButton1_link}>
           <div className="homeButtons_button homeButtons_button1">
               <img src={button1} alt="button_2"/>
               <p>{homeButton1_text}</p>
           </div>
-        </a>
+        </Link>
+        
         {/*<a href={homeButton2_link}>*/}
           <div className="homeButtons_button homeButtons_button2">
               <img src={button2} alt="button_2"/>

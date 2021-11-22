@@ -389,6 +389,7 @@ BUTTONS
 .homeButtons_button p {
   width: calc(420*var(--xUnit));
   font-family: 'neobulletin', 'normal';
+  color: var(--colorDarkBlue);
   font-size: calc(24*var(--xUnit));
   font-weight: bold;
 }
