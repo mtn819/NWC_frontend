@@ -51,7 +51,7 @@ function Why() {
             setEssays(
                 data.map(d => {
                     const featured = d.Featured;
-                    const thumbnail = [VARIABLES.fetchBaseUrl, d.TallImage.Image[0].url].join('')
+                    const thumbnail = [VARIABLES.fetchBaseUrl, d.Thumbnail.url].join('')
                     const id = d._id;
                     const title = d.ShortTitle;
 
@@ -64,7 +64,6 @@ function Why() {
 
     function EssayList(props) {
         const essays = props.essays;
-        console.log(essays)
         const listItems = essays.filter(essay => essay[3] === true)
             .map((essay) =>
             <div key={essay[0]}>
@@ -117,7 +116,7 @@ function Why() {
                         <div>
                             <h3>Torch Relay</h3>
                             <Link to="/Torch">
-                                <img src={`${VARIABLES.fetchBaseUrl}/uploads/Virgnia_Currey_Torch_Relay_Participant_Letter_0ffa5ada40.jpg`} alt=""/>
+                                <img src={`${VARIABLES.fetchBaseUrl}/uploads/comingsoon_thumb_a45492bb9f.png`} alt=""/>
                             </Link>
                         </div>
                         <EssayList essays={essays} />,
