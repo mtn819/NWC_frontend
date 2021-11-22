@@ -42,6 +42,7 @@ function Why() {
             })
         })
         .catch(err => console.log(err));
+        window.scrollTo(0, 0);
     }, []);
 
     useEffect(() => {
@@ -66,10 +67,12 @@ function Why() {
         const essays = props.essays;
         const listItems = essays.filter(essay => essay[3] === true)
             .map((essay) =>
-            <div key={essay[0]}>
-                <h3>{essay[2]}</h3>
+            <div key={essay[0]} className="thumb_with_title">
                 <Link to={`essay?id=${essay[0]}`}>
-                <img src={essay[1]} alt="" key={essay[0]} /></Link>
+                    <img src={essay[1]} alt="" key={essay[0]} />
+                    <h3 className="thumb_with_title_h3">{essay[2]}</h3>
+                </Link>
+                
             </div>
         );
         return (
@@ -87,7 +90,9 @@ function Why() {
                 <div className="whyBanner_card">
                     <h2>HISTORICAL OVERVIEW</h2>
                     <p>{pageState.HistoricalOverview}</p>
-                    <a href="/essay?id=6195463454e8a217c0d07075"><p className="why_readmore" >READ MORE</p></a>
+                    <Link to="/Essay?id=6195463454e8a217c0d07075">
+                        <p className="why_readmore" >READ MORE</p>
+                    </Link>
                 </div>
                 <figure>
                     <img src={whybannerhuman} alt=""/>
@@ -113,18 +118,17 @@ function Why() {
                 <div className="whyEssays">
                     <h2>FEATURED ESSAYS</h2>
                     <div className="whyEssays_list">
-                        <div>
-                            <h3>Torch Relay</h3>
+                        <div className="thumb_with_title">
                             <Link to="/Torch">
-                                <img src={`${VARIABLES.fetchBaseUrl}/uploads/comingsoon_thumb_a45492bb9f.png`} alt=""/>
+                                <img src={`${VARIABLES.fetchBaseUrl}/uploads/empty_thumb_0a3afbbd76.png`} alt=""/>
+                                <h3 className="thumb_with_title_h3">Torch Relay</h3>
                             </Link>
-                        </div>
+                        </div>  
                         <EssayList essays={essays} />,
-                        <div>
-                            <h3>Coming soon</h3>
-                            <img src={comingsoon} alt=""/>
+                        <div className="thumb_with_title">
+                            <img src={comingsoon} alt="" />
+                            <h3 className="thumb_with_title_h3">Coming soon</h3>
                         </div>
-                        
                     </div>
                 </div>
 
