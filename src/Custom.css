@@ -15,6 +15,7 @@ body {
   --colorLightGray: #CCC9C9; /*Like seen in the text of homeMap's popup*/
   --colorLightGrayFont: #A5A5A5; /*Like seen in the text for essays*/
   --colorDarkBlue: #142F45; /*Like seen in the background of the Navigation*/
+  --colorMediumBlue: #357A93; /*Like seen in the essay lists short titles in thumnails*/
   --colorLightBlue: #9EC7E1; /*Like seen in the links of Navigation*/
   --colorDeepRed: #B32525; /*Like seen on the border of Navigation*/
   --colorDeepOrange: #CB4E28; /*Like seen on the border of Navigation*/

@@ -3,7 +3,7 @@
     margin-block-start: 20rem;
     margin-block-end: 20rem;
     font-size: 25rem;
-    color: var(--colorLightGrayFont);
+    color: var(--colorDarkBlue);
     font-family: var(--fontMontserrat);
 }
 /*
@@ -54,7 +54,7 @@ SECTION 1
 }
 
 .torchSection1_text p {
-    color: var(--colorLightGrayFont);
+    color: var(--colorDarkBlue);
 }
 
 /*
@@ -229,7 +229,7 @@ CONCLUSION
     font-family: var(--fontMontserrat);
     padding-left: 200rem;
     padding-right: 200rem;
-    color: var(--colorLightGrayFont);
+    color: var(--colorDarkBlue);
     padding-bottom: 40rem;
 }
 
