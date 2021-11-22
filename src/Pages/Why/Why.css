@@ -116,6 +116,13 @@ ESSAYS
     font-weight: normal;
 }
 
+.whyEssays h3 {
+    font-family: var(--fontBabasNeue);
+    font-size: 50rem;
+    color: var(--colorDeepRed);
+    font-weight: normal;
+}
+
 .whyEssays_list {
     display: flex;
     width: 100%;
@@ -125,7 +132,6 @@ ESSAYS
 
 .whyEssays_list img {
     width: 340px;
-    aspect-ratio: 8/11;
     margin-right: 10rem;
 }
 

@@ -1,9 +1,14 @@
 
-
+.torch p {
+    margin-block-start: 20rem;
+    margin-block-end: 20rem;
+    font-size: 25rem;
+    color: var(--colorLightGrayFont);
+    font-family: var(--fontMontserrat);
+}
 /*
 BANNER
 */
-
 .torchSection1 {
     font-family: var(--fontMontserrat);
     padding-bottom: 120rem;
@@ -49,7 +54,6 @@ SECTION 1
 }
 
 .torchSection1_text p {
-    font-size: 20rem;
     color: var(--colorLightGrayFont);
 }
 
@@ -131,11 +135,6 @@ SECTION 2
     margin: auto;
 }
 
-.torchSection2_text {
-    font-size: 20rem;
-    color: var(--colorLightGrayFont);
-}
-
 .torchSection2_right {
     margin-left: 120rem;
 }
@@ -210,11 +209,6 @@ SECTION 3
     margin-bottom: 40rem;
 }
 
-.torchSection3_left p {
-    font-size: 20rem;
-    color: var(--colorLightGrayFont);
-}
-
 .torchSection3 img {
     padding-left: 120rem;
     width: 100%;
@@ -235,7 +229,6 @@ CONCLUSION
     font-family: var(--fontMontserrat);
     padding-left: 200rem;
     padding-right: 200rem;
-    font-size: 20rem;
     color: var(--colorLightGrayFont);
     padding-bottom: 40rem;
 }
@@ -249,12 +242,13 @@ CONCLUSION
     margin-bottom: 40rem;
 }
 
-.torch_author {
-    font-family: var(--fontMontserrat);
+.torch_author p{
+    color: var(--colorDarkBlue);
     padding-left: 200rem;
     padding-right: 200rem;
-    font-size: 25rem;
-    font-family: var(--fontMontserrat);
+    font-size: 30rem;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
 }
 
 /*
@@ -262,16 +256,14 @@ SOURCES
 */
 
 .torchSources {
-    font-family: var(--fontMontserrat);
     padding-left: 200rem;
     padding-right: 200rem;
-    font-size: 36rem;
+    
 }
 
 .torchSources h2 {
     font-size: 40rem;
     font-family: var(--fontBabasNeue);
-    color: var(--colorDarkBlue);
     font-weight: normal;
     margin-top: 120rem;
     margin-bottom: 40rem;
@@ -280,15 +272,16 @@ SOURCES
 .torchSources p {
     font-size: 15rem;
     margin-bottom: 20rem;
+    color: var(--colorDarkBlue);
 }
 
 .torch_prefCit {
+    color: var(--colorDarkBlue);
     font-family: var(--fontMontserrat);
     padding-bottom: 120rem;
     padding-left: 200rem;
     padding-right: 200rem;
     font-size: 20rem;
-    padding-bottom: 120rem;
 }
 
 .torch_prefCit h2 {
@@ -299,4 +292,6 @@ SOURCES
     margin-top: 120rem;
     margin-bottom: 40rem;
 }
+
+
 

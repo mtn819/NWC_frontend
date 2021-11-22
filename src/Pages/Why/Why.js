@@ -7,6 +7,8 @@ import VARIABLES from '../../config/.env';
 import { Link } from 'react-router-dom';
 import InfoVideo from "../../Components/Avalon/InfoVideo";
 
+
+
 function Why() {
     const [pageState, setPageState] = useState({
         HistoricalOverview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -48,15 +50,35 @@ function Why() {
         .then(data => {
             setEssays(
                 data.map(d => {
+                    const featured = d.Featured;
                     const thumbnail = [VARIABLES.fetchBaseUrl, d.TallImage.Image[0].url].join('')
                     const id = d._id;
+                    const title = d.ShortTitle;
 
-                    return [id, thumbnail];
+                    return [id, thumbnail, title, featured];
                 })
             )
         })
         .catch(err => console.log(err));
     }, []);
+
+    function EssayList(props) {
+        const essays = props.essays;
+        console.log(essays)
+        const listItems = essays.filter(essay => essay[3] === true)
+            .map((essay) =>
+            <div key={essay[0]}>
+                <h3>{essay[2]}</h3>
+                <Link to={`essay?id=${essay[0]}`}>
+                <img src={essay[1]} alt="" key={essay[0]} /></Link>
+            </div>
+        );
+        return (
+            <div>
+                {listItems}
+            </div>
+        );
+    }
 
     return (
         <div className="why">
@@ -92,13 +114,18 @@ function Why() {
                 <div className="whyEssays">
                     <h2>FEATURED ESSAYS</h2>
                     <div className="whyEssays_list">
-                        <Link to="/Torch">
-                            <img src={`${VARIABLES.fetchBaseUrl}/uploads/Virgnia_Currey_Torch_Relay_Participant_Letter_0ffa5ada40.jpg`} alt=""/>
-                        </Link>
-                        {essays.map(e => <Link to={`essay?id=${e[0]}`}>
-                            <img src={e[1]} alt="" key={e[0]} />
-                        </Link>)}
-                        <img src={comingsoon} alt=""/>
+                        <div>
+                            <h3>Torch Relay</h3>
+                            <Link to="/Torch">
+                                <img src={`${VARIABLES.fetchBaseUrl}/uploads/Virgnia_Currey_Torch_Relay_Participant_Letter_0ffa5ada40.jpg`} alt=""/>
+                            </Link>
+                        </div>
+                        <EssayList essays={essays} />,
+                        <div>
+                            <h3>Coming soon</h3>
+                            <img src={comingsoon} alt=""/>
+                        </div>
+                        
                     </div>
                 </div>
 
