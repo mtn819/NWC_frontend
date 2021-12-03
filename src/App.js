@@ -20,7 +20,7 @@ import Layout3 from "./Pages/Essay/Layout3";
 
 function App() {
   return (
-    <Router className="App">
+    <Router basename={'/dev'} className="App">
       <Navigation/>
 
       <Switch>

@@ -2,6 +2,7 @@
   "name": "nwcfrontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/dev",
   "dependencies": {
     "@react-hook/window-size": "^3.0.7",
     "@testing-library/jest-dom": "^5.12.0",
