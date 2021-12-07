@@ -40,7 +40,48 @@ function Footer() {
   }, []);
 
   return (
-    <div className="footer">
+     <div className="footer">
+        <div className="footer_top icon">
+          <img src={icon} alt="project_icon"/>
+        </div>
+        <div className="footer_top home">
+          <a href="/"><p>HOME</p></a>
+        </div>
+        <div className="footer_top contact">
+          <a href={`mailto:${contactEmail}`}><p>CONTACT</p></a>
+        </div>
+        <div className="footer_top donate">
+          <a href={donateLink}>DONATE</a>
+        </div>
+        <div className="footer_top social">
+            <div className="socialMedia">
+              <p>SOCIAL MEDIA</p>
+            </div>
+            <div className="instagram">
+                <a href={instagramLink}><img src={instagram} alt="instagram_logo"/></a>
+            </div>
+            <div className="twitter">
+                <a href={twitterLink}><img src={twitter} alt="twitter_logo"/></a>
+            </div>
+            <div className="facebook">
+              <a href={facebookLink}><img src={facebook} alt="facebook_logo"/></a>
+            </div>
+        </div>
+        <div className="footer_bot">
+          <div className="footer_support">
+            The Sharing Stories from 1977 project appreciates the support of the following:
+          </div>
+          <div className="footer_seal">
+            <img src={neh_seal} alt="NEH_seal"/> 
+          </div>
+          {paragraph}
+        </div>
+        
+    </div>
+  
+      
+      
+      /* <div className="footer">
 
       <div className="footer_top">
         <div className="footer_icon">
@@ -81,7 +122,8 @@ function Footer() {
         </div>
         {paragraph}
       </div>
-    </div>
+    </div> */
+  
   )
 }
 

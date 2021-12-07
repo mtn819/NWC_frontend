@@ -123,14 +123,31 @@ ESSAYS
     justify-content: left;
 }
 
-.whyEssays_list img {
-    width: 340px;
-    aspect-ratio: 8/11;
-    margin-right: 10rem;
+.thumb_with_title {
+    position: relative;
+    text-align: center;
 }
 
-.whyEssays_list img:hover {
-    opacity: .8;
+.thumb_with_title_h3 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--fontBabasNeue);
+    font-size: 45rem;
+    color: var(--colorMediumBlue);
+    font-weight: normal;
+    width: 350rem;
+}
+
+.whyEssays_list img {
+    width: 350rem;
+    margin-right: 15rem;
+    margin-left: 15rem;
+}
+
+.whyEssays_list a:hover {
+    opacity: .6;
 }
 
 .whyEssays_list::-webkit-scrollbar {

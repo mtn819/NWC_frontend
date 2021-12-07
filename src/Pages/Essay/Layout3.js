@@ -18,16 +18,16 @@ function Layout3() {
         section2: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
         section3Text: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
         section3Quote: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
+        section4: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
         authorCred: "Written by Jane Doe",
-        sources: ["Source A", "Source B",]
+        sources: ["Source A", "Source B",],
+        PreferredCitation: ""
     });
 
     useEffect(() => {
         fetch([VARIABLES.fetchBaseUrl, `content-essays/${id}`].join('/'))
         .then(res => res.json())
         .then(data => {
-            console.log("HERE", data);
-
             setPageState({
                 ...pageState,
                 header: data.Title,
@@ -37,10 +37,13 @@ function Layout3() {
                 section2: data.Paragraph2,
                 section3Text: data.Paragraph3,
                 section3Quote: data.PullQuote2,
-                authorCred: data.Author,
+                section4: data.Paragraph4,
+                authorCred: data.AuthorCredit,
                 sources: data.Sources.map(src => src.text),
+                PreferredCitation: data.PreferredCitation
             })
         });
+        window.scrollTo(0, 0);
     }, []);
 
     return (
@@ -48,24 +51,40 @@ function Layout3() {
             <h1>{pageState.header}</h1>
             <img src={toform} alt=""/>
             <p className="layout3_quote">{pageState.quote}</p>
-            <div className="layout3_section1">
-                <p>{pageState.section1_p1}</p>
-                <p>{pageState.section1_p2}</p>
-            </div>
+            <p className="layout3_section1">
+                <ReactMarkdown>
+                {pageState.section1_p1}
+                </ReactMarkdown>
+                <ReactMarkdown>
+                {pageState.section1_p2}
+                </ReactMarkdown>
+            </p>
             <ReactMarkdown className="layout3_section2">
                 {pageState.section2}
             </ReactMarkdown>
             <p className="layout3_section3">
-                <ReactMarkdown className="layout3_section3Text">{pageState.section3Text}</ReactMarkdown>
+                <ReactMarkdown className="layout3_section3Text">
+                    {pageState.section3Text}
+                </ReactMarkdown>
                 <p className="layout3_section3Quote">{pageState.section3Quote}</p>
             </p>
-            <p className="layout3_author">
+            <ReactMarkdown className="layout3_section2">
+                {pageState.section4}
+            </ReactMarkdown>
+            <ReactMarkdown className="layout3_author">
                 {pageState.authorCred}
-            </p>
+            </ReactMarkdown>
             <div className="layout3_sources">
                 <h2>SOURCES</h2>
                 {pageState.sources.map(src => <p>{src}</p>)}
             </div>
+
+            {/**PREF CIT */}
+            <div className="layout3_prefCit">
+                <h2>PREFERRED CITATION</h2>
+                {pageState.PreferredCitation}
+            </div>
+
         </div>
     )
 }

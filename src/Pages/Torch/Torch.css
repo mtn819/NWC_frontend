@@ -1,78 +1,60 @@
 
-
+.torch p {
+    margin-block-start: 20rem;
+    margin-block-end: 20rem;
+    font-size: 25rem;
+    color: var(--colorDarkBlue);
+    font-family: var(--fontMontserrat);
+}
 /*
 BANNER
 */
-
-/*
-
-.torchBanner {
-    width: 100%;
-    position: relative;
-    padding: 40rem 120rem;
-}
-
-.torchBanner_right {
-    font-size: 50rem;
-    width: 60%;
-    margin-left: auto;
-}
-
-.torchBanner_right h1 {
-    font-size: 100rem;
-    font-family: var(--fontBabasNeue);
-    color: var(--colorDarkBlue);
-    font-weight: normal;
-}
-
-.torchBanner_right h2 {
-    font-size: 110rem;
-    font-family: var(--fontBabasNeue);
-    font-weight: normal;
-    max-width: 24ch;
-}
-
-.torchBanner_right p {
-    font-size: 36rem;
-    max-width: 70ch;
-}
-
-*/
-
 .torchSection1 {
     font-family: var(--fontMontserrat);
+    padding-bottom: 120rem;
+    padding-left: 200rem;
+    padding-right: 200rem;
 }
 
 /*
 SECTION 1
 */
 
-.torchSection1_title h2 {
+.torchSection1_title h1 {
     font-size: 80rem;
     font-family: var(--fontBabasNeue);
+    color: var(--colorDarkBlue);
     font-weight: normal;
     text-align: center;
     max-width: 40ch;
     margin: auto;
+    padding-top: 120rem;
+    padding-bottom: 120rem;
 }
 
 .torchSection1 {
     display: flex;
-    padding: 40rem 80rem;
     align-items: center;
 }
 
 .torchSection1 > * {
-    width: 50%;
-    margin: 30rem;
+    width: 60%;
 }
 
 .torchSection1 img {
-    width: 100%;
+    width: 80%;
+}
+
+.torchSection1 figcaption {
+    width: 80%;
+    font-size: 20rem;
+    font-family: var(--fontMontserrat);
+    text-align: right;
+    padding: 20rem;
 }
 
 .torchSection1_text p {
-    font-size: 30rem;
+    color: var(--colorDarkBlue);
 }
 
 /*
@@ -88,7 +70,7 @@ MIDPHOTO
 }
 
 .torchMidphoto figcaption {
-    font-size: 45rem;
+    font-size: 35rem;
     font-family: var(--fontBabasNeue);
     color: var(--colorBeige);
     background-color: var(--colorDarkBlue);
@@ -99,12 +81,24 @@ MIDPHOTO
     right: 0;
 }
 
+.torch_border {
+    width: 100vw;
+    border-top: 25rem solid var(--colorDeepRed); /*high*/
+    height: 75rem; /*mid*/
+    background-color: var(--colorDeepOrange);
+    border-bottom: 25rem solid var(--colorDeepYellow);/*low*/
+  }
+
 /*
 SECTION 2
 */
 
 .torchSection2 {
     display: flex;
+    font-family: var(--fontMontserrat);
+    padding-bottom: 120rem;
+    padding-left: 200rem;
+    padding-right: 200rem;
 }
 
 .torchSection2 > * {
@@ -113,40 +107,40 @@ SECTION 2
 
 .torchSection2 img {
     width: 100%;
-}
-
-.torchSection2_left {
-    padding: 60rem;
+    margin-top: 100rem;
 }
 
 .torchSection2_title {
-    font-size: 80rem;
+    font-size: 40rem;
     font-family: var(--fontMontserrat);
+    color: var(--colorDarkBlue);
     font-weight: normal;
+    margin-top: 120rem;
     margin-bottom: 40rem;
 }
 
 .torchSection2_quote {
-    font-size: 50rem;
-    max-width: 40ch;
-    font-weight: bold;
-    font-family: var(--fontMontserrat);
-    border-left: 12rem solid var(--colorDeepRed);
-    padding: 20rem 60rem;
-    margin-bottom: 40rem;
+    margin-left: 10rem;
+    margin-bottom: 120rem;
 }
 
-.torchSection2_text {
-    font-size: 30rem;
-    max-width: 70ch;
+.torchSection2_quote div{
+    border-left: 8rem solid var(--colorDeepRed);
+    font-size: 25rem;
+    padding: 40rem;
+    font-family: var(--fontMontserrat);
+    color: var(--colorDarkBlue);
+    font-weight: bold;
+    font-style: italic;
+    margin: auto;
 }
 
 .torchSection2_right {
-    margin: 20rem;
+    margin-left: 120rem;
 }
 
 .torchSection2_right figcaption {
-    font-size: 30rem;
+    font-size: 20rem;
     font-family: var(--fontMontserrat);
     text-align: right;
     padding: 20rem;
@@ -159,7 +153,7 @@ MAP
 .torchMap {
     background-color: var(--colorDeepRed);
     font-family: var(--fontMontserrat);
-    font-size: 40rem;
+    font-size: 25rem;
     margin-bottom: 40rem;
     padding: 40rem;
 }
@@ -168,6 +162,8 @@ MAP
     text-align: center;
     color: white;
     padding: 40rem;
+    font-weight: normal;
+    font-size: 45rem;
 }
 
 .torchMap figure {
@@ -193,29 +189,35 @@ SECTION 3
 */
 
 .torchSection3 {
-    font-size: 40rem;
     display: flex;
-    align-items: center;
+    font-family: var(--fontMontserrat);
+    padding-left: 200rem;
+    padding-right: 200rem;
 }
 
 .torchSection3 > * {
     width: 50%;
-    margin: 20rem;
-    padding: 20rem;
-    align-items: center;
 }
 
 .torchSection3_left h2 {
+    font-size: 40rem;
     font-family: var(--fontMontserrat);
-}
-
-.torchSection3_left p {
-    font-family: var(--fontMontserrat);
-    font-size: 36rem;
+    color: var(--colorDarkBlue);
+    font-weight: normal;
+    margin-top: 120rem;
+    margin-bottom: 40rem;
 }
 
 .torchSection3 img {
+    padding-left: 120rem;
     width: 100%;
+}
+
+.torchSection3 figcaption {
+    font-size: 20rem;
+    font-family: var(--fontMontserrat);
+    text-align: right;
+    padding: 20rem;
 }
 
 /*
@@ -223,13 +225,29 @@ CONCLUSION
 */
 
 .torchConclusion {
-    font-size: 40rem;
     font-family: var(--fontMontserrat);
-    padding: 60rem;
+    padding-left: 200rem;
+    padding-right: 200rem;
+    color: var(--colorDarkBlue);
+    padding-bottom: 40rem;
 }
 
 .torchConclusion h2 {
+    font-size: 40rem;
+    font-family: var(--fontMontserrat);
+    color: var(--colorDarkBlue);
+    font-weight: normal;
+    margin-top: 120rem;
     margin-bottom: 40rem;
+}
+
+.torch_author p{
+    color: var(--colorDarkBlue);
+    padding-left: 200rem;
+    padding-right: 200rem;
+    font-size: 30rem;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
 }
 
 /*
@@ -237,18 +255,42 @@ SOURCES
 */
 
 .torchSources {
-    font-size: 36rem;
-    padding: 60rem;
+    padding-left: 200rem;
+    padding-right: 200rem;
+    
 }
 
 .torchSources h2 {
-    margin-bottom: 60rem;
+    font-size: 40rem;
     font-family: var(--fontBabasNeue);
-    font-size: 80rem;
     font-weight: normal;
-    color: var(--colorDarkBlue);
+    margin-top: 120rem;
+    margin-bottom: 40rem;
 }
 
 .torchSources p {
+    font-size: 15rem;
+    margin-bottom: 20rem;
+    color: var(--colorDarkBlue);
+}
+
+.torch_prefCit {
+    color: var(--colorDarkBlue);
+    font-family: var(--fontMontserrat);
+    padding-bottom: 120rem;
+    padding-left: 200rem;
+    padding-right: 200rem;
+    font-size: 20rem;
+}
+
+.torch_prefCit h2 {
+    font-size: 40rem;
+    font-family: var(--fontBabasNeue);
+    color: var(--colorDarkBlue);
+    font-weight: normal;
+    margin-top: 120rem;
     margin-bottom: 40rem;
 }
+
+
+
