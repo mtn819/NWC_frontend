@@ -3,126 +3,88 @@ import { useLocation } from 'react-router';
 import VARIABLES from '../../config/.env';
 import InfoAudio from '../../DiscoverNWCStories/InfoPage/InfoAudio';
 import "./Essay.css";
+import Layout1 from './Layouts/Layout1';
+import Layout2 from './Layouts/Layout2';
+import Layout3 from './Layouts/Layout3';
 
 function Essay() {
     const { search } = useLocation();
     const id = search.split('=')[1];
-    const [pageState, setPageState] = useState({
-        Title: "WHY THE NWC MATTERS",
-        Image1: '/',
-        Image2: '/',
-        Image3: '/',
-        MainImage: '/',
-        TallImage: '/',
-        Paragraph1: "ABCDEFG",
-        Paragraph2: "DEFGHIJ",
-        Paragraph3: "HIJSALL",
-        srcs: [],
-        audioUrl: "/",
-        author: "Written by Jane Doe; University of Houston, Class of 2020",
+
+    const [state, setState] = useState({
+        header: "SENECAL FALLS SOUTH",
+        quote: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
+        section1_p1: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
+        section1_p2: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
+        section2: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
+        section3Text: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
+        section3Quote: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
+        section4: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum interdum odio diam, quis rutrum enim laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit, est sed porta finibus, velit turpis sodales nisi, eu dapibus risus augue vel dolor. Nam a orci sollicitudin, interdum ligula eu, viverra sem. Etiam vitae mollis nunc, quis pellentesque sem. Vivamus vestibulum sodales dui eget tempor. Fusce eget ultrices justo, at bibendum velit. Duis commodo non ex vel euismod.",
+        authorCred: "Written by Jane Doe",
+        sources: ["Source A", "Source B",],
+        PreferredCitation: "",
+        LayoutChoice: "Layout3", // this is the default layout because it's simple
     });
 
     useEffect(() => {
         fetch([VARIABLES.fetchBaseUrl, `content-essays/${id}`].join('/'))
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             function processImage(img) {
                 // [imgurl, credit]
-                return [
-                    [VARIABLES.fetchBaseUrl, img.Image[0].url].join(''),
-                    img.ImgCredit
-                ];
+                try {
+                    return [
+                        [VARIABLES.fetchBaseUrl, img.Image[0].url].join(''),
+                        img.ImgCredit
+                    ];
+                } catch(err) {
+                    console.log(err);
+                }
             }
-            
-            const sources = data.Sources.map(s => s.text);
 
-            setPageState({
-                ...pageState,
+            setState({
+                ...state,
                 ...data,
-                srcs: sources,
+                header: data.Title,
+                quote: data.PullQuote1,
+                section1_p1: data.Paragraph1 ? data.Paragraph1.slice(0, parseInt(data.Paragraph1.length / 2)) + "-" : '',
+                section1_p2: data.Paragraph1 ? data.Paragraph1.slice(parseInt(data.Paragraph1.length / 2)) : '',
+                section2: data.Paragraph2,
+                section3Text: data.Paragraph3,
+                section3Quote: data.PullQuote2,
+                section4: data.Paragraph4,
+                authorCred: data.AuthorCredit,
+                sources: data.Sources.map(src => src.text),
+                PreferredCitation: data.PreferredCitation,
                 Image1: processImage(data.Image1),
                 Image2: processImage(data.Image2),
                 Image3: processImage(data.Image3),
                 MainImage: processImage(data.MainImage),
                 TallImage: processImage(data.TallImage),
-            });
 
-            console.log("HERE! TODAY!asdf", pageState);
+                LayoutChoice: "Layout2",
+            })
         });
+        window.scrollTo(0, 0);
     }, []);
 
-    return (
-        <div className="essay">
-            {/**BANNER */}
-            <div className="essayBanner">
-                <h1>{pageState.Title}</h1>
-            </div>
-            <div className="essayBanner_hr"></div>
-            <figure>
-                <img src={pageState.MainImage[0]} alt=""/>
-                <figcaption>{pageState.MainImage[1]}</figcaption>
-            </figure>
-
-            {/**P1 */}
-            <div className="essayP1">
-                <div className="essayP1_left">
-                    <figure>
-                        <img src={pageState.TallImage[0]} alt=""/>
-                        <figcaption>
-                            {pageState.TallImage[1]}
-                        </figcaption>
-                    </figure>
-                </div>
-                <div className="essayP1_right">
-                    <figure className="essayP1_img">
-                        <img src={pageState.Image1[0]} alt=""/>
-                        <figcaption>
-                            {pageState.Image1[1]}
-                        </figcaption>
-                    </figure>
-
-                    <p>{pageState.Paragraph1}</p>
-                </div>
-            </div>
-
-            {/**P2 */}
-            <div className="essayP2">
-                <p>{pageState.Paragraph2}</p>
-            </div>
-
-            {/**P3 */}
-            <div className="essayP3">
-                <p>{pageState.Paragraph3}</p>
-                <figure>
-                    <img src={pageState.Image2[0]} alt=""/>
-                    <figcaption>
-                        {pageState.Image2[1]}
-                    </figcaption>
-                </figure>
-            </div>
-
-            {/**P4 */}
-            <div className="essayP4">
-                <p>{pageState.Paragraph4}</p>
-                <figure>
-                    <img src={pageState.Image3[0]} alt=""/>
-                    <figcaption>
-                        {pageState.Image3[1]}
-                    </figcaption>
-                </figure>
-            </div>
-
-            {/**SOURCES */}
-            <div className="essaySources">
-                <p className="essaySources_author">{pageState.author}</p>
-                <h2>Sources:</h2>
-                {pageState.srcs.map(src => <p className="essaySources_src">
-                    {src}
-                </p>)}
-            </div>
-        </div>
-    )
+    return (<div className="essay">
+        {
+            // if layout is layout 1
+            state.LayoutChoice === "Layout1" ? 
+            // return layout 1
+            <Layout1 props={ state } /> :
+            // else
+            (
+                // if layout is layout 2
+                state.LayoutChoice === "Layout2" ?
+                // return layout 2
+                <Layout2 props={ state } /> :
+                // else return layout 3
+                <Layout3 props={ state }  />
+            )
+        }
+    </div>)
 }
 
 export default Essay
