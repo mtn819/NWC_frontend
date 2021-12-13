@@ -61,15 +61,16 @@ function Essay() {
                 Image3: processImage(data.Image3),
                 MainImage: processImage(data.MainImage),
                 TallImage: processImage(data.TallImage),
-
-                LayoutChoice: "Layout2",
             })
         });
         window.scrollTo(0, 0);
     }, []);
 
     return (<div className="essay">
-        {
+        {   // LAYOUT SWITCH
+            // DEPENDS ON state.LayoutChoice,
+            // which is provided by STRAPI
+
             // if layout is layout 1
             state.LayoutChoice === "Layout1" ? 
             // return layout 1
