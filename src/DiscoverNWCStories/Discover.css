@@ -28,6 +28,7 @@
   padding-left: calc(61*var(--xUnit));
   padding-top: calc(58*var(--xUnit));
   padding-bottom: calc(41*var(--xUnit));
+  font-size: 24rem;
 }
 
 .discover_splash_fem {
@@ -77,11 +78,28 @@
 
 .discover_stories_buttons {
   display: flex;
-  justify-content: space-between;
-  width: calc(708*var(--xUnit));
-  margin-top: calc(25.3*var(--xUnit));
-  margin-left: calc(1100*var(--xUnit));
-  margin-bottom: calc(60.3*var(--xUnit));
+  justify-content: right;
+}
+
+.discover_stories_participants {
+  font-size: 36rem;
+  font-family: var(--fontBabasNeue);
+  background-color: var(--colorDarkBlue);
+  color: white;
+  padding: 10rem 20rem;
+  border-radius: 25px;
+  margin-right: 40rem;
+  transition:
+    background-color .5s,
+    color .5s
+  ;
+}
+
+.discover_stories_participants:hover {
+  cursor: pointer;
+  background-color: white;
+  color: var(--colorDarkBlue);
+  text-decoration: underline;
 }
 
 .discover_stories_buttons img {

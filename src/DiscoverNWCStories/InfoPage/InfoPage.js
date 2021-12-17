@@ -29,13 +29,8 @@ function InfoPage({
       <div className="info_topsplash"></div>
 
       <div className="info_tophead">
-        <a href="/DiscoverNWCStories"><div className="info_back">&lt;- BACK TO DISCOVER PAGE</div></a>
+        <a href="/DiscoverNWCStories"><div className="info_back">&larr; BACK TO DISCOVER PAGE</div></a>
         <div className="info_name">{name}</div>
-        <div className="info_righthead">
-          <div>BIOGRAPHY</div>
-          <div>RELATED ARCHIVAL ITEMS</div>
-          <div>SOURCES</div>
-        </div>
       </div>
 
       <div className="info_splits">
@@ -66,20 +61,6 @@ function InfoPage({
         </div>
 
         <div className="info_rightsplit">
-          <div className="info_video">
-            <InfoVideo src={videoSRC} title={videoTitle} />
-          </div>
-
-          <div className="info_tags">
-            <div className="info_usertags">USER TAGS</div>
-            <div className="info_suggest">HAVE A SUGGESTION?</div>
-            <div className="info_tagshr"></div>
-            <div className="info_taglist">
-              {tags.map(t =>
-                <div className="info_tag">{t}</div>
-              )}
-            </div>
-          </div>
 
 
         <div className="info_biography">

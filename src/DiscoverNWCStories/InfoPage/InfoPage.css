@@ -13,6 +13,7 @@
 .info_back {
   margin-top: calc(76*var(--xUnit));
   font-size: calc(40*var(--xUnit));
+  color: blue;
 }
 
 .info_name {

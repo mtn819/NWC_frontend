@@ -7,6 +7,7 @@ import navfiller from './res/navfiller.png';
 import filler from './res/fillerimg.png';
 import viewmaps from './res/viewmaps.png';
 import addstory from './res/addstory.png';
+import { Link } from 'react-router-dom';
 
 function Stories({path}) {
 
@@ -18,8 +19,11 @@ function Stories({path}) {
         <img src={navfiller}/>
 
         <div className="discover_stories_buttons">
-          <img src={viewmaps}/>
-          <img src={addstory}/>
+          <Link to="/participants">
+            <div className="discover_stories_participants">View Participants</div>
+            {/*<img src={viewmaps}/>
+            <img src={addstory}/>*/}
+          </Link>
         </div>
       </div>
       

@@ -16,6 +16,7 @@ function Navigation() {
         <Link className={"navigation_link" + " " + (location.pathname === "/" ? "navigation_link--selected" : "")} to="/">HOME</Link>
         <Link className={"navigation_link" + " " + (location.pathname === "/About" ? "navigation_link--selected" : "")} to="/About">ABOUT PROJECT</Link> 
         <Link className={"navigation_link" + " " + (location.pathname === "/Why" ? "navigation_link--selected" : "")} to="/Why">WHY THE NWC MATTERS</Link>
+        <Link className={"navigation_link" + " " + (location.pathname === "/Participants" ? "navigation_link--selected" : "")} to="/Participants">LIST OF PARTICIPANTS</Link>
         <Link className="navigation_link" to="/DiscoverNWCStories">DISCOVER NWC STORIES</Link>  
         <div></div> 
         {/*<Link className="navigation_link" to="/DiscoverNWCStories">DISCOVER NWC STORIES</Link>  

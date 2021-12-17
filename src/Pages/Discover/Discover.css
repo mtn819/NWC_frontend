@@ -1,0 +1,79 @@
+/*
+BANNER
+*/
+
+.discoverBanner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--colorBeige);
+}
+
+.discoverBanner > img {
+    width: 25%;
+}
+
+.discoverBanner > .lcard {
+    width: 35%;
+    margin: 2rem 0;
+}
+
+.discoverBanner > .captionedImg {
+    width: 30%;
+    align-self: flex-end;
+}
+
+/*
+FEATURED
+*/
+
+.discoverFeatured > h2 {
+    font-weight: normal;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.discoverFeatured_cards {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.discoverFeatured_cards > * {
+    margin: 1rem 0;
+    width: 30%;
+}
+
+/*
+SEARCH
+*/
+
+.discoverSearch {
+    width: 100%;
+}
+
+/*
+CARDS
+*/
+
+.discoverCards_border {
+    width: 96%;
+    height: 1.5rem;
+    border-top: .5rem solid var(--colorDeepRed);
+    background-color: var(--colorDeepOrange);
+    border-bottom: .5rem solid var(--colorDeepYellow);
+    margin: 1rem auto;
+}
+
+.discoverCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.discoverCards > * {
+    margin: 1rem 0;
+    width: 30%;
+}

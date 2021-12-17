@@ -21,6 +21,7 @@ body {
   --colorDeepOrange: #CB4E28; /*Like seen on the border of Navigation*/
   --colorDeepYellow: #FFD048; /*Like seen on the bottom border of the homeAbout Section*/
   --colorBeige: #FFF4E8; /*Like seen the homeAbout section*/
+  --colorLighterBlue: rgba(117, 178, 224, .5);
 
   --fontBabasNeue: 'babas_neue';
   --fontGotham: 'gotham';
