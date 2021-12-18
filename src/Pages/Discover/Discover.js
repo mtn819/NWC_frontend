@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react'
 import "./Discover.css";
 import discoverButton from "../../res/imgs/buttondiscover.png";
 import podiumperson from "../../res/imgs/podiumperson.png";
-import LCard from '../../components/LCard/LCard';
-import CaptionedImg from '../../components/CaptionedImg/CaptionedImg';
-import FeaturedCard from "../../components/FeaturedCard/FeaturedCard";
+import LCard from '../../Components/LCard/LCard';
+import CaptionedImg from '../../Components/CaptionedImg/CaptionedImg';
+import FeaturedCard from "../../Components/FeaturedCard/FeaturedCard";
 import searchPlaceholder from "../../res/imgs/searchplaceholder.png";
 import discoverbannerperson from "../../res/imgs/discoverbannerperson.png";
-import {fetchBaseUrl} from "../../config/.env.js";
+import VARIABLES from "../../config/.env.js";
 import { loadcards } from './cardloader';
-import DiscoverCard from '../../components/DiscoverCard/DiscoverCard';
-import { getSafe, processPageOld } from "../../components/util/util";
+import DiscoverCard from '../../Components/DiscoverCard/DiscoverCard';
+import { getSafe, processPageOld } from "../../Components/util/util";
+import { Link } from 'react-router-dom';
 
 function Discover() {
     const [cards, setCards] = useState([]);
@@ -22,6 +23,8 @@ function Discover() {
     const [stateOld, setStateOld] = useState({
         bannerText: "abcdefg",
     }); // Handles the text throughout page.
+
+    const { fetchBaseUrl } = VARIABLES;
 
     useEffect(() => {
         fetch([fetchBaseUrl, `content-discover-stories`/* + `?_start=${page}&_limit=2`*/].join('/'))
@@ -40,16 +43,45 @@ function Discover() {
         .catch(err => console.log(err));
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const [filter, setFilter] = useState("");
-    function filterCards(){
-        const urlFilter = `${filter}=${input}`;
-        fetch([fetchBaseUrl, `content-discover-stories?${urlFilter}`/* + `?_start=${page}&_limit=2`*/].join('/'))
+    function search(){
+        fetch([fetchBaseUrl, `content-discover-stories` + `?name_contains=${input}`].join('/'))
         .then(response => response.json())
         .then(data => loadcards(data, setCards))
         .then(() => console.log(cards))
-        .catch(console.log);
+        .catch(err => console.log(err));
     }
 
+    const [currentSort, setCurrentSort] = useState("");
+
+    function sortName(){
+        fetch([fetchBaseUrl, `content-discover-stories` + `?name_contains=${input}` + `&_sort=name:ASC`].join('/'))
+        .then(response => response.json())
+        .then(data => loadcards(data, setCards))
+        .then(() => console.log(cards))
+        .catch(err => console.log(err));
+
+        setCurrentSort("name");
+    }
+    
+    function sortRole(){
+        fetch([fetchBaseUrl, `content-discover-stories` + `?name_contains=${input}` + `&_sort=role:ASC`].join('/'))
+        .then(response => response.json())
+        .then(data => loadcards(data, setCards))
+        .then(() => console.log(cards))
+        .catch(err => console.log(err));
+
+        setCurrentSort("role");
+    }
+
+    function sortState(){
+        fetch([fetchBaseUrl, `content-discover-stories` + `?name_contains=${input}` + `&_sort=state:ASC`].join('/'))
+        .then(response => response.json())
+        .then(data => loadcards(data, setCards))
+        .then(() => console.log(cards))
+        .catch(err => console.log(err));
+
+        setCurrentSort("state");
+    }
 
     return (
         <div className="discover">
@@ -83,12 +115,24 @@ function Discover() {
 
             {/**SEARCH */}
             <div className="discoverSearch">
-                <input value={input} onChange={e=>setInput(e.target.value)}/>
+                <div className="discoverSearch_bar">
+                    <input placeholder="Search Participants" value={input} onChange={e=>setInput(e.target.value)}/>
+                    <p className="discoverSearch_icon" onClick={() => search()}>&#x1F50E;&#xFE0E;</p>
+                </div>
                 <div className="discoverSearch_sortBy">
                     <p>SORT BY:</p>
-                    <p onClick={filterCards}>Go!</p>
-                    <p onClick={() => setFilter("Name")}>NAME</p>
+                    <p className="discoverSearch_separater">|</p>
+                    <p className="discoverSearch_sorter" onClick={() => sortName()}>NAME</p>
+                    <p className="discoverSearch_separater">|</p>
+                    <p className="discoverSearch_sorter" onClick={() => sortRole()}>ROLE</p>
+                    <p className="discoverSearch_separater">|</p>
+                    <p className="discoverSearch_sorter" onClick={() => sortState()}>STATE</p>
                 </div>
+            </div>
+            <div className="discoverButtons">
+                <Link to="/participants">
+                    <div className="discoverButtons_participants">VIEW PARTICIPANTS</div>
+                </Link>
             </div>
 
             {/**CARDS */}

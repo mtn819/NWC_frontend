@@ -1,4 +1,4 @@
-import { getSafe, media2url } from "../../components/util/util";
+import { getSafe, media2url } from "../../Components/util/util";
 
 export function loaddiscover(data, setPageState, pageState={}) {
     console.log(data);

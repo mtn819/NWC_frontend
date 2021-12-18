@@ -1,0 +1,29 @@
+.card {
+    border: .3rem solid var(--colorDeepRed);
+    padding: 1rem 2rem;
+}
+
+.card h2 {
+    width: fit-content;
+    margin: auto;
+    transform: translateY(calc(-50% - 1rem));
+    text-align: center;
+    font-size: 2rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    border-bottom: .5rem solid var(--colorDeepRed);
+}
+
+.card_content {
+    font-family: var(--fontNeoBulletin);
+    margin-bottom: 1rem;
+    font-size: .6rem;
+    margin-top: -1rem;
+    font-weight: bold;
+}
+
+.card_readmore:hover {
+    cursor: pointer;
+    color: var(--colorDeepRed);
+    text-decoration: underline;
+}

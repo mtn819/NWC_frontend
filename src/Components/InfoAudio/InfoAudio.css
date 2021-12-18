@@ -1,0 +1,12 @@
+.info_audiocontainer {
+    width: calc(1069*var(--xUnit));
+    height: calc(664*var(--xUnit));
+    display:flex;
+    align-items:center;
+  }
+
+  .info_audioiframe {
+    border-style: none;
+    border:0px;
+    width: 100%;
+  } 

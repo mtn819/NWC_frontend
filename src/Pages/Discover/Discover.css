@@ -1,3 +1,8 @@
+.discover {
+    font-size: calc(1vw + 16px);
+    font-family: var(--fontBabasNeue);
+}
+
 /*
 BANNER
 */
@@ -15,7 +20,7 @@ BANNER
 
 .discoverBanner > .lcard {
     width: 35%;
-    margin: 2rem 0;
+    margin: 2em 0;
 }
 
 .discoverBanner > .captionedImg {
@@ -30,19 +35,19 @@ FEATURED
 .discoverFeatured > h2 {
     font-weight: normal;
     text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .discoverFeatured_cards {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     flex-wrap: wrap;
 }
 
 .discoverFeatured_cards > * {
-    margin: 1rem 0;
+    margin: 1em 0;
     width: 30%;
 }
 
@@ -51,7 +56,90 @@ SEARCH
 */
 
 .discoverSearch {
-    width: 100%;
+    width: calc(100% - 2em);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--colorLightBlue);
+    padding: .4em;
+    align-items: center;
+}
+
+.discoverSearch_bar {
+    width: fit-content;
+    display: flex;
+    border: .1em solid var(--colorLightBlue);
+    padding: 0 .2em;
+}
+
+.discoverSearch_bar > input {
+    border: none;
+    outline: none;
+    border-bottom: .1em solid var(--colorLightBlue);
+    height: fit-content;
+    font-size: .7em;
+    margin: auto;
+    padding-left: 1ch;
+    margin-right: 1ch;
+}
+
+.discoverSearch_bar > input::placeholder {
+    color: lightgray;
+}
+
+.discoverSearch_bar > input:focus {
+    border-bottom: .1em solid var(--colorDeepRed);
+}
+
+.discoverSearch_icon {
+    color: var(--colorLightBlue);
+}
+
+.discoverSearch_icon:hover {
+    cursor: pointer;
+    color: var(--colorDeepRed);
+    transform: scale(1.04);
+}
+
+.discoverSearch_sortBy {
+    display: flex;
+}
+
+.discoverSearch_sortBy > * {
+    margin: 0 .5em;
+    color: var(--colorLightBlue);
+}
+
+.discoverSearch_sorter:hover {
+    cursor: pointer;
+    opacity: .7;
+    transform: scale(1.04);
+}
+
+.discoverSearch_separater {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.discoverButtons {
+    width: calc(100% - 2em);
+    margin: .5em auto;
+    display: flex;
+    justify-content: right;
+}
+
+.discoverButtons_participants {
+    color: white;
+    background-color: var(--colorDarkBlue);
+    width: fit-content;
+    padding: .2em;
+    border-radius: 12px;
+    transition: color .5s, background-color .5s;
+}
+
+.discoverButtons_participants:hover {
+    background-color: white;
+    color: var(--colorDarkBlue);
+    text-decoration: underline;
 }
 
 /*
@@ -60,11 +148,11 @@ CARDS
 
 .discoverCards_border {
     width: 96%;
-    height: 1.5rem;
-    border-top: .5rem solid var(--colorDeepRed);
+    height: 1.5em;
+    border-top: .5em solid var(--colorDeepRed);
     background-color: var(--colorDeepOrange);
-    border-bottom: .5rem solid var(--colorDeepYellow);
-    margin: 1rem auto;
+    border-bottom: .5em solid var(--colorDeepYellow);
+    margin: 1em auto;
 }
 
 .discoverCards {
@@ -74,6 +162,6 @@ CARDS
 }
 
 .discoverCards > * {
-    margin: 1rem 0;
+    margin: 1em 0;
     width: 30%;
 }

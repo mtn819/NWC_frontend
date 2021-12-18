@@ -1,3 +1,8 @@
+.discoverInfo {
+    font-size: calc(16px + 1vw);
+    font-family: var(--fontBabasNeue);
+}
+
 /*
 BANNER
 */
@@ -5,13 +10,14 @@ BANNER
 .discoverInfoBanner {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 1rem;
+    padding: 1.5em 1em;
 }
 
 .discoverInfoBanner a {
     text-decoration: none;
     color: inherit;
     display: block;
+    color: var(--colorDeepRed);
 }
 
 .discoverInfoBanner a:hover {
@@ -37,7 +43,7 @@ BODY
 }
 
 .discoverInfoBody > * {
-    margin: 1rem;
+    margin: 1em;
     position: relative;
 }
 
@@ -52,22 +58,22 @@ BODY_LEFT
 .discoverInfoBody_profile {
     background-color: rgba(245, 245, 245, 1);
     width: 100%;
-    padding-bottom: 1rem;
+    padding-bottom: 1em;
 }
 
 .discoverInfoBody_profile > h3,
 .discoverInfoBody_profile > p {
-    padding: 0 .6rem;
+    padding: 0 .6em;
 }
 
 .discoverInfoBody_profile > h3 {
-    font-size: .8rem;
+    font-size: .8em;
     font-weight: normal;
-    margin-top: .5rem;
+    margin-top: .5em;
 }
 
 .discoverInfoBody_profile > p {
-    font-size: .5rem;
+    font-size: .5em;
     font-family: var(--fontMontserrat);
     font-weight: bold;
 }
@@ -77,12 +83,12 @@ BODY_LEFT
 }
 
 .discoverInfoBody_caption {
-    font-size: .5rem;
-    margin-bottom: 1rem;
+    font-size: .5em;
+    margin-bottom: 1em;
 }
 
 .discoverInfoBody_role {
-    margin-bottom: .4rem;
+    margin-bottom: .4em;
 }
 
 .discoverInfoBody_submit {
@@ -90,13 +96,13 @@ BODY_LEFT
     width: 99%;
     margin: auto;
     display: block;
-    margin: .8rem auto;
-    padding: .2rem;
+    margin: .8em auto;
+    padding: .2em;
     border-radius: 999px;
     background-color: var(--colorDeepRed);
     color: white;
     font-family: var(--fontBabas);
-    font-size: .7rem;
+    font-size: .7em;
 }
 
 .discoverInfoBody_submit:hover {
@@ -115,13 +121,13 @@ BODY_RIGHT
 
 .discoverInfoBody_video {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
 }
 
 .discoverInfoBody_tagh {
     border-bottom: 2px solid var(--colorDeepRed);
-    padding-bottom: .4rem;
-    margin-bottom: .4rem;
+    padding-bottom: .4em;
+    margin-bottom: .4em;
 }
 
 .discoverInfoBody_tagh h3 {
@@ -132,32 +138,32 @@ BODY_RIGHT
 .discoverInfoBody_tags {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
 }
 
 .discoverInfoBody_tag {
-    margin: .2rem;
+    margin: .2em;
     border: 3px solid var(--colorDeepRed);
     color: var(--colorDeepRed);
     border-radius: 999px;
-    padding: 0 1.5rem;
+    padding: 0 1.5em;
 }
 
 .discoverInfoBody_bioh {
     width: fit-content;
-    border-bottom: .5rem solid var(--colorDeepRed);
-    font-size: 1.7rem;
+    border-bottom: .5em solid var(--colorDeepRed);
+    font-size: 1.7em;
     font-weight: normal;
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
 }
 
 .discoverInfoBody_bigquote {
     background-color: var(--colorBeige);
-    padding: 1rem;
+    padding: 1em;
     width: fit-content;
     margin: auto;
-    border-left: .8rem solid var(--colorDeepRed);
-    margin-bottom: 1rem;
+    border-left: .8em solid var(--colorDeepRed);
+    margin-bottom: 1em;
 }
 
 .discoverInfoBody_bigquote p {
@@ -170,26 +176,26 @@ BODY_RIGHT
 }
 
 .discoverInfoBody_text {
-    padding: .5rem;
+    padding: .5em;
     background-color: rgba(158,199,225, .3);
-    margin-bottom: 1rem;
-    font-size: .6rem;
+    margin-bottom: 1em;
+    font-size: .6em;
 }
 
 .discoverInfoBody_text p {
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     font-family: var(--fontMontserrat);
 }
 
 .discoverInfoBody_sources h3 {
     font-weight: normal;
-    margin-bottom: .6rem;
+    margin-bottom: .6em;
 }
 
 .discoverInfoBody_sources p {
-    font-size: .6rem;
+    font-size: .6em;
     font-family: var(--fontMontserrat);
-    margin-bottom: .4rem;
+    margin-bottom: .4em;
 }
 
 /*
@@ -213,7 +219,7 @@ ARCHIVE
 
 .discoverInfoArchive_items > * {
     width: 100%;
-    margin: 1rem;
+    margin: 1em;
 }
 
 .discoverInfoArchive_item {
@@ -240,16 +246,16 @@ STORIES
 */
 
 .discoverInfoStories {
-    padding: 1rem;
+    padding: 1em;
     background-color: var(--colorBeige);
-    margin: 1rem;
-    margin-bottom: 2rem;
+    margin: 1em;
+    margin-bottom: 2em;
 }
 
 .discoverInfoStories > h2 {
     text-align: center;
     color: var(--colorDeepRed);
-    padding-bottom: 2rem;
+    padding-bottom: 2em;
 }
 
 .discoverInfoStories_stories {
@@ -259,5 +265,5 @@ STORIES
 .discoverInfoStories_stories > * {
     background-color: white;
     width: 100%;
-    margin: 0 .2rem;
+    margin: 0 .2em;
 }

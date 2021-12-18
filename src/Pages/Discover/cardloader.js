@@ -1,4 +1,4 @@
-import { media2url } from "../../components/util/util";
+import { media2url } from "../../Components/util/util";
 
 function d2card(datum) {
     console.log(datum);

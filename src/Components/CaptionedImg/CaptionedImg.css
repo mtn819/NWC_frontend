@@ -1,0 +1,24 @@
+.captionedImg {
+    font-size: calc(16px + 1vw);
+    font-family: var(--fontBabasNeue);
+}
+
+.captionedImg > img {
+    width: 100%;
+}
+
+.captionedImg_caption {
+    height: 2em;
+    color: var(--colorBeige);
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorDarkBlue);
+    border: 1px solid black;
+    width: fit-content;
+    margin-top: -2.5em;
+    position: relative;
+    font-size: .8em;
+}

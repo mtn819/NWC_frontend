@@ -17,7 +17,8 @@ import Why from "./Pages/Why/Why";
 import Essay from "./Pages/Essay/Essay";
 import Torch from "./Pages/Torch/Torch";
 import Participants from "./Pages/Participants/Participants";
-// import Discover from "./Pages/Discover/Discover";
+import Discover from "./Pages/Discover/Discover";
+import DiscoverInfo from "./Pages/Discover/DiscoverInfo";
 
 function App() {
   return (
@@ -34,11 +35,14 @@ function App() {
         </Route>
         */}
         <Route path = "/DiscoverNWCStories">
-          <DiscoverNWCStories/>
+          <Discover />{/*<DiscoverNWCStories/>*/}
         </Route>
-        {/*<Route path = "/Discover">
+        <Route path="/discover/:storyId">
+          <DiscoverInfo/>
+        </Route>
+        <Route path = "/Discover">
           <Discover />
-        </Route>*/}
+        </Route>
         <Route path = "/Why">
           <Why/>
         </Route>

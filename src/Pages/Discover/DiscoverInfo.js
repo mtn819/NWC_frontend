@@ -8,15 +8,17 @@ import mayaangelou from "../../res/imgs/mayaangelou.png";
 import videofiller from "../../res/imgs/videofiller.png";
 import ReactMarkdown from 'react-markdown';
 import docfiller from "../../res/imgs/docfiller1.png";
-import {processPageOld} from "../../components/util/util";
-import { fetchBaseUrl } from '../../config/.env';
+import {processPageOld} from "../../Components/util/util";
+import VARIABLES from '../../config/.env';
 import { loaddiscover } from "./discoverInfoLoader";
 import { loadcards } from "./cardloader";
-import FeaturedCard from '../../components/FeaturedCard/FeaturedCard';
-import InfoVideo from '../../components/InfoVideo/InfoVideo';
+import FeaturedCard from '../../Components/FeaturedCard/FeaturedCard';
+import InfoVideo from '../../Components/InfoVideo/InfoVideo';
 
 function DiscoverInfo({}) {
     const { storyId } = useParams(); // WILL BE USED TO GRAB STRAPI DATA
+
+    const { fetchBaseUrl } = VARIABLES;
     
     const [ pageState, setPageState ] = useState({
         /**PROFILE STUFF (left) */
@@ -88,11 +90,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     <Link to="/discover">&larr; BACK TO DISCOVER PAGE</Link>
                     <h1>MAYA ANGELOU</h1>
                 </div>
-                <div className="discoverInfoBanner_right">
-                    <Link to="/">BIOGRAPHY</Link>
-                    <Link to="/">RELATED ARCHIVAL ITEMS</Link>
-                    <Link to="/">SOURCES</Link>
-                </div>
             </div>
 
             {/**BODY */}
@@ -125,17 +122,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
                 {/**BODY_RIGHT */}
                 <div className="discoverInfoBody_right">
-                    
-                    <InfoVideo src={pageState.AvalonUrl} title={pageState.AvalonTitle} />
-
-                    <div className="discoverInfoBody_tagh">
-                        <h3>USER TAGS</h3>
-                    </div>
-                    <div className="discoverInfoBody_tags">{
-                        pageState.tags.map(t => <p className="discoverInfoBody_tag">
-                            {t}
-                        </p>)
-                    }</div>
 
                     <h2 className="discoverInfoBody_bioh">
                         BIOGRAPHY
@@ -165,7 +151,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </div>
 
             {/**ARCHIVE */}
-            <div className="discoverInfoArchive">
+            {/*<div className="discoverInfoArchive">
                 <h2>EXPLORE MORE FROM THE ARCHIVE</h2>
                 <div className="discoverInfoArchive_items">
                     {pageState.archive.map(item => <a className="discoverInfoArchive_item" href={item[1]}>
@@ -173,10 +159,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <p className="discoverInfoArchive_title">{item[2]}</p>
                     </a>)}
                 </div>
-            </div>
+            </div>*/}
 
             {/**STORIES */}
-            <div className="discoverInfoStories">
+            {/*<div className="discoverInfoStories">
                 <h2>EXPLORE MORE STORIES</h2>
                 <div className="discoverInfoStories_stories">
                     { cards.map(c => <a href={`/discover/${c.id}`}><FeaturedCard
@@ -187,7 +173,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         role={c.role}
                     /></a>) }
                 </div>
-            </div>
+            </div>*/}
         </div>
     )
 }

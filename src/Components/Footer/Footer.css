@@ -1,105 +1,64 @@
 .footer {
-  display: grid;
-  grid-template-columns: repeat(5, [col] auto ) ;
-  grid-template-rows: repeat(2, [row] auto  );
-  background-color: var(--colorDarkBlue);
-  font-family: 'babas_neue';
-  padding-top: 146rem;
-  padding-left: 108rem;
-  padding-right: 108rem;
-  padding-bottom: 60rem;
+    font-size: calc(16px + 1vw);
+    font-family: var(--fontBabasNeue);
+    background-color: var(--colorDarkBlue);
+    padding: 2em;
 }
 
 .footer_top {
-  font-size: 40rem;
-  color: var(--colorLightBlue);
+    display: flex;
+    justify-content: space-between;
 }
 
-.icon {
-  grid-column: col / span ;
-  grid-row: row;
+.footer_top > div {
+    border-left: .5px solid white;
+    padding-left: 1em;
 }
 
-.home  {
-  grid-column: col / span;
-  grid-row: row;
-  border-right: 2rem solid white;
+.footer_media > p,
+.footer a {
+    text-decoration: none;
+    color: var(--colorLightBlue);
 }
 
-.contact {
-  grid-column: col / span;
-  grid-row: row 1;
-  border-right: 2rem solid white;
-  margin-left: 80rem;
+.footer a:hover {
+    text-decoration: underline;
+    color: white;
 }
 
-.donate {
-  grid-column: col / span;
-  grid-row: row 1;
-  border-right: 2rem solid white;
-  margin-left: 80rem;
+.footer_mediaIcons {
+    margin-top: 1em;
+    display: flex;
+    height: .8em;
 }
 
-.social {
-  display: grid;
-  grid-template-columns: repeat(3, [col] auto ) ;
-  grid-template-rows: repeat(2, [row] auto  );;
-  margin-left: 80rem;
+.footer_mediaIcons > * {
+    margin-left: .5em;
 }
 
-.socialMedia {
-  grid-column: col / span 3;
-  grid-row: 1;
+.footer_mediaIcons > *:hover {
+    border-bottom: .2em solid var(--colorLightBlue);
+    cursor: pointer;
+    transform: scale(1.3);
 }
 
-.instagram {
-  grid-column: 1;
-  grid-row: 2;
+.footer_bottom {
+    font-size: .6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--colorBluePurple);
+    text-align: center;
 }
 
-.twitter{
-  grid-column: 2;
-  grid-row: 2;
+.footer_bottom > * {
+    margin-top: 1em;
 }
 
-.facebook{
-  grid-column: 3;
-  grid-row: 2;
+.footer_bottom > img {
+    width: 10em;
 }
 
-.home a,
-.contact a,
-.donate a {
-  color: var(--colorLightBlue);
-  text-decoration: none;
-}
-
-.home a:hover,
-.about a:hover,
-.contact a:hover,
-.donate a:hover{
-  color: white;
-}
-
-.socialIcons a:hover img {
-  transform: scale(1.04);
-  padding-bottom: 12rem;
-}
-
-.footer_bot {
-  margin-top: 80rem;
-  grid-column: col / span 5 ;
-  grid-row: row 2;
-  font-size: 30rem;
-  color: #3874A5;
-  text-align: center;
-}
-
-.footer_support {
-    margin-bottom: 30rem;
-}
-
-.footer_seal img {
-  width: 400rem;
-  margin-bottom: 40rem;
+.footer_bottomText {
+    max-width: 90ch;
 }

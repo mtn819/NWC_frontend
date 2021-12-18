@@ -7,27 +7,43 @@ function Participants() {
 
     // Pull Strapi Data
     useEffect(() => {
-        function compare(a, b) {
-            // for comparing participants
-
-            return a.LastName < b.LastName; // alphabetic ordering of last name.
-        }
-
-        fetch([VARIABLES.fetchBaseUrl, 'list-of-participants'].join('/')) // need to figure out how to sort in query, but for another day </3
+        fetch([VARIABLES.fetchBaseUrl, 'list-of-participants?_sort=name:ASC'].join('/')) // need to figure out how to sort in query, but for another day </3
         .then(res => res.json())
         .then(data => {
             // console.log(data);
-            data.sort(compare);
             setParticipants(data)
         })
         .catch(err => console.log(err));
     }, []);
 
+    function filterState(state) {
 
+        console.log([VARIABLES.fetchBaseUrl, `list-of-participants?States_contains=${state}`].join('/'));
+        fetch([VARIABLES.fetchBaseUrl, `list-of-participants?States_contains=${state}`].join('/')) // need to figure out how to sort in query, but for another day </3
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data);
+            setParticipants(Array.isArray(data) ? data : [])
+        })
+        .catch(err => console.log(err));
+    };
+
+    function stateOption(state) {
+        return (
+            <option>{state}</option>
+        )
+    };
+
+    const geostates = ["", "Texas", "Louisiana", "Arkansas"];
 
     return (
         <div className="participants">
             <h1>List of NWC Participants</h1>
+
+            <p>Filter by State: </p>
+            <select onChange={e => filterState(e.target.value)}>
+                {geostates.map(g => <option>{g}</option>)}
+            </select>
 
             {/**LIST */}
             <div className="participantsList">

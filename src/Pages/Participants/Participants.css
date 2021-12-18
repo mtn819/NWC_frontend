@@ -10,6 +10,16 @@
     margin-bottom: 1em;
 }
 
+.participants > p {
+    text-align: center;
+}
+
+.participants > select {
+    display: block;
+    margin: auto;
+    margin-bottom: 4em;
+}
+
 .participantsList {
     display: flex;
     flex-direction: column;
