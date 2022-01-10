@@ -144,7 +144,7 @@ function Discover() {
             <div className="discoverCards">
                 {cards.map((value, index) => <DiscoverCard
                     key={Math.random()}
-                    color={["yellow", "blue", "red", "teal"][index % 4]}
+                    color={["yellow", "blue", "red", "teal"][value.name.charCodeAt(0) % 4]}
                     href={`/discover/${value.id}`}
                     name={value.name}
                     role={value.role}

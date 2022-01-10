@@ -40,14 +40,21 @@ function Participants() {
         <div className="participants">
             <h1>List of NWC Participants</h1>
 
-            <p>Filter by State: </p>
-            <select onChange={e => filterState(e.target.value)}>
-                {geostates.map(g => <option>{g}</option>)}
-            </select>
+            {/**FILTER */}
+            <div className="participantsFilter">
+                <p>Filter by State: </p>
+                <select onChange={e => filterState(e.target.value)}>
+                    {geostates.map(g => <option>{g}</option>)}
+                </select>
+            </div>
 
             {/**LIST */}
             <div className="participantsList">
-                {participants.map(p => <p key={Math.random()}>{p.LastName} {p.FirstName}</p>)}
+                {
+                participants.length === 0
+                ? "No Participants Found."
+                : participants.map(p => <p key={Math.random()}>{p.LastName} {p.FirstName}</p>)
+                }
             </div>
         </div>
     )

@@ -10,14 +10,19 @@
     margin-bottom: 1em;
 }
 
-.participants > p {
+.participantsFilter > p {
     text-align: center;
 }
 
-.participants > select {
+.participantsFilter > select {
     display: block;
     margin: auto;
     margin-bottom: 4em;
+}
+
+.participantsFilter {
+    width: fit-content;
+    margin-left: 6em;
 }
 
 .participantsList {
