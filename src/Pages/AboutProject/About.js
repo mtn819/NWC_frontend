@@ -11,6 +11,8 @@ import axios from '../../config/axios';
 import VARIABLES from "../../config/.env.js";
 import { ArrowCounterclockwise } from 'react-bootstrap-icons';
 
+
+
 const getWhere = (data, key, value) => {
   return data.filter(e => e[key] === value);
 }
@@ -37,6 +39,40 @@ function About() {
   const [aboutDocuments_cblink, setAboutDocuments_cblink] = useState(jack);
   const [aboutDocuments_aplink, setAboutDocuments_aplink] = useState(jack);
   const [aboutDocuments_frlink, setAboutDocuments_frlink] = useState(jack);
+
+  const contributors = {
+    "PROJECT LEADS": [
+      {
+        name: "Nancy Beck Young",
+        role: "PROJECT CO-DIRECTOR",
+        university: "UNIVERSITY OF HOUSTON",
+      },
+      {
+        name: "Lola Babalola",
+        role: "GRAPHIC DESIGNER",
+        university: "UNIVERSITY OF HOUSTON",
+      },
+      {
+        name: "Lola Babalola 2",
+        role: "GRAPHIC DESIGNER",
+        university: "UNIVERSITY OF HOUSTON",
+      },
+    ],
+    "PROJECT LEADS 2": [
+      {
+        name: "ABCDEFG",
+        role: "PROJECT CO-DIRECTOR",
+        university: "UNIVERSITY OF HOUSTON",
+      },
+      {
+        name: "HIJKLMNOP",
+        role: "GRAPHIC DESIGNER",
+        university: "UNIVERSITY OF HOUSTON",
+      },
+    ],
+  };
+
+  const [currentTab, setCurrentTab] = useState("PROJECT LEADS");
 
   useEffect(() => {
     fetch([VARIABLES.fetchBaseUrl, "content-abouts"].join('/'))
@@ -176,6 +212,37 @@ function About() {
       {/**MEET */}
       <div className="aboutMeet">
         <img src={meet}/>
+      </div>
+
+      {/**TABLE */}
+      <div className="aboutTable">
+        <div className="aboutTable_tabs">
+          {
+            Object.keys(contributors).map(k => 
+              <div
+                key={Math.random() * Math.random()}
+                className={`aboutTable_tab ${currentTab === k ? 'aboutTable_tab--active' : ''}`}
+                onClick={e=>setCurrentTab(k)}
+              >
+                <p>{k}</p>
+              </div>
+            )
+          }
+        </div>
+        <div className="aboutTable_entries">
+          {
+            contributors[currentTab].map(c => 
+              <div
+                className="aboutTable_entry"
+                key={Math.random()}
+              >
+                <p className="aboutTable_name">{c.name}</p>
+                <p className="aboutTable_role">{c.role}</p>
+                <p className="aboutTable_university">{c.university}</p>
+              </div>
+            )
+          }
+        </div>
       </div>
 
       {/**BOTTOMCHART */}

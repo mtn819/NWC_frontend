@@ -187,3 +187,79 @@ MEET
   width: 1604rem;
   height: 980rem;
 }
+
+/*
+TABLE
+*/
+
+.aboutTable {
+  font-size: calc(16px + 1vw);
+  display: flex;
+  width: 90%;
+  margin: 2em auto;
+  border: 1px solid black;
+}
+
+.aboutTable_tabs {
+  width: 30%;
+}
+
+.aboutTable_tab {
+  font-family: var(--fontBabasNeue);
+  width: 100%;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--colorDarkBlue);
+  border: 1px solid var(--colorDarkBlue);
+}
+
+.aboutTable_tab:hover {
+  background-color: var(--colorDarkBlue);
+  color: white;
+  cursor: pointer;
+}
+
+.aboutTable_tab--active {
+  background-color: var(--colorDarkBlue);
+  color: white;
+  pointer-events: none;
+}
+
+.aboutTable_entries { 
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--colorDarkBlue);
+  flex-wrap: wrap;
+}
+
+.aboutTable_entries > * {
+  width: 50%;
+}
+
+.aboutTable_entry {
+  padding: .5em;
+}
+
+.aboutTable_entry > p {
+  color: var(--colorDarkBlue);
+}
+
+.aboutTable_name {
+  font-family: var(--fontMontserrat);
+  font-weight: bold;
+  font-size: .8em;
+}
+
+.aboutTable_role {
+  font-family: var(--fontMontserrat);
+  font-size: .5em;
+  font-weight: bold;
+}
+
+.aboutTable_university {
+  font-size: .6em;
+  font-family: var(--fontMontserrat);
+}
