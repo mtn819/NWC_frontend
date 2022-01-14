@@ -6,7 +6,7 @@ function Card({link, thumbnail, name, role, state, bottomText}) {
     <a href={link}>
     <div className="discover_card">
       <div className="discover_card_thumbnail">
-        <img src={thumbnail}/>
+        <img src={thumbnail} alt="Thumbnail" />
       </div>
 
       <div className="discover_card_hole">

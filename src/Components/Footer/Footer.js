@@ -20,7 +20,7 @@ function Footer() {
         .then(response => response.json())
         .then(data => processPage(data, setState))
         .catch(err => console.log(err));
-    }, [])
+    }, []) /* eslint-disable-line */
 
     return (
         <div className="footer">

@@ -33,6 +33,10 @@ function DiscoverCard({
             logo = teallogo;
             border = getborder("#00597C");
             break;
+        default:
+            logo = teallogo;
+            border = getborder("#00597C");
+
     }
 
     return (
