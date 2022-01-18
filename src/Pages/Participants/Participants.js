@@ -14,7 +14,7 @@ function Participants() {
             setParticipants(data)
         })
         .catch(err => console.log(err));
-    }, []);
+    }, []); // eslint-disable-line
 
     function filterState(state) {
 
@@ -26,12 +26,6 @@ function Participants() {
             setParticipants(Array.isArray(data) ? data : [])
         })
         .catch(err => console.log(err));
-    };
-
-    function stateOption(state) {
-        return (
-            <option>{state}</option>
-        )
     };
 
     const geostates = ["", "Texas", "Louisiana", "Arkansas"];

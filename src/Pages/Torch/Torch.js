@@ -53,7 +53,7 @@ function Torch() {
         
         .catch(err => console.log(err));
         window.scrollTo(0, 0);
-    }, [])
+    }, []); // eslint-disable-line
 
     return (
         <div className="torch">

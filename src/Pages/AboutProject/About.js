@@ -7,9 +7,7 @@ import tl from './res/tl.png';
 import meet from './res/meatteem.png';
 import bottomchart from './res/bottomchart.png';
 
-import axios from '../../config/axios';
 import VARIABLES from "../../config/.env.js";
-import { ArrowCounterclockwise } from 'react-bootstrap-icons';
 
 
 
@@ -23,7 +21,6 @@ const urlify = (str) => {
 
 function About() {
   const jack = "_";//"ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY.";
-  const yt = "https://www.youtube.com";
 
   const [aboutBanner_card, setAboutBanner_card] = useState(jack);
   const [aboutImgCredit, setAboutImgCredit] = useState("JANE DOE");
@@ -148,14 +145,14 @@ function About() {
       
       {/**BANNER */}
       <div className="aboutBanner">
-        <img src={button} className="aboutBanner_button"/>
+        <img src={button} className="aboutBanner_button" alt="_" />
         <div className="aboutBanner_card">
           <p>
             {aboutBanner_card}
           </p>
         </div>
         <div className="aboutBanner_credit" title={aboutImgCredit_more}><p>PHOTO BY {aboutImgCredit}</p></div>
-        <img src={chick} className="aboutBanner_chick"/>
+        <img src={chick} className="aboutBanner_chick" alt="_" />
       </div>
     
       {/**TIMELINE */}
@@ -181,17 +178,17 @@ function About() {
           <div className="aboutTimeline_annotNo"><p>5</p></div>
           <div className="aboutTimeline_annotText">{aboutTimeline_5}</div>
         </div>
-        <img src={tl} className="aboutTimeline_tl"/>
+        <img src={tl} className="aboutTimeline_tl" alt="_" />
       </div>
 
       {/**DOCUMENTS */}
       <div className="aboutDocuments">
-        <a href={aboutDocuments_ddlink} target="_blank">
+        <a href={aboutDocuments_ddlink} target="_blank" rel="noreferrer" >
         <div className="aboutDocuments_item aboutDocuments_design">
           DESIGN DOCUMENTS
         </div>
         </a>
-        <a href={aboutDocuments_cblink} target="_blank">
+        <a href={aboutDocuments_cblink} target="_blank" rel="noreferrer" >
         <div className="aboutDocuments_item aboutDocuments_code">
           CODEBOOK
         </div>
@@ -201,7 +198,7 @@ function About() {
           APPROACH TO DIGITAL HUMANITIES
         </div>
         </a>*/}
-        <a href={aboutDocuments_frlink} target="_blank">
+        <a href={aboutDocuments_frlink} target="_blank" rel="noreferrer" >
         <div className="aboutDocuments_item aboutDocuments_further">
           FURTHER READING
         </div>
@@ -211,7 +208,7 @@ function About() {
 
       {/**MEET */}
       <div className="aboutMeet">
-        <img src={meet}/>
+        <img src={meet} alt="_" />
       </div>
 
       {/**TABLE */}
@@ -247,7 +244,7 @@ function About() {
 
       {/**BOTTOMCHART */}
       <div className="aboutChart">
-        <img src={bottomchart}/>
+        <img src={bottomchart} alt="_" />
       </div>
     
     </div>

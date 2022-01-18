@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import "./Discover.css";
 import discoverButton from "../../res/imgs/buttondiscover.png";
-import podiumperson from "../../res/imgs/podiumperson.png";
 import LCard from '../../Components/LCard/LCard';
 import CaptionedImg from '../../Components/CaptionedImg/CaptionedImg';
 import FeaturedCard from "../../Components/FeaturedCard/FeaturedCard";
-import searchPlaceholder from "../../res/imgs/searchplaceholder.png";
 import discoverbannerperson from "../../res/imgs/discoverbannerperson.png";
 import VARIABLES from "../../config/.env.js";
 import { loadcards } from './cardloader';
@@ -30,12 +28,9 @@ function Discover() {
         fetch([fetchBaseUrl, `content-discover-stories`/* + `?_start=${page}&_limit=2`*/].join('/'))
         .then(response => response.json())
         .then(data => loadcards(data, setCards))
-        .then(() => console.log(cards))
-        .catch(console.log);
-
-        console.log(`Page: ${page}.`);
-    }, []);
-
+        .catch(err => console.log(err));
+    }, []); // eslint-disable-line
+ 
     useEffect(() => {
         fetch([fetchBaseUrl, "content-discovers"].join('/'))
         .then(req => req.json())
@@ -44,40 +39,36 @@ function Discover() {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     function search(){
-        fetch([fetchBaseUrl, `content-discover-stories` + `?name_contains=${input}`].join('/'))
+        fetch([fetchBaseUrl, `content-discover-stories?name_contains=${input}`].join('/'))
         .then(response => response.json())
         .then(data => loadcards(data, setCards))
-        .then(() => console.log(cards))
         .catch(err => console.log(err));
     }
 
     const [currentSort, setCurrentSort] = useState("");
 
     function sortName(){
-        fetch([fetchBaseUrl, `content-discover-stories` + `?name_contains=${input}` + `&_sort=name:ASC`].join('/'))
+        fetch([fetchBaseUrl, `content-discover-stories?name_contains=${input}&_sort=name:ASC`].join('/'))
         .then(response => response.json())
         .then(data => loadcards(data, setCards))
-        .then(() => console.log(cards))
         .catch(err => console.log(err));
 
         setCurrentSort("name");
     }
     
     function sortRole(){
-        fetch([fetchBaseUrl, `content-discover-stories` + `?name_contains=${input}` + `&_sort=role:ASC`].join('/'))
+        fetch([fetchBaseUrl, `content-discover-stories?name_contains=${input}&_sort=role:ASC`].join('/'))
         .then(response => response.json())
         .then(data => loadcards(data, setCards))
-        .then(() => console.log(cards))
         .catch(err => console.log(err));
 
         setCurrentSort("role");
     }
 
     function sortState(){
-        fetch([fetchBaseUrl, `content-discover-stories` + `?name_contains=${input}` + `&_sort=state:ASC`].join('/'))
+        fetch([fetchBaseUrl, `content-discover-stories?name_contains=${input}&_sort=state:ASC`].join('/'))
         .then(response => response.json())
         .then(data => loadcards(data, setCards))
-        .then(() => console.log(cards))
         .catch(err => console.log(err));
 
         setCurrentSort("state");

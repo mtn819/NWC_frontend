@@ -7,8 +7,6 @@ import ReactMarkdown from 'react-markdown';
 
 // point format: [Name, x, y, Description]
 function Map({mapImg, points}) {
-  const popupImg = "https://www.htmlcsscolor.com/preview/gallery/CCC9C9.png";
-  const popupFeed = [popupImg, popupImg, popupImg]
   const description = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
 
   const [hovering, setHovering] = useState(false);
@@ -33,13 +31,13 @@ function Map({mapImg, points}) {
     {popup !== false ? <div className="homeMap_grayer" onClick={()=>setPopup(false)}></div> : ""}
 
     {/**LEFT SIDE */}
-    <div className={"homeMap_map" + " " + (popup !== false ? "homeMap_map--grayed" : "")}>
+    <div className={"homeMap_map " + (popup !== false ? "homeMap_map--grayed" : "")}>
       <div className="homeMap_poi">
         <p className="homeMap_poiHeader">
           POINTS OF INTEREST
         </p>
         {points.map(p => <p
-          className={"homeMap_poiText" + " " + (hovering === p[0] ? "homeMap_poiText--hovering" : "")}
+          className={"homeMap_poiText " + (hovering === p[0] ? "homeMap_poiText--hovering" : "")}
           onMouseEnter={() => setHovering(p[0])}
           onMouseLeave={() => setHovering(false)}
           onClick={() => {
@@ -66,11 +64,11 @@ function Map({mapImg, points}) {
 
       {/**RIGHT SIDE */}
       <div className="homeMap_interactive">
-        <img className="homeMap_img" src={mapImg}/>
+        <img className="homeMap_img" src={mapImg} alt="_" />
 
         {points.map(p => <div 
           className={
-            "homeMap_dot" + " " +
+            "homeMap_dot " +
             (hovering === p[0] ? "homeMap_dot--hovering" : "")}
           onMouseEnter={() => setHovering(p[0])}
           onMouseLeave={() => setHovering(false)}
@@ -95,7 +93,7 @@ function Map({mapImg, points}) {
             setcaption2(p[14]);
             setcaption3(p[15]);
             //setcaption4(p[16]);
-        }} src={maptick}/>
+        }} src={maptick} alt="_" />
           <div className="homeMap_dotLabel">{p[0]}</div>
         </div>)}
         
@@ -112,7 +110,7 @@ function Map({mapImg, points}) {
                 </div>
                 <p>BACK TO MAP</p>
               </div>
-              <div className="homeMap_popupImg"><img src={mainImage}/></div>
+              <div className="homeMap_popupImg"><img src={mainImage} alt="_" /></div>
               <div className="homeMap_popupSrc">
                 <p>{caption1}</p>
                 <p>{caption2}</p>
@@ -120,19 +118,19 @@ function Map({mapImg, points}) {
                 {/*<p>{caption4}</p>*/}
               </div>
               <div className="homeMap_popupFeed">
-                <a href={pdf1} target="_blank">
+                <a href={pdf1} target="_blank" rel="noreferrer" >
                 <div className="homeMap_popupFeedImg">
-                  <img src={img1}/>
+                  <img src={img1} alt="_" />
                 </div>
                 </a>
-                <a href={pdf2} target="_blank">
+                <a href={pdf2} target="_blank" rel="noreferrer" >
                 <div className="homeMap_popupFeedImg">
-                  <img src={img2}/>
+                  <img src={img2} alt="_" />
                 </div>
                 </a>
-                <a href={pdf3} target="_blank">
+                <a href={pdf3} target="_blank" rel="noreferrer">
                 <div className="homeMap_popupFeedImg">
-                  <img src={img3}/>
+                  <img src={img3} alt="_" />
                 </div>
                 </a>
                 {/*<a href={pdf4} target="_blank">

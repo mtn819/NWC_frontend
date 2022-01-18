@@ -5,12 +5,6 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import VARIABLES from "../../config/.env.js";
 
-import highlight1 from './res/highlight1.png';
-import highlight2 from './res/highlight1.png';
-import highlight3 from './res/highlight1.png';
-
-import axios from '../../config/axios';
-
 const getWhere = (data, key, value) => {
   return data.filter(e => e[key] === value)[0];
 }
@@ -20,7 +14,7 @@ const urlify = (str) => {
 }
 
 function HighlightsCarousel() {
-  const jack = "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
+  const jack = "_"; // "ALL WORK AND NO PLAY MAKES JACK A DULL BOY. ";
 
   const [header1, setHeader1] = useState("ARTICLE / TITLE");
   const [content1, setContent1] = useState(jack);
@@ -72,7 +66,7 @@ function HighlightsCarousel() {
     <div className="homeHighlights_carousel">
       <Carousel autoPlay>
         <div className="homeHighlights_carouselCard">
-          <img className="homeHighlights_img1" src={img1}/>
+          <img className="homeHighlights_img1" src={img1} alt="_" />
           {/**
           <div>
             <p className="homeHighlights_cardHeader">{header1}</p>
@@ -81,7 +75,7 @@ function HighlightsCarousel() {
            */}
         </div>
         <div className="homeHighlights_carouselCard" className="homeHighlights_carouselCard">
-          <img className="homeHighlights_img2" src={img2}/>
+          <img className="homeHighlights_img2" src={img2} alt="_" />
           {/**
           <div>
             <p className="homeHighlights_cardHeader">{header2}</p>
@@ -90,7 +84,7 @@ function HighlightsCarousel() {
            */}
         </div>
         <div className="homeHighlights_carouselCard">
-          <img className="homeHighlights_img3" src={img3}/>
+          <img className="homeHighlights_img3" src={img3} alt="_" />
           {/**
           <div>
             <p className="homeHighlights_cardHeader">{header3}</p>

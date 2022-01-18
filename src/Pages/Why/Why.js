@@ -43,7 +43,7 @@ function Why() {
         })
         .catch(err => console.log(err));
         window.scrollTo(0, 0);
-    }, []);
+    }, []); // eslint-disable-line
 
     useEffect(() => {
         fetch([VARIABLES.fetchBaseUrl, "content-essays"].join('/'))
@@ -61,7 +61,7 @@ function Why() {
             )
         })
         .catch(err => console.log(err));
-    }, []);
+    }, []); // eslint-disable-line
 
     function EssayList(props) {
         const essays = props.essays;
@@ -110,7 +110,7 @@ function Why() {
             </div>
 
             {/**TIMELINE */}
-            <iframe src={pageState.TimelineIframeSrc} width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe> 
+            <iframe title="Timeline Iframe" src={pageState.TimelineIframeSrc} width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe> 
 
 
             <div className="whylowerSection">

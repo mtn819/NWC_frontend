@@ -31,7 +31,7 @@ const getWhere = (data, key, value) => {
 }
 
 const urlify = (str) => {
-  return [VARIABLES.fetchBaseUrl, str].join('/');//VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + "" + str;
+  return [VARIABLES.fetchBaseUrl, str].join('/'); // VARIABLES.axiosBaseURL.slice(0, VARIABLES.axiosBaseURL.length-1) + "" + str;
 }
 
 export const superSorter = (list) => {
@@ -233,7 +233,7 @@ function Home() {
 
   return (
     <>
-    <div className={"overlay_vid" + " " + (videoOn ? "": "overlay_vid--off")}>  
+    <div className={"overlay_vid " + (videoOn ? "": "overlay_vid--off")}>  
       <p 
         className="overlay_vid_skip"
         onClick={e => {setVideoOn(!videoOn); scroll()}}

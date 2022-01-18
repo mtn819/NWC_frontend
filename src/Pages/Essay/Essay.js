@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router';
 import VARIABLES from '../../config/.env';
-import InfoAudio from '../../DiscoverNWCStories/InfoPage/InfoAudio';
 import "./Essay.css";
 import Layout1 from './Layouts/Layout1';
 import Layout2 from './Layouts/Layout2';
@@ -64,7 +63,7 @@ function Essay() {
             })
         });
         window.scrollTo(0, 0);
-    }, []);
+    }, []); // eslint-disable-line
 
     return (<div className="essay">
         {   // LAYOUT SWITCH

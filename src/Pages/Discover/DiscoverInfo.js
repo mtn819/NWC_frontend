@@ -5,17 +5,13 @@ import {
 } from "react-router-dom";
 import "./DiscoverInfo.css";
 import mayaangelou from "../../res/imgs/mayaangelou.png";
-import videofiller from "../../res/imgs/videofiller.png";
 import ReactMarkdown from 'react-markdown';
 import docfiller from "../../res/imgs/docfiller1.png";
-import {processPageOld} from "../../Components/util/util";
 import VARIABLES from '../../config/.env';
 import { loaddiscover } from "./discoverInfoLoader";
 import { loadcards } from "./cardloader";
-import FeaturedCard from '../../Components/FeaturedCard/FeaturedCard';
-import InfoVideo from '../../Components/InfoVideo/InfoVideo';
 
-function DiscoverInfo({}) {
+function DiscoverInfo() {
     const { storyId } = useParams(); // WILL BE USED TO GRAB STRAPI DATA
 
     const { fetchBaseUrl } = VARIABLES;
@@ -68,7 +64,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         .then(data => loaddiscover(data, setPageState, pageState))
         .then(data => console.log(pageState))
         .catch(err => console.log(err));
-    }, []);
+    }, []); // eslint-disable-line
 
     const [cards, setCards] = useState([]);
 
@@ -79,7 +75,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         .then(data => loadcards(data, setCards))
         .then(data => console.log(cards))
         .catch(err => console.log(err));
-    }, []);
+    }, []); // eslint-disable-line
 
     return (
         <div className="discoverInfo">
