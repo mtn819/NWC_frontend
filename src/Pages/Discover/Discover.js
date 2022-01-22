@@ -27,7 +27,10 @@ function Discover() {
     useEffect(() => {
         fetch([fetchBaseUrl, `content-discover-stories`/* + `?_start=${page}&_limit=2`*/].join('/'))
         .then(response => response.json())
-        .then(data => loadcards(data, setCards))
+        .then(data => {
+            console.log("Dicover Here", data);
+            loadcards(data, setCards);
+        })
         .catch(err => console.log(err));
     }, []); // eslint-disable-line
  

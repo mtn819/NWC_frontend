@@ -6,13 +6,14 @@ function d2card(datum) {
         name: datum.name,
         role: datum.role,
         state: datum.state,
-        img: media2url(datum.profilepic[0]),
+        // img: media2url(datum.profilepic[0]),
         featured: datum.featured,
     };
 };
 
 export function loadcards(data, setState) {
     try{
+        console.log(data);
         setState(data.map(d2card));
     } catch(e) {
         console.log(e);
