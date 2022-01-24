@@ -1,67 +1,98 @@
 import React, { useState, useEffect } from 'react'
 import "./Footer.css";
+import { Link } from 'react-router-dom';
 
 import VARIABLES from "../../config/.env";
-import { processPage, getSafe } from "../../Components/util/util";
 
 import icon from "../../res/imgs/icon.png";
 import instagram from "../../res/imgs/instagram.png";
 import twitter from "../../res/imgs/twitter.png";
 import facebook from "../../res/imgs/facebook.png";
 import natendow from "../../res/imgs/natendow.png";
-import { Link } from 'react-router-dom';
+
+const getWhere = (data, key, value) => {
+    return data.filter(e => e[key] === value);
+}
 
 function Footer() {
-    // const [state, setState] = useState({});
-    const [email, setEmail] = useState({});
-    // const 
 
-    const { fetchBaseUrl } = VARIABLES;
+    const [donateLink, setDonateLink] = useState("");
+    const [facebookLink, setFacebookLink] = useState("");
+    const [instagramLink, setInstagramLink] = useState("");
+    const [twitterLink, setTwitterLink] = useState("");
+    const [contactEmail, setContactEmail] = useState("");
+    const [paragraph, setParagraph] = useState("");
 
     useEffect(() => {
-        fetch([fetchBaseUrl, "content-footers"].join('/'))
+        fetch([VARIABLES.fetchBaseUrl, "content-footers"].join('/'))
         .then(response => response.json())
         .then(data => {
-            // extract text field;
-            function etf(section){
-                const obj = data.filter(obj => obj.Section === section)[0];
-                return obj.Content + '';
-            }
+            const get = (section) => {
+                return getWhere(data, 'Section', section)[0]['Content'];
+              };
 
-            setEmail(etf('email'));
-        })
-        .catch(err => console.log(err));
-    }, []) /* eslint-disable-line */
+            setDonateLink (
+                get("DonateLink")
+            );
+
+            setFacebookLink (
+                get("FacebookLink")
+            );
+
+            setInstagramLink (
+                get("InstagramLink")
+            );
+
+            setTwitterLink (
+                get("TwitterLink")
+            );
+      
+            setContactEmail (
+              get("contactEmail")
+            );
+
+            setParagraph (
+                get("paragraph")
+            );
+          })
+        }, []);  /* eslint-disable-line */
 
     return (
         <div className="footer">
-            <div className="footer_top">
-                <img src={icon} alt="Nwc Icon"/>
-                <div className="footer_home">
-                    <Link to="/">HOME</Link>
+                <div className="footer_top icon">
+                    <img src={icon} alt="project_icon"/>
                 </div>
-                <div className="footer_about">
-                    <Link to="/about">ABOUT</Link>
+                <div className="footer_top home">
+                    <Link to={'/'}>HOME</Link>
                 </div>
-                <div className="footer_contact">
-                    <a href={`mailto:${email}`}>CONTACT</a>
+                <div className="footer_top contact">
+                    <a href={`mailto:${contactEmail}`}><p>CONTACT</p></a>
                 </div>
-                <div className="footer_donate">
-                    <a href={getSafe(email, "DONATE_LINK")}>DONATE</a>
+                <div className="footer_top donate">
+                    <a href={donateLink}>DONATE</a>
                 </div>
-                <div className="footer_media">
-                    <p>SOCIAL MEDIA</p>
-                    <div className="footer_mediaIcons">
-                        <img src={instagram} alt="instagram"/>
-                        <img src={twitter} alt="twitter"/>
-                        <img src={facebook} alt="facebook"/>
+                <div className="footer_top social">
+                    <div className="socialMedia">
+                        <p>SOCIAL MEDIA</p>
+                    </div>
+                    <div className="instagram">
+                        <a href={instagramLink}><img src={instagram} alt="instagram_logo"/></a>
+                    </div>
+                    <div className="twitter">
+                        <a href={twitterLink}><img src={twitter} alt="twitter_logo"/></a>
+                    </div>
+                    <div className="facebook">
+                        <a href={facebookLink}><img src={facebook} alt="facebook_logo"/></a>
                     </div>
                 </div>
-            </div>
-            <div className="footer_bottom">
-                <p>THE SHARING STORIES FROM 1977 PROJECT APPRECIATES THE SUPPORT OF THE FOLLOWING:</p>
-                <img src={natendow} alt="NATIONAL ENDOWMENT FOR THE HUMANITIES"/>
-                <p className="footer_bottomText">{getSafe(email, "BOTTOM_TEXT")}</p>
+            <div className="footer_bot">
+                <div className="footer_support">
+                    The Sharing Stories from 1977 project appreciates the support of the following:
+                </div>
+                <div className="footer_seal">
+                    <img src={natendow} alt="NEH_seal"/> 
+                </div>
+                {paragraph}
             </div>
         </div>
     )
