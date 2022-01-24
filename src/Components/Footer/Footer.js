@@ -9,16 +9,27 @@ import instagram from "../../res/imgs/instagram.png";
 import twitter from "../../res/imgs/twitter.png";
 import facebook from "../../res/imgs/facebook.png";
 import natendow from "../../res/imgs/natendow.png";
+import { Link } from 'react-router-dom';
 
 function Footer() {
-    const [state, setState] = useState([]);
+    // const [state, setState] = useState({});
+    const [email, setEmail] = useState({});
+    // const 
 
     const { fetchBaseUrl } = VARIABLES;
 
     useEffect(() => {
-        fetch([fetchBaseUrl, "PAGES?PAGE=FOOTER"].join('/'))
+        fetch([fetchBaseUrl, "content-footers"].join('/'))
         .then(response => response.json())
-        .then(data => processPage(data, setState))
+        .then(data => {
+            // extract text field;
+            function etf(section){
+                const obj = data.filter(obj => obj.Section === section)[0];
+                return obj.Content + '';
+            }
+
+            setEmail(etf('email'));
+        })
         .catch(err => console.log(err));
     }, []) /* eslint-disable-line */
 
@@ -27,16 +38,16 @@ function Footer() {
             <div className="footer_top">
                 <img src={icon} alt="Nwc Icon"/>
                 <div className="footer_home">
-                    <a href={getSafe(state, "HOME_LINK")}>HOME</a>
+                    <Link to="/">HOME</Link>
                 </div>
                 <div className="footer_about">
-                    <a href={getSafe(state, "ABOUT_LINK")}>ABOUT</a>
+                    <Link to="/about">ABOUT</Link>
                 </div>
                 <div className="footer_contact">
-                    <a href={getSafe(state, "CONTACT_LINK")}>CONTACT</a>
+                    <a href={`mailto:${email}`}>CONTACT</a>
                 </div>
                 <div className="footer_donate">
-                    <a href={getSafe(state, "DONATE_LINK")}>DONATE</a>
+                    <a href={getSafe(email, "DONATE_LINK")}>DONATE</a>
                 </div>
                 <div className="footer_media">
                     <p>SOCIAL MEDIA</p>
@@ -50,7 +61,7 @@ function Footer() {
             <div className="footer_bottom">
                 <p>THE SHARING STORIES FROM 1977 PROJECT APPRECIATES THE SUPPORT OF THE FOLLOWING:</p>
                 <img src={natendow} alt="NATIONAL ENDOWMENT FOR THE HUMANITIES"/>
-                <p className="footer_bottomText">{getSafe(state, "BOTTOM_TEXT")}</p>
+                <p className="footer_bottomText">{getSafe(email, "BOTTOM_TEXT")}</p>
             </div>
         </div>
     )

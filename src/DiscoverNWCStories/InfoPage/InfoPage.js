@@ -17,9 +17,9 @@ function InfoPage({
   const career = "POET, WRITER, CIVIL RIGHTS ACTIVIST";
   const role = "NATIONAL COMMISIONER";
   const tags = ["tag1", "tag2", "tag3"]
-  const quoteTop = "\"All work and no play makes Jack a dull boy.\" ";
-  const bioText = "All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. ";
-  const quoteBot = "\"All work and no play makes Jack a dull boy.\" ";
+  const quoteTop = "_"; // "\"All work and no play makes Jack a dull boy.\" ";
+  const bioText = "_"; // "All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. ";
+  const quoteBot = "_"; // "\"All work and no play makes Jack a dull boy.\" ";
   //const video = "https://cdn.vox-cdn.com/thumbor/RWw0ruSCoa1PrEtjEfjXyQofY8M=/0x0:2040x1360/1200x800/filters:focal(857x517:1183x843)/cdn.vox-cdn.com/uploads/chorus_image/image/69176604/acastro_180403_1777_youtube_0001.0.jpg";
   const videoSRC = "https://av.lib.uh.edu:443/master_files/wh246s17n/embed";
   const videoTitle = "Barbara Trincilla interview";

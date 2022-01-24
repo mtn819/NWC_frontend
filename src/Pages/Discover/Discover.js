@@ -13,9 +13,6 @@ import { Link } from 'react-router-dom';
 
 function Discover() {
     const [cards, setCards] = useState([]);
-
-    const [page, setPage] = useState(0);
-
     const [input, setInput] = useState("");
 
     const [stateOld, setStateOld] = useState({
@@ -28,7 +25,6 @@ function Discover() {
         fetch([fetchBaseUrl, `content-discover-stories`/* + `?_start=${page}&_limit=2`*/].join('/'))
         .then(response => response.json())
         .then(data => {
-            console.log("Dicover Here", data);
             loadcards(data, setCards);
         })
         .catch(err => console.log(err));
@@ -48,15 +44,11 @@ function Discover() {
         .catch(err => console.log(err));
     }
 
-    const [currentSort, setCurrentSort] = useState("");
-
     function sortName(){
         fetch([fetchBaseUrl, `content-discover-stories?name_contains=${input}&_sort=name:ASC`].join('/'))
         .then(response => response.json())
         .then(data => loadcards(data, setCards))
         .catch(err => console.log(err));
-
-        setCurrentSort("name");
     }
     
     function sortRole(){
@@ -64,8 +56,6 @@ function Discover() {
         .then(response => response.json())
         .then(data => loadcards(data, setCards))
         .catch(err => console.log(err));
-
-        setCurrentSort("role");
     }
 
     function sortState(){
@@ -73,8 +63,6 @@ function Discover() {
         .then(response => response.json())
         .then(data => loadcards(data, setCards))
         .catch(err => console.log(err));
-
-        setCurrentSort("state");
     }
 
     return (
@@ -83,7 +71,7 @@ function Discover() {
             {/**BANNER */}
             <div className="discoverBanner">
                 <img src={discoverButton} alt="Discover NWC Stories"/>
-                <LCard text={getSafe(stateOld, "BannerText")}/>
+                <LCard text={getSafe(stateOld, "BannerText") + ""} />
                 <CaptionedImg
                     src={discoverbannerperson}
                     caption="PHOTO BY JANE DOE"

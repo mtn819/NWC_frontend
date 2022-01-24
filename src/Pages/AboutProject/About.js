@@ -9,6 +9,8 @@ import bottomchart from './res/bottomchart.png';
 
 import VARIABLES from "../../config/.env.js";
 
+import MeetTheTeam from '../MeetTheTeam/MeetTheTeam';
+
 
 
 const getWhere = (data, key, value) => {
@@ -207,9 +209,11 @@ function About() {
       </div>
 
       {/**MEET */}
-      <div className="aboutMeet">
+      {/*<div className="aboutMeet">
         <img src={meet} alt="_" />
-      </div>
+      </div>*/}
+
+      <MeetTheTeam />
 
       {/**TABLE */}
       <div className="aboutTable">

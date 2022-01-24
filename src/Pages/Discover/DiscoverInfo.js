@@ -84,7 +84,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             <div className="discoverInfoBanner">
                 <div className="discoverInfoBanner_left">
                     <Link to="/discover">&larr; BACK TO DISCOVER PAGE</Link>
-                    <h1>MAYA ANGELOU</h1>
+                    <h1>{pageState.pfname}</h1>
                 </div>
             </div>
 

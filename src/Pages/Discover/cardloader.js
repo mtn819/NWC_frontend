@@ -1,4 +1,4 @@
-import { media2url } from "../../Components/util/util";
+// import { media2url } from "../../Components/util/util";
 
 function d2card(datum) {
     return {
@@ -13,7 +13,6 @@ function d2card(datum) {
 
 export function loadcards(data, setState) {
     try{
-        console.log(data);
         setState(data.map(d2card));
     } catch(e) {
         console.log(e);

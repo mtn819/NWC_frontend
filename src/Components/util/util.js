@@ -54,5 +54,4 @@ export function processPageOld(data, setState, state={}) {
         ...state,
         ...newState,
     });
-    console.log(newState)
 }

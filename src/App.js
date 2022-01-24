@@ -18,6 +18,7 @@ import Torch from "./Pages/Torch/Torch";
 import Participants from "./Pages/Participants/Participants";
 import Discover from "./Pages/Discover/Discover";
 import DiscoverInfo from "./Pages/Discover/DiscoverInfo";
+import MeetTheTeam from "./Pages/MeetTheTeam/MeetTheTeam";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           <HowToContribute/>
         </Route>
         */}
+        <Route path="/MeetTheTeam">
+          <MeetTheTeam />
+        </Route>
         <Route path = "/DiscoverNWCStories">
           <Discover />{/*<DiscoverNWCStories/>*/}
         </Route>

@@ -1,0 +1,25 @@
+.meetIcon {
+    font-size: calc(16px + 1vw);
+    text-align: center;
+    width: fit-content;
+}
+
+.meetIcon:hover {
+    /* cursor: pointer; */
+}
+
+.meetIcon > img {
+    max-height: 12em;
+    aspect-ratio: 1/1;
+}
+
+.meetIcon_name {
+    font-family: var(--fontBabasNeue);
+    font-size: 2em;
+}
+
+.meetIcon_role {
+    font-family: var(--fontMontserrat);
+    max-width: 15ch;
+    margin: auto;
+}
