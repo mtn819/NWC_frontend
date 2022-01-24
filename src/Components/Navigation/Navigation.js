@@ -32,7 +32,6 @@ function Navigation() {
         <JuicyLink navname="Home" pathname="/"/>
         <JuicyLink navname="About Project" pathname="/About"/>
         <JuicyLink navname="Why The NWC Matters" pathname="/Why"/>
-        <JuicyLink navname="List Of Participants" pathname="/Participants"/>
         <JuicyLink navname="Discover NWC Stories" pathname="/DiscoverNWCStories"/>
         <div></div> 
         {/*<Link className="navigation_link" to="/DiscoverNWCStories">DISCOVER NWC STORIES</Link>  

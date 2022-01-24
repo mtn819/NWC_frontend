@@ -1,6 +1,0 @@
-.info_videoiframe {
-    border-style: none;
-    border:0px;
-    width: calc(1069*var(--xUnit));
-    height: calc(664*var(--xUnit));
-  }
