@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./DiscoverCard.css";
 import yellowlogo from "./yellowlogo.png";
 import bluelogo from "./bluelogo.png";
@@ -40,7 +41,7 @@ function DiscoverCard({
     }
 
     return (
-        <a className="discoverCard" href={href} style={{"border": border}}>
+        <Link className="discoverCard" to={href} style={{"border": border}}>
             <div href="discoverCard_body">
                 <div className="discoverCard_holePunch" style={{"border": border}}></div>
                 <div className="discoverCard_items">
@@ -55,7 +56,7 @@ function DiscoverCard({
                 </div>
                 <p className="discoverCard_bottom">National Women's Conference 1977</p>
             </div>
-        </a>
+        </Link>
     )
 }
 
