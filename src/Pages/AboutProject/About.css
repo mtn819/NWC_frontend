@@ -229,18 +229,28 @@ TABLE
 
 .aboutTable_entries { 
   width: 70%;
-  display: flex;
   flex-direction: row;
   border: 1px solid var(--colorDarkBlue);
-  flex-wrap: wrap;
 }
 
 .aboutTable_entries > * {
-  width: 50%;
 }
 
 .aboutTable_entry {
   padding: .5em;
+  display: flex;
+  align-items: center;
+}
+
+.aboutTable_entry > * {
+  margin: .2em;
+}
+
+.aboutTable_entry > img {
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 999px;
+  width: 2em;
 }
 
 .aboutTable_entry > p {
@@ -253,13 +263,8 @@ TABLE
   font-size: .8em;
 }
 
-.aboutTable_role {
-  font-family: var(--fontMontserrat);
-  font-size: .5em;
-  font-weight: bold;
-}
-
-.aboutTable_university {
+.aboutTable_txt {
   font-size: .6em;
   font-family: var(--fontMontserrat);
+  max-width: 70ch;
 }

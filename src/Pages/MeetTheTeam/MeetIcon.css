@@ -5,7 +5,7 @@
 }
 
 .meetIcon:hover {
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
 .meetIcon > img {
@@ -22,4 +22,42 @@
     font-family: var(--fontMontserrat);
     max-width: 15ch;
     margin: auto;
+}
+
+.meetIcon_popup {
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+    position: absolute;
+    background-color: white;
+    margin-top: -14em;
+    margin-left: -2em;
+}
+
+.meetIcon_popupHeader {
+    background-color: var(--colorDarkBlue);
+    color: white;
+    text-align: left;
+    padding-left: 4ch;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.meetIcon_popupHeader > h3 {
+    font-family: var(--fontBabasNeue);
+    font-weight: normal;
+    max-width: 20em;
+}
+
+.meetIcon_popupHeader > p {
+    font-family: var(--fontMontserrat);
+    font-size: .6em;
+}
+
+.meetIcon_popupText > p {
+    max-width: 20em;
+    font-family: var(--fontMontserrat);
+    font-size: .6em;
+    text-align: left;
+    padding: .8em;
 }
