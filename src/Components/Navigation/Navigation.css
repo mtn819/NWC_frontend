@@ -51,11 +51,11 @@
 
 .navigation_link--selected {
   color: white;
-  text-decoration: underline;
 }
 
 .navigation_link:hover {
-  color: white
+  color: white;
+  text-decoration: underline;
 }
 
 .navigation_border {

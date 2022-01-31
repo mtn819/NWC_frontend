@@ -4,7 +4,6 @@ import "./About.css";
 import button from "./res/button.png";
 import chick from './res/chick.png';
 import tl from './res/tl.png';
-import meet from './res/meatteem.png';
 import bottomchart from './res/bottomchart.png';
 
 import VARIABLES from "../../config/.env.js";
@@ -209,10 +208,6 @@ function About() {
       </div>
 
       {/**MEET */}
-      {/*<div className="aboutMeet">
-        <img src={meet} alt="_" />
-      </div>*/}
-
       <MeetTheTeam />
 
       {/**TABLE */}
