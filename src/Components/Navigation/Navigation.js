@@ -33,10 +33,9 @@ function Navigation() {
         <JuicyLink navname="About Project" pathname="/About"/>
         <JuicyLink navname="Why The NWC Matters" pathname="/Why"/>
         <JuicyLink navname="Discover NWC Stories" pathname="/DiscoverNWCStories"/>
+        <JuicyLink navname="Mapping the NWC" pathname="/MappingNWC"/>
         <div></div> 
-        {/*<Link className="navigation_link" to="/DiscoverNWCStories">DISCOVER NWC STORIES</Link>  
-        <Link className="navigation_link" to="/WhyTheNWCMatters">WHY THE NWC MATTERS</Link>
-        <Link className="navigation_link" to="/MappingNWC">MAPPING THE NWC</Link>
+        {/*
         <Link className="navigation_link" to="/HowToContribute">HOW TO CONTRIBUTE</Link>
         <img className="navigation_search" src={icon_search}/>*/}
     </div>

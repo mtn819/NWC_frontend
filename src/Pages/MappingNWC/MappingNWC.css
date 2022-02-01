@@ -1,0 +1,255 @@
+.mappingNWC {
+  font-size: calc(1vw + 16px);
+  font-family: var(--fontBabasNeue);
+}
+
+/*
+BANNER
+*/
+
+.mappingNWCBanner {
+  width: 100vw;
+  background: url("./res/mapbg.png");
+  padding-top: 151rem;
+  display: flex;
+}
+
+.mappingNWC_button {
+  width: 500rem;
+  height: 500rem;
+}
+
+.mappingNWC_card {
+  width: 834rem;
+  height: 450rem;
+  min-height: 450rem;
+  background-color: white;
+  border-left: 12rem solid var(--colorDeepRed);
+  padding: 61rem;
+  padding-top: 58rem;
+  margin-top: 52rem;
+}
+
+.mappingNWC_card p {
+  font-family: var(--fontNeoBulletin);
+  font-size: 30rem;
+  font-weight: bold;
+  width: 760rem;
+}
+
+.mappingNWC_credit {
+  min-width: 323rem;
+  height: 84rem;
+  background-color: var(--colorDarkBlue);
+  color: var(--colorBeige);
+  font-size: 36rem;
+  font-family: var(--fontBabasNeue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  margin-left: -200rem;;
+  margin-top: 577rem;
+  margin-right: 400rem;
+  width: fit-content;
+  text-align: right;
+  padding: 12rem;
+}
+
+.mappingNWC_credit p {
+  width: 323rem;
+  text-align: center;
+}
+
+.mappingNWC_component119 {
+  width: 537rem;
+  height: 764rem;
+  margin-left: -400rem;
+  margin-bottom: -151rem;
+  margin-top: -100rem;
+}
+
+/*
+Map
+*/
+
+.map-container {
+  height: 400px;
+}
+
+/*
+SEARCH
+*/
+
+.mappingNWCSearch {
+  margin-right: 80rem;
+  margin-top: 50rem;
+  margin-left: 80rem;
+  padding: .4em;
+}
+
+.mappingNWCSearch h1 {
+  font-size:50rem;
+  font-weight: normal;
+  color: var(--colorDarkBlue);
+  margin-bottom: 15rem;
+}
+
+.mappingNWCSearch hr {
+  border: none;
+  height: 4rem;
+  color: var(--colorDarkBlue); /* old IE */
+  background-color: var(--colorDarkBlue); /* Modern Browsers */
+  margin-bottom: 10rem;
+}
+
+.mappingNWCSearch h2 {
+  font-family: var(--fontMontserrat);
+  font-size:25rem;
+  color: var(--colorDarkBlue);
+
+}
+
+.mappingNWCSearch p {
+  font-family: var(--fontMontserrat);
+  font-size:25rem;
+  color: var(--colorDarkBlue);
+  margin-bottom: 15rem;
+}
+
+.mappingNWCSearch_bar {
+  width: fit-content;
+  display: flex;
+  border: .1em solid var(--colorLightBlue);
+  padding: 0 .2em;
+}
+
+.mappingNWCSearch_bar > input {
+  border: none;
+  outline: none;
+  border-bottom: .1em solid var(--colorLightBlue);
+  height: fit-content;
+  font-size: .7em;
+  margin: auto;
+  padding-left: 1ch;
+  margin-right: 1ch;
+}
+
+.mappingNWCSearch_bar > input::placeholder {
+  color: lightgray;
+}
+
+.mappingNWCSearch_bar > input:focus {
+  border-bottom: .1em solid var(--colorDeepRed);
+}
+
+.mappingNWSearch_icon {
+  color: var(--colorLightBlue);
+}
+
+.mappingNWCSearch_icon:hover {
+  cursor: pointer;
+  color: var(--colorDeepRed);
+  transform: scale(1.04);
+}
+
+
+.mappingNWCSearch_panel {
+  display: grid;
+  grid-template-columns: repeat(8, [col] auto ) ;
+  grid-template-rows: 1;
+  padding-top: 100rem;
+  padding-left: 30rem;
+  padding-bottom: 30rem;
+}
+
+.mappingNWCSearch_panel p {
+  font-size:25rem;
+  color: var(--colorDarkBlue);
+  margin-bottom: 15rem;
+  margin-left: 10rem;
+}
+
+form {
+  font-size:25rem;
+  color: var(--colorDarkBlue);
+  display: flex;
+}
+
+.panel{
+  flex-grow: 1;
+  height: 300px;
+}
+
+.panel + .panel {
+  margin-left: 2%;
+}
+
+
+
+.form-control {
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+  --form-control-color: var(--form-control-disabled);
+
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
+

@@ -9,7 +9,8 @@ import './Custom.css';
 import Footer from "./Components/Footer/Footer";
 import Navigation from './Components/Navigation/Navigation';
 import Home from './Pages/Home/Home';
-// import MappingNWC from "./MappingNWC/MappingNWC";
+import MappingNWC from "./Pages/MappingNWC/MappingNWC";
+import AdvancedSearch from "./Pages/MappingNWC/AdvancedSearch";
 // import HowToContribute from "./HowToContribute/HowToContribute";
 import About from "./Pages/AboutProject/About";
 import Why from "./Pages/Why/Why";
@@ -20,6 +21,7 @@ import Discover from "./Pages/Discover/Discover";
 import DiscoverInfo from "./Pages/Discover/DiscoverInfo";
 import MeetTheTeam from "./Pages/MeetTheTeam/MeetTheTeam";
 
+
 function App() {
   return (
     <Router basename={'/dev'} className="App">
@@ -27,9 +29,6 @@ function App() {
 
       <Switch>
         {/*
-        <Route path = "/MappingNWC">
-          <MappingNWC/>
-        </Route>
         <Route path = "/HowToContribute">
           <HowToContribute/>
         </Route>
@@ -55,6 +54,12 @@ function App() {
         </Route>
         <Route path = "/Torch">
          <Torch/>
+        </Route>
+        <Route path = "/MappingNWC">
+          <MappingNWC/>
+        </Route>
+        <Route path = "/AdvancedSearch">
+          <AdvancedSearch/>
         </Route>
         <Route path = "/About">
           <About></About>
