@@ -1,0 +1,33 @@
+/*
+Map
+*/
+
+
+.map-container {
+  height: 400px;
+}
+
+/*
+  Reset button styles
+  It takes a little bit of work to achieve a “blank slate” look.
+*/
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  /*
+    Show a hand cursor on hover instead of the default arrow cursor
+    (Some argue that we should keep the default arrow cursor for buttons, to be consistent with how desktop operating systems treat buttons.)
+  */
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+

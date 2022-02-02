@@ -108,7 +108,7 @@ function MappingNWC() {
   
   return (
     <div className="mappingNWC">
-      
+
       {/**BANNER */}
       <div className="mappingNWCBanner">
         <img src={button} className="mappingNWC_button" alt="_" />
@@ -123,55 +123,124 @@ function MappingNWC() {
 
       {/**SEARCH */}
       <div className="mappingNWCSearch">
-          <h1>HOW TO SEARCH this DATA</h1>
-          <hr></hr>
-          <h2>BASIC SEARCH</h2>
-          <p> {basicSearch_text} </p>
-          <h2>ADVANCED SEARCH</h2>
-          <p> <Link to="/AdvancedSearch">Click here</Link> if you want to search... </p>
-        </div>
+        <h1>HOW TO SEARCH this DATA</h1>
+        <hr></hr>
+        <h2>BASIC SEARCH</h2>
+        <p> {basicSearch_text} </p>
+        <h2>ADVANCED SEARCH</h2>
+        <p> <Link to="/AdvancedSearch">Click here</Link> if you want to search... </p>
+
         <div className="mappingNWCSearch_bar">
-          <input placeholder="SEARCH" value={input} onChange={e=>setInput(e.target.value)}/>
+          <input placeholder="SEARCH" value={input} onChange={e => setInput(e.target.value)} />
           <p className="mappingNWCSearch_icon" onClick={() => search()}>&#x1F50E;&#xFE0E;</p>
         </div>
-        <form action="">
-          <div className='panel'>
-            <p>LOCATION AND NWC ROLE</p>
-            <Select
-              defaultValue={[stateOptions[2], stateOptions[3]]}
-              isMulti
-              name="colors"
-              options={stateOptions}
-              className="basic-multi-select"
-              classNamePrefix="select"
-            />
-            <label class="form-control">
-              <input type="checkbox" name="favorite1" value="chocolate" /> DELEGATES/ALTERNATES</label>
-            <label class="form-control">
-              <input type="checkbox" name="favorite2" value="vanilla" /> NATIONAL COMMISSIONERS</label>
-            <label class="form-control">
-              <input type="checkbox" name="favorite3" value="mint" /> NOTABLE SPEAKERS</label>
+        <form className="basicForm" action="">
+          <div className="row">
+            <div className='panel'>
+              <p>LOCATION AND NWC ROLE</p>
+              <p>&nbsp;&nbsp;STATE/TERRITORY</p>
+              <Select
+                defaultValue={[stateOptions[42]]}
+                isMulti
+                name="colors"
+                options={stateOptions}
+                className="basic-multi-select"
+                classNamePrefix="select"
+              />
+              <p>&nbsp;&nbsp;ROLES</p>
+              <label className="form-control">
+                <input type="checkbox" name="favorite1" value="delegates" />DELEGATES/ALTERNATES</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite2" value="national commissioner" />NATIONAL COMMISSIONERS</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="notable Speakers" />NOTABLE SPEAKERS</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="journalists" />JOURNALISTS</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="torch relay runners" />TORCH RELAY RUNNERS</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="staff" />STAFF/VOLUNTEERS</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="international dignitaries" />INTERNATIONAL DIGNITARIES</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="offcial observer" />OFFICIAL OBSERVERS</label>
+            </div>
+            <div className='panel'>
+              <p>RACE AND ETHNICITY IDENTIFIERS</p>
+              <label className="form-control">
+                <input type="checkbox" name="favorite1" value="asian american" />ASIAN AMERICAN/PACIFIC ISLANDER</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite2" value="black" />BLACK</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="hispanic" />HISPANIC</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="native american" />NATIVE AMERICAN/AMERICAN INDIAN</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="white" />WHITE</label>
+            </div>
+            <div className='panel'>
+              <p>RELIGION</p>
+              <label className="form-control">
+                <input type="checkbox" name="favorite1" value="agnostic" />AGNOSTIC</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite2" value="atheist" />ATHEIST</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="catholic" />CATHOLIC</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="christian" />CHRISTIAN NON CATHOLIC</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="eastern religions" />EASTERN RELIGIONS</label>
+                <label className="form-control">
+                <input type="checkbox" name="favorite1" value="jewish" />JEWISH</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite2" value="mormon" />MORMON</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="muslim" />MUSLIM</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="unknown" />UNKNOWN</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="non of the above" />NONE OF THE ABOVE</label>
+            </div>
+            <div className='panel'>
+              <p>HIGHEST LEVEL OF EDUCATION</p>
+              <label className="form-control">
+                <input type="checkbox" name="favorite1" value="high school" />HIGH SCHOOL</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite2" value="college" />COLLEGE</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="graduate" />GRADUATE/PROFESSIONAL</label>
+            </div>
+            <div className='panel'>
+              <p>POLITICAL OFFICES HELD</p>
+              <label className="form-control">
+                <input type="checkbox" name="favorite1" value="city" />CITY LEVEL</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite2" value="county" />COUNTY LEVEL</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="state" />STATE LEVEL</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="federal" />FEDERAL LEVEL</label>
+            </div>
+            <div className='panel'>
+              <p>POLITICAL PARTY MEMBERSHIP</p>
+              <label className="form-control">
+                <input type="checkbox" name="favorite1" value="democratic" />DEMOCRATIC PARTY</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite2" value="republic" />REPUBLICAN PARTY</label>
+              <label className="form-control">
+                <input type="checkbox" name="favorite3" value="third" />THIRD PARTY</label>
+            </div>
+            <div className='panel'>
+              <p>ERA STANCE</p>
+            </div>
           </div>
-          <div className='panel'>
-            <p>RACE AND ETHNICITY IDENTIFIERS</p>
+          <div className="row">
+            <button type="reset" name="action"  class="resetButton">RESET</button>
+            <button type="submit" name="action" formaction="/search" class="searchButton">SEARCH</button>
           </div>
-          <div className='panel'>
-            <p>RELIGION</p>
-          </div>
-          <div className='panel'>
-            <p>HIGHEST LEVEL OF <br></br>EDUCATION</p>
-          </div>
-          <div className='panel'>
-            <p>POLITICAL OFFICES HELD</p>
-          </div>
-          <div className='panel'>
-            <p>POLITICAL PARTY MEMBERSHIP</p>
-          </div>
-          <div className='panel'>
-            <p>ERA STANCE</p>
-          </div>
+
         </form>
-        
+      </div>
       {/**MAP */}
       <Map />
     </div>

@@ -69,13 +69,17 @@ BANNER
   margin-top: -100rem;
 }
 
-/*
-Map
-*/
 
-.map-container {
-  height: 400px;
-}
+
+
+
+.marker {
+  display: block;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  }
 
 /*
 SEARCH
@@ -153,39 +157,36 @@ SEARCH
   transform: scale(1.04);
 }
 
-
-.mappingNWCSearch_panel {
-  display: grid;
-  grid-template-columns: repeat(8, [col] auto ) ;
-  grid-template-rows: 1;
-  padding-top: 100rem;
-  padding-left: 30rem;
-  padding-bottom: 30rem;
-}
-
-.mappingNWCSearch_panel p {
-  font-size:25rem;
-  color: var(--colorDarkBlue);
-  margin-bottom: 15rem;
-  margin-left: 10rem;
-}
-
-form {
+.basicForm {
   font-size:25rem;
   color: var(--colorDarkBlue);
   display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: right;
 }
 
 .panel{
   flex-grow: 1;
-  height: 300px;
+  height: auto;
+  font-family: var(--fontBabasNeue);
+  padding-left: 10rem;
+}
+
+.panel p{
+  font-family: var(--fontBabasNeue);
+  margin-top: 10rem;
+  padding-bottom: 10rem;
+
 }
 
 .panel + .panel {
   margin-left: 2%;
+  border-left: 4rem solid var(--colorDarkBlue);
 }
-
-
 
 .form-control {
   line-height: 1.1;
@@ -244,6 +245,34 @@ input[type="checkbox"]:disabled {
 
   color: var(--form-control-disabled);
   cursor: not-allowed;
+}
+
+button {
+  font-size: 30rem;
+  font-family: var(--fontBabasNeue);
+  margin-top: 20rem;
+  border: none;
+  color: white;
+  width: fit-content;
+  padding-left: 50rem;
+  padding-right: 50rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  border-radius: 30rem;
+  transition: color .5s, background-color .5s;
+}
+
+.searchButton {
+  background-color: var(--colorDeepRed);
+}
+
+.resetButton {
+  margin-right: 50rem;
+  background-color: var(--colorDarkBlue);
+}
+
+button:hover {
+  text-decoration: underline;
 }
 
 
