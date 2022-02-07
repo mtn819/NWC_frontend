@@ -54,6 +54,7 @@ function DiscoverInfo() {
             // for example
             // setState({ nestedEl: { a: 'b' } }); // this will crash things.
             // this is why the occasional map function is seen in below's assignments.
+            // we want [literal1, literal2, ...], not [{object1}, {object2}, ...] (which is the purpose of the occasional .map)
             setState({
                 bigquote1: data[0].bigquote1,
                 bigquote2: data[0].bigquote2,
@@ -62,6 +63,10 @@ function DiscoverInfo() {
                 imgcaption: data[0].imgcaption,
                 maintext: data[0].maintext,
                 name: data[0].name,
+                // this is just getting the url. this pattern is common for media objects, like images and pdf files.
+                // this is also acheived in media2url, which can be found in util.js,
+                // but i think that level of abstraction is unnecessary.
+                // the string literal is my personal preference.
                 profilepic: `${fetchBaseUrl}${data[0].profilepic[0].url}`,
                 profilepic_alt: data[0].profilepic[0].alternativeText,
                 role: data[0].role,
@@ -91,12 +96,14 @@ function DiscoverInfo() {
     // </p>));
     //
     // instead of
-    // arr.map(e => <SomeComponentIMade />)
+    // arr.map(e => <SomeComponentIMade prop={e.someAttribute} />)
     //
     // the first example pretty much shows what anyone familiar with boring, basic HTML would be expecting to see on the page.
-    // the second example would require a degree of scavenging.
+    // the second example would require a (likely small but at least considerable) degree of scavenging.
+    // things that get used on tons of different pages are good candidates for getting abstracted into components.
     //
     // Of course, all these comments are my personal preference.
+    // Do at your discression. if things get really messy, abstract.
     // If you have something you truly believe to be a superior alternative, please pursue that.
     // But yeah, my general approach again was: do as much with HTML and CSS as possible, as those are braindead and more fool-proof.
     // Using react and javascript minimally, in my opinion, seems to reduce bugs.
@@ -112,11 +119,6 @@ function DiscoverInfo() {
     return (
         <div className="discoverInfo">
             
-            {/**
-             * I decided to create these kinds of mini labels within the HTML and CSS files.
-             * I really like them, and they make my life quite easy.
-             * I just use them to visually break up and connect (between HTML and CSS) large sections.
-             * */}
             {/**BANNER */}
             <div className="discoverInfoBanner">
                 <div className="discoverInfoBanner_left">
