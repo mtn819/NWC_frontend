@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Participants.css';
 import VARIABLES from '../../config/.env';
+import { CSVLink, CSVDownload } from "react-csv";
 
 function Participants() {
     const [participants, setParticipants] = useState([]);
@@ -33,6 +34,17 @@ function Participants() {
     return (
         <div className="participants">
             <h1>List of NWC Participants</h1>
+            <span className="participants_dl">
+            <CSVLink
+                data={[
+                    ["Last", "First"],
+                    ...participants.map(p => [p.LastName, p.FirstName]),
+                ]}
+                filename={`participants-${Date.now()}.csv`}
+            >
+                Download the CSV
+            </CSVLink>
+            </span>
 
             {/**FILTER */}
             <div className="participantsFilter">

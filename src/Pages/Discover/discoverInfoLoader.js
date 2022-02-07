@@ -1,10 +1,10 @@
 import { media2url } from "../../Components/util/util";
 
-export function loaddiscover(data, setPageState, pageState={}) {
+export function loaddiscover(data, setState, state={}) {
     console.log(data);
 
-    setPageState({
-        ...pageState,
+    setState({
+        ...state,
         pfpsrc: media2url(data[0].profilepic[0]),
         pfpalt: data[0].name,
         pfcaption: data[0].imgcaption,
