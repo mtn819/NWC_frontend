@@ -9,15 +9,18 @@ import { loadmap } from './maploader';
 
 import button from "./res/button.png";
 import component119 from './res/component119.png';
-import AdvancedSearch from './AdvancedSearch';
 
 function MappingNWC() {
 
-  const [banner_card, setBanner_card] = useState("");
-  const [imgCredit, setImgCredit] = useState("");
-  const [imgCredit_more, setImgCredit_more] = useState("")
+  const { fetchBaseUrl } = VARIABLES;
 
-  const [basicSearch_text, setBasicSearch_text] = useState("")
+  const [ state, setState ] = useState({
+    banner_text: '',
+    bannerimage_credit: '',
+    bannerimagecredit_more: '',
+    basicsearch_text: ''
+  });
+
 
   const [maps, setMap] = useState([]);
   const [input, setInput] = useState("");
@@ -75,29 +78,23 @@ function MappingNWC() {
 { value: "WY", label: "Wyoming" },
   ]
 
+  // grab page data from strapi
   useEffect(() => {
-    fetch([VARIABLES.fetchBaseUrl, "content-mapping-nwc"].join('/'))
+    fetch(`${fetchBaseUrl}/content-mapping-nwc`)
     .then(res => res.json())
     .then(data => {
-      setBanner_card (
-        data.Banner_text
-      );
-
-      setImgCredit(
-        data.BannerImage_Credit
-      );
-
-      setImgCredit_more(
-          data.BannerImageCredit_more
-      );
-
-      setBasicSearch_text(
-        data.BasicSearch_Text
-    );
+      console.log(data);
+        setState({
+            banner_text: data.Banner_text,
+            bannerimage_credit: data.BannerImage_Credit,
+            bannerimagecredit_more: data.BannerImageCredit_more,
+            basicsearch_text: data.BasicSearch_Text
+        });
     })
-  }, []);
+    .catch(err => console.log(err));
+}, []); // eslint-disable-line
 
-  function search(){
+function search(){
     fetch([VARIABLES.fetchBaseUrl, `participants?name_contains=${input}`].join('/'))
     .then(response => response.json())
     .then(data => loadmap(data, setMap))
@@ -114,10 +111,10 @@ function MappingNWC() {
         <img src={button} className="mappingNWC_button" alt="_" />
         <div className="mappingNWC_card">
           <p>
-            {banner_card}
+            {state.banner_text}
           </p>
         </div>
-        <div className="mappingNWC_credit" title={imgCredit_more}><p>PHOTO BY {imgCredit}</p></div>
+        <div className="mappingNWC_credit" title={state.bannerimagecredit_more}><p>PHOTO BY {state.bannerimage_credit}</p></div>
         <img src={component119} className="mappingNWC_component119" alt="_" />
       </div>
 
@@ -126,7 +123,7 @@ function MappingNWC() {
         <h1>HOW TO SEARCH this DATA</h1>
         <hr></hr>
         <h2>BASIC SEARCH</h2>
-        <p> {basicSearch_text} </p>
+        <p> {state.basicsearch_text} </p>
         <h2>ADVANCED SEARCH</h2>
         <p> <Link to="/AdvancedSearch">Click here</Link> if you want to search... </p>
 
