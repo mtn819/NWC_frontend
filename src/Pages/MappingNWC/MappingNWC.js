@@ -18,9 +18,16 @@ function MappingNWC() {
     banner_text: '',
     bannerimage_credit: '',
     bannerimagecredit_more: '',
-    basicsearch_text: ''
+    basicsearch_text: '',
+    searchQuery: ''
   });
 
+  //from values
+  const [values, setValues] = useState({
+    delegates: '',
+    lastName: '',
+    email: '',
+  });
 
   const [maps, setMap] = useState([]);
   const [input, setInput] = useState("");
@@ -83,7 +90,6 @@ function MappingNWC() {
     fetch(`${fetchBaseUrl}/content-mapping-nwc`)
     .then(res => res.json())
     .then(data => {
-      console.log(data);
         setState({
             banner_text: data.Banner_text,
             bannerimage_credit: data.BannerImage_Credit,
@@ -94,12 +100,38 @@ function MappingNWC() {
     .catch(err => console.log(err));
 }, []); // eslint-disable-line
 
-function search(){
-    fetch([VARIABLES.fetchBaseUrl, `participants?name_contains=${input}`].join('/'))
+
+
+// handle inut change on text search query
+const handleInputChanged = (e) => {
+  this.setState({
+    searchQuery: e.target.value
+  });
+}
+
+// submit text search query
+const handleSearchIconClicked = (e) => {
+  var searchQuery = this.state.searchQuery;
+
+  fetch([VARIABLES.fetchBaseUrl, `participants?name_contains=${searchQuery}`].join('/'))
     .then(response => response.json())
     .then(data => loadmap(data, setMap))
     .catch(err => console.log(err));
 }
+
+// Form submitting logic, prevent default page refresh 
+const handleSubmit = (e) => {
+  const { email, name, age, address, phoneNo } = this.state
+	e.preventDefault();
+	alert(`
+    ____Your Details____\n
+    Email : ${email}
+    Name : ${name}
+    Age : ${age}
+    Address : ${address}
+    Phone No : ${phoneNo}
+  `);
+};
 
 
   
@@ -123,15 +155,17 @@ function search(){
         <h1>HOW TO SEARCH this DATA</h1>
         <hr></hr>
         <h2>BASIC SEARCH</h2>
-        <p> {state.basicsearch_text} </p>
+        <p>{state.basicsearch_text}</p>
         <h2>ADVANCED SEARCH</h2>
         <p> <Link to="/AdvancedSearch">Click here</Link> if you want to search... </p>
 
         <div className="mappingNWCSearch_bar">
-          <input placeholder="SEARCH" value={input} onChange={e => setInput(e.target.value)} />
-          <p className="mappingNWCSearch_icon" onClick={() => search()}>&#x1F50E;&#xFE0E;</p>
+          <input type="text" value={state.searchQuery} placeholder="SEARCH" onChange={handleInputChanged.bind(this)}/>
+          <button onClick={handleSearchIconClicked.bind(this)} className="mappingNWCSearch_icon">
+          &#x1F50E;&#xFE0E;
+</button>
         </div>
-        <form className="basicForm" action="">
+        <div className="basicForm">
           <div className="row">
             <div className='panel'>
               <p>LOCATION AND NWC ROLE</p>
@@ -139,14 +173,13 @@ function search(){
               <Select
                 defaultValue={[stateOptions[42]]}
                 isMulti
-                name="colors"
                 options={stateOptions}
                 className="basic-multi-select"
                 classNamePrefix="select"
               />
               <p>&nbsp;&nbsp;ROLES</p>
               <label className="form-control">
-                <input type="checkbox" name="favorite1" value="delegates" />DELEGATES/ALTERNATES</label>
+                <input type="checkbox" value={values.delegates} />DELEGATES/ALTERNATES</label>
               <label className="form-control">
                 <input type="checkbox" name="favorite2" value="national commissioner" />NATIONAL COMMISSIONERS</label>
               <label className="form-control">
@@ -232,11 +265,11 @@ function search(){
             </div>
           </div>
           <div className="row">
-            <button type="reset" name="action"  class="resetButton">RESET</button>
-            <button type="submit" name="action" formaction="/search" class="searchButton">SEARCH</button>
+            <button type="reset" name="action"  className="resetButton">RESET</button>
+            <button type="submit" name="action" formAction="/search" className="searchButton">SEARCH</button>
           </div>
-
-        </form>
+        </div>
+        
       </div>
       {/**MAP */}
       <Map />
