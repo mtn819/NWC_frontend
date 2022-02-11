@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Select from 'react-select'
+import Select from 'react-select';
 
 import Map from "./Map";
 import VARIABLES from "../../config/.env.js";
 import './MappingNWC.css'
-import { loadmap } from './maploader';
 
 import button from "./res/button.png";
 import component119 from './res/component119.png';
@@ -104,18 +103,22 @@ function MappingNWC() {
 
 // handle inut change on text search query
 const handleInputChanged = (e) => {
-  this.setState({
+  setState({
+    ...state,
     searchQuery: e.target.value
   });
 }
 
 // submit text search query
 const handleSearchIconClicked = (e) => {
-  var searchQuery = this.state.searchQuery;
+  var searchQuery = state.searchQuery;
 
-  fetch([VARIABLES.fetchBaseUrl, `participants?name_contains=${searchQuery}`].join('/'))
+console.log([VARIABLES.fetchBaseUrl, `participants?first_name_contains=${searchQuery}`].join('/'));
+  fetch([VARIABLES.fetchBaseUrl, `participants?first_name_contains=${searchQuery}`].join('/'))
     .then(response => response.json())
-    .then(data => loadmap(data, setMap))
+    .then(data =>  {
+      console.log(data);
+    })
     .catch(err => console.log(err));
 }
 
