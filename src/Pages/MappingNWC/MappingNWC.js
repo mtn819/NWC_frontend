@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
+import { useForm } from "react-hook-form";
+import * as qs from 'qs';
 
 import Map from "./Map";
 import VARIABLES from "../../config/.env.js";
@@ -13,131 +15,123 @@ function MappingNWC() {
 
   const { fetchBaseUrl } = VARIABLES;
 
-  const [ state, setState ] = useState({
+  const [state, setState] = useState({
     banner_text: '',
     bannerimage_credit: '',
     bannerimagecredit_more: '',
-    basicsearch_text: '',
-    searchQuery: ''
-  });
-
-  //from values
-  const [values, setValues] = useState({
-    delegates: '',
-    lastName: '',
-    email: '',
+    basicsearch_text: ''
   });
 
   const [maps, setMap] = useState([]);
-  const [input, setInput] = useState("");
 
+  // forms 
+  const { register: registerSearch, handleSubmit: handleSubmitSearch, formState: { errors: errorsSearch } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  // submit text search query
+  const onSubmitSearch = (data) => {
+    var searchQuery = data.searchText;
+
+    fetch([VARIABLES.fetchBaseUrl, `participants?first_name_contains=${searchQuery}`].join('/'))
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(err => console.log(err));
+  }
+
+  // submit basic search query
+  const onSubmit = data => {
+    console.log(data);
+
+    const query = qs.stringify({
+      _where:
+      {
+        _or: [{
+          'roles.carter_national_commissioner': 1
+        }, { 'roles.ford_national_commissioner': 1 }]
+      }
+    });
+
+console.log(query)
+    fetch(`${fetchBaseUrl}/participants/basic?${query}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setMap();
+      })
+      .catch(err => console.log(err));
+  }
+
+  // adding USA list of states for select inout
   const stateOptions = [
     { value: "AL", label: "Alabama" },
-{ value: "AK", label: "Alaska" },
-{ value: "AZ", label: "Arizona" },
-{ value: "AR", label: "Arkansas" },
-{ value: "CA", label: "California" },
-{ value: "CO", label: "Colorado" },
-{ value: "CT", label: "Connecticut" },
-{ value: "DE", label: "Delaware" },
-{ value: "FL", label: "Florida" },
-{ value: "GA", label: "Georgia" },
-{ value: "HI", label: "Hawaii" },
-{ value: "ID", label: "Idaho" },
-{ value: "IL", label: "Illinois" },
-{ value: "IN", label: "Indiana" },
-{ value: "IA", label: "Iowa" },
-{ value: "KS", label: "Kansas" },
-{ value: "KY", label: "Kentucky" },
-{ value: "LA", label: "Louisiana" },
-{ value: "ME", label: "Maine" },
-{ value: "MD", label: "Maryland" },
-{ value: "MA", label: "Massachusetts" },
-{ value: "MI", label: "Michigan" },
-{ value: "MN", label: "Minnesota" },
-{ value: "MS", label: "Mississippi" },
-{ value: "MO", label: "Missouri" },
-{ value: "MT", label: "Montana" },
-{ value: "NE", label: "Nebraska" },
-{ value: "NV", label: "Nevada" },
-{ value: "NH", label: "New Hampshire" },
-{ value: "NJ", label: "New Jersey" },
-{ value: "NM", label: "New Mexico" },
-{ value: "NY", label: "New York" },
-{ value: "NC", label: "North Carolina" },
-{ value: "ND", label: "North Dakota" },
-{ value: "OH", label: "Ohio" },
-{ value: "OK", label: "Oklahoma" },
-{ value: "OR", label: "Oregon" },
-{ value: "PA", label: "Pennsylvania" },
-{ value: "RI", label: "Rhode Island" },
-{ value: "SC", label: "South Carolina" },
-{ value: "SD", label: "South Dakota" },
-{ value: "TN", label: "Tennessee" },
-{ value: "TX", label: "Texas" },
-{ value: "UT", label: "Utah" },
-{ value: "VT", label: "Vermont" },
-{ value: "VA", label: "Virginia" },
-{ value: "WA", label: "Washington" },
-{ value: "WV", label: "West Virginia" },
-{ value: "WI", label: "Wisconsin" },
-{ value: "WY", label: "Wyoming" },
+    { value: "AK", label: "Alaska" },
+    { value: "AZ", label: "Arizona" },
+    { value: "AR", label: "Arkansas" },
+    { value: "CA", label: "California" },
+    { value: "CO", label: "Colorado" },
+    { value: "CT", label: "Connecticut" },
+    { value: "DE", label: "Delaware" },
+    { value: "FL", label: "Florida" },
+    { value: "GA", label: "Georgia" },
+    { value: "HI", label: "Hawaii" },
+    { value: "ID", label: "Idaho" },
+    { value: "IL", label: "Illinois" },
+    { value: "IN", label: "Indiana" },
+    { value: "IA", label: "Iowa" },
+    { value: "KS", label: "Kansas" },
+    { value: "KY", label: "Kentucky" },
+    { value: "LA", label: "Louisiana" },
+    { value: "ME", label: "Maine" },
+    { value: "MD", label: "Maryland" },
+    { value: "MA", label: "Massachusetts" },
+    { value: "MI", label: "Michigan" },
+    { value: "MN", label: "Minnesota" },
+    { value: "MS", label: "Mississippi" },
+    { value: "MO", label: "Missouri" },
+    { value: "MT", label: "Montana" },
+    { value: "NE", label: "Nebraska" },
+    { value: "NV", label: "Nevada" },
+    { value: "NH", label: "New Hampshire" },
+    { value: "NJ", label: "New Jersey" },
+    { value: "NM", label: "New Mexico" },
+    { value: "NY", label: "New York" },
+    { value: "NC", label: "North Carolina" },
+    { value: "ND", label: "North Dakota" },
+    { value: "OH", label: "Ohio" },
+    { value: "OK", label: "Oklahoma" },
+    { value: "OR", label: "Oregon" },
+    { value: "PA", label: "Pennsylvania" },
+    { value: "RI", label: "Rhode Island" },
+    { value: "SC", label: "South Carolina" },
+    { value: "SD", label: "South Dakota" },
+    { value: "TN", label: "Tennessee" },
+    { value: "TX", label: "Texas" },
+    { value: "UT", label: "Utah" },
+    { value: "VT", label: "Vermont" },
+    { value: "VA", label: "Virginia" },
+    { value: "WA", label: "Washington" },
+    { value: "WV", label: "West Virginia" },
+    { value: "WI", label: "Wisconsin" },
+    { value: "WY", label: "Wyoming" },
   ]
 
   // grab page data from strapi
   useEffect(() => {
     fetch(`${fetchBaseUrl}/content-mapping-nwc`)
-    .then(res => res.json())
-    .then(data => {
+      .then(res => res.json())
+      .then(data => {
         setState({
-            banner_text: data.Banner_text,
-            bannerimage_credit: data.BannerImage_Credit,
-            bannerimagecredit_more: data.BannerImageCredit_more,
-            basicsearch_text: data.BasicSearch_Text
+          banner_text: data.Banner_text,
+          bannerimage_credit: data.BannerImage_Credit,
+          bannerimagecredit_more: data.BannerImageCredit_more,
+          basicsearch_text: data.BasicSearch_Text
         });
-    })
-    .catch(err => console.log(err));
-}, []); // eslint-disable-line
+      })
+      .catch(err => console.log(err));
+  }, []); // eslint-disable-line
 
-
-
-// handle inut change on text search query
-const handleInputChanged = (e) => {
-  setState({
-    ...state,
-    searchQuery: e.target.value
-  });
-}
-
-// submit text search query
-const handleSearchIconClicked = (e) => {
-  var searchQuery = state.searchQuery;
-
-console.log([VARIABLES.fetchBaseUrl, `participants?first_name_contains=${searchQuery}`].join('/'));
-  fetch([VARIABLES.fetchBaseUrl, `participants?first_name_contains=${searchQuery}`].join('/'))
-    .then(response => response.json())
-    .then(data =>  {
-      console.log(data);
-    })
-    .catch(err => console.log(err));
-}
-
-// Form submitting logic, prevent default page refresh 
-const handleSubmit = (e) => {
-  const { email, name, age, address, phoneNo } = this.state
-	e.preventDefault();
-	alert(`
-    ____Your Details____\n
-    Email : ${email}
-    Name : ${name}
-    Age : ${age}
-    Address : ${address}
-    Phone No : ${phoneNo}
-  `);
-};
-
-
-  
   return (
     <div className="mappingNWC">
 
@@ -162,13 +156,13 @@ const handleSubmit = (e) => {
         <h2>ADVANCED SEARCH</h2>
         <p> <Link to="/AdvancedSearch">Click here</Link> if you want to search... </p>
 
-        <div className="mappingNWCSearch_bar">
-          <input type="text" value={state.searchQuery} placeholder="SEARCH" onChange={handleInputChanged.bind(this)}/>
-          <button onClick={handleSearchIconClicked.bind(this)} className="mappingNWCSearch_icon">
-          &#x1F50E;&#xFE0E;
-</button>
-        </div>
-        <div className="basicForm">
+        <form key={1} onSubmit={handleSubmitSearch(onSubmitSearch)} className="mappingNWCSearch_bar">
+          <input type="text" placeholder="SEARCH" defaultValue="test" {...registerSearch("searchText")} />
+          <button type="submit" className="mappingNWCSearch_icon">&#x1F50E;&#xFE0E;</button>
+        </form>
+
+        {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
+        <form key={2} onSubmit={handleSubmit(onSubmit)} className="basicForm">
           <div className="row">
             <div className='panel'>
               <p>LOCATION AND NWC ROLE</p>
@@ -182,21 +176,21 @@ const handleSubmit = (e) => {
               />
               <p>&nbsp;&nbsp;ROLES</p>
               <label className="form-control">
-                <input type="checkbox" value={values.delegates} />DELEGATES/ALTERNATES</label>
+                <input type="checkbox" {...register("delegate_alternate")} />DELEGATES/ALTERNATES</label>
               <label className="form-control">
-                <input type="checkbox" name="favorite2" value="national commissioner" />NATIONAL COMMISSIONERS</label>
+                <input type="checkbox" {...register("national_commissioner")} />NATIONAL COMMISSIONERS</label>
               <label className="form-control">
-                <input type="checkbox" name="favorite3" value="notable Speakers" />NOTABLE SPEAKERS</label>
+                <input type="checkbox" {...register("speakers")} />NOTABLE SPEAKERS</label>
               <label className="form-control">
-                <input type="checkbox" name="favorite3" value="journalists" />JOURNALISTS</label>
+                <input type="checkbox" {...register("journalists")} />JOURNALISTS</label>
               <label className="form-control">
-                <input type="checkbox" name="favorite3" value="torch relay runners" />TORCH RELAY RUNNERS</label>
+                <input type="checkbox" {...register("torch_relay_runner")} />TORCH RELAY RUNNERS</label>
               <label className="form-control">
-                <input type="checkbox" name="favorite3" value="staff" />STAFF/VOLUNTEERS</label>
+                <input type="checkbox" {...register("staff_volunteer")} />STAFF/VOLUNTEERS</label>
               <label className="form-control">
-                <input type="checkbox" name="favorite3" value="international dignitaries" />INTERNATIONAL DIGNITARIES</label>
+                <input type="checkbox" {...register("international_dignitary")} />INTERNATIONAL DIGNITARIES</label>
               <label className="form-control">
-                <input type="checkbox" name="favorite3" value="offcial observer" />OFFICIAL OBSERVERS</label>
+                <input type="checkbox" {...register("official_observer")} />OFFICIAL OBSERVERS</label>
             </div>
             <div className='panel'>
               <p>RACE AND ETHNICITY IDENTIFIERS</p>
@@ -223,7 +217,7 @@ const handleSubmit = (e) => {
                 <input type="checkbox" name="favorite3" value="christian" />CHRISTIAN NON CATHOLIC</label>
               <label className="form-control">
                 <input type="checkbox" name="favorite3" value="eastern religions" />EASTERN RELIGIONS</label>
-                <label className="form-control">
+              <label className="form-control">
                 <input type="checkbox" name="favorite1" value="jewish" />JEWISH</label>
               <label className="form-control">
                 <input type="checkbox" name="favorite2" value="mormon" />MORMON</label>
@@ -268,11 +262,24 @@ const handleSubmit = (e) => {
             </div>
           </div>
           <div className="row">
-            <button type="reset" name="action"  className="resetButton">RESET</button>
-            <button type="submit" name="action" formAction="/search" className="searchButton">SEARCH</button>
+            {/* errors will return when field validation fails  */}
+            {errors.exampleRequired && <span>This field is required</span>}
           </div>
-        </div>
-        
+          <div className="row">
+            <button type="reset" className="resetButton">RESET</button>
+            <button type="submit" className="searchButton">SEARCH</button>
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
       </div>
       {/**MAP */}
       <Map />
