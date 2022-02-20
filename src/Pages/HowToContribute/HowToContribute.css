@@ -1,0 +1,308 @@
+/* 
+BEHAVIOR FOR HTML 
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+
+  /*
+  BANNER
+  */
+  .howToContributeBanner {
+    width: 100vw;
+    background: url("./res/mapbg.png");
+    padding-top: 151rem;
+    display: flex;
+}
+
+.howToContribute_button {
+  width: 500rem;
+  height: 500rem;
+}
+
+  /*
+  BANNER CARD
+  */
+.howToContribute_card {
+  width: 834rem;
+  height: 358rem;
+  min-height: 358rem;
+  background-color: white;
+  border-left: 12rem solid var(--colorDeepRed);
+  padding: 61rem;
+  padding-top: 58rem;
+  margin-top: 52rem;
+  }
+
+.howToContribute_card p {
+  font-family: var(--fontNeoBulletin);
+  font-size: 30rem;
+  font-weight: bold;
+  width: 760rem;
+  }
+
+/*
+  PHOTO CREDIT
+*/
+
+.howToContribute_credit {
+  float:right;
+  min-width: 323rem;
+  height: 84rem;
+  background-color: var(--colorDarkBlue);
+  color: var(--colorBeige);
+  font-size: 36rem;
+  font-family: var(--fontBabasNeue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 10%;
+  margin-left: -200rem;;
+  margin-top: 577rem;
+  margin-right: 400rem;
+  width: fit-content;
+  text-align: right;
+  padding: 12rem;
+}
+
+.howToContribute_credit p {
+width: 323rem;
+text-align: center;
+}
+
+.howToContribute_component119 {
+  width: 537rem;
+  height: 764rem;
+  margin-left: -400rem;
+  margin-bottom: -151rem;
+  margin-top: -100rem;
+  }
+
+/* 
+    HOW TO GET INVOLVED BUTTON BANNER
+*/
+
+.howToContributeButtons_container{
+}
+
+.howToContributeButtons_column {
+    float: left;
+    width: 15%;
+    margin-top: 25rem;
+    margin-left: 55rem;
+    padding: 55px;
+}
+
+.howToContributeButtons_column img{
+  position:absolute;
+  width: auto;
+  height:auto;
+}
+
+.howToContributeButtons_column li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.howToContributeButtons_column a img:last-child{
+  display: none;
+}
+
+.howToContributeButtons_column a:hover img:last-child{
+  display:block;
+}
+.howToContributeButtons_column a:hover img:first-child{
+  display:none;
+}
+
+
+/* 
+    HOW TO GET INVOLVED BUTTON BANNER (WIP)
+*/
+
+/* 
+
+    HOW TO GET INVOLVED BANNER TEXT SOCIAL MEDIA
+
+*/
+.howToContributeInvolved_banner{
+  margin-top: 500rem;
+  margin-bottom: 100rem;
+}
+
+.howToContributeInvolved_socialMedia {
+  display: grid;
+  grid-template-columns: repeat(5, [col] auto ) ;
+  grid-template-rows: repeat(2, [row] auto  );
+    margin-right: 80rem;
+    margin-top: 50rem;
+    margin-left: 150rem;
+  }
+  
+  .howToContributeInvolved h1 {
+    font-weight: 100;
+    font-size: 80rem;
+    font-family: var(--fontBabasNeue);
+    margin-bottom: 15rem;
+    grid-column: 1 ;
+    grid-row: 1;
+  }
+.howToContributeInvolved_favFace{
+  
+  grid-column: 2;
+  grid-row:1;
+  margin-left:900px;
+  margin-top:20px;
+
+}
+.howToContributeInvolved_favTwitter{
+  grid-column: 3;
+  grid-row:1;
+  margin-top:22px;
+}
+.howToContributeInvolved_favInsta{
+  grid-column: 4;
+  grid-row: 1;
+  margin-top:20px;
+}
+.howToContributeInvolved_favShare{
+  grid-column: 5;
+  grid-row: 1;
+  margin-top:16px;
+}
+/* 
+
+    HOW TO GET INVOLVED CONTAINER (IMG, TEXT, TITLE)
+
+*/
+
+.howToContributeInvolved_container {
+  display:flex;
+  margin-right: 80rem;
+  margin-top: 50rem;
+  margin-left:150rem;
+  padding: .4em;
+}
+
+.howToContributeInvolved_researcherImg {
+  float:left;
+  scroll-margin-top: 100px;
+}
+
+.howToContributeInvolved_content{
+  margin-left:1px;
+}
+
+.howToContributeInvolved_researcherText {
+  padding-left: 55rem;
+}
+
+.howToContributeInvolved_researcherText h1 {
+  font-size: 60rem;
+  font-family: var(--fontBabasNeue);
+  text-align: left;
+  font-weight:100;
+}
+
+.howToContributeInvolved_researcherText h1:hover {
+  color: #FFD048;
+  
+}
+
+.howToContributeInvolved_researcherText p {
+  font-size: 24rem;
+  font-family: var(--fontNeoBulletin);
+  padding-right: 10%;
+  padding-top:20rem;
+  text-align: left;
+}
+
+
+/* 
+    HOW TO GET INVOLVED SUBMISSION (WIP)
+*/
+
+.howToContributeSubmission_container { 
+  display: flex;
+}
+  
+  .howToContributeSubmission_frontdrop {
+    
+    background-color: var(--colorBeige);
+    padding: 40rem 120rem;
+    width: 84%;
+    margin: 60rem auto;
+    padding-bottom: 80rem;
+  }
+  
+  .howToContributeSubmission_header {
+    font-size: 55rem;
+    font-family: var(--fontBabasNeue);
+    color: #655948;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 6%;
+    
+  }
+  
+  .howToContributeSubmission_body p{
+    font-family: var(--fontNeoBulletin);
+    font-size: 25rem;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 6%;
+  }
+
+  .howToContributeSubmission_body_links{
+    display: flex;
+    justify-content: center;
+
+  }
+  
+  .howToContributeSubmission_oral {
+    border-radius: 50px;
+    background: var(--colorDeepRed);
+    padding: 20px;
+    width: 450px;
+    height: 80px;
+  }
+  
+  .howToContributeSubmission_oral p{
+    font-family: var(--fontBabasNeue);
+    font-size: 30rem;
+    color: white;
+    text-align: center;
+  }
+  .howToContributeSubmission_corrections {
+    border-radius: 50px;
+    background: var(--colorDeepRed);
+    padding: 20px;
+    width: 300px;
+    height: 80px;
+  }
+  
+  .howToContributeSubmission_corrections p{
+    font-family: var(--fontBabasNeue);
+    font-size: 35rem;
+    color: white;
+    text-align: center;
+  }
+
+  .howToContributeSubmission_archival {
+    border-radius: 50px;
+    background: var(--colorDeepRed);
+    padding: 20px;
+    width: 450px;
+    height: 80px;
+  }
+  
+  .howToContributeSubmission_archival p{
+    font-family: var(--fontBabasNeue);
+    font-size: 30rem;
+    color: white;
+    text-align: center;
+  }
+/* 
+    HOW TO GET INVOLVED SUBMISSION (WIP)
+*/
