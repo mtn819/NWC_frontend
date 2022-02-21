@@ -29,6 +29,7 @@ function Navigation() {
           pathname="/DiscoverNWCStories"
         />
         <JuicyLink navname="Mapping the NWC" pathname="/MappingNWC" />
+        <JuicyLink navname="How to Contribute" pathname="/HowToContribute" />
         <div></div>
         {/*
         <Link className="navigation_link" to="/HowToContribute">HOW TO CONTRIBUTE</Link>
