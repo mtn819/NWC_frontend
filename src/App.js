@@ -11,7 +11,6 @@ import Navigation from './Components/Navigation/Navigation';
 import Home from './Pages/Home/Home';
 import MappingNWC from "./Pages/MappingNWC/MappingNWC";
 import AdvancedSearch from "./Pages/MappingNWC/AdvancedSearch";
-// import HowToContribute from "./HowToContribute/HowToContribute";
 import About from "./Pages/AboutProject/About";
 import Why from "./Pages/Why/Why";
 import Essay from "./Pages/Essay/Essay";
@@ -20,59 +19,58 @@ import Participants from "./Pages/Participants/Participants";
 import Discover from "./Pages/Discover/Discover";
 import DiscoverInfo from "./Pages/Discover/DiscoverInfo";
 import MeetTheTeam from "./Pages/MeetTheTeam/MeetTheTeam";
+import HowToContribute from "./Pages/HowToContribute/HowToContribute";
 
 
 function App() {
   return (
     <Router basename={'/dev'} className="App">
-      <Navigation/>
+      <Navigation />
 
       <Switch>
-        {/*
-        <Route path = "/HowToContribute">
-          <HowToContribute/>
-        </Route>
-        */}
         <Route path="/MeetTheTeam">
           <MeetTheTeam />
         </Route>
-        <Route path = "/DiscoverNWCStories">
+        <Route path="/DiscoverNWCStories">
           <Discover />{/*<DiscoverNWCStories/>*/}
         </Route>
         <Route path="/discover/:storyId">
-          <DiscoverInfo/>
+          <DiscoverInfo />
         </Route>
-        <Route path = "/Discover">
+        <Route path="/Discover">
           <Discover />
         </Route>
-        <Route path = "/Why">
-          <Why/>
+        <Route path="/Why">
+          <Why />
         </Route>
-        <Route path = "/Essay">
+        <Route path="/Essay">
           {/*<Essay/>*/}
-          <Essay/>
+          <Essay />
         </Route>
-        <Route path = "/Torch">
-         <Torch/>
+        <Route path="/Torch">
+          <Torch />
         </Route>
-        <Route path = "/MappingNWC">
-          <MappingNWC/>
+        <Route path="/MappingNWC">
+          <MappingNWC />
         </Route>
-        <Route path = "/AdvancedSearch">
-          <AdvancedSearch/>
+        <Route path="/HowToContribute">
+          <HowToContribute />
         </Route>
-        <Route path = "/About">
+        <Route path="/AdvancedSearch">
+          <AdvancedSearch />
+        </Route>
+        <Route path="/About">
           <About></About>
         </Route>
-        <Route path = "/Participants">
+        <Route path="/Participants">
           <Participants />
         </Route>
-        <Route path = "/">
-          <Home/>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
-      <Footer/>
-    </Router> 
+      <Footer />
+    </Router>
   );
 }
 
