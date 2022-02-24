@@ -15,6 +15,7 @@ function MappingNWC() {
 
   const { fetchBaseUrl } = VARIABLES;
 
+  // one state to hold the regular page content loaded from Strapi
   const [state, setState] = useState({
     banner_text: '',
     bannerimage_credit: '',
@@ -22,6 +23,7 @@ function MappingNWC() {
     basicsearch_text: ''
   });
 
+  // 2nd state to hold map data 
   const [maps, setMap] = useState([]);
 
   // forms 
@@ -35,30 +37,60 @@ function MappingNWC() {
     fetch([VARIABLES.fetchBaseUrl, `participants?first_name_contains=${searchQuery}`].join('/'))
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        setMap(data);
       })
       .catch(err => console.log(err));
   }
 
   // submit basic search query
   const onSubmit = data => {
-    console.log(data);
+    var roles = [];
+
+    if (data.delegate_alternate)
+      roles.push({'nwc_roles.delegate_at_the_nwc': 1});
+    
+    if (data.national_commissioner) {
+      roles.push({'nwc_roles.ford_national_commissioner': 1});
+      roles.push({'nwc_roles.carter_national_commissioner': 1});
+    }
+
+    if(data.torch_relay_runner) {
+      roles.push({'nwc_roles.torch_relay_runner': 1});
+    }
+
+    if(data.notable_speaker) {
+      roles.push({'notable_speaker': 1});
+    }
+
+    if(data.journalists_covering_the_nwc) {
+      roles.push({'journalists_covering_the_nwc': 1});
+    }
+
+    if(data.staff_volunteer) {
+      roles.push({'volunteer': 1});
+      roles.push({'paid_staff_member': 1});
+    }
+
+    if(data.international_dignitary) {
+      roles.push({'international_dignitary': 1});
+    }
+
+    if(data.official_observer) {
+      roles.push({'official_observer': 1});
+    }
 
     const query = qs.stringify({
       _where:
       {
-        _or: [{
-          'roles.carter_national_commissioner': 1
-        }, { 'roles.ford_national_commissioner': 1 }]
+        _or: roles
       }
-    });
+    },
+      { encode: false });
 
-console.log(query)
-    fetch(`${fetchBaseUrl}/participants/basic?${query}`)
+    fetch(`${fetchBaseUrl}/participants?${query}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
-        setMap();
+        setMap(maps => data);
       })
       .catch(err => console.log(err));
   }
@@ -157,7 +189,7 @@ console.log(query)
         <p> <Link to="/AdvancedSearch">Click here</Link> if you want to search... </p>
 
         <form key={1} onSubmit={handleSubmitSearch(onSubmitSearch)} className="mappingNWCSearch_bar">
-          <input type="text" placeholder="SEARCH" defaultValue="test" {...registerSearch("searchText")} />
+          <input type="text" placeholder="SEARCH" {...registerSearch("searchText")} />
           <button type="submit" className="mappingNWCSearch_icon">&#x1F50E;&#xFE0E;</button>
         </form>
 
@@ -180,9 +212,9 @@ console.log(query)
               <label className="form-control">
                 <input type="checkbox" {...register("national_commissioner")} />NATIONAL COMMISSIONERS</label>
               <label className="form-control">
-                <input type="checkbox" {...register("speakers")} />NOTABLE SPEAKERS</label>
+                <input type="checkbox" {...register("notable_speaker")} />NOTABLE SPEAKERS</label>
               <label className="form-control">
-                <input type="checkbox" {...register("journalists")} />JOURNALISTS</label>
+                <input type="checkbox" {...register("journalists_covering_the_nwc")} />JOURNALISTS</label>
               <label className="form-control">
                 <input type="checkbox" {...register("torch_relay_runner")} />TORCH RELAY RUNNERS</label>
               <label className="form-control">
@@ -270,19 +302,10 @@ console.log(query)
             <button type="submit" className="searchButton">SEARCH</button>
           </div>
         </form>
-
-
-
-
-
-
-
-
-
-
       </div>
       {/**MAP */}
-      <Map />
+      {maps.length !== 0 && <Map map_data={maps} />}
+      
     </div>
   )
 }

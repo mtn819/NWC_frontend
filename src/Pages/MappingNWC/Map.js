@@ -45,7 +45,7 @@ const geojson = {
     ]
 };
 
-export default function Map() {
+export default function Map({ map_data }) {
     const mapContainer = useRef(null);
     const map = useRef(null);
 
@@ -54,7 +54,7 @@ export default function Map() {
     const [zoom, setZoom] = useState(4);
 
     useEffect(() => {
-        if (map.current) return; // initialize map only once
+        //if (map.current) return; // initialize map only once
         map.current = new mapboxgl.Map({
             container: mapContainer.current,
             style: 'mapbox://styles/mapbox/light-v10',
@@ -65,34 +65,48 @@ export default function Map() {
         const nav = new mapboxgl.NavigationControl();
         map.current.addControl(nav, "top-right");
 
-        // Add markers to the map.
-        for (const marker of geojson.features) {
-            // Create a DOM element for each marker.
-            const el = document.createElement('div');
-            const width = marker.properties.iconSize[0];
-            const height = marker.properties.iconSize[1];
-            el.className = 'marker';
-            el.style.backgroundImage = `url(https://placekitten.com/g/${width}/${height}/)`;
-            el.style.width = `${width}px`;
-            el.style.height = `${height}px`;
-            el.style.backgroundSize = '100%';
+        if (map_data.length > 0) {
+            map_data.forEach(function (point) {
+                let geometry = point.location_of_residence_in1977;
+                delete point.location_of_residence_in1977;
+                let properties = point;
+                let marker = { "type": "Feature", "geometry": geometry, "properties": properties }
+                const el = document.createElement('div');
+                el.className = 'marker';
 
-            el.addEventListener('click', () => {
-                window.alert(marker.properties.message);
+                el.addEventListener('click', () => {
+                    window.alert(marker.properties.first_name);
+                });
+
+                // Add markers to the map.
+                new mapboxgl.Marker(el)
+                    .setLngLat(marker.geometry.coordinates)
+                    .addTo(map.current);
             });
-
-            // Add markers to the map.
-            new mapboxgl.Marker(el)
-                .setLngLat(marker.geometry.coordinates)
-                .addTo(map.current);
         }
-
-
-    });
+    }, [lng, lat, zoom, map_data]);
 
     return (
         <div className='map-area'>
             <div ref={mapContainer} className="map-container" />
+            <div className="table-container">
+                <table>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>State</th>
+                    </tr>
+                    {map_data.length > 0 && map_data.map((val, key) => {
+                        return (
+                            <tr key={key}>
+                                <td>{val.first_name}</td>
+                                <td>{val.last_name}</td>
+                                <td>{val.state}</td>
+                            </tr>
+                        )
+                    })}
+                </table>
+            </div>
         </div>
     );
 }
