@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import VARIABLES from '../../config/.env';
 import './HowToContribute.css';
-import component119 from "./res/component119.png"
+import htcBannerPic from "./res/htcBannerPic.png"
 import archivists_button from "./res/archivists_button.png"
 import archivists_button_hover from "./res/archivists_button_hover.png"
 import researcher_button from "./res/researcher_button.png"
@@ -22,6 +22,8 @@ import favInsta from "./res/favInsta.png"
 import favFace from "./res/favFace.png"
 import favTwitter from "./res/favTwitter.png"
 import favShare from "./res/favShare.png"
+import LCard from "../../Components/LCard/LCard";
+import CaptionedImg from "../../Components/CaptionedImg/CaptionedImg";
 
 const getWhere = (data, key, value) => {
     return data.filter(e => e[key] === value);
@@ -40,8 +42,8 @@ function HowToContribute() {
     const [nwcParticipantsText, setNwcParticipantsText] = useState("");
     const [educatorsText, setEducatorsText] = useState("");
     const [studentsText, setStudentsText] = useState("");
-    // need strapi field to be created
-    // const [archivistsText, setArchivistsText] = useState("");
+    const [archivistsText, setArchivistsText] = useState("");
+
 
     useEffect(() => {
         fetch([VARIABLES.fetchBaseUrl, "content-how-to-contribute"].join('/'))
@@ -69,10 +71,9 @@ function HowToContribute() {
                 setStudentsText(
                     data.StudentsText
                 );
-                //Need field option in strapi
-                // setArchivistsText(
-                //     data.ArchivistsText
-                // );
+                setArchivistsText(
+                    data.ArchivistsText
+                );
             })
     }, []);
 
@@ -103,19 +104,13 @@ function HowToContribute() {
         <div className="howToContribute">
 
             {/* BANNER */}
-            <div className="howToContributeBanner">
-                <img src={how_to_contribute_button} className="howToContribute_button" alt="_" />
-                <div className="howToContribute_card">
-                    <p>
-                        {banner_card}
-                    </p>
-                </div>
-                <div className="howToContribute_credit" title={imgCredit_more}>
-                    <p>
-                        PHOTO BY {imgCredit}
-                    </p>
-                </div>
-                <img src={component119} className="howToContribute_component119" alt="_" />
+            <div className="contributeBanner">
+                <img src={how_to_contribute_button} alt="How to Contribute" />
+                <LCard text={banner_card} />
+                <CaptionedImg
+                    src={htcBannerPic}
+                    caption={"Photo by " + imgCredit}
+                    caption_more={imgCredit_more} />
             </div>
 
             {/* BUTTONS */}
@@ -216,7 +211,7 @@ function HowToContribute() {
                 <div class="howToContributeInvolved_content">
                     <div className="howToContributeInvolved_researcherText">
                         <h1>ARCHIVISTS</h1>
-                        <p>{researchersText}</p>
+                        <p>{archivistsText}</p>
                     </div>
                 </div>
             </div>
@@ -294,5 +289,4 @@ function HowToContribute() {
         </div>
     )
 }
-
 export default HowToContribute

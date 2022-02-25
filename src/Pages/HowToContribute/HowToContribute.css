@@ -1,90 +1,44 @@
 /* 
-BEHAVIOR FOR HTML 
+    BEHAVIOR FOR HTML 
 */
+
+
 html {
   scroll-behavior: smooth;
 }
 
 
-  /*
-  BANNER
-  */
-  .howToContributeBanner {
-    width: 100vw;
-    background: url("./res/mapbg.png");
-    padding-top: 151rem;
-    display: flex;
-}
-
-.howToContribute_button {
-  width: 500rem;
-  height: 500rem;
-}
-
-  /*
-  BANNER CARD
-  */
-.howToContribute_card {
-  width: 834rem;
-  height: 358rem;
-  min-height: 358rem;
-  background-color: white;
-  border-left: 12rem solid var(--colorDeepRed);
-  padding: 61rem;
-  padding-top: 58rem;
-  margin-top: 52rem;
-  }
-
-.howToContribute_card p {
-  font-family: var(--fontNeoBulletin);
-  font-size: 30rem;
-  font-weight: bold;
-  width: 760rem;
-  }
-
 /*
-  PHOTO CREDIT
+    BANNER
 */
 
-.howToContribute_credit {
-  float:right;
-  min-width: 323rem;
-  height: 84rem;
-  background-color: var(--colorDarkBlue);
-  color: var(--colorBeige);
-  font-size: 36rem;
-  font-family: var(--fontBabasNeue);
+.contributeBanner {
   display: flex;
   align-items: center;
-  justify-content: center;
-  right: 10%;
-  margin-left: -200rem;;
-  margin-top: 577rem;
-  margin-right: 400rem;
-  width: fit-content;
-  text-align: right;
-  padding: 12rem;
+  justify-content: space-around;
+  background: url("./res/mapbg.png");
 }
 
-.howToContribute_credit p {
-width: 323rem;
-text-align: center;
+.contributeBanner > img {
+  width: 25%;
 }
 
-.howToContribute_component119 {
-  width: 537rem;
-  height: 764rem;
-  margin-left: -400rem;
-  margin-bottom: -151rem;
-  margin-top: -100rem;
-  }
+.contributeBanner > .lcard {
+  width: 35%;
+  margin: 2em 0;
+}
+
+.contributeBanner > .captionedImg {
+  width: 30%;
+  align-self: flex-end;
+  margin-bottom: -13rem;
+  margin-right: -40rem;
+}
 
 /* 
     HOW TO GET INVOLVED BUTTON BANNER
 */
 
-.howToContributeButtons_container{
-}
 
 .howToContributeButtons_column {
     float: left;
@@ -188,10 +142,13 @@ text-align: center;
 
 .howToContributeInvolved_content{
   margin-left:1px;
+  
 }
 
 .howToContributeInvolved_researcherText {
   padding-left: 55rem;
+  width:auto;
+  
 }
 
 .howToContributeInvolved_researcherText h1 {
@@ -212,6 +169,7 @@ text-align: center;
   padding-right: 10%;
   padding-top:20rem;
   text-align: left;
+
 }
 
 
@@ -260,13 +218,17 @@ text-align: center;
     border-radius: 50px;
     background: var(--colorDeepRed);
     padding: 20px;
-    width: 450px;
+    width: 500px;
     height: 80px;
+  }
+
+  .howToContributeSubmission_oral:hover{
+    background: #80280D;
   }
   
   .howToContributeSubmission_oral p{
     font-family: var(--fontBabasNeue);
-    font-size: 30rem;
+    font-size: 35rem;
     color: white;
     text-align: center;
   }
@@ -274,8 +236,12 @@ text-align: center;
     border-radius: 50px;
     background: var(--colorDeepRed);
     padding: 20px;
-    width: 300px;
+    width: 250px;
     height: 80px;
+  }
+
+  .howToContributeSubmission_corrections:hover{
+    background: #80280D;
   }
   
   .howToContributeSubmission_corrections p{
@@ -289,13 +255,17 @@ text-align: center;
     border-radius: 50px;
     background: var(--colorDeepRed);
     padding: 20px;
-    width: 450px;
+    width: 475px;
     height: 80px;
+  }
+
+  .howToContributeSubmission_archival:hover{
+    background: #80280D;
   }
   
   .howToContributeSubmission_archival p{
     font-family: var(--fontBabasNeue);
-    font-size: 30rem;
+    font-size: 35rem;
     color: white;
     text-align: center;
   }

@@ -45,8 +45,9 @@
   color: var(--colorLightBlue);
   font-family: 'babas_neue', normal;
   font-size: 35rem;
-  margin-left: 150rem;
+  margin-left: 110rem;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .navigation_link--selected {
