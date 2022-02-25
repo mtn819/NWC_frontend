@@ -31,14 +31,14 @@ html {
 .contributeBanner > .captionedImg {
   width: 30%;
   align-self: flex-end;
+  margin-bottom: -13rem;
+  margin-right: -40rem;
 }
 
 /* 
     HOW TO GET INVOLVED BUTTON BANNER
 */
 
-.howToContributeButtons_container{
-}
 
 .howToContributeButtons_column {
     float: left;
@@ -142,10 +142,13 @@ html {
 
 .howToContributeInvolved_content{
   margin-left:1px;
+  
 }
 
 .howToContributeInvolved_researcherText {
   padding-left: 55rem;
+  width:auto;
+  
 }
 
 .howToContributeInvolved_researcherText h1 {
@@ -166,6 +169,7 @@ html {
   padding-right: 10%;
   padding-top:20rem;
   text-align: left;
+
 }
 
 
@@ -214,13 +218,17 @@ html {
     border-radius: 50px;
     background: var(--colorDeepRed);
     padding: 20px;
-    width: 600px;
+    width: 500px;
     height: 80px;
+  }
+
+  .howToContributeSubmission_oral:hover{
+    background: #80280D;
   }
   
   .howToContributeSubmission_oral p{
     font-family: var(--fontBabasNeue);
-    font-size: 30rem;
+    font-size: 35rem;
     color: white;
     text-align: center;
   }
@@ -228,8 +236,12 @@ html {
     border-radius: 50px;
     background: var(--colorDeepRed);
     padding: 20px;
-    width: 300px;
+    width: 250px;
     height: 80px;
+  }
+
+  .howToContributeSubmission_corrections:hover{
+    background: #80280D;
   }
   
   .howToContributeSubmission_corrections p{
@@ -243,13 +255,17 @@ html {
     border-radius: 50px;
     background: var(--colorDeepRed);
     padding: 20px;
-    width: 450px;
+    width: 475px;
     height: 80px;
+  }
+
+  .howToContributeSubmission_archival:hover{
+    background: #80280D;
   }
   
   .howToContributeSubmission_archival p{
     font-family: var(--fontBabasNeue);
-    font-size: 30rem;
+    font-size: 35rem;
     color: white;
     text-align: center;
   }

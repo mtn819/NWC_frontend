@@ -42,8 +42,7 @@ function HowToContribute() {
     const [nwcParticipantsText, setNwcParticipantsText] = useState("");
     const [educatorsText, setEducatorsText] = useState("");
     const [studentsText, setStudentsText] = useState("");
-    // need strapi field to be created
-    // const [archivistsText, setArchivistsText] = useState("");
+    const [archivistsText, setArchivistsText] = useState("");
 
 
     useEffect(() => {
@@ -72,10 +71,9 @@ function HowToContribute() {
                 setStudentsText(
                     data.StudentsText
                 );
-                //Need field option in strapi
-                // setArchivistsText(
-                //     data.ArchivistsText
-                // );
+                setArchivistsText(
+                    data.ArchivistsText
+                );
             })
     }, []);
 
@@ -107,7 +105,7 @@ function HowToContribute() {
 
             {/* BANNER */}
             <div className="contributeBanner">
-                <img src={how_to_contribute_button} alt="Discover NWC Stories" />
+                <img src={how_to_contribute_button} alt="How to Contribute" />
                 <LCard text={banner_card} />
                 <CaptionedImg
                     src={htcBannerPic}
@@ -213,7 +211,7 @@ function HowToContribute() {
                 <div class="howToContributeInvolved_content">
                     <div className="howToContributeInvolved_researcherText">
                         <h1>ARCHIVISTS</h1>
-                        <p>{researchersText}</p>
+                        <p>{archivistsText}</p>
                     </div>
                 </div>
             </div>
@@ -291,5 +289,4 @@ function HowToContribute() {
         </div>
     )
 }
-
 export default HowToContribute
