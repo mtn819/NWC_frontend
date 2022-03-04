@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import { render } from 'react-snapshot';
 //import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalProvider from './context/GlobalProvider';
 
-ReactDOM.render(
+render(
   <React.StrictMode>
     <GlobalProvider>
       <App />
