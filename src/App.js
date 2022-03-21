@@ -17,6 +17,7 @@ import Discover from './Pages/Discover/Discover';
 import DiscoverInfo from './Pages/Discover/DiscoverInfo';
 import MeetTheTeam from './Pages/MeetTheTeam/MeetTheTeam';
 import PDFViewer from './Pages/PDFViewer/PDFViewer';
+import Forms from './Pages/Forms/Forms';
 import { Helmet } from 'react-helmet';
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
       <Navigation />
 
       <Switch>
+        <Route path="/Forms">
+          <Forms />
+        </Route>
         {/*
         <Route path = "/HowToContribute">
           <HowToContribute/>
